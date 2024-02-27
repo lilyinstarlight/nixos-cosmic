@@ -1,0 +1,122 @@
+{
+  inputs = {
+    # TODO: switch to `github:NixOS/nixpkgs/nixos-unstable` once NixOS/nixpkgs#279009 is merged
+    #nixpkgs.url = "github:lilyinstarlight/nixpkgs/tmp/virgl";
+    nixpkgs.url = "/home/lily/src/nixpkgs";
+
+    # TODO: switch to `github:Mic92/nix-update` once Mic92/nix-update#227 and Mic92/nix-update#228 are merged
+    nix-update = {
+      url = "github:lilyinstarlight/nix-update/tmp/fixed";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    flake-compat = {
+      url = "github:nix-community/flake-compat";
+      flake = false;
+    };
+  };
+
+  outputs = { self, nixpkgs, nix-update, ... }: let
+    forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+  in {
+    lib = {
+      packagesFor = pkgs: import ./pkgs { inherit pkgs; };
+    };
+
+    packages = forAllSystems (system: self.lib.packagesFor nixpkgs.legacyPackages.${system});
+
+    overlays = {
+      default = final: prev: self.lib.packagesFor prev;
+    };
+
+    nixosModules = {
+      default = import ./nixos { inherit (nixpkgs) lib; cosmicOverlay = self.overlays.default; };
+    };
+
+    legacyPackages = forAllSystems (system: let pkgs = nixpkgs.legacyPackages.${system}; in {
+      update = pkgs.writeShellApplication {
+        name = "cosmic-update";
+
+        runtimeInputs = [
+          pkgs.coreutils
+          nix-update.packages.${system}.default
+        ];
+
+        text = ''
+          for pkg in pkgs/*; do
+            if ! [ -f "$pkg/package.nix" ]; then
+              continue
+            fi
+
+            attr="$(basename "$pkg")"
+
+            if [ "$attr" = wrapCosmicAppsHook ]; then
+              continue
+            fi
+
+            nix-update --commit --version branch=HEAD "$attr"
+          done
+        '';
+      };
+
+      vm = (nixpkgs.lib.nixosSystem {
+        modules = [
+          ({ lib, pkgs, modulesPath, ... }: {
+            imports = [
+              self.nixosModules.default
+
+              "${toString modulesPath}/virtualisation/qemu-vm.nix"
+            ];
+
+            services.xserver.desktopManager.cosmic.enable = true;
+            services.xserver.displayManager.cosmic-greeter.enable = true;
+
+            environment.systemPackages = [ pkgs.drm_info ];
+
+            boot.kernelParams = [ "quiet" "udev.log_level=3"  ];
+            boot.initrd.kernelModules = [ "bochs" ];
+
+            boot.initrd.verbose = false;
+
+            boot.initrd.systemd.enable = true;
+
+            boot.loader.systemd-boot.enable = true;
+            boot.loader.timeout = 0;
+
+            boot.plymouth.enable = true;
+            boot.plymouth.theme = "nixos-bgrt";
+            boot.plymouth.themePackages = [ pkgs.nixos-bgrt-plymouth ];
+
+            services.openssh = {
+              enable = true;
+              settings.PermitRootLogin = "yes";
+            };
+
+            documentation.nixos.enable = false;
+
+            users.mutableUsers = false;
+            users.users.root.password = "meow";
+            users.users.user = {
+              isNormalUser = true;
+              password = "meow";
+            };
+
+            virtualisation.useBootLoader = true;
+            virtualisation.useEFIBoot = true;
+            virtualisation.mountHostNixStore = true;
+
+            virtualisation.memorySize = 4096;
+
+            virtualisation.forwardPorts = [
+              { from = "host"; host.port = 2222; guest.port = 22; }
+            ];
+
+            nixpkgs.hostPlatform = system;
+
+            system.stateVersion = lib.trivial.release;
+          })
+        ];
+      }).config.system.build.vm;
+    });
+  };
+}

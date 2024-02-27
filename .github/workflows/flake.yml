@@ -1,0 +1,32 @@
+name: Flake
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Flake Update
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@v9
+
+      - id: update-flake-lock
+        uses: DeterminateSystems/update-flake-lock@v20
+        with:
+          commit-msg: 'flake: update inputs'
+          pr-title: 'flake: update inputs'
+          pr-labels: 'dependencies'
+
+      - uses: benc-uk/workflow-dispatch@v121
+        if: ${{ contains(fromJSON('["created", "updated"]'), steps.update-flake-lock.outputs.pull-request-operation) }}
+        with:
+          workflow: ci.yml
+          ref: refs/heads/update_flake_lock_action

@@ -1,0 +1,40 @@
+name: Cosmic
+
+on:
+  schedule:
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Cosmic Update
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@v9
+
+      - run: nix -vL run --show-trace .#update
+
+      - id: create-pr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: update_cosmic_action
+          delete-branch: true
+          committer: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
+          author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
+          commit-message: 'pkgs: update cosmic'
+          title: 'pkgs: update cosmic'
+          labels: 'dependencies'
+          body: |
+            Automated bump of Cosmic packages
+
+      - uses: benc-uk/workflow-dispatch@v121
+        if: ${{ contains(fromJSON('["created", "updated"]'), steps.create-pr.outputs.pull-request-operation) }}
+        with:
+          workflow: ci.yml
+          ref: refs/heads/update_cosmic_action

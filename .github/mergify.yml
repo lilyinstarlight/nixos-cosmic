@@ -1,0 +1,13 @@
+pull_request_rules:
+  - name: Auto-merge for dependency bump pull requests
+    conditions:
+      - or:
+        - author=dependabot[bot]
+        - author=github-actions[bot]
+      - label=dependencies
+
+      - check-success=Build
+    actions:
+      merge:
+        method: squash
+      delete_head_branch:
