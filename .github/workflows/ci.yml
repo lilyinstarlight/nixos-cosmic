@@ -21,4 +21,4 @@ jobs:
           name: cosmic
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
-      - run: nix -vL build --show-trace .#vm
+      - run: nix -vL build --show-trace --cores 1 .#vm
