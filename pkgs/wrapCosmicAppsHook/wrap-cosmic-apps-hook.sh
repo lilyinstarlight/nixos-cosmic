@@ -1,6 +1,10 @@
 # shellcheck shell=bash
 cosmicAppsWrapperArgs=()
 
+cosmicAppsVergenHook() {
+  export VERGEN_GIT_COMMIT_DATE="$SOURCE_DATE_EPOCH"
+}
+
 cosmicAppsLinkerArgsHook() {
   # Force linking to libEGL, which is always dlopen()ed.
   local flags="CARGO_TARGET_@cargoLinkerVar@_RUSTFLAGS"
@@ -13,7 +17,7 @@ cosmicAppsLinkerArgsHook() {
   export "$flags"="${!flags} -C link-arg=-Wl,--pop-state"
 }
 
-preConfigurePhases+=" cosmicAppsLinkerArgsHook"
+preConfigurePhases+=" cosmicAppsVergenHook cosmicAppsLinkerArgsHook"
 
 cosmicAppsWrapperArgsHook() {
     # add fallback schemas, icons, and settings paths
