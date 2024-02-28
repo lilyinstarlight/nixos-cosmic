@@ -18,6 +18,11 @@ jobs:
 
       - uses: DeterminateSystems/nix-installer-action@v9
 
+      - name: Configure git
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
       - run: nix -vL run --show-trace .#update
 
       - id: create-pr
