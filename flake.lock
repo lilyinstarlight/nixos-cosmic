@@ -64,15 +64,16 @@
       "locked": {
         "lastModified": 1709071039,
         "narHash": "sha256-2iNAcl/hYNlNy1mKPlHsPpwoqF3WXtGa2SUetd1+kKo=",
-        "ref": "refs/heads/tmp/virgl",
+        "owner": "lilyinstarlight",
+        "repo": "nixpkgs",
         "rev": "f088aa27a1d557c9a643310b645d48f9e956135d",
-        "revCount": 587171,
-        "type": "git",
-        "url": "file:///home/lily/src/nixpkgs"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/lily/src/nixpkgs"
+        "owner": "lilyinstarlight",
+        "ref": "tmp/virgl",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "root": {

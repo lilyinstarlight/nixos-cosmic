@@ -1,8 +1,7 @@
 {
   inputs = {
     # TODO: switch to `github:NixOS/nixpkgs/nixos-unstable` once NixOS/nixpkgs#279009 is merged
-    #nixpkgs.url = "github:lilyinstarlight/nixpkgs/tmp/virgl";
-    nixpkgs.url = "/home/lily/src/nixpkgs";
+    nixpkgs.url = "github:lilyinstarlight/nixpkgs/tmp/virgl";
 
     # TODO: switch to `github:Mic92/nix-update` once Mic92/nix-update#227 and Mic92/nix-update#228 are merged
     nix-update = {
