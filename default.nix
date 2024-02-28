@@ -18,4 +18,4 @@ let
   ).defaultNix;
 in
 
-self.legacyPackages.${system} // self.packages.${system}
+self.packages.${system}
