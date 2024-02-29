@@ -36,7 +36,7 @@ jobs:
           title: 'pkgs: update cosmic'
           labels: 'dependencies'
           body: |
-            Automated bump of Cosmic packages
+            Automated bump of COSMIC packages
 
       - uses: benc-uk/workflow-dispatch@v121
         if: ${{ contains(fromJSON('["created", "updated"]'), steps.create-pr.outputs.pull-request-operation) }}
