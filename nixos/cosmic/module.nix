@@ -19,6 +19,7 @@ in
     ''];
 
     # environment packages
+    environment.etc."cosmic-comp/config.ron".source = lib.mkDefault "${pkgs.cosmic-comp}/etc/cosmic-comp/config.ron";
     environment.pathsToLink = [ "/share/cosmic" ];
     environment.systemPackages = with pkgs; [
       gnome.adwaita-icon-theme
