@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # TODO: switch to `github:Mic92/nix-update` once Mic92/nix-update#227 and Mic92/nix-update#228 are merged
+    # TODO: switch to `github:Mic92/nix-update` once Mic92/nix-update#227, Mic92/nix-update#228, and Mic92/nix-update#229 are merged
     nix-update = {
       url = "github:lilyinstarlight/nix-update/tmp/fixed";
       inputs.nixpkgs.follows = "nixpkgs";
