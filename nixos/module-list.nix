@@ -1,3 +1,3 @@
-{ lib }:
-
-lib.filter (value: value != null) (lib.mapAttrsToList (name: type: if type == "directory" then "${toString ./.}/${name}/module.nix" else null) (builtins.readDir ./.))
+let
+  dir = builtins.readDir ./.;
+in builtins.filter (value: value != null) (builtins.map (name: if dir.${name} == "directory" then "${builtins.toString ./.}/${name}/module.nix" else null) (builtins.attrNames dir))

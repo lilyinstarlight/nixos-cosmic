@@ -1,9 +1,8 @@
-{ pkgs }:
+{ pkgs ? null, final ? null, prev ? null }:
 
 let
-  inherit (pkgs) lib;
-
-  pkgsPaths = lib.filterAttrs (_: value: value != null) (lib.mapAttrs (name: type: if type == "directory" then "${toString ./.}/${name}/package.nix" else null) (builtins.readDir ./.));
-  callPackage = lib.callPackageWith (pkgs // finalPkgs // { inherit callPackage; });
-  finalPkgs = lib.mapAttrs (_: path: callPackage path {}) pkgsPaths;
+  dir = builtins.readDir ./.;
+  pkgsPaths = builtins.filter (pkgPath: pkgPath != null) (builtins.map (name: if dir.${name} == "directory" then { inherit name; value = "${builtins.toString ./.}/${name}/package.nix"; } else null) (builtins.attrNames dir));
+  callPackage = if final != null then final.callPackage else pkgs.lib.callPackageWith (pkgs // finalPkgs // { inherit callPackage; });
+  finalPkgs = builtins.listToAttrs (builtins.map (pkgPath: { inherit (pkgPath) name; value = callPackage pkgPath.value {}; }) pkgsPaths);
 in finalPkgs

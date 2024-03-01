@@ -1,7 +1,6 @@
 {
   inputs = {
-    # TODO: switch to `github:NixOS/nixpkgs/nixos-unstable` once NixOS/nixpkgs#279009 is merged
-    nixpkgs.url = "github:lilyinstarlight/nixpkgs/tmp/virgl";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # TODO: switch to `github:Mic92/nix-update` once Mic92/nix-update#227 and Mic92/nix-update#228 are merged
     nix-update = {
@@ -25,11 +24,11 @@
     packages = forAllSystems (system: self.lib.packagesFor nixpkgs.legacyPackages.${system});
 
     overlays = {
-      default = final: prev: self.lib.packagesFor prev;
+      default = final: prev: import ./pkgs { inherit final prev; };
     };
 
     nixosModules = {
-      default = import ./nixos { inherit (nixpkgs) lib; cosmicOverlay = self.overlays.default; };
+      default = import ./nixos { cosmicOverlay = self.overlays.default; };
     };
 
     legacyPackages = forAllSystems (system: let pkgs = nixpkgs.legacyPackages.${system}; in {
@@ -64,7 +63,7 @@
             imports = [
               self.nixosModules.default
 
-              "${toString modulesPath}/virtualisation/qemu-vm.nix"
+              "${builtins.toString modulesPath}/virtualisation/qemu-vm.nix"
             ];
 
             services.xserver.desktopManager.cosmic.enable = true;
@@ -105,6 +104,8 @@
             virtualisation.mountHostNixStore = true;
 
             virtualisation.memorySize = 4096;
+            # TODO: below options can be removed once NixOS/nixpkgs#279009 is merged
+            virtualisation.qemu.options = [ "-vga none" "-device virtio-gpu-gl-pci" "-display default,gl=on" ];
 
             virtualisation.forwardPorts = [
               { from = "host"; host.port = 2222; guest.port = 22; }

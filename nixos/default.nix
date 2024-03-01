@@ -1,7 +1,7 @@
-{ lib, cosmicOverlay, ... }:
+{ cosmicOverlay }:
 
 {
-  imports = import ./module-list.nix { inherit lib; };
+  imports = import ./module-list.nix;
 
   nixpkgs.overlays = [ cosmicOverlay ];
 }
