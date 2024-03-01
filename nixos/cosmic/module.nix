@@ -4,7 +4,7 @@ let
   cfg = config.services.xserver.desktopManager.cosmic;
 in
 {
-  meta.maintainers = with lib.maintainers; [ nyanbinary ];
+  meta.maintainers = with lib.maintainers; [ nyanbinary lilyinstarlight ];
 
   options.services.xserver.desktopManager.cosmic = {
     enable = lib.mkEnableOption (lib.mdDoc "COSMIC desktop environment");
