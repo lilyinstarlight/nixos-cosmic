@@ -57,8 +57,6 @@ rustPlatform.buildRustPackage {
   postInstall = ''
     mkdir -p $out/etc/cosmic-comp
     cp config.ron $out/etc/cosmic-comp/config.ron
-
-    cosmicAppsWrapperArgs+=(--suffix XDG_CONFIG_DIRS : $out/etc)
   '' + lib.optionalString useXWayland ''
     cosmicAppsWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ xwayland ]})
   '';
