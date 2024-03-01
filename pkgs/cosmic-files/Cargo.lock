@@ -1127,11 +1127,11 @@ dependencies = [
 [[package]]
 name = "cosmic-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "atomicwrites",
  "cosmic-config-derive",
- "dirs",
+ "dirs 5.0.1",
  "iced_futures",
  "known-folders",
  "notify",
@@ -1144,7 +1144,7 @@ dependencies = [
 [[package]]
 name = "cosmic-config-derive"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "quote",
  "syn 1.0.109",
@@ -1155,10 +1155,11 @@ name = "cosmic-files"
 version = "0.1.0"
 dependencies = [
  "chrono",
- "dirs",
+ "dirs 5.0.1",
  "env_logger",
  "fastrand 2.0.1",
  "fork",
+ "freedesktop_entry_parser",
  "i18n-embed",
  "i18n-embed-fl",
  "image 0.24.9",
@@ -1179,12 +1180,13 @@ dependencies = [
  "tokio",
  "trash",
  "vergen",
+ "xdg",
 ]
 
 [[package]]
 name = "cosmic-text"
 version = "0.11.2"
-source = "git+https://github.com/pop-os/cosmic-text.git#2766961af621b9235616e186046f6d14a2f5fbc0"
+source = "git+https://github.com/pop-os/cosmic-text.git#22e61965aa38ab0bd64bbdddf3848ae891edceba"
 dependencies = [
  "bitflags 2.4.2",
  "fontdb",
@@ -1206,7 +1208,7 @@ dependencies = [
 [[package]]
 name = "cosmic-theme"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "almost",
  "cosmic-config",
@@ -1351,7 +1353,7 @@ version = "0.19.0"
 source = "git+https://github.com/gfx-rs/wgpu?rev=20fda69#20fda698341efbdc870b8027d6d49f5bf3f36109"
 dependencies = [
  "bitflags 2.4.2",
- "libloading 0.8.1",
+ "libloading 0.8.2",
  "winapi",
 ]
 
@@ -1498,11 +1500,20 @@ dependencies = [
 
 [[package]]
 name = "dirs"
+version = "3.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "30baa043103c9d0c2a57cf537cc2f35623889dc0d405e6c3cccfadbc81c71309"
+dependencies = [
+ "dirs-sys 0.3.7",
+]
+
+[[package]]
+name = "dirs"
 version = "5.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "44c45a9d03d6676652bcb5e724c7e988de1acad23a711b5217ab9cbecbec2225"
 dependencies = [
- "dirs-sys",
+ "dirs-sys 0.4.1",
 ]
 
 [[package]]
@@ -1513,6 +1524,17 @@ checksum = "b98cf8ebf19c3d1b223e151f99a4f9f0690dca41414773390fc824184ac833e1"
 dependencies = [
  "cfg-if 1.0.0",
  "dirs-sys-next",
+]
+
+[[package]]
+name = "dirs-sys"
+version = "0.3.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1b1d1d91c932ef41c0f2663aa8b0ca0342d444d842c06914aa0a7e352d0bada6"
+dependencies = [
+ "libc",
+ "redox_users",
+ "winapi",
 ]
 
 [[package]]
@@ -1570,7 +1592,7 @@ version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "330c60081dcc4c72131f8eb70510f1ac07223e5d4163db481a04a0befcffa412"
 dependencies = [
- "libloading 0.8.1",
+ "libloading 0.8.2",
 ]
 
 [[package]]
@@ -2025,16 +2047,39 @@ dependencies = [
 ]
 
 [[package]]
+name = "freedesktop-desktop-entry"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "45157175a725e81f3f594382430b6b78af5f8f72db9bd51b94f0785f80fc6d29"
+dependencies = [
+ "dirs 3.0.2",
+ "gettext-rs",
+ "memchr",
+ "thiserror",
+ "xdg",
+]
+
+[[package]]
 name = "freedesktop-icons"
 version = "0.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a8ef34245e0540c9a3ce7a28340b98d2c12b75da0d446da4e8224923fcaa0c16"
 dependencies = [
- "dirs",
+ "dirs 5.0.1",
  "once_cell",
  "rust-ini",
  "thiserror",
  "xdg",
+]
+
+[[package]]
+name = "freedesktop_entry_parser"
+version = "1.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "db9c27b72f19a99a895f8ca89e2d26e4ef31013376e56fdafef697627306c3e4"
+dependencies = [
+ "nom 7.1.3",
+ "thiserror",
 ]
 
 [[package]]
@@ -2223,6 +2268,26 @@ dependencies = [
  "cfg-if 1.0.0",
  "libc",
  "wasi",
+]
+
+[[package]]
+name = "gettext-rs"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e49ea8a8fad198aaa1f9655a2524b64b70eb06b2f3ff37da407566c93054f364"
+dependencies = [
+ "gettext-sys",
+ "locale_config",
+]
+
+[[package]]
+name = "gettext-sys"
+version = "0.21.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c63ce2e00f56a206778276704bbe38564c8695249fdc8f354b4ef71c57c3839d"
+dependencies = [
+ "cc",
+ "temp-dir",
 ]
 
 [[package]]
@@ -2465,7 +2530,7 @@ dependencies = [
  "bitflags 2.4.2",
  "com",
  "libc",
- "libloading 0.8.1",
+ "libloading 0.8.2",
  "thiserror",
  "widestring",
  "winapi",
@@ -2597,7 +2662,7 @@ dependencies = [
 [[package]]
 name = "iced"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "iced_accessibility",
  "iced_core",
@@ -2612,7 +2677,7 @@ dependencies = [
 [[package]]
 name = "iced_accessibility"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "accesskit",
  "accesskit_winit",
@@ -2621,7 +2686,7 @@ dependencies = [
 [[package]]
 name = "iced_core"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "bitflags 1.3.2",
  "log",
@@ -2638,7 +2703,7 @@ dependencies = [
 [[package]]
 name = "iced_futures"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "futures",
  "iced_core",
@@ -2651,7 +2716,7 @@ dependencies = [
 [[package]]
 name = "iced_graphics"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "bitflags 1.3.2",
  "bytemuck",
@@ -2675,7 +2740,7 @@ dependencies = [
 [[package]]
 name = "iced_renderer"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "iced_graphics",
  "iced_tiny_skia",
@@ -2687,7 +2752,7 @@ dependencies = [
 [[package]]
 name = "iced_runtime"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "iced_core",
  "iced_futures",
@@ -2697,7 +2762,7 @@ dependencies = [
 [[package]]
 name = "iced_style"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "iced_core",
  "once_cell",
@@ -2707,7 +2772,7 @@ dependencies = [
 [[package]]
 name = "iced_tiny_skia"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "bytemuck",
  "cosmic-text",
@@ -2724,7 +2789,7 @@ dependencies = [
 [[package]]
 name = "iced_wgpu"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "bitflags 1.3.2",
  "bytemuck",
@@ -2743,7 +2808,7 @@ dependencies = [
 [[package]]
 name = "iced_widget"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "iced_renderer",
  "iced_runtime",
@@ -2757,7 +2822,7 @@ dependencies = [
 [[package]]
 name = "iced_winit"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "iced_graphics",
  "iced_runtime",
@@ -2853,9 +2918,9 @@ checksum = "029d73f573d8e8d63e6d5020011d3255b28c3ba85d6cf870a07184ed23de9284"
 
 [[package]]
 name = "indexmap"
-version = "2.2.4"
+version = "2.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "967d6dd42f16dbf0eb8040cb9e477933562684d3918f7d253f2ff9087fb3e7a3"
+checksum = "7b0b929d511467233429c45a44ac1dcaa21ba0f5ba11e4879e6ed28ddb4f9df4"
 dependencies = [
  "equivalent",
  "hashbrown",
@@ -3010,7 +3075,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6aae1df220ece3c0ada96b8153459b67eebe9ae9212258bb0134ae60416fdf76"
 dependencies = [
  "libc",
- "libloading 0.8.1",
+ "libloading 0.8.2",
  "pkg-config",
 ]
 
@@ -3101,7 +3166,7 @@ checksum = "9c198f91728a82281a64e1f4f9eeb25d82cb32a5de251c6bd1b5154d63a8e7bd"
 [[package]]
 name = "libcosmic"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#e12d6253389860dc9fbb0d651e86287ad8f609ae"
+source = "git+https://github.com/pop-os/libcosmic.git#ce45af20f8f1d7c803b20c8af37fdd3adac641e2"
 dependencies = [
  "apply",
  "ashpd",
@@ -3110,6 +3175,7 @@ dependencies = [
  "css-color",
  "derive_setters",
  "fraction",
+ "freedesktop-desktop-entry",
  "freedesktop-icons",
  "iced",
  "iced_core",
@@ -3122,8 +3188,11 @@ dependencies = [
  "iced_widget",
  "iced_winit",
  "lazy_static",
+ "mime",
+ "nix 0.27.1",
  "palette",
  "rfd",
+ "shlex",
  "slotmap",
  "taffy",
  "thiserror",
@@ -3156,12 +3225,12 @@ dependencies = [
 
 [[package]]
 name = "libloading"
-version = "0.8.1"
+version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c571b676ddfc9a8c12f1f3d3085a7b163966a8fd8098a90640953ce5f6170161"
+checksum = "2caa5afb8bf9f3a2652760ce7d4f62d21c4d5a423e68466fca30df82f2330164"
 dependencies = [
  "cfg-if 1.0.0",
- "windows-sys 0.48.0",
+ "windows-targets 0.52.4",
 ]
 
 [[package]]
@@ -3383,6 +3452,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "minimal-lexical"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "68354c5c6bd36d73ff3feceb05efa59b6acb7626617f4962be322a825e61f79a"
+
+[[package]]
 name = "miniz_oxide"
 version = "0.3.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3426,9 +3501,9 @@ dependencies = [
 
 [[package]]
 name = "mio"
-version = "0.8.10"
+version = "0.8.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8f3d0b296e374a4e6f3c7b0a1f5a51d748a0d34c85e7dc48fc3fa9a87657fe09"
+checksum = "a4a650543ca06a924e8b371db273b2756685faae30f8487da1b56505a8f78b0c"
 dependencies = [
  "libc",
  "log",
@@ -3595,6 +3670,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "nix"
+version = "0.27.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2eb04e9c688eff1c89d72b407f168cf79bb9e867a9d3323ed6c01519eb9cc053"
+dependencies = [
+ "bitflags 2.4.2",
+ "cfg-if 1.0.0",
+ "libc",
+]
+
+[[package]]
 name = "nom"
 version = "5.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3603,6 +3689,16 @@ dependencies = [
  "lexical-core",
  "memchr",
  "version_check",
+]
+
+[[package]]
+name = "nom"
+version = "7.1.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d273983c5a657a70a3e8f2a01329822f3b8c8172b73826411a55751e404a0a4a"
+dependencies = [
+ "memchr",
+ "minimal-lexical",
 ]
 
 [[package]]
@@ -3619,7 +3715,7 @@ dependencies = [
  "kqueue",
  "libc",
  "log",
- "mio 0.8.10",
+ "mio 0.8.11",
  "walkdir",
  "windows-sys 0.48.0",
 ]
@@ -3881,9 +3977,9 @@ checksum = "3fdb12b2476b595f9358c5161aa467c2438859caa136dec86c26fdd2efe17b92"
 
 [[package]]
 name = "open"
-version = "5.0.2"
+version = "5.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eedff767bc49d336bff300224f73307ae36963c843e38dc9312a22171b012cbc"
+checksum = "1f2588edf622de56e7a1fed57bf203344f63c03f3d43472ba0434a92373c8f27"
 dependencies = [
  "is-wsl",
  "libc",
@@ -4814,6 +4910,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "shlex"
+version = "1.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0fda2ff0d084019ba4d7c6f371c95d8fd75ce3524c3cb8fb653a3023f6323e64"
+
+[[package]]
 name = "signal-hook-registry"
 version = "1.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5130,6 +5232,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e1fc403891a21bcfb7c37834ba66a547a8f402146eba7265b5a6d88059c9ff2f"
 
 [[package]]
+name = "temp-dir"
+version = "0.1.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dd16aa9ffe15fe021c6ee3766772132c6e98dfa395a167e16864f61a9cfb71d6"
+
+[[package]]
 name = "tempfile"
 version = "3.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5289,7 +5397,7 @@ checksum = "d4098d49269baa034a8d1eae9bd63e9fa532148d772121dace3bcd6a6c98eb6d"
 dependencies = [
  "as-raw-xcb-connection",
  "ctor",
- "libloading 0.8.1",
+ "libloading 0.8.2",
  "tracing",
 ]
 
@@ -5326,7 +5434,7 @@ dependencies = [
  "backtrace",
  "bytes",
  "libc",
- "mio 0.8.10",
+ "mio 0.8.11",
  "num_cpus",
  "pin-project-lite",
  "signal-hook-registry",
@@ -5397,7 +5505,7 @@ dependencies = [
  "serde",
  "serde_spanned",
  "toml_datetime",
- "winnow 0.6.3",
+ "winnow 0.6.5",
 ]
 
 [[package]]
@@ -5699,9 +5807,9 @@ checksum = "f3c4517f54858c779bbcbf228f4fca63d121bf85fbecb2dc578cdf4a39395690"
 
 [[package]]
 name = "walkdir"
-version = "2.4.0"
+version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d71d857dc86794ca4c280d616f7da00d2dbfd8cd788846559a6813e6aa4b54ee"
+checksum = "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b"
 dependencies = [
  "same-file",
  "winapi-util",
@@ -6074,7 +6182,7 @@ dependencies = [
  "js-sys",
  "khronos-egl",
  "libc",
- "libloading 0.8.1",
+ "libloading 0.8.2",
  "log",
  "metal",
  "naga",
@@ -6504,9 +6612,9 @@ dependencies = [
 
 [[package]]
 name = "winnow"
-version = "0.6.3"
+version = "0.6.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "44e19b97e00a4d3db3cdb9b53c8c5f87151b5689b82cc86c2848cbdcccb2689b"
+checksum = "dffa400e67ed5a4dd237983829e66475f0a4a26938c4b04c21baede6262215b8"
 dependencies = [
  "memchr",
 ]
@@ -6531,7 +6639,7 @@ dependencies = [
  "as-raw-xcb-connection",
  "gethostname",
  "libc",
- "libloading 0.8.1",
+ "libloading 0.8.2",
  "once_cell",
  "rustix 0.38.31",
  "x11rb-protocol",
@@ -6574,7 +6682,7 @@ dependencies = [
  "dirs-next",
  "glob",
  "mime",
- "nom",
+ "nom 5.1.3",
  "unicase",
 ]
 
@@ -6679,9 +6787,9 @@ dependencies = [
 
 [[package]]
 name = "zbus_names"
-version = "2.6.0"
+version = "2.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fb80bb776dbda6e23d705cf0123c3b95df99c4ebeaec6c2599d4a5419902b4a9"
+checksum = "437d738d3750bed6ca9b8d423ccc7a8eb284f6b1d6d4e225a0e4e6258d864c8d"
 dependencies = [
  "serde",
  "static_assertions",
