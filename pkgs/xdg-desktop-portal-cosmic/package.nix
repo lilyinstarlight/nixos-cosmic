@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "xdg-desktop-portal-cosmic";
-  version = "0-unstable-2024-02-23";
+  version = "0-unstable-2024-03-02";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "xdg-desktop-portal-cosmic";
-    rev = "f6d394e5d05b6acdf7d39d5211d4dca02b419e39";
-    hash = "sha256-3C8YcC/usYwp5uSaD+rKyj8l+qk3vwOZ5XH/HJVkJ7k=";
+    rev = "8de2295327e383833ffd8149ccd1c3b1c6a4336f";
+    hash = "sha256-KxAsRWAoTRxtrq8rf7HJTcYlSBQNdm+IiVSJGL9G5LM=";
   };
 
   cargoLock = {
@@ -24,16 +24,16 @@ rustPlatform.buildRustPackage {
     outputHashes = {
       "accesskit-0.12.2" = "sha256-ksaYMGT/oug7isQY8/1WD97XDUsX2ShBdabUzxWffYw=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
-      "cosmic-bg-config-0.1.0" = "sha256-2P2NcgDmytvBCMbG8isfZrX+JirMwAz8qjW3BhfhebI=";
+      "cosmic-bg-config-0.1.0" = "sha256-U+BF+lLd/DmZq8ISc9zHAegzv0K97g9Qq+D9qZDbyY4=";
       "cosmic-client-toolkit-0.1.0" = "sha256-vj7Wm1uJ5ULvGNEwKznNhujCZQiuntsWMyKQbIVaO/Q=";
-      "cosmic-config-0.1.0" = "sha256-ETNVJ4y7EraAlU9XEZGNNPdyWt1WIURr1dSH6hQ0Pos=";
+      "cosmic-config-0.1.0" = "sha256-jXMjGkMoTFLcu31ILTkZpYpmjuo0z6LVvUt82ehl6oc=";
       "cosmic-settings-daemon-0.1.0" = "sha256-z/dvRyc3Zc1fAQh2HKk6NI6QSDpNqarqslwszjU+0nc=";
-      "cosmic-text-0.11.1" = "sha256-lyBl0VAzcKBqLeCPrA28VW6O0MWXazJg1b11YuBR65U=";
+      "cosmic-text-0.11.2" = "sha256-S53HQoK2ZzsP4953BYg7YlyNaM4Uvc2K0asEgfgYfb4=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "libspa-0.8.0" = "sha256-KnNeFQPu0E4XxZVladf1fbChh0Xjhw3tN9Dqp7uy+/I=";
       "smithay-client-toolkit-0.18.0" = "sha256-2WbDKlSGiyVmi7blNBr2Aih9FfF2dq/bny57hoA4BrE=";
-      "softbuffer-0.4.1" = "sha256-CACVCnyFgefkpDlll6IeaPWB8a3gbF6BW8MnlkytV8o=";
+      "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
     };
   };
