@@ -21,6 +21,7 @@ If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flak
 
   outputs = { self, nixpkgs, nixos-cosmic }: {
     nixosConfigurations = {
+      # NOTE: change "host" to your system's hostname
       host = nixpkgs.lib.nixosSystem {
         modules = [
           {
