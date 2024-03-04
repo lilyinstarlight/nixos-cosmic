@@ -70,7 +70,7 @@ rustPlatform.buildRustPackage {
   ];
 
   postPatch = ''
-    substituteInPlace src/greeter.rs --replace '/usr/bin/env' '${lib.getExe' coreutils "env"}'
+    substituteInPlace src/greeter.rs --replace-fail '/usr/bin/env' '${lib.getExe' coreutils "env"}'
   '';
 
   meta = with lib; {
