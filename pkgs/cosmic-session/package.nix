@@ -1,10 +1,10 @@
 {
   lib,
   fetchFromGitHub,
-  bash,
   rustPlatform,
-  just,
+  bash,
   dbus,
+  just,
   rust,
   stdenv,
   xdg-desktop-portal-cosmic,
@@ -30,15 +30,16 @@ rustPlatform.buildRustPackage {
 
   postPatch = ''
     substituteInPlace Justfile \
-        --replace 'target/release/cosmic-session' "target/${rust.lib.toRustTargetSpecShort stdenv.hostPlatform}/release/cosmic-session"
+      --replace-fail 'target/release/cosmic-session' "target/${rust.lib.toRustTargetSpecShort stdenv.hostPlatform}/release/cosmic-session"
     substituteInPlace data/start-cosmic \
-        --replace '#!/bin/bash' '#!${lib.getExe bash}' \
-        --replace '/usr/bin/cosmic-session' '${placeholder "out"}/bin/cosmic-session' \
-        --replace '/usr/bin/dbus-run-session' '${lib.getExe' dbus "dbus-run-session"}'
-    substituteInPlace data/cosmic.desktop --replace '/usr/bin/start-cosmic' '${placeholder "out"}/bin/start-cosmic'
+      --replace-fail '/usr/bin/cosmic-session' '${placeholder "out"}/bin/cosmic-session' \
+      --replace-fail '/usr/bin/dbus-run-session' '${lib.getExe' dbus "dbus-run-session"}'
+    substituteInPlace data/cosmic.desktop \
+      --replace-fail '/usr/bin/start-cosmic' '${placeholder "out"}/bin/start-cosmic'
   '';
 
   nativeBuildInputs = [ just ];
+  buildInputs = [ bash ];
 
   dontUseJustBuild = true;
 
