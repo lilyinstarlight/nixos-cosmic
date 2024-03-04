@@ -31,7 +31,8 @@ makeSetupHook {
   ];
 
   substitutions = {
-    inherit cosmic-icons cosmic-settings;
+    cosmicIcons = cosmic-icons;
+    cosmicSettings = cosmic-settings;
 
     cargoLinkerVar = stdenv.hostPlatform.rust.cargoEnvVarTarget;
     cargoLinkLibs = lib.escapeShellArgs ([

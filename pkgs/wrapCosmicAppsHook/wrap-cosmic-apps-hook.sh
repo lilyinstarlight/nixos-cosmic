@@ -21,7 +21,7 @@ preConfigurePhases+=" cosmicAppsVergenHook cosmicAppsLinkerArgsHook"
 
 cosmicAppsWrapperArgsHook() {
     # add fallback schemas, icons, and settings paths
-    cosmicAppsWrapperArgs+=(--suffix XDG_DATA_DIRS : "@cosmic-settings@/share:@cosmic-icons@/share")
+    cosmicAppsWrapperArgs+=(--suffix XDG_DATA_DIRS : "@cosmicSettings@/share:@cosmicIcons@/share")
 
     if [ -d "${prefix:?}/share" ]; then
         cosmicAppsWrapperArgs+=(--prefix XDG_DATA_DIRS : "$prefix/share")
