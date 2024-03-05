@@ -928,6 +928,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "cosmic-applet-minimize"
+version = "0.1.1"
+dependencies = [
+ "anyhow",
+ "i18n-embed 0.13.9",
+ "i18n-embed-fl 0.6.7",
+ "image",
+ "libcosmic",
+ "memmap2 0.9.4",
+ "once_cell",
+ "png",
+ "rust-embed 6.8.1",
+ "rust-embed-utils 7.8.1",
+ "rustix 0.38.31",
+ "tempfile",
+ "tokio",
+ "tracing",
+ "tracing-log",
+ "tracing-subscriber",
+]
+
+[[package]]
 name = "cosmic-applet-network"
 version = "0.1.0"
 dependencies = [
