@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, utils, ... }:
 
 let
   cfg = config.services.xserver.desktopManager.cosmic;
@@ -6,8 +6,17 @@ in
 {
   meta.maintainers = with lib.maintainers; [ nyanbinary lilyinstarlight ];
 
-  options.services.xserver.desktopManager.cosmic = {
-    enable = lib.mkEnableOption (lib.mdDoc "COSMIC desktop environment");
+  options = {
+    services.xserver.desktopManager.cosmic = {
+      enable = lib.mkEnableOption (lib.mdDoc "COSMIC desktop environment");
+    };
+
+    environment.cosmic.excludePackages = lib.mkOption {
+      description = lib.mdDoc "List of COSMIC packages to exclude from the default environment";
+      type = lib.types.listOf lib.types.package;
+      default = [];
+      example = lib.literalExpression "[ pkgs.cosmic-edit ]";
+    };
   };
 
   config = lib.mkIf cfg.enable {
@@ -21,10 +30,9 @@ in
     # environment packages
     environment.etc."cosmic-comp/config.ron".source = lib.mkDefault "${pkgs.cosmic-comp}/etc/cosmic-comp/config.ron";
     environment.pathsToLink = [ "/share/cosmic" ];
-    environment.systemPackages = with pkgs; [
-      gnome.adwaita-icon-theme
-      cosmic-applibrary
+    environment.systemPackages = utils.removePackagesByName (with pkgs; [
       cosmic-applets
+      cosmic-applibrary
       cosmic-bg
       cosmic-comp
       cosmic-edit
@@ -42,10 +50,11 @@ in
       cosmic-settings-daemon
       cosmic-term
       cosmic-workspaces-epoch
+      gnome.adwaita-icon-theme
       hicolor-icon-theme
       pop-icon-theme
       pop-launcher
-    ];
+    ]) config.environment.cosmic.excludePackages;
 
     # xdg portal packages and config
     xdg.portal = {
@@ -60,9 +69,9 @@ in
     };
 
     # fonts
-    fonts.packages = with pkgs; [
+    fonts.packages = utils.removePackagesByName (with pkgs; [
       fira-mono
-    ];
+    ]) config.environment.cosmic.excludePackages;
 
     # required features
     hardware.opengl.enable = true;
