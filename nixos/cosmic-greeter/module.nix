@@ -16,7 +16,7 @@ in
       settings = {
         default_session = {
           user = "cosmic-greeter";
-          command = "${pkgs.coreutils}/bin/env XCURSOR_THEME=Pop systemd-cat -t cosmic-greeter ${pkgs.cosmic-comp}/bin/cosmic-comp ${pkgs.cosmic-greeter}/bin/cosmic-greeter";
+          command = ''${pkgs.coreutils}/bin/env XCURSOR_THEME="''${XCURSOR_THEME:-Pop}" systemd-cat -t cosmic-greeter ${pkgs.cosmic-comp}/bin/cosmic-comp ${pkgs.cosmic-greeter}/bin/cosmic-greeter'';
         };
       };
     };
