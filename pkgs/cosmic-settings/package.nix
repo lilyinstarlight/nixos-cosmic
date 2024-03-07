@@ -20,13 +20,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings";
-  version = "0-unstable-2024-03-04";
+  version = "0-unstable-2024-03-06";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings";
-    rev = "9175e7e9ee89504755df30ed725933b21108ec99";
-    hash = "sha256-mx6m4Zq7iAl9YfIL8x1qkszc6tG93Rd/VMkuUNbNfvs=";
+    rev = "958d9ba16449570b86d9eee15ae15683ca5a07d6";
+    hash = "sha256-hZ4SDrqM86Ixey/S8q5uE/H7LyIqki3d+oqzdmkaLHw=";
   };
 
   cargoLock = {
@@ -34,13 +34,13 @@ rustPlatform.buildRustPackage {
     outputHashes = {
       "accesskit-0.12.2" = "sha256-ksaYMGT/oug7isQY8/1WD97XDUsX2ShBdabUzxWffYw=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
-      "cosmic-bg-config-0.1.0" = "sha256-2P2NcgDmytvBCMbG8isfZrX+JirMwAz8qjW3BhfhebI=";
+      "cosmic-bg-config-0.1.0" = "sha256-U+BF+lLd/DmZq8ISc9zHAegzv0K97g9Qq+D9qZDbyY4=";
       "cosmic-client-toolkit-0.1.0" = "sha256-vj7Wm1uJ5ULvGNEwKznNhujCZQiuntsWMyKQbIVaO/Q=";
-      "cosmic-comp-config-0.1.0" = "sha256-Lj24AkdLHOICHnBtrVCTKaBiySViTCxEWl4Ry8nfiXg=";
-      "cosmic-config-0.1.0" = "sha256-zx6ztF2LcUEjO3DFjgIlJ9QO+N/P5Hahg//CyXkRGfI=";
-      "cosmic-panel-config-0.1.0" = "sha256-JrBmCMa2w74+TQhmXIcrdLn9KQu2V7ifSilmKhSL9a0=";
+      "cosmic-comp-config-0.1.0" = "sha256-krMzz7CY47cER5kMqH/gZ+4fvkBQypvqrcRV0S4brbI=";
+      "cosmic-config-0.1.0" = "sha256-6gBJDma3QJTH3K9cZLxHv/+Qt2iBSCIIO92WK6crrVw=";
+      "cosmic-panel-config-0.1.0" = "sha256-YwQftpAgCMtqHe9iXFWEZXF4rgG3iTmGNNu79hmtveo=";
       "cosmic-randr-shell-0.1.0" = "sha256-t1PM/uIM+lbBwgFsKnRiqPZnlb4dxZnN72MfnW0HU/0=";
-      "cosmic-text-0.11.2" = "sha256-Y9i5stMYpx+iqn4y5DJm1O1+3UIGp0/fSsnNq3Zloug=";
+      "cosmic-text-0.11.2" = "sha256-6mvGyMCFC/tSIiDgDX+zuDUi15S9dXI6Dc6pj36hIJM=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "smithay-client-toolkit-0.18.0" = "sha256-2WbDKlSGiyVmi7blNBr2Aih9FfF2dq/bny57hoA4BrE=";
