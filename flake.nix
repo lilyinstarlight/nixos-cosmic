@@ -118,7 +118,7 @@
             })
           ];
         };
-      in nixosConfig.config.system.build.vm // { closure = nixosConfig.config.system.build.toplevel; };
+      in nixosConfig.config.system.build.vm // { closure = nixosConfig.config.system.build.toplevel; pkgs = nixosConfig.pkgs; };
     });
   };
 }
