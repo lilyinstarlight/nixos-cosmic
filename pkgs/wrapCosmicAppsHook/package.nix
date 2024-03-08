@@ -2,14 +2,13 @@
 , lib
 , makeSetupHook
 , makeBinaryWrapper
-, cosmic-icons
-, cosmic-settings
 , libGL
 , libxkbcommon
 , xorg
 , wayland
 , vulkan-loader
 , targetPackages
+, includeSettings ? true
 }:
 
 makeSetupHook {
@@ -31,7 +30,7 @@ makeSetupHook {
   ];
 
   substitutions = {
-    fallbackXdgDirs = "${lib.optionalString (cosmic-settings != null) "${cosmic-settings}/share:"}${cosmic-icons}/share";
+    fallbackXdgDirs = "${lib.optionalString includeSettings "${targetPackages.cosmic-settings}/share:"}${targetPackages.cosmic-icons}/share";
 
     cargoLinkerVar = stdenv.hostPlatform.rust.cargoEnvVarTarget;
     cargoLinkLibs = lib.escapeShellArgs ([

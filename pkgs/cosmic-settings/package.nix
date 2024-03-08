@@ -16,7 +16,7 @@
 }:
 
 let
-  wrapCosmicAppsHook' = buildPackages.wrapCosmicAppsHook.override { cosmic-settings = null; };
+  wrapCosmicAppsHook' = buildPackages.wrapCosmicAppsHook.override { includeSettings = false; };
 in
 
 rustPlatform.buildRustPackage {
