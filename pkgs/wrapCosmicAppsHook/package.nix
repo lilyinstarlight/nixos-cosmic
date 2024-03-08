@@ -31,8 +31,7 @@ makeSetupHook {
   ];
 
   substitutions = {
-    cosmicIcons = cosmic-icons;
-    cosmicSettings = cosmic-settings;
+    fallbackXdgDirs = "${lib.optionalString (cosmic-settings != null) "${cosmic-settings}/share:"}${cosmic-icons}/share";
 
     cargoLinkerVar = stdenv.hostPlatform.rust.cargoEnvVarTarget;
     cargoLinkLibs = lib.escapeShellArgs ([

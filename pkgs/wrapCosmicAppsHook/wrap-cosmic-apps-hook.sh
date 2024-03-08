@@ -6,7 +6,7 @@ cosmicAppsVergenHook() {
 }
 
 cosmicAppsLinkerArgsHook() {
-  # Force linking to libEGL, which is always dlopen()ed.
+  # Force linking to certain libraries like libEGL, which are always dlopen()ed
   local flags="CARGO_TARGET_@cargoLinkerVar@_RUSTFLAGS"
 
   export "$flags"="${!flags-} -C link-arg=-Wl,--push-state,--no-as-needed"
@@ -21,7 +21,7 @@ preConfigurePhases+=" cosmicAppsVergenHook cosmicAppsLinkerArgsHook"
 
 cosmicAppsWrapperArgsHook() {
     # add fallback schemas, icons, and settings paths
-    cosmicAppsWrapperArgs+=(--suffix XDG_DATA_DIRS : "@cosmicSettings@/share:@cosmicIcons@/share")
+    cosmicAppsWrapperArgs+=(--suffix XDG_DATA_DIRS : "@fallbackXdgDirs@")
 
     if [ -d "${prefix:?}/share" ]; then
         cosmicAppsWrapperArgs+=(--prefix XDG_DATA_DIRS : "$prefix/share")
@@ -36,7 +36,7 @@ wrapCosmicApp() {
     wrapProgram "$program" "${cosmicAppsWrapperArgs[@]}" "$@"
 }
 
-# Note: $cosmicAppsWrapperArgs still gets defined even if ${dontWrapCosmicApps-} is set.
+# Note: $cosmicAppsWrapperArgs still gets defined even if ${dontWrapCosmicApps-} is set
 wrapCosmicAppsHook() {
     # guard against running multiple times (e.g. due to propagation)
     [ -z "$wrapCosmicAppsHookHasRun" ] || return 0

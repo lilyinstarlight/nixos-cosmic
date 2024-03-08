@@ -2,21 +2,22 @@
 , stdenv
 , fetchFromGitHub
 , rustPlatform
-, makeBinaryWrapper
+, buildPackages
 , cmake
-, cosmic-icons
 , cosmic-randr
 , expat
 , fontconfig
 , freetype
 , just
 , libinput
-, libxkbcommon
 , pkg-config
 , udev
 , util-linux
-, wayland
 }:
+
+let
+  wrapCosmicAppsHook' = buildPackages.wrapCosmicAppsHook.override { cosmic-settings = null; };
+in
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings";
@@ -50,8 +51,8 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ makeBinaryWrapper cmake just pkg-config util-linux ];
-  buildInputs = [ expat fontconfig freetype libxkbcommon libinput udev wayland ];
+  nativeBuildInputs = [ wrapCosmicAppsHook' cmake just pkg-config util-linux ];
+  buildInputs = [ expat fontconfig freetype libinput udev ];
 
   dontUseJustBuild = true;
 
@@ -65,9 +66,7 @@ rustPlatform.buildRustPackage {
   ];
 
   postInstall = ''
-    wrapProgram "$out/bin/cosmic-settings" \
-      --prefix PATH : '${lib.makeBinPath [ cosmic-randr ]}' \
-      --suffix XDG_DATA_DIRS : '${placeholder "out"}/share:${cosmic-icons}/share'
+    cosmicAppsWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ cosmic-randr ]})
   '';
 
   meta = with lib; {
