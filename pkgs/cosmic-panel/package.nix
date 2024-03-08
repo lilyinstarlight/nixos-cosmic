@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-panel";
-  version = "0-unstable-2024-03-07";
+  version = "0-unstable-2024-03-08";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-panel";
-    rev = "5023ac5e3008d946c22bee1fd7d91cbccbc09732";
-    sha256 = "sha256-DT5ecfg0Lum2sXAvid9SGC75n1R4ne74xZTpHNJTzTk=";
+    rev = "07fcaee64f80d9aa498be53d40077bc0a510437b";
+    sha256 = "sha256-A6rmL3vEpJ02wVRz1WdUecMGJ0r2rxfwDcPJ2G3oQZw=";
   };
 
   cargoLock = {
@@ -24,8 +24,8 @@ rustPlatform.buildRustPackage {
     outputHashes = {
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "cosmic-client-toolkit-0.1.0" = "sha256-vj7Wm1uJ5ULvGNEwKznNhujCZQiuntsWMyKQbIVaO/Q=";
-      "cosmic-config-0.1.0" = "sha256-P7GCTYfRvqIN8CeheyTELx6fMKCTsaZCp9oEbda2jCo=";
-      "cosmic-notifications-util-0.1.0" = "sha256-hC76AYUC9Igjx5jFr1157UHVbBT5L9x2YhUslsFaBrc=";
+      "cosmic-config-0.1.0" = "sha256-HFiDKyo93Sz9DLxCd9Yt4+iW1U36Nu0HhIcnv3q3Ers=";
+      "cosmic-notifications-util-0.1.0" = "sha256-tdha/4LGJjOShXVChNf5plbboIAJWP2mwkjqHLnj5Cw=";
       "launch-pad-0.1.0" = "sha256-tnbSJ/GP9GTnLnikJmvb9XrJSgnUnWjadABHF43L1zc=";
       "smithay-0.3.0" = "sha256-OI+wtDeJ/2bJyiTxL+F53j1CWnZ0aH7XjUmM6oN45Ow=";
       "smithay-client-toolkit-0.18.0" = "sha256-2WbDKlSGiyVmi7blNBr2Aih9FfF2dq/bny57hoA4BrE=";
