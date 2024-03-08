@@ -2,7 +2,7 @@
 , stdenv
 , fetchFromGitHub
 , rustPlatform
-, buildPackages
+, wrapCosmicAppsHook
 , cmake
 , cosmic-randr
 , expat
@@ -16,7 +16,7 @@
 }:
 
 let
-  wrapCosmicAppsHook' = buildPackages.wrapCosmicAppsHook.override { includeSettings = false; };
+  wrapCosmicAppsHook' = (wrapCosmicAppsHook.__spliced.buildHost or wrapCosmicAppsHook).override { includeSettings = false; };
 in
 
 rustPlatform.buildRustPackage {
