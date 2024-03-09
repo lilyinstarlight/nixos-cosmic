@@ -15,13 +15,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-applets";
-  version = "0-unstable-2024-03-08";
+  version = "0-unstable-2024-03-09";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-applets";
-    rev = "ec75698a00077503503edff13e583de785b7fede";
-    hash = "sha256-6eXjlopWLbox6kY/NiPssDY5UPEelhOm02HEM5Af7u0=";
+    rev = "13dedfc3c7abefb810641c221ceb288a869bea9f";
+    hash = "sha256-dk/gN7Xmto+IiOHyMDN2MJAGe8+rE8tDxPDRvtB/mYc=";
   };
 
   cargoLock = {
@@ -31,10 +31,10 @@ rustPlatform.buildRustPackage {
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "cosmic-client-toolkit-0.1.0" = "sha256-vj7Wm1uJ5ULvGNEwKznNhujCZQiuntsWMyKQbIVaO/Q=";
       "cosmic-comp-config-0.1.0" = "sha256-uUpRd8bR2TyD7Y1lpKmJTaTNv9yNsZVnr0oWDQgHD/0=";
-      "cosmic-config-0.1.0" = "sha256-6gBJDma3QJTH3K9cZLxHv/+Qt2iBSCIIO92WK6crrVw=";
+      "cosmic-config-0.1.0" = "sha256-fp0c8ek7GA8E6Ony2uTNjRJvmMJLGx8g1DT+WbmFjj8=";
       "cosmic-dbus-networkmanager-0.1.0" = "sha256-a/cvbB0M9cUd8RP5XxgHRbJ/i/UKAEK4DTwwUU69IuY=";
-      "cosmic-notifications-config-0.1.0" = "sha256-hC76AYUC9Igjx5jFr1157UHVbBT5L9x2YhUslsFaBrc=";
-      "cosmic-panel-config-0.1.0" = "sha256-YwQftpAgCMtqHe9iXFWEZXF4rgG3iTmGNNu79hmtveo=";
+      "cosmic-notifications-config-0.1.0" = "sha256-tdha/4LGJjOShXVChNf5plbboIAJWP2mwkjqHLnj5Cw=";
+      "cosmic-panel-config-0.1.0" = "sha256-A6rmL3vEpJ02wVRz1WdUecMGJ0r2rxfwDcPJ2G3oQZw=";
       "cosmic-settings-daemon-0.1.0" = "sha256-z/dvRyc3Zc1fAQh2HKk6NI6QSDpNqarqslwszjU+0nc=";
       "cosmic-text-0.11.2" = "sha256-6mvGyMCFC/tSIiDgDX+zuDUi15S9dXI6Dc6pj36hIJM=";
       "cosmic-time-0.4.0" = "sha256-mMTctwZdW4vlX7m7Aq682bZViObnPH8V5KsVCKDV47M=";
