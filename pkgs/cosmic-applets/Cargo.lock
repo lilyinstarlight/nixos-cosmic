@@ -577,9 +577,9 @@ dependencies = [
 
 [[package]]
 name = "bumpalo"
-version = "3.15.3"
+version = "3.15.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8ea184aa71bb362a1157c896979544cc23974e08fd265f29ea96b59f0b4a555b"
+checksum = "7ff69b9dd49fd426c69a0db9fc04dd934cdb6645ff000864d98f7e2af8830eaa"
 
 [[package]]
 name = "bytemuck"
@@ -651,9 +651,9 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.0.89"
+version = "1.0.90"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a0ba8f7aaa012f30d5b2861462f6708eccd49c3c39863fe083a308035f63d723"
+checksum = "8cd6604a82acf3039f1144f54b8eb34e91ffba622051189e71b781822d5ee1f5"
 
 [[package]]
 name = "cfg-expr"
@@ -685,9 +685,9 @@ checksum = "77e53693616d3075149f4ead59bdeecd204ac6b8192d8969757601b74bddf00f"
 
 [[package]]
 name = "chrono"
-version = "0.4.34"
+version = "0.4.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5bc015644b92d5890fab7489e49d21f879d5c990186827d42ec511919404f38b"
+checksum = "8eaf5903dcbc0a39312feb77df2ff4c76387d591b9fc7b04a238dcf8bb62639a"
 dependencies = [
  "android-tzdata",
  "iana-time-zone",
@@ -1119,7 +1119,7 @@ dependencies = [
 [[package]]
 name = "cosmic-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "atomicwrites",
  "cosmic-config-derive",
@@ -1139,7 +1139,7 @@ dependencies = [
 [[package]]
 name = "cosmic-config-derive"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "quote",
  "syn 1.0.109",
@@ -1162,7 +1162,7 @@ dependencies = [
 [[package]]
 name = "cosmic-notifications-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/cosmic-notifications#19f147f9ed8c46196bf6f5b5debc99a7228555fc"
+source = "git+https://github.com/pop-os/cosmic-notifications#63a1e46f54a0af3fdee35f49b9f3e0baf6baf186"
 dependencies = [
  "cosmic-config",
  "serde",
@@ -1171,7 +1171,7 @@ dependencies = [
 [[package]]
 name = "cosmic-notifications-util"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/cosmic-notifications#19f147f9ed8c46196bf6f5b5debc99a7228555fc"
+source = "git+https://github.com/pop-os/cosmic-notifications#63a1e46f54a0af3fdee35f49b9f3e0baf6baf186"
 dependencies = [
  "bytemuck",
  "fast_image_resize",
@@ -1192,7 +1192,7 @@ dependencies = [
 [[package]]
 name = "cosmic-panel-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/cosmic-panel#9b44708b4b7e6652c63c0fc74b8b486bd70b1071"
+source = "git+https://github.com/pop-os/cosmic-panel#07fcaee64f80d9aa498be53d40077bc0a510437b"
 dependencies = [
  "anyhow",
  "cosmic-config",
@@ -1250,7 +1250,7 @@ dependencies = [
 [[package]]
 name = "cosmic-theme"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "almost",
  "cosmic-config",
@@ -1397,7 +1397,7 @@ version = "0.19.0"
 source = "git+https://github.com/gfx-rs/wgpu?rev=20fda69#20fda698341efbdc870b8027d6d49f5bf3f36109"
 dependencies = [
  "bitflags 2.4.2",
- "libloading 0.8.2",
+ "libloading 0.8.3",
  "winapi",
 ]
 
@@ -1660,7 +1660,7 @@ version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "330c60081dcc4c72131f8eb70510f1ac07223e5d4163db481a04a0befcffa412"
 dependencies = [
- "libloading 0.8.2",
+ "libloading 0.8.3",
 ]
 
 [[package]]
@@ -2018,9 +2018,9 @@ checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
 
 [[package]]
 name = "font-types"
-version = "0.4.2"
+version = "0.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0bd7f3ea17572640b606b35df42cfb6ecdf003704b062580e59918692190b73d"
+checksum = "5b7f6040d337bd44434ab21fc6509154edf2cece88b23758d9d64654c4e7730b"
 
 [[package]]
 name = "fontconfig-parser"
@@ -2613,7 +2613,7 @@ dependencies = [
  "bitflags 2.4.2",
  "com",
  "libc",
- "libloading 0.8.2",
+ "libloading 0.8.3",
  "thiserror",
  "widestring",
  "winapi",
@@ -2782,7 +2782,7 @@ dependencies = [
 [[package]]
 name = "iced"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "iced_accessibility",
  "iced_core",
@@ -2797,7 +2797,7 @@ dependencies = [
 [[package]]
 name = "iced_accessibility"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "accesskit",
  "accesskit_unix",
@@ -2806,7 +2806,7 @@ dependencies = [
 [[package]]
 name = "iced_core"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "bitflags 1.3.2",
  "iced_accessibility",
@@ -2825,7 +2825,7 @@ dependencies = [
 [[package]]
 name = "iced_futures"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "futures",
  "iced_core",
@@ -2838,7 +2838,7 @@ dependencies = [
 [[package]]
 name = "iced_graphics"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "bitflags 1.3.2",
  "bytemuck",
@@ -2862,7 +2862,7 @@ dependencies = [
 [[package]]
 name = "iced_renderer"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "iced_graphics",
  "iced_tiny_skia",
@@ -2874,7 +2874,7 @@ dependencies = [
 [[package]]
 name = "iced_runtime"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "iced_accessibility",
  "iced_core",
@@ -2886,7 +2886,7 @@ dependencies = [
 [[package]]
 name = "iced_sctk"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "enum-repr",
  "float-cmp",
@@ -2911,7 +2911,7 @@ dependencies = [
 [[package]]
 name = "iced_style"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "iced_core",
  "once_cell",
@@ -2921,7 +2921,7 @@ dependencies = [
 [[package]]
 name = "iced_tiny_skia"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "bytemuck",
  "cosmic-text",
@@ -2938,7 +2938,7 @@ dependencies = [
 [[package]]
 name = "iced_wgpu"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "bitflags 1.3.2",
  "bytemuck",
@@ -2957,7 +2957,7 @@ dependencies = [
 [[package]]
 name = "iced_widget"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "iced_renderer",
  "iced_runtime",
@@ -3173,7 +3173,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6aae1df220ece3c0ada96b8153459b67eebe9ae9212258bb0134ae60416fdf76"
 dependencies = [
  "libc",
- "libloading 0.8.2",
+ "libloading 0.8.3",
  "pkg-config",
 ]
 
@@ -3242,7 +3242,7 @@ checksum = "9c198f91728a82281a64e1f4f9eeb25d82cb32a5de251c6bd1b5154d63a8e7bd"
 [[package]]
 name = "libcosmic"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic#801c502c36c4c7d3b6cfa7f41f34f2c093877030"
+source = "git+https://github.com/pop-os/libcosmic#ef050d5b05ea31acd2716538265fafd5b92d6cdb"
 dependencies = [
  "apply",
  "ashpd 0.7.0",
@@ -3303,9 +3303,9 @@ dependencies = [
 
 [[package]]
 name = "libloading"
-version = "0.8.2"
+version = "0.8.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2caa5afb8bf9f3a2652760ce7d4f62d21c4d5a423e68466fca30df82f2330164"
+checksum = "0c2a198fb6b0eada2a8df47933734e6d35d350665a33a3593d7164fa52c75c19"
 dependencies = [
  "cfg-if",
  "windows-targets 0.52.4",
@@ -5026,9 +5026,9 @@ dependencies = [
 
 [[package]]
 name = "svg_fmt"
-version = "0.4.1"
+version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8fb1df15f412ee2e9dfc1c504260fa695c1c3f10fe9f4a6ee2d2184d7d6450e2"
+checksum = "f83ba502a3265efb76efb89b0a2f7782ad6f2675015d4ce37e4b547dda42b499"
 
 [[package]]
 name = "svgtypes"
@@ -5273,7 +5273,7 @@ checksum = "d4098d49269baa034a8d1eae9bd63e9fa532148d772121dace3bcd6a6c98eb6d"
 dependencies = [
  "as-raw-xcb-connection",
  "ctor",
- "libloading 0.8.2",
+ "libloading 0.8.3",
  "tracing",
 ]
 
@@ -6026,7 +6026,7 @@ dependencies = [
  "js-sys",
  "khronos-egl",
  "libc",
- "libloading 0.8.2",
+ "libloading 0.8.3",
  "log",
  "metal",
  "naga",
@@ -6271,7 +6271,7 @@ dependencies = [
  "as-raw-xcb-connection",
  "gethostname",
  "libc",
- "libloading 0.8.2",
+ "libloading 0.8.3",
  "once_cell",
  "rustix 0.38.31",
  "x11rb-protocol",
