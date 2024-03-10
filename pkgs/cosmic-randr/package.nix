@@ -38,7 +38,7 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/pop-os/cosmic-randr";
     description = "Library and utility for displaying and configuring Wayland outputs";
     license = licenses.mpl20;
-    maintainers = with maintainers; [ nyanbinary ];
+    maintainers = with maintainers; [ nyanbinary lilyinstarlight ];
     platforms = platforms.linux;
     mainProgram = "cosmic-randr";
   };

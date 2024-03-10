@@ -61,6 +61,7 @@ rustPlatform.buildRustPackage {
     maintainers = with maintainers; [
       a-kenji
       nyanbinary
+      lilyinstarlight
     ];
     platforms = platforms.linux;
   };

@@ -53,4 +53,9 @@ makeSetupHook {
       "vulkan"
     ]);
   };
+
+  meta = {
+    description = "Setup hook for configuring and wrapping applications based on libcosmic";
+    maintainers = [ lib.maintainers.lilyinstarlight ];
+  };
 } ./wrap-cosmic-apps-hook.sh

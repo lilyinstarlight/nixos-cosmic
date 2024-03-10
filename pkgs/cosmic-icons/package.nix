@@ -40,6 +40,6 @@ stdenvNoCC.mkDerivation rec {
     license = with licenses; [
       cc-by-sa-40
     ];
-    maintainers = with maintainers; [ a-kenji ];
+    maintainers = with maintainers; [ a-kenji lilyinstarlight ];
   };
 }

@@ -60,7 +60,7 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/pop-os/cosmic-design-demo";
     description = "Design Demo for the COSMIC Desktop Environment";
     license = licenses.mpl20;
-    maintainers = with maintainers; [ nyanbinary ];
+    maintainers = with maintainers; [ nyanbinary lilyinstarlight ];
     platforms = platforms.linux;
     mainProgram = "cosmic-design-demo";
   };
