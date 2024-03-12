@@ -9,6 +9,7 @@
 , glib
 , just
 , libinput
+, openssl
 , pkg-config
 , stdenv
 }:
@@ -48,6 +49,7 @@ rustPlatform.buildRustPackage rec {
     fontconfig
     flatpak
     freetype
+    openssl
   ];
 
   dontUseJustBuild = true;
