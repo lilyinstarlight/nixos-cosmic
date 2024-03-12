@@ -54,6 +54,8 @@ in
       hicolor-icon-theme
       pop-icon-theme
       pop-launcher
+    ] ++ lib.optionals config.services.flatpak.enable [
+      cosmic-store
     ]) config.environment.cosmic.excludePackages;
 
     # xdg portal packages and config
@@ -76,11 +78,15 @@ in
     # required features
     hardware.opengl.enable = true;
     services.xserver.libinput.enable = true;
+    xdg.mime.enable = true;
+    xdg.icons.enable = true;
 
     # optional features
     hardware.pulseaudio.enable = lib.mkDefault true;
+    hardware.bluetooth.enable = lib.mkDefault true;
 
     # required dbus services
+    services.accounts-daemon.enable = true;
     services.upower.enable = true;
     security.polkit.enable = true;
 
