@@ -11,6 +11,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    # greetd config
     services.greetd = {
       enable = true;
       settings = {
@@ -21,6 +22,7 @@ in
       };
     };
 
+    # daemon for querying background state and such
     systemd.services.cosmic-greeter-daemon = {
       wantedBy = [ "multi-user.target" ];
       before = [ "greetd.service" ];
@@ -30,6 +32,7 @@ in
       };
     };
 
+    # greeter user (hardcoded in cosmic-greeter)
     systemd.tmpfiles.rules = [
       "d '/var/lib/cosmic-greeter' - cosmic-greeter cosmic-greeter - -"
     ];
@@ -42,11 +45,17 @@ in
 
     users.groups.cosmic-greeter = { };
 
+    # required features
     hardware.opengl.enable = true;
     services.xserver.libinput.enable = true;
 
+    # required dbus services
+    services.accounts-daemon.enable = true;
+
+    # required for authentication
     security.pam.services.cosmic-greeter = {};
 
+    # dbus definitions
     services.dbus.packages = with pkgs; [ cosmic-greeter ];
   };
 }
