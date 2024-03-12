@@ -70,6 +70,8 @@
               services.xserver.desktopManager.cosmic.enable = true;
               services.xserver.displayManager.cosmic-greeter.enable = true;
 
+              services.flatpak.enable = true;
+
               environment.systemPackages = [ pkgs.drm_info pkgs.firefox ];
 
               boot.kernelParams = [ "quiet" "udev.log_level=3"  ];
