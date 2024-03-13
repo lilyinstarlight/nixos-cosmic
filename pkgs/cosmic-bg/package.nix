@@ -10,21 +10,21 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-bg";
-  version = "0-unstable-2024-02-29";
+  version = "0-unstable-2024-03-12";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-bg";
-    rev = "218b1a558a1f70b3590ce7d26776e3b8c76d9891";
-    hash = "sha256-U+BF+lLd/DmZq8ISc9zHAegzv0K97g9Qq+D9qZDbyY4=";
+    rev = "742a3444cd7f599184d6f553a2a7bc91e19084a6";
+    hash = "sha256-yFyrMakBlFgSwqTmVzPoCL0QmhIlfXhv7r4MtBnD2No=";
   };
 
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
-      "cosmic-config-0.1.0" = "sha256-yDNg1JE/MKboG6F/WP04XdXkWH5VNtnzbPze4J79erc=";
-      "smithay-client-toolkit-0.18.0" = "sha256-7s5XPmIflUw2qrKRAZUz30cybYKvzD5Hu4ViDpzGC3s=";
+      "cosmic-config-0.1.0" = "sha256-5J9tjpEcZJrUtW7barwXTOTNXNr33TLwYjApKkwDSvc=";
+      "smithay-client-toolkit-0.18.0" = "sha256-2WbDKlSGiyVmi7blNBr2Aih9FfF2dq/bny57hoA4BrE=";
     };
   };
 
