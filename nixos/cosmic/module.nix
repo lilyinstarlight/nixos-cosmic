@@ -65,9 +65,9 @@ in
         xdg-desktop-portal-cosmic
         xdg-desktop-portal-gtk
       ];
-      configPackages = with pkgs; [
+      configPackages = lib.mkDefault (with pkgs; [
         xdg-desktop-portal-cosmic
-      ];
+      ]);
     };
 
     # fonts
