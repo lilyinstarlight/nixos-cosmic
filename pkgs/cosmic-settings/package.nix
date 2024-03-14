@@ -26,8 +26,8 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings";
-    rev = "37e5bcc40270d785ec935295b9678302779236e3";
-    hash = "sha256-IlcLHuZ7f1A1R7yrTMp5fNQasMhHFnA9o6qsk0sJLu0=";
+    rev = "d6b28231e2d0c40b45f10a4b01744e0f568eb0a6";
+    hash = "sha256-uuQvMgTQa9g0MWgON/qfiLdU8wTcnbzSOHsPbFsRk1s=";
   };
 
   cargoLock = {
