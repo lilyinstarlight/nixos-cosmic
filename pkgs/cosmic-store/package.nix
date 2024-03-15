@@ -2,13 +2,9 @@
 , fetchFromGitHub
 , rustPlatform
 , wrapCosmicAppsHook
-, appstream
 , flatpak
-, fontconfig
-, freetype
 , glib
 , just
-, libinput
 , openssl
 , pkg-config
 , stdenv
@@ -43,12 +39,8 @@ rustPlatform.buildRustPackage rec {
 
   nativeBuildInputs = [ wrapCosmicAppsHook just pkg-config ];
   buildInputs = [
-    appstream
     glib
-    libinput
-    fontconfig
     flatpak
-    freetype
     openssl
   ];
 
