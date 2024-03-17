@@ -39,4 +39,4 @@ If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flak
 }
 ```
 
-After rebuilding with that configuration to get the binary cache substituters set up, enable COSMIC with `services.xserver.desktopManager.cosmic.enable = true` and `services.xserver.displayManager.cosmic-greeter.enable = true` in your NixOS configuration
+After rebuilding with that configuration to get the binary cache substituters set up, enable COSMIC with `services.desktopManager.cosmic.enable = true` and `services.displayManager.cosmic-greeter.enable = true` in your NixOS configuration

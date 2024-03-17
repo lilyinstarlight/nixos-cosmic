@@ -1,13 +1,13 @@
 { config, pkgs, lib, utils, ... }:
 
 let
-  cfg = config.services.xserver.desktopManager.cosmic;
+  cfg = config.services.desktopManager.cosmic;
 in
 {
   meta.maintainers = with lib.maintainers; [ nyanbinary lilyinstarlight ];
 
   options = {
-    services.xserver.desktopManager.cosmic = {
+    services.desktopManager.cosmic = {
       enable = lib.mkEnableOption (lib.mdDoc "COSMIC desktop environment");
     };
 
@@ -23,8 +23,8 @@ in
     # seed configuration in nixos-generate-config
     system.nixos-generate-config.desktopConfiguration = [''
       # Enable the COSMIC Desktop Environment.
-      services.xserver.displayManager.cosmic-greeter.enable = true;
-      services.xserver.desktopManager.cosmic.enable = true;
+      services.displayManager.cosmic-greeter.enable = true;
+      services.desktopManager.cosmic.enable = true;
     ''];
 
     # environment packages
