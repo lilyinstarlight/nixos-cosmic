@@ -25,7 +25,7 @@ jobs:
           pr-title: 'flake: update inputs'
           pr-labels: 'dependencies'
 
-      - uses: benc-uk/workflow-dispatch@v121
+      - uses: benc-uk/workflow-dispatch@v1
         if: ${{ contains(fromJSON('["created", "updated"]'), steps.update-flake-lock.outputs.pull-request-operation) }}
         with:
           workflow: ci.yml
