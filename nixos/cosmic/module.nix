@@ -85,6 +85,9 @@ in
     hardware.pulseaudio.enable = lib.mkDefault true;
     hardware.bluetooth.enable = lib.mkDefault true;
 
+    # general graphical session features
+    programs.dconf.enable = lib.mkDefault true;
+
     # required dbus services
     services.accounts-daemon.enable = true;
     services.upower.enable = true;
