@@ -2,19 +2,13 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    # TODO: switch to `github:Mic92/nix-update` once Mic92/nix-update#227, Mic92/nix-update#228, and Mic92/nix-update#229 are merged
-    nix-update = {
-      url = "github:lilyinstarlight/nix-update/tmp/fixed";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     flake-compat = {
       url = "github:nix-community/flake-compat";
       flake = false;
     };
   };
 
-  outputs = { self, nixpkgs, nix-update, ... }: let
+  outputs = { self, nixpkgs, ... }: let
     forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
   in {
     lib = {
@@ -37,7 +31,7 @@
 
         runtimeInputs = [
           pkgs.coreutils
-          nix-update.packages.${system}.default
+          pkgs.nix-update
         ];
 
         text = ''
