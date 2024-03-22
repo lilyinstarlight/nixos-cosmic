@@ -18,6 +18,10 @@ jobs:
 
       - uses: DeterminateSystems/nix-installer-action@v10
 
+      - uses: cachix/cachix-action@v14
+        with:
+          name: cosmic
+
       - name: Configure git
         run: |
           git config user.name 'github-actions[bot]'
