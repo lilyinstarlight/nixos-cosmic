@@ -73,6 +73,7 @@ in
 
     # fonts
     fonts.packages = utils.removePackagesByName (with pkgs; [
+      fira
       fira-mono
     ]) config.environment.cosmic.excludePackages;
 
