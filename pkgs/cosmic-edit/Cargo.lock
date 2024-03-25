@@ -1107,6 +1107,7 @@ dependencies = [
  "notify",
  "open",
  "patch",
+ "regex",
  "rust-embed",
  "serde",
  "smol_str",
