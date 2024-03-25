@@ -11,13 +11,13 @@
 }:
 rustPlatform.buildRustPackage {
   pname = "cosmic-session";
-  version = "0-unstable-2024-03-09";
+  version = "0-unstable-2024-03-25";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-session";
-    rev = "3fc8c8d7a4d9ea81147b8721c17000acd6ee6c64";
-    sha256 = "sha256-m/nxmj47pSMv2xhW0eqxBwlA9xF+ZMepEJWvF+DIqlM=";
+    rev = "ac74753f320a1e065dbb0a894e6006f712854751";
+    sha256 = "sha256-aknRHxXm6uuXWnkx8qU/vRhS/gZG8zyUcMIJCXvnAAU=";
   };
 
   cargoLock = {
