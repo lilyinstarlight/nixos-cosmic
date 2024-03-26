@@ -15,13 +15,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-applets";
-  version = "0-unstable-2024-03-21";
+  version = "0-unstable-2024-03-25";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-applets";
-    rev = "4da5efb83de7b60fe051f9850ce9b0ddd9a5eccd";
-    hash = "sha256-HTxV/Cc+9eY8aQOCYvZQhYerSVygPEzvHNWTb7jOkM0=";
+    rev = "8128b6cf8992791d9009d67cfc75e1a93ebd8843";
+    hash = "sha256-xRwA8m1c/SkAxZagelSNs6lmJfya6mYwgPwe0Zj5LGo=";
   };
 
   cargoLock = {
@@ -30,14 +30,14 @@ rustPlatform.buildRustPackage {
       "accesskit-0.12.2" = "sha256-ksaYMGT/oug7isQY8/1WD97XDUsX2ShBdabUzxWffYw=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-PEH+aCpjDCEIj8s39nIeWxb7qu3u9IfriGqf0pYObMk=";
-      "cosmic-client-toolkit-0.1.0" = "sha256-vj7Wm1uJ5ULvGNEwKznNhujCZQiuntsWMyKQbIVaO/Q=";
+      "cosmic-client-toolkit-0.1.0" = "sha256-mz3lzznFU+KNH3YyIc0K6shsNZx8pnK6PkU/gKXbASs=";
       "cosmic-comp-config-0.1.0" = "sha256-uUpRd8bR2TyD7Y1lpKmJTaTNv9yNsZVnr0oWDQgHD/0=";
-      "cosmic-config-0.1.0" = "sha256-x/xWMR5w2oEbghTSa8iCi24DA2s99+tcnga8K6jS6HQ=";
+      "cosmic-config-0.1.0" = "sha256-bxbwd24zfYQIhmvW6WJXjOK4LGNFCXW8MyRJZjPI2SY=";
       "cosmic-dbus-networkmanager-0.1.0" = "sha256-a/cvbB0M9cUd8RP5XxgHRbJ/i/UKAEK4DTwwUU69IuY=";
-      "cosmic-notifications-config-0.1.0" = "sha256-tdha/4LGJjOShXVChNf5plbboIAJWP2mwkjqHLnj5Cw=";
-      "cosmic-panel-config-0.1.0" = "sha256-s/ORB1/GpnU1r+9miQRhBMSuLo4w69Uw3P6qFHNycOg=";
+      "cosmic-notifications-config-0.1.0" = "sha256-X3f3AOY8SwVhXPeI0WP7OKjuEvK6eNJ5Bjthxd27xdM=";
+      "cosmic-panel-config-0.1.0" = "sha256-qGPFn/fCxU+AZcEPfSd/3Wo5kj2yqWfXQVmApBAjjH0=";
       "cosmic-settings-daemon-0.1.0" = "sha256-z/dvRyc3Zc1fAQh2HKk6NI6QSDpNqarqslwszjU+0nc=";
-      "cosmic-text-0.11.2" = "sha256-K9cZeClr1zz4LanJS0WPEpxAplQrXfCjFKrSn5n4rDA=";
+      "cosmic-text-0.11.2" = "sha256-gUIQFHPaFTmtUfgpVvsGTnw2UKIBx9gl0K67KPuynWs=";
       "cosmic-time-0.4.0" = "sha256-wsvdoQ5FVCR/UF63YiSVFCQU/LXJjD0/9B8frtv2xFM=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";

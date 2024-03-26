@@ -15,13 +15,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-edit";
-  version = "0-unstable-2024-03-24";
+  version = "0-unstable-2024-03-25";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-edit";
-    rev = "5410746e1de0a3573d71d971ae550a599f6d2e91";
-    hash = "sha256-1XrHOZz3JOLIvWTtQCqaP8txpSJVSdMwA9RjSFZsobw=";
+    rev = "59933e6a03843c03e93204c7a217ca1972846fb8";
+    hash = "sha256-KIJiiSTuMQogF5pdX2OS3WOBsoZBlKEeVbaW95/Zweg=";
   };
 
   cargoLock = {
