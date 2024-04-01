@@ -3,6 +3,7 @@
 , rustPlatform
 , wrapCosmicAppsHook
 , pkg-config
+, pulseaudio
 , udev
 }:
 
@@ -34,7 +35,7 @@ rustPlatform.buildRustPackage {
   };
 
   nativeBuildInputs = [ wrapCosmicAppsHook pkg-config ];
-  buildInputs = [ udev ];
+  buildInputs = [ pulseaudio udev ];
 
   env.POLKIT_AGENT_HELPER_1 = "/run/wrappers/bin/polkit-agent-helper-1";
 
