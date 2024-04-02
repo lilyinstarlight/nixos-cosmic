@@ -873,16 +873,20 @@ dependencies = [
 name = "cosmic-app-list"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "cosmic-client-toolkit",
  "cosmic-protocols",
  "futures",
  "i18n-embed",
  "i18n-embed-fl",
+ "image 0.25.0",
  "itertools",
  "libcosmic",
+ "memmap2 0.9.4",
  "once_cell",
  "rand",
  "rust-embed",
+ "rustix 0.38.32",
  "serde",
  "switcheroo-control",
  "tokio",
