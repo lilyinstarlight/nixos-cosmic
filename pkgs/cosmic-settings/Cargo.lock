@@ -1330,6 +1330,7 @@ dependencies = [
  "tracing",
  "tracing-subscriber",
  "url",
+ "xkb-data",
 ]
 
 [[package]]
@@ -4895,6 +4896,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "serde-xml-rs"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fb3aa78ecda1ebc9ec9847d5d3aba7d618823446a049ba2491940506da6e2782"
+dependencies = [
+ "log",
+ "serde",
+ "thiserror",
+ "xml-rs",
+]
+
+[[package]]
 name = "serde_derive"
 version = "1.0.197"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6583,6 +6596,16 @@ source = "git+https://github.com/pop-os/xdg-shell-wrapper#224ada13d8ac53fec7854e
 dependencies = [
  "serde",
  "wayland-protocols-wlr",
+]
+
+[[package]]
+name = "xkb-data"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "294a599fc9e6a43c9f44f5d6c560b89fd751be413717442b31c17fa367d3c764"
+dependencies = [
+ "serde",
+ "serde-xml-rs",
 ]
 
 [[package]]
