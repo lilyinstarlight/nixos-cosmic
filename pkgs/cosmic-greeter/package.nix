@@ -1,6 +1,5 @@
 { lib
 , fetchFromGitHub
-, fetchpatch
 , rustPlatform
 , wrapCosmicAppsHook
 , cmake
@@ -14,13 +13,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-greeter";
-  version = "0-unstable-2024-03-23";
+  version = "0-unstable-2024-04-05";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-greeter";
-    rev = "d133e600dad0a1befadb4fef054b1f77ac663162";
-    sha256 = "sha256-6QW/akIQFDEuG4d6ryNx703DwlpM6GvFQcan5b5cpuM=";
+    rev = "1bded07bfdd04fd69a5bb81de998427d3d28d5f8";
+    sha256 = "sha256-6v/xlVxp+FX4HCLM7RbTfG0UuU7TO59eLFnPzVW/GFI=";
   };
 
   cargoLock = {
@@ -40,15 +39,6 @@ rustPlatform.buildRustPackage {
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
     };
   };
-
-  patches = [
-    # TODO: see upstream PR pop-os/cosmic-greeter#16
-    (fetchpatch {
-      name = "cosmic-greeter-update-libcosmic.patch";
-      url = "https://github.com/pop-os/cosmic-greeter/commit/0c0d376d60b618763fd28a51e3f5ea0998e51be1.diff";
-      hash = "sha256-/Yf5XVRYjp3XtexOy5Xfv/5edEX5CaRUnQWVhvq/258=";
-    })
-  ];
 
   nativeBuildInputs = [ wrapCosmicAppsHook rustPlatform.bindgenHook cmake just pkg-config ];
   buildInputs = [ linux-pam ];
