@@ -83,8 +83,13 @@ in
     xdg.icons.enable = true;
 
     # optional features
-    hardware.pulseaudio.enable = lib.mkDefault true;
     hardware.bluetooth.enable = lib.mkDefault true;
+    services.acpid.enable = lib.mkDefault true;
+    services.pipewire = {
+      enable = lib.mkDefault true;
+      alsa.enable = lib.mkDefault true;
+      pulse.enable = lib.mkDefault true;
+    };
 
     # general graphical session features
     programs.dconf.enable = lib.mkDefault true;
