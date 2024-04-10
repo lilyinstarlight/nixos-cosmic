@@ -6,7 +6,6 @@
 , desktop-file-utils
 , intltool
 , just
-, pkg-config
 , stdenv
 }:
 
@@ -42,8 +41,7 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook just pkg-config ];
-  buildInputs = [ appstream-glib desktop-file-utils intltool ];
+  nativeBuildInputs = [ wrapCosmicAppsHook just ];
 
   dontUseJustBuild = true;
 

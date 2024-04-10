@@ -4,7 +4,6 @@
 , wrapCosmicAppsHook
 , just
 , nasm
-, pkg-config
 , stdenv
 }:
 
@@ -28,7 +27,7 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook just nasm pkg-config ];
+  nativeBuildInputs = [ wrapCosmicAppsHook just nasm ];
 
   dontUseJustBuild = true;
 

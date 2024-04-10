@@ -6,7 +6,6 @@
 , coreutils
 , just
 , linux-pam
-, pkg-config
 , rust
 , stdenv
 }:
@@ -42,7 +41,7 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook rustPlatform.bindgenHook cmake just pkg-config ];
+  nativeBuildInputs = [ wrapCosmicAppsHook rustPlatform.bindgenHook cmake just ];
   buildInputs = [ linux-pam ];
 
   cargoBuildFlags = [ "--all" ];

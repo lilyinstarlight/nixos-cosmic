@@ -3,7 +3,6 @@
 , rustPlatform
 , wrapCosmicAppsHook
 , just
-, pkg-config
 , stdenv
 , util-linux
 }:
@@ -33,7 +32,7 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook just pkg-config util-linux ];
+  nativeBuildInputs = [ wrapCosmicAppsHook just util-linux ];
 
   dontUseJustBuild = true;
 

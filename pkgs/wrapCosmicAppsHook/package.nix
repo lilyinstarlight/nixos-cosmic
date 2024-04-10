@@ -2,6 +2,7 @@
 , lib
 , makeSetupHook
 , makeBinaryWrapper
+, pkg-config
 , libGL
 , libxkbcommon
 , xorg
@@ -14,7 +15,7 @@
 makeSetupHook {
   name = "wrap-cosmic-apps-hook";
 
-  propagatedBuildInputs = [ makeBinaryWrapper ];
+  propagatedBuildInputs = [ makeBinaryWrapper pkg-config ];
 
   # TODO: Xorg libs can be removed once tiny-xlib is bumped above 0.2.2 in libcosmic/iced
   depsTargetTargetPropagated = assert (lib.assertMsg (!targetPackages ? raw) "wrapGAppsHook must be in nativeBuildInputs"); [
