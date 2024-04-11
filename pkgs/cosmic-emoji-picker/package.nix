@@ -6,13 +6,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-emoji-picker";
-  version = "0-unstable-2024-04-08";
+  version = "0-unstable-2024-04-01";
 
   src = fetchFromGitHub {
     owner = "benfuddled";
     repo = "emoji-picker";
-    rev = "1da5e380f482fe5a7fd654eb9f47e6fe29d99ebe";
-    hash = "sha256-ZEQGUIDCJta+eVjvLPrL6CZkNWUdOuFz4vkGkH/E56A=";
+    rev = "41bbf0030645a89922dd21dd9cd81e48274c63db";
+    hash = "sha256-bGPu4CStwXmUu7MvNfSJI2JGZoTQDg2WAcnmGx5Uvqo=";
   };
 
   cargoLock = {
