@@ -11,6 +11,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    # TODO: remove when NixOS/nixpkgs#303674 is merged and on nixos-unstable
+    services.displayManager.enable = true;
+
     # greetd config
     services.greetd = {
       enable = true;
