@@ -4,6 +4,7 @@
 , wrapCosmicAppsHook
 , libinput
 , mesa
+, pixman
 , pkg-config
 , seatd
 , stdenv
@@ -50,6 +51,7 @@ rustPlatform.buildRustPackage {
   buildInputs = [
     libinput
     mesa
+    pixman
     seatd
     udev
   ] ++ lib.optional useSystemd systemd;
