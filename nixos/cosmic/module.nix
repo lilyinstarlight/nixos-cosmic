@@ -97,6 +97,7 @@ in
     # required dbus services
     services.accounts-daemon.enable = true;
     services.upower.enable = true;
+    services.power-profiles-daemon.enable = lib.mkDefault (!config.hardware.system76.power-daemon.enable);
     security.polkit.enable = true;
 
     # session packages
