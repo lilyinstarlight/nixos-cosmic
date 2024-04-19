@@ -1,6 +1,5 @@
 { lib
 , fetchFromGitHub
-, fetchpatch
 , rustPlatform
 , wrapCosmicAppsHook
 , dbus
@@ -49,15 +48,6 @@ rustPlatform.buildRustPackage {
       "xdg-shell-wrapper-config-0.1.0" = "sha256-cQ0JMfxpDdPtBF6IxgF6cCey/vxqGfXC4dPgs4u73tQ=";
     };
   };
-
-  patches = [
-    (fetchpatch {
-      # TODO: remove when pop-os/cosmic-applets#356 is merged
-      name = "cosmic-applets-fix-cosmic-applet-battery-cpu-monster.patch";
-      url = "https://github.com/pop-os/cosmic-applets/commit/120edae47c81764062e61789eabea5fa9af96c03.diff";
-      hash = "sha256-bisOt+y1w9gOafP6+Eg5kkG+TBSwfrP1UtVmqTBPTO4=";
-    })
-  ];
 
   nativeBuildInputs = [ wrapCosmicAppsHook just pkg-config util-linux ];
   buildInputs = [ dbus glib libinput pulseaudio udev ];
