@@ -66,7 +66,7 @@
 
               services.flatpak.enable = true;
 
-              environment.systemPackages = [ pkgs.drm_info pkgs.firefox pkgs.cosmic-emoji-picker ];
+              environment.systemPackages = [ pkgs.drm_info pkgs.firefox pkgs.cosmic-emoji-picker pkgs.cosmic-tasks ];
 
               boot.kernelParams = [ "quiet" "udev.log_level=3"  ];
               boot.initrd.kernelModules = [ "bochs" ];
