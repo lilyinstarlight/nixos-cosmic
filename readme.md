@@ -6,7 +6,7 @@ Nix package set and NixOS module for using COSMIC from NixOS. This is a temporar
 
 ### Flakes
 
-If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flake with the following:
+If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flake by adding the following to /etc/nixos/flake.nix:
 
 ```nix
 {
