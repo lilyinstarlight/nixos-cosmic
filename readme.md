@@ -2,6 +2,10 @@
 
 Nix package set and NixOS module for using COSMIC from NixOS. This is a temporary repository for testing COSMIC on NixOS as it is developed. When COSMIC gets more stable and it is fully working on NixOS, these packages and module are intended to be merged upstream into nixpkgs.
 
+## Hardware Requirements for build
+* 16GB Ram
+* 40GB Disk
+
 ## Usage
 
 ### Flakes
