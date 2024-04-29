@@ -50,7 +50,7 @@ in
 
     # required features
     hardware.opengl.enable = true;
-    services.xserver.libinput.enable = true;
+    services.libinput.enable = true;
 
     # required dbus services
     services.accounts-daemon.enable = true;
