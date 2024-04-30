@@ -2,8 +2,9 @@
 , fetchFromGitHub
 , rustPlatform
 , wrapCosmicAppsHook
-, just
 , stdenv
+, glib
+, just
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -36,6 +37,7 @@ rustPlatform.buildRustPackage rec {
   };
 
   nativeBuildInputs = [ wrapCosmicAppsHook just ];
+  buildInputs = [ glib ];
 
   dontUseJustBuild = true;
 
