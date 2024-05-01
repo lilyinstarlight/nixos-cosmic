@@ -104,7 +104,7 @@ in
     services.displayManager.sessionPackages = with pkgs; [ cosmic-session ];
     systemd.packages = with pkgs; [ cosmic-session ];
     # TODO: remove when upstream has XDG autostart support
-    systemd.targets.cosmic-session = {
+    systemd.user.targets.cosmic-session = {
       wants = [ "xdg-desktop-autostart.target" ];
       before = [ "xdg-desktop-autostart.target" ];
     };
