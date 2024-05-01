@@ -78,7 +78,7 @@ in
 
     # required features
     hardware.opengl.enable = true;
-    services.xserver.libinput.enable = true;
+    services.libinput.enable = true;
     xdg.mime.enable = true;
     xdg.icons.enable = true;
 
