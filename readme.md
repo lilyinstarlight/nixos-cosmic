@@ -40,3 +40,16 @@ If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flak
 ```
 
 After rebuilding with that configuration to get the binary cache substituters set up, enable COSMIC with `services.desktopManager.cosmic.enable = true` and `services.displayManager.cosmic-greeter.enable = true` in your NixOS configuration
+
+## Troubleshooting
+
+### Phantom non-existent display on Nvidia ([cosmic-randr#13](https://github.com/pop-os/cosmic-randr/issues/13))
+
+If while using an Nvidia GPU, `cosmic-settings` and `cosmic-randr list` show an additional display that can not be disabled, try Nvidia's experimental framebuffer device.
+
+Add to your configuration:
+
+```nix
+boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
+```
+
