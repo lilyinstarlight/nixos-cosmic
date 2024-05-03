@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "xdg-desktop-portal-cosmic";
-  version = "0-unstable-2024-04-12";
+  version = "0-unstable-2024-05-01";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "xdg-desktop-portal-cosmic";
-    rev = "b667e4a005ec60d94b8faa3c2f3a869653e3f9f0";
-    hash = "sha256-41ezjpNmg1a3xPq8PKVs+hGd1ZGNSFZNEj6IJNegmqA=";
+    rev = "566b8660964588bb2d66daf397f680f015c3f451";
+    hash = "sha256-/XqpqWOrHU6ediGp+b23zNwykz58v/GjYAskeHG/uTU=";
   };
 
   cargoLock = {
