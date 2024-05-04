@@ -12,13 +12,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-term";
-  version = "0-unstable-2024-04-30";
+  version = "0-unstable-2024-05-03";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-term";
-    rev = "b6a07c834e1f1e57bf7b270462e6797deba1d8b8";
-    hash = "sha256-7Sx03jnHG8XHDyANiVywSHGYt1WiPzSihtcTldFtJPk=";
+    rev = "e6aecbe8405de95af0710b0b6769d88c88628009";
+    hash = "sha256-fFKWrMtDcURXN+ikbQObnRWyjYvFSqYQ+jSN2BAJyUI=";
   };
 
   cargoLock = {
@@ -26,15 +26,15 @@ rustPlatform.buildRustPackage rec {
     outputHashes = {
       "accesskit-0.12.2" = "sha256-ksaYMGT/oug7isQY8/1WD97XDUsX2ShBdabUzxWffYw=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
-      "clipboard_macos-0.1.0" = "sha256-KVcKQ4DtoZCgFBnejIaQfQxJJJxd/mFzHBI+4PbGBio=";
-      "cosmic-config-0.1.0" = "sha256-VEE/1XQZaojz9gxTV/Zz++eVplsCfiDPgf/cAr2Rih8=";
-      "cosmic-files-0.1.0" = "sha256-kv3tq6CI+c3GYAF0G2+fcjAgdW4fVy1F6SXxNy48aWk=";
-      "cosmic-text-0.11.2" = "sha256-gUIQFHPaFTmtUfgpVvsGTnw2UKIBx9gl0K67KPuynWs=";
+      "clipboard_macos-0.1.0" = "sha256-temNg+RdvquSLAdkwU5b6dtu9vZkXjnDASS/eJo2rz8=";
+      "cosmic-config-0.1.0" = "sha256-feTSeB9+V6Qjw+QfXV7eD8/pDyY92NWALmEM0J7dt2o=";
+      "cosmic-files-0.1.0" = "sha256-jIFoEXXCftq26NFMO4vxk+Repqe1u75twDPoSmnfI+Q=";
+      "cosmic-text-0.11.2" = "sha256-Jpgbg1DScteec7ItcGgbQYXu1bBNYJEw1SGsxpcxYfM=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "libc-0.2.151" = "sha256-VcNTcLOnVXMlX86yeY0VDfIfKOZyyx/DO1Hbe30BsaI=";
       "smithay-client-toolkit-0.18.0" = "sha256-/7twYMt5/LpzxLXAQKTGNnWcfspUkkZsN5hJu7KaANc=";
-      "smithay-clipboard-0.8.0" = "sha256-LDd56TJ175qsj2/EV/dbBRV9HMU7RzgrG5JP7H2PmhE=";
+      "smithay-clipboard-0.8.0" = "sha256-phySYRO6z18X5kB1CZ5/+AYwzU8ooQ+BuOvBeyuIfXw=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
       "winit-0.29.10" = "sha256-ScTII2AzK3SC8MVeASZ9jhVWsEaGrSQ2BnApTxgfxK4=";
