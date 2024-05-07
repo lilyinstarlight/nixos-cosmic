@@ -9,16 +9,21 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-randr";
-  version = "0-unstable-2024-01-18";
+  version = "0-unstable-2024-05-06";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-randr";
-    rev = "88c570cf8b88beae1cf4f3e2d412cc64ec49cd7c";
-    hash = "sha256-t1PM/uIM+lbBwgFsKnRiqPZnlb4dxZnN72MfnW0HU/0=";
+    rev = "12fa7ce503c832cb9565b59ff722b15b7bab3f31";
+    hash = "sha256-9iyRy1nPlN5wBbf8g28dwqsGpektXb5sanhjj44M2jI=";
   };
 
-  cargoHash = "sha256-n6DrKVUWUrTV2agUsN5dXAzxECuarVzZ0CYRfJQn1KI=";
+  cargoLock = {
+    lockFile = ./Cargo.lock;
+    outputHashes = {
+      "cosmic-protocols-0.1.0" = "sha256-W7egL3eR6H6FIHWpM67JgjWhD/ql+gZxaogC1O31rRI=";
+    };
+  };
 
   nativeBuildInputs = [ just pkg-config ];
   buildInputs = [ wayland ];
