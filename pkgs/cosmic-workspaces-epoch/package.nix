@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-workspaces-epoch";
-  version = "0-unstable-2024-05-02";
+  version = "0-unstable-2024-05-07";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-workspaces-epoch";
-    rev = "30b0cfe17b87936e08cc1e659972e8052e247d2b";
-    hash = "sha256-5SXWSZhQFIpvByRk2saQWu4bS/CUUVe7bhlD91Z9aD8=";
+    rev = "71766231935c644f3ad837ee9904d39b56ebd98e";
+    hash = "sha256-YtXOkCxSN8wzDvnFRzXtcvHgKVePEm2TCJAgbxntE7w=";
   };
 
   cargoLock = {

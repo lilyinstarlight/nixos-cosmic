@@ -9,26 +9,28 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-panel";
-  version = "0-unstable-2024-05-04";
+  version = "0-unstable-2024-05-07";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-panel";
-    rev = "683a204ef81bd17c2b35264521e5145df3518ee5";
-    sha256 = "sha256-OWCfIf4iCxB+jBm8ka5JW4J/gHCi8MjLtMaODim1Iic=";
+    rev = "8c4d94591f552d4044e917be9b5ab90ddb572643";
+    sha256 = "sha256-q8Lwg+EPNXFD3b5G1WKnxsiOc10QCsYncP3c3kv3FNs=";
   };
 
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
+      "clipboard_macos-0.1.0" = "sha256-temNg+RdvquSLAdkwU5b6dtu9vZkXjnDASS/eJo2rz8=";
       "cosmic-client-toolkit-0.1.0" = "sha256-vj7Wm1uJ5ULvGNEwKznNhujCZQiuntsWMyKQbIVaO/Q=";
-      "cosmic-config-0.1.0" = "sha256-HFiDKyo93Sz9DLxCd9Yt4+iW1U36Nu0HhIcnv3q3Ers=";
-      "cosmic-notifications-util-0.1.0" = "sha256-tdha/4LGJjOShXVChNf5plbboIAJWP2mwkjqHLnj5Cw=";
+      "cosmic-config-0.1.0" = "sha256-ekvd2j0PpNLR6Rv+2APga9ci2LSIYmSdSS8Vdzmw6vw=";
+      "cosmic-notifications-util-0.1.0" = "sha256-ahYb8Sz9CDF5xngkYIieUqo3Iw8ai2V2AXxqkvUBnjk=";
       "launch-pad-0.1.0" = "sha256-tnbSJ/GP9GTnLnikJmvb9XrJSgnUnWjadABHF43L1zc=";
-      "smithay-0.3.0" = "sha256-OI+wtDeJ/2bJyiTxL+F53j1CWnZ0aH7XjUmM6oN45Ow=";
-      "smithay-client-toolkit-0.18.0" = "sha256-2WbDKlSGiyVmi7blNBr2Aih9FfF2dq/bny57hoA4BrE=";
-      "xdg-shell-wrapper-0.1.0" = "sha256-cQ0JMfxpDdPtBF6IxgF6cCey/vxqGfXC4dPgs4u73tQ=";
+      "smithay-0.3.0" = "sha256-tScCvnZ+rpfloO0HsLHWL50MfRrGo8/YQt/u1OYZdws=";
+      "smithay-client-toolkit-0.18.0" = "sha256-/7twYMt5/LpzxLXAQKTGNnWcfspUkkZsN5hJu7KaANc=";
+      "smithay-clipboard-0.8.0" = "sha256-phySYRO6z18X5kB1CZ5/+AYwzU8ooQ+BuOvBeyuIfXw=";
+      "xdg-shell-wrapper-0.1.0" = "sha256-OjFcBzVE/fpHTK9bHxcHocEa16q6i9mVRNfJ9lLa/cw=";
     };
   };
 

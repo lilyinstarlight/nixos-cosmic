@@ -11,13 +11,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-launcher";
-  version = "0-unstable-2024-05-03";
+  version = "0-unstable-2024-05-06";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-launcher";
-    rev = "7752b9b09e4d14c4fc142f4e41cf6d633d51c1a5";
-    sha256 = "sha256-I4ypmA6ijHoyM8f7rs+GpPAYB76aSAZwmd6D+ka26jk=";
+    rev = "0e7cf5dfd9ce43914836fa8e6d89e66714816d76";
+    sha256 = "sha256-lfouVSL/rdg5qNBwoKb6HUMAXOxXqh/oc7E4jMcQo3o=";
   };
 
   cargoLock = {
