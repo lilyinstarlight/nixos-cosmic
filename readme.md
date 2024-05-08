@@ -2,9 +2,6 @@
 
 Nix package set and NixOS module for using COSMIC from NixOS. This is a temporary repository for testing COSMIC on NixOS as it is developed. When COSMIC gets more stable and it is fully working on NixOS, these packages and module are intended to be merged upstream into nixpkgs.
 
-## Hardware Requirements for build
-* 16GB Ram
-* 40GB Disk
 
 ## Usage
 
@@ -43,7 +40,17 @@ If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flak
 }
 ```
 
-After rebuilding with that configuration to get the binary cache substituters set up, enable COSMIC with `services.desktopManager.cosmic.enable = true` and `services.displayManager.cosmic-greeter.enable = true` in your NixOS configuration
+**Note:** To ensure binary substituters are set up before attempting to pull any COSMIC packages, perform a `nixos-rebuild switch` with this configuration before attempting to add any COSMIC packages or settings to your NixOS configuration.
+
+After setting up binary substituters and NixOS module, enable COSMIC with `services.desktopManager.cosmic.enable = true` and `services.displayManager.cosmic-greeter.enable = true` in your NixOS configuration.
+
+
+## Build Requirements
+
+Although there is a provided binary cache for `x86_64-linux` built against current `nixos-unstable` branch, if you are not using a current `nixos-unstable` or are not on `x86_64-linux`, then you may need to build packages locally.
+
+Generally you will need roughly 16 GiB of RAM and 40 GiB of disk space, but it can be built with less RAM by reducing build parallelism, either via `--cores 1` or `-j 1` or both, on `nix build`, `nix-build`, and `nixos-rebuild` commands.
+
 
 ## Troubleshooting
 
@@ -56,4 +63,3 @@ Add to your configuration:
 ```nix
 boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
 ```
-
