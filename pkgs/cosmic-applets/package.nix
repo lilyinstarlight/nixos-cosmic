@@ -15,13 +15,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-applets";
-  version = "0-unstable-2024-05-08";
+  version = "0-unstable-2024-05-09";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-applets";
-    rev = "982dd5d41ab2cdc916aa4bbcb13350099479b7ce";
-    hash = "sha256-xCK378kxxEe8gqNYGy7Y793SIJzpaWeXuPb4vohW3XM=";
+    rev = "60a1511d4d1bd095b1a505390f3887169a575d84";
+    hash = "sha256-eM7YZsecxMyEDvlZX3fXQCPMxiy9czHswrotoFUxbBA=";
   };
 
   cargoLock = {
@@ -32,10 +32,10 @@ rustPlatform.buildRustPackage {
       "clipboard_macos-0.1.0" = "sha256-temNg+RdvquSLAdkwU5b6dtu9vZkXjnDASS/eJo2rz8=";
       "cosmic-client-toolkit-0.1.0" = "sha256-XUiyL4M3hLBoBlpuG0K71QuhM4SSUBeYGtUhD+FL6Wg=";
       "cosmic-comp-config-0.1.0" = "sha256-uUpRd8bR2TyD7Y1lpKmJTaTNv9yNsZVnr0oWDQgHD/0=";
-      "cosmic-config-0.1.0" = "sha256-f1u0zdMOUBNUjsYeunu3VQ1siugpaBFE3jCJDitNWdY=";
+      "cosmic-config-0.1.0" = "sha256-ekvd2j0PpNLR6Rv+2APga9ci2LSIYmSdSS8Vdzmw6vw=";
       "cosmic-dbus-networkmanager-0.1.0" = "sha256-t/dwQGNGvvMRhdjIDHbEh5sUjkBnjdxQm2PDudUutL0=";
       "cosmic-notifications-config-0.1.0" = "sha256-ahYb8Sz9CDF5xngkYIieUqo3Iw8ai2V2AXxqkvUBnjk=";
-      "cosmic-panel-config-0.1.0" = "sha256-Xl/5Ag9osO5jhNxHnvsPGSadvRgbZWb6zLdwJRRRho8=";
+      "cosmic-panel-config-0.1.0" = "sha256-q8Lwg+EPNXFD3b5G1WKnxsiOc10QCsYncP3c3kv3FNs=";
       "cosmic-settings-daemon-0.1.0" = "sha256-z/dvRyc3Zc1fAQh2HKk6NI6QSDpNqarqslwszjU+0nc=";
       "cosmic-text-0.11.2" = "sha256-Jpgbg1DScteec7ItcGgbQYXu1bBNYJEw1SGsxpcxYfM=";
       "cosmic-time-0.4.0" = "sha256-qOxfyQ2r3yD6i/rgm22oNuOWslBgWrVh9zw3/qLIDT0=";
@@ -45,7 +45,7 @@ rustPlatform.buildRustPackage {
       "smithay-clipboard-0.8.0" = "sha256-phySYRO6z18X5kB1CZ5/+AYwzU8ooQ+BuOvBeyuIfXw=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
-      "xdg-shell-wrapper-config-0.1.0" = "sha256-/imUJyKgGSPAesxR7UathFyhsFI9gQ3oUoicvqUnWWU=";
+      "xdg-shell-wrapper-config-0.1.0" = "sha256-OjFcBzVE/fpHTK9bHxcHocEa16q6i9mVRNfJ9lLa/cw=";
     };
   };
 
