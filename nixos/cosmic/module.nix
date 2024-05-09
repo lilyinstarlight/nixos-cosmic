@@ -90,6 +90,8 @@ in
       alsa.enable = lib.mkDefault true;
       pulse.enable = lib.mkDefault true;
     };
+    services.gvfs.enable = lib.mkDefault true;
+    networking.networkmanager.enable = lib.mkDefault true;
 
     # general graphical session features
     programs.dconf.enable = lib.mkDefault true;
