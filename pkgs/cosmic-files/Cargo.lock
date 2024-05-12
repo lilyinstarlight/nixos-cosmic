@@ -4820,7 +4820,7 @@ dependencies = [
 [[package]]
 name = "smithay-clipboard"
 version = "0.8.0"
-source = "git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-4#9b995a33a88c496a90259dd207367a998c95ac98"
+source = "git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-4#ab422ddcc95a9a1717df094f9c8fe69e2fdb2a27"
 dependencies = [
  "libc",
  "raw-window-handle 0.6.1",
