@@ -4,6 +4,7 @@ let
   cfg = config.services.desktopManager.cosmic;
 in
 {
+  imports = [ ./config.nix ];
   meta.maintainers = with lib.maintainers; [ nyanbinary lilyinstarlight ];
 
   options = {
