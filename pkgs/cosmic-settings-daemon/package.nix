@@ -8,13 +8,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings-daemon";
-  version = "0-unstable-2024-05-11";
+  version = "0-unstable-2024-05-13";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings-daemon";
-    rev = "580e88b55e71072d865597840b423b881d739a08";
-    hash = "sha256-hC0MSqw1R2290KLn+J5hs/YrsLxyRmRA+DjEdvVRyNQ=";
+    rev = "fa09322c4ac29970a3957c61990a2b3211af6abc";
+    hash = "sha256-IUJkAim/kSYHJFkMiNzlDPRPd+NwWhFqndG/qXgI+Sc=";
   };
 
   cargoLock = {
@@ -22,14 +22,14 @@ rustPlatform.buildRustPackage {
     outputHashes = {
       "accesskit-0.12.2" = "sha256-ksaYMGT/oug7isQY8/1WD97XDUsX2ShBdabUzxWffYw=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
-      "clipboard_macos-0.1.0" = "sha256-A0NHPBZaTrcx4ggk81aNcjYWQFjVdvpffCC5EmLbXi0=";
-      "cosmic-config-0.1.0" = "sha256-wgSJwZ/X2ZYnAfBnC2dG3uZ6COOm69P2ieLi4l6lZi8=";
-      "cosmic-text-0.11.2" = "sha256-gUIQFHPaFTmtUfgpVvsGTnw2UKIBx9gl0K67KPuynWs=";
+      "clipboard_macos-0.1.0" = "sha256-temNg+RdvquSLAdkwU5b6dtu9vZkXjnDASS/eJo2rz8=";
+      "cosmic-config-0.1.0" = "sha256-B0NKjjw5tyjNnV+tgfqNg0Wh8JEZeegxWp4kgQsESiE=";
+      "cosmic-text-0.11.2" = "sha256-Jpgbg1DScteec7ItcGgbQYXu1bBNYJEw1SGsxpcxYfM=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
-      "geoclue2-0.1.0" = "sha256-k3lSg8yavxWelgCLhlSPGzmkFjrbdxk8SSoKmRPGGVA=";
+      "geoclue2-0.1.0" = "sha256-t/dwQGNGvvMRhdjIDHbEh5sUjkBnjdxQm2PDudUutL0=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "smithay-client-toolkit-0.18.0" = "sha256-/7twYMt5/LpzxLXAQKTGNnWcfspUkkZsN5hJu7KaANc=";
-      "smithay-clipboard-0.8.0" = "sha256-lf9zFXwO5RI/A2P4stcbLJDqHgyRsBOckQFUmmxvqAE=";
+      "smithay-clipboard-0.8.0" = "sha256-MqzynFCZvzVg9/Ry/zrbH5R6//erlZV+nmQ2St63Wnc=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
     };
