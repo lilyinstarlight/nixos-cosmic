@@ -9,13 +9,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-notifications";
-  version = "0-unstable-2024-05-14";
+  version = "0-unstable-2024-05-16";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-notifications";
-    rev = "1a1bbfaf8fd04d0831d77f452779d9a09b2c6d6e";
-    hash = "sha256-kEYih/1ietSBb8Iph0Fycsnj05JI8VQGOPBCLoVDBO0=";
+    rev = "bcac69002446650ab5d26d074fbfb071487f1ad7";
+    hash = "sha256-lznrLvKKvjvmUipzRge/jofHrOhQzcsA8eL+11ArP8U=";
   };
 
   cargoLock = {
