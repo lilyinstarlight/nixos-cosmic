@@ -2,51 +2,7 @@
   lib,
   config,
   ...
-}:
-# possible actions:
-# -----------------
-# Terminate,
-# Debug,
-# Close,
-# Escape,
-# Workspace(u8),
-# NextWorkspace,
-# PreviousWorkspace,
-# LastWorkspace,
-# MoveToWorkspace(u8),
-# MoveToNextWorkspace,
-# MoveToPreviousWorkspace,
-# MoveToLastWorkspace,
-# SendToWorkspace(u8),
-# SendToNextWorkspace,
-# SendToPreviousWorkspace,
-# SendToLastWorkspace,
-# NextOutput,
-# PreviousOutput,
-# MoveToNextOutput,
-# MoveToPreviousOutput,
-# SendToNextOutput,
-# SendToPreviousOutput,
-# SwitchOutput(Direction),
-# MoveToOutput(Direction),
-# SendToOutput(Direction),
-# MigrateWorkspaceToNextOutput,
-# MigrateWorkspaceToPreviousOutput,
-# MigrateWorkspaceToOutput(Direction),
-# Focus(FocusDirection),
-# Move(Direction),
-# ToggleOrientation,
-# Orientation(crate::shell::layout::Orientation),
-# ToggleStacking,
-# ToggleTiling,
-# ToggleWindowFloating,
-# ToggleSticky,
-# SwapWindow,
-# Resizing(ResizeDirection),
-# Minimize,
-# Maximize,
-# Spawn(String),
-let
+}: let
   inherit (lib) filterAttrs concatStrings concatStringsSep mapAttrsToList concatLists foldlAttrs concatMapAttrs mapAttrs' nameValuePair boolToString;
   inherit (builtins) typeOf toString stringLength;
 
@@ -124,11 +80,18 @@ let
     else s;
 
   # set up boilerplate for keybinding config file
-  cosmic-bindings = a:
+  createCosmicBindings = a:
     struct {
       key_bindings = mapBindings a;
       data_control_enabled = false;
     };
+  mapCosmicSettings = application: options:
+    mapAttrs' (k: v:
+      nameValuePair "xdg/cosmic/${application}/v${options.version}/${k}" {
+        enable = true;
+        text = serialise.${typeOf v} v;
+      })
+    options.option;
 in {
   options.services.desktopManager.cosmic.keybindings = with lib;
     mkOption {
@@ -180,16 +143,11 @@ in {
 
   config.environment.etc =
     {
-      "cosmic-comp/config.ron".text = cosmic-bindings config.services.desktopManager.cosmic.keybindings;
+      "cosmic-comp/config.ron".text = createCosmicBindings config.services.desktopManager.cosmic.keybindings;
     }
     // concatMapAttrs (
       application: options:
-        mapAttrs' (k: v:
-          nameValuePair "xdg/cosmic/${application}/v${options.version}/${k}" {
-            enable = true;
-            text = serialise.${typeOf v} v;
-          })
-        options.option
+        mapCosmicSettings application options
     )
     config.services.desktopManager.cosmic.otherSettings;
 }
