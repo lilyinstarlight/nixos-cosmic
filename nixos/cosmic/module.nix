@@ -102,6 +102,9 @@ in
     services.power-profiles-daemon.enable = lib.mkDefault (!config.hardware.system76.power-daemon.enable);
     security.polkit.enable = true;
 
+    # store secrets, passwords, keys, certificates and make them available to applications
+    services.gnome.gnome-keyring.enable = true;
+
     # session packages
     services.displayManager.sessionPackages = with pkgs; [ cosmic-session ];
     systemd.packages = with pkgs; [ cosmic-session ];
