@@ -92,6 +92,7 @@ in
     };
     services.gvfs.enable = lib.mkDefault true;
     networking.networkmanager.enable = lib.mkDefault true;
+    services.gnome.gnome-keyring.enable = lib.mkDefault true;
 
     # general graphical session features
     programs.dconf.enable = lib.mkDefault true;
@@ -101,9 +102,6 @@ in
     services.upower.enable = true;
     services.power-profiles-daemon.enable = lib.mkDefault (!config.hardware.system76.power-daemon.enable);
     security.polkit.enable = true;
-
-    # store secrets, passwords, keys, certificates and make them available to applications
-    services.gnome.gnome-keyring.enable = true;
 
     # session packages
     services.displayManager.sessionPackages = with pkgs; [ cosmic-session ];
