@@ -9,13 +9,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-notifications";
-  version = "0-unstable-2024-05-16";
+  version = "0-unstable-2024-05-17";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-notifications";
-    rev = "bcac69002446650ab5d26d074fbfb071487f1ad7";
-    hash = "sha256-lznrLvKKvjvmUipzRge/jofHrOhQzcsA8eL+11ArP8U=";
+    rev = "d847eeb7a8db2849d795885d1c8b829596bcdd36";
+    hash = "sha256-58VLKqEum223i8Sfwjaz+R2SAc9NjT65Mx2ihDhkQM8=";
   };
 
   cargoLock = {
@@ -25,9 +25,9 @@ rustPlatform.buildRustPackage {
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-temNg+RdvquSLAdkwU5b6dtu9vZkXjnDASS/eJo2rz8=";
       "cosmic-client-toolkit-0.1.0" = "sha256-XUiyL4M3hLBoBlpuG0K71QuhM4SSUBeYGtUhD+FL6Wg=";
-      "cosmic-config-0.1.0" = "sha256-b0g3NFMFu/QJ2lPUKwwwMmN+MuF8NB3F+lirlZ5tUmA=";
-      "cosmic-panel-config-0.1.0" = "sha256-pxpcYRVZu/1Ykq5Y+O7k12oba5om19t49IWDd3l/eQo=";
-      "cosmic-settings-daemon-0.1.0" = "sha256-z/dvRyc3Zc1fAQh2HKk6NI6QSDpNqarqslwszjU+0nc=";
+      "cosmic-config-0.1.0" = "sha256-seGqRDy37n0SNiJplXNbU1f6jlP4JuskeKvdUS2Z7WQ=";
+      "cosmic-panel-config-0.1.0" = "sha256-s+p5pCzacNOJLCEmMH+QdwQlK1aGUBqIetlXW7D3A0A=";
+      "cosmic-settings-daemon-0.1.0" = "sha256-Bz/bzXCm60AF0inpZJDF4iNZIX3FssImORrE5nZpkyQ=";
       "cosmic-text-0.11.2" = "sha256-Jpgbg1DScteec7ItcGgbQYXu1bBNYJEw1SGsxpcxYfM=";
       "cosmic-time-0.4.0" = "sha256-qOxfyQ2r3yD6i/rgm22oNuOWslBgWrVh9zw3/qLIDT0=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
