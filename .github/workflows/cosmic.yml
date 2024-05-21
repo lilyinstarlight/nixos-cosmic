@@ -18,7 +18,7 @@ jobs:
 
       - uses: DeterminateSystems/nix-installer-action@v11
 
-      - uses: cachix/cachix-action@v14
+      - uses: cachix/cachix-action@v15
         with:
           name: cosmic
 
