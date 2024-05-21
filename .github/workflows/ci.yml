@@ -8,9 +8,24 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Build
+  build_x86_64_linux:
+    name: Build - x86_64-linux
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@v11
+
+      - uses: cachix/cachix-action@v15
+        with:
+          name: cosmic
+          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+      - run: nix -vL build --show-trace --cores 1 --max-jobs 1 .#vm.closure
+
+  build_aarch64_linux:
+    name: Build - aarch64-linux
+    runs-on: [linux, ARM64, drakon64/github-actions-runner-aws, EC2-r7g.large]
     steps:
       - uses: actions/checkout@v4
 
