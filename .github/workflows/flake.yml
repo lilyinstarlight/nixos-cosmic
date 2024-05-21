@@ -30,3 +30,9 @@ jobs:
         with:
           workflow: ci.yml
           ref: refs/heads/update_flake_lock_action
+
+      - uses: benc-uk/workflow-dispatch@v1
+        if: ${{ contains(fromJSON('["created", "updated"]'), steps.create-pr.outputs.pull-request-operation) }}
+        with:
+          workflow: ci_aarch64.yml
+          ref: refs/heads/update_cosmic_action
