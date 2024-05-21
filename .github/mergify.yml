@@ -6,7 +6,8 @@ pull_request_rules:
         - author=github-actions[bot]
       - label=dependencies
 
-      - check-success=Build
+      - check-success=Build - x86_64-linux
+      - check-success=Build - aarch64-linux
     actions:
       merge:
         method: squash
