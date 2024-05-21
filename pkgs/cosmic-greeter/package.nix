@@ -1,6 +1,5 @@
 { lib
 , fetchFromGitHub
-, fetchpatch
 , rustPlatform
 , wrapCosmicAppsHook
 , cmake
@@ -13,13 +12,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-greeter";
-  version = "0-unstable-2024-05-17";
+  version = "0-unstable-2024-05-20";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-greeter";
-    rev = "d8c81ce3fb1e54fad6911ed6ae688f0ee351fcd7";
-    sha256 = "sha256-fMvMrJ+qCeZkp5k6lDDW5TJWdu3f2KBCWw3t1JtGTCE=";
+    rev = "4613fbb1849af68e8967ad95ce1d58158a7fb4c6";
+    sha256 = "sha256-o2KaFhgmO3wVzxOPoai41DH/RaniGKOkn7+NCNiekLQ=";
   };
 
   cargoLock = {
@@ -41,15 +40,6 @@ rustPlatform.buildRustPackage {
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
     };
   };
-
-  patches = [
-    (fetchpatch {
-      # TODO: remove when pop-os/cosmic-greeter#48 is merged
-      name = "cosmic-greeter-fix-dbus-error-with-zbus-4.patch";
-      url = "https://github.com/pop-os/cosmic-greeter/commit/21b00afdde0fe7ace06caa5e9fe19b76e3890ce9.diff";
-      hash = "sha256-x1yKDm7RBUZ4YcLq66JH3sapM4ulunEi9MEs8WCrVfs=";
-    })
-  ];
 
   nativeBuildInputs = [ wrapCosmicAppsHook rustPlatform.bindgenHook cmake just ];
   buildInputs = [ linux-pam ];

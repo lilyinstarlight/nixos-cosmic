@@ -58,7 +58,7 @@ dependencies = [
  "futures-util",
  "once_cell",
  "serde",
- "zbus 3.15.1",
+ "zbus 3.15.2",
 ]
 
 [[package]]
@@ -265,9 +265,9 @@ checksum = "70033777eb8b5124a81a1889416543dddef2de240019b674c81285a2635a7e1e"
 
 [[package]]
 name = "anyhow"
-version = "1.0.84"
+version = "1.0.86"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "18b8795de6d09abb2b178fa5a9e3bb10da935750f33449a132b328b9391b2c6a"
+checksum = "b3d1d046238990b9cf5bcde22a3fb3584ee5cf65fb2765f454ed428c7a0063da"
 
 [[package]]
 name = "apply"
@@ -339,7 +339,7 @@ dependencies = [
  "serde_repr",
  "tokio",
  "url",
- "zbus 4.2.1",
+ "zbus 4.2.2",
 ]
 
 [[package]]
@@ -527,7 +527,7 @@ checksum = "3b43422f69d8ff38f95f1b2bb76517c91589a924d1559a0e935d7c8ce0274c11"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -562,7 +562,7 @@ checksum = "c6fa2087f2753a7da8cc1c0dbfcf89579dd57458e36769de5ac750b4671737ca"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -601,9 +601,9 @@ dependencies = [
  "enumflags2",
  "serde",
  "static_assertions",
- "zbus 3.15.1",
+ "zbus 3.15.2",
  "zbus_names 2.6.1",
- "zvariant 3.15.1",
+ "zvariant 3.15.2",
 ]
 
 [[package]]
@@ -615,7 +615,7 @@ dependencies = [
  "atspi-common",
  "atspi-proxies",
  "futures-lite 1.13.0",
- "zbus 3.15.1",
+ "zbus 3.15.2",
 ]
 
 [[package]]
@@ -626,7 +626,7 @@ checksum = "6495661273703e7a229356dcbe8c8f38223d697aacfaf0e13590a9ac9977bb52"
 dependencies = [
  "atspi-common",
  "serde",
- "zbus 3.15.1",
+ "zbus 3.15.2",
 ]
 
 [[package]]
@@ -785,7 +785,7 @@ checksum = "4da9a32f3fed317401fa3c862968128267c3106685286e15d5aaa3d7389c2f60"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -854,9 +854,9 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.0.97"
+version = "1.0.98"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "099a5357d84c4c61eb35fc8eafa9a79a902c2f76911e5747ced4e032edd8d9b4"
+checksum = "41c270e7540d725e65ac7f1b212ac8ce349719624d7bcff99f8e2e488e8cf03f"
 dependencies = [
  "jobserver",
  "libc",
@@ -1105,7 +1105,7 @@ dependencies = [
 [[package]]
 name = "cosmic-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "atomicwrites",
  "cosmic-config-derive",
@@ -1124,7 +1124,7 @@ dependencies = [
 [[package]]
 name = "cosmic-config-derive"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "quote",
  "syn 1.0.109",
@@ -1133,7 +1133,7 @@ dependencies = [
 [[package]]
 name = "cosmic-files"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/cosmic-files.git#059d70f21a95e430b3955ff55cdeb5ef6695644c"
+source = "git+https://github.com/pop-os/cosmic-files.git#cf47297866f31447aa8e42079aa92bcffd65624c"
 dependencies = [
  "chrono",
  "dirs",
@@ -1218,7 +1218,7 @@ dependencies = [
 [[package]]
 name = "cosmic-theme"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "almost",
  "cosmic-config",
@@ -1243,18 +1243,18 @@ dependencies = [
 
 [[package]]
 name = "crc32fast"
-version = "1.4.0"
+version = "1.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b3855a8a784b474f333699ef2bbca9db2c4a1f6d9088a90a2d25b1eb53111eaa"
+checksum = "a97769d94ddab943e4510d138150169a2758b5ef3eb191a9ee688de3e23ef7b3"
 dependencies = [
  "cfg-if",
 ]
 
 [[package]]
 name = "crossbeam-channel"
-version = "0.5.12"
+version = "0.5.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ab3db02a9c5b5121e1e42fbdb1aeb65f5e02624cc58c43f2884c6ccac0b82f95"
+checksum = "33480d6946193aa8033910124896ca395333cae7e2d1113d1fef6c3272217df2"
 dependencies = [
  "crossbeam-utils",
 ]
@@ -1280,9 +1280,9 @@ dependencies = [
 
 [[package]]
 name = "crossbeam-utils"
-version = "0.8.19"
+version = "0.8.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "248e3bacc7dc6baa3b21e405ee045c3047101a49145e7e9eca583ab4c2ca5345"
+checksum = "22ec99545bb0ed0ea7bb9b8e1e9122ea386ff8a48c0922e43f36d45ab09e0e80"
 
 [[package]]
 name = "crunchy"
@@ -1323,7 +1323,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "edb49164822f3ee45b17acd4a208cfc1251410cf0cad9a833234c9890774dd9f"
 dependencies = [
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -1363,7 +1363,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "strsim 0.11.1",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -1374,7 +1374,7 @@ checksum = "733cabb43482b1a1b53eee8583c2b9e8684d592215ea83efd305dd31bc2f0178"
 dependencies = [
  "darling_core",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -1425,7 +1425,7 @@ dependencies = [
  "darling",
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -1494,7 +1494,7 @@ checksum = "487585f4d0c6655fe74905e2504d8ad6908e4db67f744eb140876906c2f3175d"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -1602,7 +1602,7 @@ checksum = "5c785274071b1b420972453b306eeca06acf4633829db4223b58a2a8c5953bc4"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -1948,7 +1948,7 @@ checksum = "1a5c6c585bc94aaf2c7b51dd4c2ba22680844aba4c687be581871a6f518c5742"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -2098,7 +2098,7 @@ checksum = "87750cf4b7a4c0625b1529e4c543c2182106e4dedc60a2a6455e00d212c489ac"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -2449,7 +2449,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "strsim 0.10.0",
- "syn 2.0.64",
+ "syn 2.0.65",
  "unic-langid",
 ]
 
@@ -2463,7 +2463,7 @@ dependencies = [
  "i18n-config",
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -2492,7 +2492,7 @@ dependencies = [
 [[package]]
 name = "iced"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "dnd",
  "iced_accessibility",
@@ -2510,7 +2510,7 @@ dependencies = [
 [[package]]
 name = "iced_accessibility"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "accesskit",
  "accesskit_winit",
@@ -2519,7 +2519,7 @@ dependencies = [
 [[package]]
 name = "iced_core"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "bitflags 2.5.0",
  "dnd",
@@ -2539,7 +2539,7 @@ dependencies = [
 [[package]]
 name = "iced_futures"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "futures",
  "iced_core",
@@ -2552,7 +2552,7 @@ dependencies = [
 [[package]]
 name = "iced_graphics"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "bitflags 2.5.0",
  "bytemuck",
@@ -2576,7 +2576,7 @@ dependencies = [
 [[package]]
 name = "iced_renderer"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "iced_graphics",
  "iced_tiny_skia",
@@ -2588,7 +2588,7 @@ dependencies = [
 [[package]]
 name = "iced_runtime"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "dnd",
  "iced_core",
@@ -2600,7 +2600,7 @@ dependencies = [
 [[package]]
 name = "iced_style"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "iced_core",
  "once_cell",
@@ -2610,7 +2610,7 @@ dependencies = [
 [[package]]
 name = "iced_tiny_skia"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "bytemuck",
  "cosmic-text",
@@ -2627,7 +2627,7 @@ dependencies = [
 [[package]]
 name = "iced_wgpu"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "bitflags 2.5.0",
  "bytemuck",
@@ -2653,7 +2653,7 @@ dependencies = [
 [[package]]
 name = "iced_widget"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "dnd",
  "iced_renderer",
@@ -2669,7 +2669,7 @@ dependencies = [
 [[package]]
 name = "iced_winit"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "dnd",
  "iced_graphics",
@@ -2777,9 +2777,9 @@ dependencies = [
 
 [[package]]
 name = "instant"
-version = "0.1.12"
+version = "0.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7a5bbe824c507c5da5956355e86a746d82e0e1464f65d862cc5e71da70e94b2c"
+checksum = "e0242819d153cba4b4b05a5a8f2a7e9bbf97b6055b2a002b395c96b5ff3c0222"
 dependencies = [
  "cfg-if",
 ]
@@ -3011,7 +3011,7 @@ source = "git+https://gitlab.redox-os.org/redox-os/liblibc.git?branch=redox-epol
 [[package]]
 name = "libcosmic"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#107eeb5f1f4481008319d8def63806f8463bde02"
+source = "git+https://github.com/pop-os/libcosmic.git#f4936344f01f592ca3b0616eff8f32e75c1e2b35"
 dependencies = [
  "apply",
  "ashpd",
@@ -3042,7 +3042,7 @@ dependencies = [
  "tracing",
  "unicode-segmentation",
  "url",
- "zbus 4.2.1",
+ "zbus 4.2.2",
 ]
 
 [[package]]
@@ -3554,7 +3554,7 @@ dependencies = [
  "proc-macro-crate 3.1.0",
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -3725,7 +3725,7 @@ dependencies = [
  "proc-macro-error",
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -3759,7 +3759,7 @@ dependencies = [
  "by_address",
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -3864,7 +3864,7 @@ dependencies = [
  "phf_shared",
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -4024,9 +4024,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.82"
+version = "1.0.83"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8ad3d49ab951a01fbaafe34f2ec74122942fe18a3f9814c3268f1bb72042131b"
+checksum = "0b33eb56c327dec362a9e55b3ad14f9d2f0904fb5a5b03b513ab5465399e9f43"
 dependencies = [
  "unicode-ident",
 ]
@@ -4114,9 +4114,9 @@ checksum = "f60fcc7d6849342eff22c4350c8b9a989ee8ceabc4b481253e8946b9fe83d684"
 
 [[package]]
 name = "raw-window-handle"
-version = "0.6.1"
+version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8cc3bcbdb1ddfc11e700e62968e6b4cc9c75bb466464ad28fb61c5b2c964418b"
+checksum = "20675572f6f24e9e76ef639bc5552774ed45f1c30e2951e1e99c59888861c539"
 
 [[package]]
 name = "rayon"
@@ -4323,7 +4323,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "rust-embed-utils",
- "syn 2.0.64",
+ "syn 2.0.65",
  "walkdir",
 ]
 
@@ -4493,7 +4493,7 @@ checksum = "6048858004bcff69094cd972ed40a32500f153bd3be9f716b2eed2e8217c4838"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -4516,7 +4516,7 @@ checksum = "6c64451ba24fc7a6a2d60fc75dd9c83c90903b19028d4eff35e88fc1e86564e9"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -4827,9 +4827,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.64"
+version = "2.0.65"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7ad3dee41f36859875573074334c200d1add8e4a87bb37113ebd31d926b7b11f"
+checksum = "d2863d96a84c6439701d7a38f9de935ec562c8832cc55d1dde0f513b52fad106"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4894,7 +4894,7 @@ checksum = "46c3384250002a6d5af4d114f2845d37b57521033f30d5c3f46c4d70e1197533"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -5114,7 +5114,7 @@ checksum = "34704c8d6ebcbc939824180af020566b01a7c01f80641264eba0999f6c2b6be7"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -5453,7 +5453,7 @@ dependencies = [
  "once_cell",
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
  "wasm-bindgen-shared",
 ]
 
@@ -5487,7 +5487,7 @@ checksum = "e94f17b526d0a461a191c78ea52bbce64071ed5c04c9ffe424dcb38f74171bb7"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
  "wasm-bindgen-backend",
  "wasm-bindgen-shared",
 ]
@@ -5873,7 +5873,7 @@ checksum = "f6fc35f58ecd95a9b71c4f2329b911016e6bec66b3f2e6a4aad86bd2e99e2f9b"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -5895,7 +5895,7 @@ checksum = "08990546bf4edef8f431fa6326e032865f27138718c587dc21bc0265bbcb57cc"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -6303,9 +6303,9 @@ checksum = "c94451ac9513335b5e23d7a8a2b61a7102398b8cca5160829d313e84c9d98be1"
 
 [[package]]
 name = "zbus"
-version = "3.15.1"
+version = "3.15.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5acecd3f8422f198b1a2f954bcc812fe89f3fa4281646f3da1da7925db80085d"
+checksum = "675d170b632a6ad49804c8cf2105d7c31eddd3312555cffd4b740e08e97c25e6"
 dependencies = [
  "async-broadcast 0.5.1",
  "async-executor",
@@ -6337,16 +6337,16 @@ dependencies = [
  "uds_windows",
  "winapi",
  "xdg-home",
- "zbus_macros 3.15.1",
+ "zbus_macros 3.15.2",
  "zbus_names 2.6.1",
- "zvariant 3.15.1",
+ "zvariant 3.15.2",
 ]
 
 [[package]]
 name = "zbus"
-version = "4.2.1"
+version = "4.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e5915716dff34abef1351d2b10305b019c8ef33dcf6c72d31a6e227d5d9d7a21"
+checksum = "989c3977a7aafa97b12b9a35d21cdcff9b0d2289762b14683f45d66b1ba6c48f"
 dependencies = [
  "async-broadcast 0.7.0",
  "async-executor",
@@ -6376,36 +6376,36 @@ dependencies = [
  "uds_windows",
  "windows-sys 0.52.0",
  "xdg-home",
- "zbus_macros 4.2.1",
+ "zbus_macros 4.2.2",
  "zbus_names 3.0.0",
- "zvariant 4.1.0",
+ "zvariant 4.1.1",
 ]
 
 [[package]]
 name = "zbus_macros"
-version = "3.15.1"
+version = "3.15.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2207eb71efebda17221a579ca78b45c4c5f116f074eb745c3a172e688ccf89f5"
+checksum = "7131497b0f887e8061b430c530240063d33bf9455fa34438f388a245da69e0a5"
 dependencies = [
  "proc-macro-crate 1.3.1",
  "proc-macro2",
  "quote",
  "regex",
  "syn 1.0.109",
- "zvariant_utils",
+ "zvariant_utils 1.0.1",
 ]
 
 [[package]]
 name = "zbus_macros"
-version = "4.2.1"
+version = "4.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "66fceb36d0c1c4a6b98f3ce40f410e64e5a134707ed71892e1b178abc4c695d4"
+checksum = "6fe9de53245dcf426b7be226a4217dd5e339080e5d46e64a02d6e5dcbf90fca1"
 dependencies = [
  "proc-macro-crate 3.1.0",
  "proc-macro2",
  "quote",
- "syn 1.0.109",
- "zvariant_utils",
+ "syn 2.0.65",
+ "zvariant_utils 2.0.0",
 ]
 
 [[package]]
@@ -6416,7 +6416,7 @@ checksum = "437d738d3750bed6ca9b8d423ccc7a8eb284f6b1d6d4e225a0e4e6258d864c8d"
 dependencies = [
  "serde",
  "static_assertions",
- "zvariant 3.15.1",
+ "zvariant 3.15.2",
 ]
 
 [[package]]
@@ -6427,7 +6427,7 @@ checksum = "4b9b1fef7d021261cc16cba64c351d291b715febe0fa10dc3a443ac5a5022e6c"
 dependencies = [
  "serde",
  "static_assertions",
- "zvariant 4.1.0",
+ "zvariant 4.1.1",
 ]
 
 [[package]]
@@ -6453,7 +6453,7 @@ checksum = "15e934569e47891f7d9411f1a451d947a60e000ab3bd24fbb970f000387d1b3b"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.64",
+ "syn 2.0.65",
 ]
 
 [[package]]
@@ -6467,65 +6467,76 @@ dependencies = [
 
 [[package]]
 name = "zvariant"
-version = "3.15.1"
+version = "3.15.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c5b4fcf3660d30fc33ae5cd97e2017b23a96e85afd7a1dd014534cd0bf34ba67"
+checksum = "4eef2be88ba09b358d3b58aca6e41cd853631d44787f319a1383ca83424fb2db"
 dependencies = [
  "byteorder",
  "enumflags2",
  "libc",
  "serde",
  "static_assertions",
- "zvariant_derive 3.15.1",
+ "zvariant_derive 3.15.2",
 ]
 
 [[package]]
 name = "zvariant"
-version = "4.1.0"
+version = "4.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "877ef94e5e82b231d2a309c531f191a8152baba8241a7939ee04bd76b0171308"
+checksum = "9aa6d31a02fbfb602bfde791de7fedeb9c2c18115b3d00f3a36e489f46ffbbc7"
 dependencies = [
  "endi",
  "enumflags2",
  "serde",
  "static_assertions",
  "url",
- "zvariant_derive 4.1.0",
+ "zvariant_derive 4.1.1",
 ]
 
 [[package]]
 name = "zvariant_derive"
-version = "3.15.1"
+version = "3.15.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0277758a8a0afc0e573e80ed5bfd9d9c2b48bd3108ffe09384f9f738c83f4a55"
+checksum = "37c24dc0bed72f5f90d1f8bb5b07228cbf63b3c6e9f82d82559d4bae666e7ed9"
 dependencies = [
  "proc-macro-crate 1.3.1",
  "proc-macro2",
  "quote",
  "syn 1.0.109",
- "zvariant_utils",
+ "zvariant_utils 1.0.1",
 ]
 
 [[package]]
 name = "zvariant_derive"
-version = "4.1.0"
+version = "4.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b7ca98581cc6a8120789d8f1f0997e9053837d6aa5346cbb43454d7121be6e39"
+checksum = "642bf1b6b6d527988b3e8193d20969d53700a36eac734d21ae6639db168701c8"
 dependencies = [
  "proc-macro-crate 3.1.0",
  "proc-macro2",
  "quote",
- "syn 1.0.109",
- "zvariant_utils",
+ "syn 2.0.65",
+ "zvariant_utils 2.0.0",
 ]
 
 [[package]]
 name = "zvariant_utils"
-version = "1.1.1"
+version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "75fa7291bdd68cd13c4f97cc9d78cbf16d96305856dfc7ac942aeff4c2de7d5a"
+checksum = "7234f0d811589db492d16893e3f21e8e2fd282e6d01b0cddee310322062cc200"
 dependencies = [
  "proc-macro2",
  "quote",
  "syn 1.0.109",
+]
+
+[[package]]
+name = "zvariant_utils"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fc242db087efc22bd9ade7aa7809e4ba828132edc312871584a6b4391bdf8786"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.65",
 ]
