@@ -25,7 +25,7 @@ jobs:
 
   build_aarch64_linux:
     name: Build - aarch64-linux
-    runs-on: [linux, ARM64, drakon64/github-actions-runner-aws, EC2-r7g.large]
+    runs-on: [linux, ARM64, drakon64/github-actions-runner-aws, EC2-r7g.large, EBS-30GB]
     steps:
       - uses: actions/checkout@v4
 
