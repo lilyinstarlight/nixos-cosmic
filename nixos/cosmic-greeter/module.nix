@@ -30,6 +30,8 @@ in
       wantedBy = [ "multi-user.target" ];
       before = [ "greetd.service" ];
       serviceConfig = {
+        Type = "dbus";
+        BusName = "com.system76.CosmicGreeter";
         ExecStart = "${pkgs.cosmic-greeter}/bin/cosmic-greeter-daemon";
         Restart = "on-failure";
       };
