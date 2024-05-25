@@ -49,7 +49,7 @@ After setting up binary substituters and NixOS module, enable COSMIC with `servi
 
 ## Build Requirements
 
-Although there is a provided binary cache for `x86_64-linux` built against current `nixos-unstable` branch, if you are not using a current `nixos-unstable` or are not on `x86_64-linux`, then you may need to build packages locally.
+Although there is a provided binary cache built against current `nixos-unstable` branch, if you are not using a current `nixos-unstable` then you may need to build packages locally.
 
 Generally you will need roughly 16 GiB of RAM and 40 GiB of disk space, but it can be built with less RAM by reducing build parallelism, either via `--cores 1` or `-j 1` or both, on `nix build`, `nix-build`, and `nixos-rebuild` commands.
 
