@@ -8,13 +8,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings-daemon";
-  version = "0-unstable-2024-05-26";
+  version = "0-unstable-2024-05-28";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings-daemon";
-    rev = "f21bf4530815a7cdc9c7eb7a57816abb6c738f41";
-    hash = "sha256-Ldhh59SFn4vNQqJITG8s8Dyehe2haJBJupS1WHrtTFo=";
+    rev = "3010b4c70b1aede5882465c8da4542973cc519e7";
+    hash = "sha256-aCcMUJHrz0QGeackjrqs92F3pFq1OTxl6I6nHflvOKc=";
   };
 
   cargoLock = {
@@ -23,7 +23,7 @@ rustPlatform.buildRustPackage {
       "accesskit-0.12.2" = "sha256-ksaYMGT/oug7isQY8/1WD97XDUsX2ShBdabUzxWffYw=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-temNg+RdvquSLAdkwU5b6dtu9vZkXjnDASS/eJo2rz8=";
-      "cosmic-config-0.1.0" = "sha256-5VTrZ3c5SEK/PCeQRC3XmSG9wbbET4pyPQum1dmMoCA=";
+      "cosmic-config-0.1.0" = "sha256-jkjsmsPBbXXjCaiYttE6POR2jevzLqRE/79AaLcNaIo=";
       "cosmic-text-0.11.2" = "sha256-Jpgbg1DScteec7ItcGgbQYXu1bBNYJEw1SGsxpcxYfM=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "geoclue2-0.1.0" = "sha256-Bz/bzXCm60AF0inpZJDF4iNZIX3FssImORrE5nZpkyQ=";
