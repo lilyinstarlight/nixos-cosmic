@@ -8,13 +8,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-applibrary";
-  version = "0-unstable-2024-05-23";
+  version = "0-unstable-2024-05-28";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-applibrary";
-    rev = "a121f3333b851431e4554303f00639afbf88f88c";
-    hash = "sha256-CMILftPS/5Qu8wsat8/q/KxXVX/y7dypylD5XnK8Gow=";
+    rev = "efb48f4c4e7e5a096c7bd931b286f460a8ae7725";
+    hash = "sha256-JLYgSBNfR2d2lm9Giw0Mzh2Qsk2R7xOSSKuHGiDe8+k=";
   };
 
   cargoLock = {
