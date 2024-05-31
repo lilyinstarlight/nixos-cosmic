@@ -8,10 +8,22 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_x86_64_linux:
-    name: Build - x86_64-linux
-    runs-on: [linux, X64, drakon64/github-actions-runner-aws, EC2-r7i.large, EBS-30GB]
+  build:
+    strategy:
+      matrix:
+        architecture:
+          - system: x86_64-linux
+            runner: [linux, X64, drakon64/github-actions-runner-aws, EC2-r7i.large, EBS-30GB]
+          - system: aarch64-linux
+            runner: [linux, ARM64, drakon64/github-actions-runner-aws, EC2-r7g.large, EBS-30GB]
+        attribute:
+          - vm.closure
+          - vm-stable.closure
+
+    name: Build - ${{ matrix.architecture.system }} - ${{ matrix.attribute }}
+    runs-on: ${{ matrix.architecture.runner }}
     timeout-minutes: 1440
+
     steps:
       - uses: actions/checkout@v4
 
@@ -22,20 +34,8 @@ jobs:
           name: cosmic
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
-      - run: nix -vL build --show-trace --cores 1 --max-jobs 1 .#vm.closure
-
-  build_aarch64_linux:
-    name: Build - aarch64-linux
-    runs-on: [linux, ARM64, drakon64/github-actions-runner-aws, EC2-r7g.large, EBS-30GB]
-    timeout-minutes: 1440
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: DeterminateSystems/nix-installer-action@v11
-
-      - uses: cachix/cachix-action@v15
-        with:
-          name: cosmic
-          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
-
-      - run: nix -vL build --show-trace --cores 1 --max-jobs 1 .#vm.closure
+      - env:
+          SYSTEM: ${{ matrix.architecture.system }}
+          ATTRIBUTE: ${{ matrix.attribute }}
+        run: |
+          nix -vL build --show-trace --cores 1 --max-jobs 1 --system "$SYSTEM" ".#$ATTRIBUTE"
