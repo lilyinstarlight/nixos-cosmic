@@ -1,7 +1,7 @@
 { lib
 , fetchFromGitHub
 , rustPlatform
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , flatpak
 , glib
 , just
@@ -40,7 +40,7 @@ rustPlatform.buildRustPackage rec {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook just pkg-config ];
+  nativeBuildInputs = [ libcosmicAppHook just pkg-config ];
   buildInputs = [
     glib
     flatpak

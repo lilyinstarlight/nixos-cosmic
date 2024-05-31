@@ -1,7 +1,7 @@
 { lib
 , fetchFromGitHub
 , rustPlatform
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , libinput
 , mesa
 , pixman
@@ -48,7 +48,7 @@ rustPlatform.buildRustPackage {
 
   separateDebugInfo = true;
 
-  nativeBuildInputs = [ wrapCosmicAppsHook pkg-config ];
+  nativeBuildInputs = [ libcosmicAppHook pkg-config ];
   buildInputs = [
     libinput
     mesa
@@ -64,7 +64,7 @@ rustPlatform.buildRustPackage {
     mkdir -p $out/etc/cosmic-comp
     cp config.ron $out/etc/cosmic-comp/config.ron
   '' + lib.optionalString useXWayland ''
-    cosmicAppsWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ xwayland ]})
+    libcosmicAppWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ xwayland ]})
   '';
 
   meta = with lib; {

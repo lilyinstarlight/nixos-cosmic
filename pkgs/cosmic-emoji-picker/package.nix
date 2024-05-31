@@ -1,6 +1,6 @@
 { lib
 , fetchFromGitHub
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , rustPlatform
 }:
 
@@ -34,7 +34,7 @@ rustPlatform.buildRustPackage {
   };
 
   nativeBuildInputs = [
-    wrapCosmicAppsHook
+    libcosmicAppHook
   ];
 
   meta = with lib; {

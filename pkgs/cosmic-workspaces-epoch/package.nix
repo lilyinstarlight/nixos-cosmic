@@ -1,7 +1,7 @@
 { lib
 , rustPlatform
 , fetchFromGitHub
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , pkg-config
 , libinput
 , mesa
@@ -39,7 +39,7 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook pkg-config ];
+  nativeBuildInputs = [ libcosmicAppHook pkg-config ];
   buildInputs = [ libinput mesa udev ];
 
   meta = with lib; {

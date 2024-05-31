@@ -1,6 +1,6 @@
 { lib
 , fetchFromGitHub
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , rustPlatform
 , libsecret
 , openssl
@@ -37,7 +37,7 @@ rustPlatform.buildRustPackage rec {
   };
 
   nativeBuildInputs = [
-    wrapCosmicAppsHook
+    libcosmicAppHook
   ];
 
   buildInputs = [

@@ -1,7 +1,7 @@
 { lib
 , fetchFromGitHub
 , rustPlatform
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , cmake
 , expat
 , fontconfig
@@ -41,7 +41,7 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook cmake just pkg-config ];
+  nativeBuildInputs = [ libcosmicAppHook cmake just pkg-config ];
   buildInputs = [ expat fontconfig freetype ];
 
   dontUseJustBuild = true;

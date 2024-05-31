@@ -1,6 +1,6 @@
 { lib
 , fetchFromGitHub
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , fontconfig
 , freetype
 , just
@@ -42,7 +42,7 @@ rustPlatform.buildRustPackage rec {
   };
 
   nativeBuildInputs = [
-    wrapCosmicAppsHook
+    libcosmicAppHook
     just
     pkg-config
   ];

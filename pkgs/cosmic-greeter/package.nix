@@ -1,7 +1,7 @@
 { lib
 , fetchFromGitHub
 , rustPlatform
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , cmake
 , coreutils
 , just
@@ -41,7 +41,7 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook rustPlatform.bindgenHook cmake just ];
+  nativeBuildInputs = [ libcosmicAppHook rustPlatform.bindgenHook cmake just ];
   buildInputs = [ linux-pam ];
 
   cargoBuildFlags = [ "--all" ];

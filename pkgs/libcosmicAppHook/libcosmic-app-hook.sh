@@ -1,11 +1,11 @@
 # shellcheck shell=bash
-cosmicAppsWrapperArgs=()
+libcosmicAppWrapperArgs=()
 
-cosmicAppsVergenHook() {
+libcosmicAppVergenHook() {
   export VERGEN_GIT_COMMIT_DATE="$SOURCE_DATE_EPOCH"
 }
 
-cosmicAppsLinkerArgsHook() {
+libcosmicAppLinkerArgsHook() {
   # Force linking to certain libraries like libEGL, which are always dlopen()ed
   local flags="CARGO_TARGET_@cargoLinkerVar@_RUSTFLAGS"
 
@@ -17,32 +17,32 @@ cosmicAppsLinkerArgsHook() {
   export "$flags"="${!flags} -C link-arg=-Wl,--pop-state"
 }
 
-preConfigurePhases+=" cosmicAppsVergenHook cosmicAppsLinkerArgsHook"
+preConfigurePhases+=" libcosmicAppVergenHook libcosmicAppLinkerArgsHook"
 
-cosmicAppsWrapperArgsHook() {
+libcosmicAppWrapperArgsHook() {
     # add fallback schemas, icons, and settings paths
-    cosmicAppsWrapperArgs+=(--suffix XDG_DATA_DIRS : "@fallbackXdgDirs@")
+    libcosmicAppWrapperArgs+=(--suffix XDG_DATA_DIRS : "@fallbackXdgDirs@")
 
     if [ -d "${prefix:?}/share" ]; then
-        cosmicAppsWrapperArgs+=(--prefix XDG_DATA_DIRS : "$prefix/share")
+        libcosmicAppWrapperArgs+=(--prefix XDG_DATA_DIRS : "$prefix/share")
     fi
 }
 
-preFixupPhases+=" cosmicAppsWrapperArgsHook"
+preFixupPhases+=" libcosmicAppWrapperArgsHook"
 
-wrapCosmicApp() {
+wrapLibcosmicApp() {
     local program="$1"
     shift 1
-    wrapProgram "$program" "${cosmicAppsWrapperArgs[@]}" "$@"
+    wrapProgram "$program" "${libcosmicAppWrapperArgs[@]}" "$@"
 }
 
-# Note: $cosmicAppsWrapperArgs still gets defined even if ${dontWrapCosmicApps-} is set
-wrapCosmicAppsHook() {
+# Note: $libcosmicAppWrapperArgs still gets defined even if ${dontWrapLibcosmicApp-} is set
+libcosmicAppWrapHook() {
     # guard against running multiple times (e.g. due to propagation)
-    [ -z "$wrapCosmicAppsHookHasRun" ] || return 0
-    wrapCosmicAppsHookHasRun=1
+    [ -z "$libcosmicAppWrapHookHasRun" ] || return 0
+    libcosmicAppWrapHookHasRun=1
 
-    if [[ -z "${dontWrapCosmicApps:-}" ]]; then
+    if [[ -z "${dontWrapLibcosmicApp:-}" ]]; then
         targetDirsThatExist=()
         targetDirsRealPath=()
 
@@ -55,7 +55,7 @@ wrapCosmicAppsHook() {
                 find "${targetDir}" -type f -executable -print0 |
                     while IFS= read -r -d '' file; do
                         echo "Wrapping program '${file}'"
-                        wrapCosmicApp "${file}"
+                        wrapLibcosmicApp "${file}"
                     done
             fi
         done
@@ -74,10 +74,10 @@ wrapCosmicAppsHook() {
                         fi
                     done
                     echo "Wrapping link: '$linkPath'"
-                    wrapCosmicApp "${linkPath}"
+                    wrapLibcosmicApp "${linkPath}"
                 done
         fi
     fi
 }
 
-fixupOutputHooks+=(wrapCosmicAppsHook)
+fixupOutputHooks+=(libcosmicAppWrapHook)

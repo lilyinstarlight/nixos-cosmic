@@ -1,7 +1,7 @@
 { lib
 , fetchFromGitHub
 , rustPlatform
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , pkg-config
 , pulseaudio
 , udev
@@ -36,7 +36,7 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook pkg-config ];
+  nativeBuildInputs = [ libcosmicAppHook pkg-config ];
   buildInputs = [ pulseaudio udev ];
 
   env.POLKIT_AGENT_HELPER_1 = "/run/wrappers/bin/polkit-agent-helper-1";

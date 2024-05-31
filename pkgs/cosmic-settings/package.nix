@@ -2,7 +2,7 @@
 , stdenv
 , fetchFromGitHub
 , rustPlatform
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , cmake
 , cosmic-randr
 , expat
@@ -16,7 +16,7 @@
 }:
 
 let
-  wrapCosmicAppsHook' = (wrapCosmicAppsHook.__spliced.buildHost or wrapCosmicAppsHook).override { includeSettings = false; };
+  libcosmicAppHook' = (libcosmicAppHook.__spliced.buildHost or libcosmicAppHook).override { includeSettings = false; };
 in
 
 rustPlatform.buildRustPackage {
@@ -55,7 +55,7 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook' cmake just pkg-config util-linux ];
+  nativeBuildInputs = [ libcosmicAppHook' cmake just pkg-config util-linux ];
   buildInputs = [ expat fontconfig freetype libinput udev ];
 
   dontUseJustBuild = true;
@@ -70,7 +70,7 @@ rustPlatform.buildRustPackage {
   ];
 
   postInstall = ''
-    cosmicAppsWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ cosmic-randr ]})
+    libcosmicAppWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ cosmic-randr ]})
   '';
 
   meta = with lib; {

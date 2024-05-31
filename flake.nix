@@ -44,7 +44,7 @@
 
             attr="$(basename "$pkg")"
 
-            if [ "$attr" = wrapCosmicAppsHook ]; then
+            if [ "$attr" = libcosmicAppHook ]; then
               continue
             fi
 

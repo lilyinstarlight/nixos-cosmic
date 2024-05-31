@@ -2,7 +2,7 @@
   lib,
   fetchFromGitHub,
   rustPlatform,
-  wrapCosmicAppsHook,
+  libcosmicAppHook,
   fontconfig,
   freetype,
   glib,
@@ -44,7 +44,7 @@ rustPlatform.buildRustPackage rec {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook just pkg-config ];
+  nativeBuildInputs = [ libcosmicAppHook just pkg-config ];
   buildInputs = [
     glib
     gtk3
