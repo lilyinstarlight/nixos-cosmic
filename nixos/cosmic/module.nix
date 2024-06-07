@@ -64,8 +64,15 @@ in
       enable = true;
       extraPortals = with pkgs; [
         xdg-desktop-portal-cosmic
-        xdg-desktop-portal-gtk
-      ];
+      ]
+      # Workaround for conflicting xdg-desktop-portal-gtk
+      # see https://github.com/lilyinstarlight/nixos-cosmic/issues/17
+      ++ lib.optional (!(
+          config.services.xserver.desktopManager.gnome.enable ||
+          config.services.xserver.desktopManager.deepin.enable ||
+          config.services.xserver.desktopManager.cinnamon.enable ||
+          config.services.xserver.desktopManager.phosh.enable
+        )) pkgs.xdg-desktop-portal-gtk;
       configPackages = lib.mkDefault (with pkgs; [
         xdg-desktop-portal-cosmic
       ]);
