@@ -8,7 +8,7 @@
 , linux-pam
 , rust
 , stdenv
-, systemd
+, udev
 }:
 
 rustPlatform.buildRustPackage {
@@ -44,7 +44,7 @@ rustPlatform.buildRustPackage {
   };
 
   nativeBuildInputs = [ libcosmicAppHook rustPlatform.bindgenHook cmake just ];
-  buildInputs = [ linux-pam systemd ];
+  buildInputs = [ linux-pam udev ];
 
   cargoBuildFlags = [ "--all" ];
 
