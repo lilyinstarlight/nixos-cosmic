@@ -5,6 +5,7 @@
 , cmake
 , coreutils
 , just
+, libinput
 , linux-pam
 , rust
 , stdenv
@@ -44,7 +45,7 @@ rustPlatform.buildRustPackage {
   };
 
   nativeBuildInputs = [ libcosmicAppHook rustPlatform.bindgenHook cmake just ];
-  buildInputs = [ linux-pam udev ];
+  buildInputs = [ libinput linux-pam udev ];
 
   cargoBuildFlags = [ "--all" ];
 
