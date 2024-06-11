@@ -1133,53 +1133,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "cosmic-tasks"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "cli-clipboard",
- "cosmic-tasks-core",
- "dirs",
- "emojis",
- "env_logger",
- "fork",
- "i18n-embed",
- "i18n-embed-fl",
- "libcosmic",
- "log",
- "once_cell",
- "open",
- "paste",
- "rust-embed",
- "serde",
- "slotmap",
- "smol_str",
- "tokio",
- "tracing",
- "vergen",
-]
-
-[[package]]
-name = "cosmic-tasks-core"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "async-trait",
- "chrono",
- "derive-getters",
- "derive_setters",
- "dirs",
- "emojis",
- "libset",
- "ron",
- "serde",
- "serde_json",
- "sqlx",
- "tracing",
- "uuid",
-]
-
-[[package]]
 name = "cosmic-text"
 version = "0.11.2"
 source = "git+https://github.com/pop-os/cosmic-text.git#b0a70c70ffba883ac6ff022b535db195712f552f"
@@ -3729,6 +3682,53 @@ checksum = "9aa2b01e1d916879f73a53d01d1d6cee68adbb31d6d9177a8cfce093cced1d50"
 dependencies = [
  "futures-core",
  "pin-project-lite",
+]
+
+[[package]]
+name = "orderly"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "cli-clipboard",
+ "dirs",
+ "emojis",
+ "env_logger",
+ "fork",
+ "i18n-embed",
+ "i18n-embed-fl",
+ "libcosmic",
+ "log",
+ "once_cell",
+ "open",
+ "orderly-core",
+ "paste",
+ "rust-embed",
+ "serde",
+ "slotmap",
+ "smol_str",
+ "tokio",
+ "tracing",
+ "vergen",
+]
+
+[[package]]
+name = "orderly-core"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "chrono",
+ "derive-getters",
+ "derive_setters",
+ "dirs",
+ "emojis",
+ "libset",
+ "ron",
+ "serde",
+ "serde_json",
+ "sqlx",
+ "tracing",
+ "uuid",
 ]
 
 [[package]]
