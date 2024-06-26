@@ -77,7 +77,7 @@ in
     ]) config.environment.cosmic.excludePackages;
 
     # required features
-    hardware.opengl.enable = true;
+    hardware.graphics.enable = true;
     services.libinput.enable = true;
     xdg.mime.enable = true;
     xdg.icons.enable = true;
