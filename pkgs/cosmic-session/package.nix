@@ -11,20 +11,20 @@
 }:
 rustPlatform.buildRustPackage {
   pname = "cosmic-session";
-  version = "0-unstable-2024-06-26";
+  version = "0-unstable-2024-06-27";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-session";
-    rev = "cb33b70ca67677d556dd6187e7528869e3be0409";
-    sha256 = "sha256-47cUiMaDuWVurZcPj4ScL7PV8KKxWS6jm1DQetHpaCU=";
+    rev = "b4561cfc71257f2aca5a9b731a2c3c360f080ec4";
+    sha256 = "sha256-hjFg1TeKs6GCn/iZqSLDA0D0XOrBwrQWIbRpayJ5FTE=";
   };
 
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
       "cosmic-notifications-util-0.1.0" = "sha256-GmTT7SFBqReBMe4GcNSym1YhsKtFQ/0hrDcwUqXkaBw=";
-      "launch-pad-0.1.0" = "sha256-tnbSJ/GP9GTnLnikJmvb9XrJSgnUnWjadABHF43L1zc=";
+      "launch-pad-0.1.0" = "sha256-c+uawTQlg5SW8x7DOBG2Idv/AfIaCFNtLQLUz8ifT2I=";
     };
   };
 
