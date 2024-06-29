@@ -3685,53 +3685,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "orderly"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "cli-clipboard",
- "dirs",
- "emojis",
- "env_logger",
- "fork",
- "i18n-embed",
- "i18n-embed-fl",
- "libcosmic",
- "log",
- "once_cell",
- "open",
- "orderly-core",
- "paste",
- "rust-embed",
- "serde",
- "slotmap",
- "smol_str",
- "tokio",
- "tracing",
- "vergen",
-]
-
-[[package]]
-name = "orderly-core"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "async-trait",
- "chrono",
- "derive-getters",
- "derive_setters",
- "dirs",
- "emojis",
- "libset",
- "ron",
- "serde",
- "serde_json",
- "sqlx",
- "tracing",
- "uuid",
-]
-
-[[package]]
 name = "os_pipe"
 version = "1.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4990,6 +4943,53 @@ dependencies = [
  "grid",
  "num-traits",
  "slotmap",
+]
+
+[[package]]
+name = "tasks"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "cli-clipboard",
+ "dirs",
+ "emojis",
+ "env_logger",
+ "fork",
+ "i18n-embed",
+ "i18n-embed-fl",
+ "libcosmic",
+ "log",
+ "once_cell",
+ "open",
+ "paste",
+ "rust-embed",
+ "serde",
+ "slotmap",
+ "smol_str",
+ "tasks-core",
+ "tokio",
+ "tracing",
+ "vergen",
+]
+
+[[package]]
+name = "tasks-core"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "async-trait",
+ "chrono",
+ "derive-getters",
+ "derive_setters",
+ "dirs",
+ "emojis",
+ "libset",
+ "ron",
+ "serde",
+ "serde_json",
+ "sqlx",
+ "tracing",
+ "uuid",
 ]
 
 [[package]]
