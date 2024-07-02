@@ -42,7 +42,7 @@ If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flak
 }
 ```
 
-**Note:** To ensure binary substituters are set up before attempting to pull any COSMIC packages, perform a `nixos-rebuild switch` with this configuration before attempting to add any COSMIC packages or settings to your NixOS configuration.
+**Note:** To ensure binary substituters are set up before attempting to pull any COSMIC packages, perform a `nixos-rebuild test` with this configuration before attempting to add any COSMIC packages or settings to your NixOS configuration.
 
 After setting up binary substituters and NixOS module, enable COSMIC with `services.desktopManager.cosmic.enable = true` and `services.displayManager.cosmic-greeter.enable = true` in your NixOS configuration.
 
