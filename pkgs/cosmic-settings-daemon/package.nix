@@ -4,6 +4,7 @@
 , geoclue2-with-demo-agent
 , libinput
 , pkg-config
+, libinput
 , udev
 }:
 
