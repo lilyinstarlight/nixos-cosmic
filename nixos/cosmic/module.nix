@@ -28,7 +28,6 @@ in
     ''];
 
     # environment packages
-    environment.etc."cosmic-comp/config.ron".source = lib.mkDefault "${pkgs.cosmic-comp}/etc/cosmic-comp/config.ron";
     environment.pathsToLink = [ "/share/cosmic" ];
     environment.systemPackages = utils.removePackagesByName (with pkgs; [
       alsa-utils
