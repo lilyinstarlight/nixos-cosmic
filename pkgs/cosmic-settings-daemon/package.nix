@@ -3,6 +3,7 @@
 , rustPlatform
 , geoclue2-with-demo-agent
 , pkg-config
+, libinput
 , udev
 }:
 
@@ -36,7 +37,7 @@ rustPlatform.buildRustPackage {
   };
 
   nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ udev ];
+  buildInputs = [ libinput udev ];
 
   env.GEOCLUE_AGENT = "${lib.getLib geoclue2-with-demo-agent}/libexec/geoclue-2.0/demos/agent";
 

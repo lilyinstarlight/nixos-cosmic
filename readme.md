@@ -1,5 +1,14 @@
 # NixOS COSMIC
 
+
+## fork
+
+(i fully intend to abandon this within the next week)
+
+x86_64 linux support only atm 
+
+---
+
 Nix package set and NixOS module for using COSMIC from NixOS. This is a temporary repository for testing COSMIC on NixOS as it is developed. When COSMIC gets more stable and it is fully working on NixOS, these packages and module are intended to be merged upstream into nixpkgs ([issue to be updated when upstreaming](https://github.com/NixOS/nixpkgs/issues/259641)).
 
 Dedicated development matrix room: <https://matrix.to/#/#cosmic:nixos.org>

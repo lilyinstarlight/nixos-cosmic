@@ -13,28 +13,28 @@ jobs:
       matrix:
         architecture:
           - system: x86_64-linux
-            runner: [linux, X64, drakon64/github-actions-runner-aws, EC2-r7i.large, EBS-30GB]
-          - system: aarch64-linux
-            runner: [linux, ARM64, drakon64/github-actions-runner-aws, EC2-r7g.large, EBS-30GB]
+            runner: [linux, X64]
+          # - system: aarch64-linux
+          #   runner: [linux, ARM64, drakon64/github-actions-runner-aws, EC2-r7g.large, EBS-30GB]
         attribute:
           - vm.closure
-          - vm-stable.closure
+          # - vm-stable.closure
 
     name: Build - ${{ matrix.architecture.system }} - ${{ matrix.attribute }}
-    runs-on: ${{ matrix.architecture.runner }}
+    runs-on: self-hosted
 
     steps:
       - uses: actions/checkout@v4
 
-      - uses: DeterminateSystems/nix-installer-action@v12
+      # - uses: DeterminateSystems/nix-installer-action@v12
 
-      - uses: cachix/cachix-action@v15
-        with:
-          name: cosmic
-          authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      # - uses: cachix/cachix-action@v15
+      #   with:
+      #     name: cosmic
+      #     authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
       - env:
-          SYSTEM: ${{ matrix.architecture.system }}
-          ATTRIBUTE: ${{ matrix.attribute }}
+          SYSTEM: x86_64-linux
+          ATTRIBUTE: vm.closure
         run: |
-          nix -vL build --show-trace --cores 2 --max-jobs 1 --system "$SYSTEM" ".#$ATTRIBUTE"
+          nix -vL build --show-trace --cores 8 --max-jobs 2 --system "$SYSTEM" ".#$ATTRIBUTE"
