@@ -8,7 +8,7 @@ on:
 jobs:
   update:
     name: Cosmic Update
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       actions: write
       contents: write
@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: DeterminateSystems/nix-installer-action@v12
+      # - uses: DeterminateSystems/nix-installer-action@v12
 
       - uses: cachix/cachix-action@v15
         with:
