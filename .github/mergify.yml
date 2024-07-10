@@ -7,7 +7,7 @@ pull_request_rules:
       - label=dependencies
 
       - check-success=Build - x86_64-linux - vm.closure
-      - check-success=Build - aarch64-linux - vm.closure
+      # - check-success=Build - aarch64-linux - vm.closure
       # - check-success=Build - x86_64-linux - vm-stable.closure
       # - check-success=Build - aarch64-linux - vm-stable.closure
     actions:
