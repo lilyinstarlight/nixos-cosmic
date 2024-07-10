@@ -920,6 +920,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "cosmic-comp-config"
+version = "0.1.0"
+source = "git+https://github.com/pop-os/cosmic-comp#2d0f1cbf2be311b91096b2f2332cd7bafabbfde3"
+dependencies = [
+ "cosmic-config",
+ "input",
+ "serde",
+]
+
+[[package]]
 name = "cosmic-config"
 version = "0.1.0"
 source = "git+https://github.com/pop-os/libcosmic#bd84f1f07ddf531fb11df4f897a9ec7cce229fe5"
@@ -951,7 +961,6 @@ name = "cosmic-settings-config"
 version = "0.1.0"
 dependencies = [
  "cosmic-config",
- "heck 0.5.0",
  "serde",
  "serde_with",
  "thiserror",
@@ -967,11 +976,13 @@ dependencies = [
  "anyhow",
  "chrono",
  "clap",
+ "cosmic-comp-config",
  "cosmic-config",
  "cosmic-theme",
  "dirs",
  "geoclue2",
  "libcosmic",
+ "locale1",
  "memoize",
  "notify",
  "notify-rust",
@@ -1782,7 +1793,7 @@ dependencies = [
 [[package]]
 name = "geoclue2"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/dbus-settings-bindings#1fdfcc8045e6732fc54b2c945008e89999a6cf71"
+source = "git+https://github.com/pop-os/dbus-settings-bindings#cd21ddcb1b5cbfc80ab84b34d3c8b1ff3d81179a"
 dependencies = [
  "serde",
  "serde_repr",
@@ -2002,12 +2013,6 @@ name = "heck"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8"
-
-[[package]]
-name = "heck"
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
 
 [[package]]
 name = "hermit-abi"
@@ -2343,6 +2348,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "input"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7911ce3db9c10c5ab4a35c49af778a5f9a827bd0f7371d9be56175d8dd2740d0"
+dependencies = [
+ "bitflags 2.5.0",
+ "input-sys",
+ "io-lifetimes",
+ "libc",
+ "log",
+ "udev",
+]
+
+[[package]]
+name = "input-sys"
+version = "1.18.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bd4f5b4d1c00331c5245163aacfe5f20be75b564c7112d45893d4ae038119eb0"
+
+[[package]]
 name = "instant"
 version = "0.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2579,6 +2604,14 @@ name = "linux-raw-sys"
 version = "0.6.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f0b5399f6804fbab912acbd8878ed3532d506b7c951b8f9f164ef90fef39e3f4"
+
+[[package]]
+name = "locale1"
+version = "0.1.0"
+source = "git+https://github.com/pop-os/dbus-settings-bindings#cd21ddcb1b5cbfc80ab84b34d3c8b1ff3d81179a"
+dependencies = [
+ "zbus 4.3.0",
+]
 
 [[package]]
 name = "lock_api"
@@ -3068,7 +3101,7 @@ version = "0.17.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ec4c6225c69b4ca778c0aea097321a64c421cf4577b331c61b229267edabb6f8"
 dependencies = [
- "heck 0.4.1",
+ "heck",
  "proc-macro-error",
  "proc-macro2",
  "quote",
@@ -4456,7 +4489,7 @@ checksum = "f962df74c8c05a667b5ee8bcf162993134c104e96440b663c8daa176dc772d8c"
 [[package]]
 name = "upower_dbus"
 version = "0.3.2"
-source = "git+https://github.com/pop-os/dbus-settings-bindings#1fdfcc8045e6732fc54b2c945008e89999a6cf71"
+source = "git+https://github.com/pop-os/dbus-settings-bindings#cd21ddcb1b5cbfc80ab84b34d3c8b1ff3d81179a"
 dependencies = [
  "serde",
  "serde_repr",

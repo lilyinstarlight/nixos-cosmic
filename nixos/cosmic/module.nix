@@ -51,7 +51,7 @@ in
       cosmic-settings-daemon
       cosmic-term
       cosmic-workspaces-epoch
-      gnome.adwaita-icon-theme
+      adwaita-icon-theme
       hicolor-icon-theme
       pop-icon-theme
       pop-launcher
