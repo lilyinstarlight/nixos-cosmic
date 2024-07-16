@@ -18,7 +18,7 @@ jobs:
             runner: [linux, ARM64, drakon64/github-actions-runner-aws, EC2-r7g.large, EBS-30GB]
         attribute:
           - vm.closure
-          - vm-stable.closure
+          #- vm-stable.closure
 
     name: Build - ${{ matrix.architecture.system }} - ${{ matrix.attribute }}
     runs-on: ${{ matrix.architecture.runner }}
