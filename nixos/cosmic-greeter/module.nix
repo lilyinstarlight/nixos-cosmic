@@ -4,7 +4,7 @@ let
   cfg = config.services.displayManager.cosmic-greeter;
 in
 {
-  meta.maintainers = with lib.maintainers; [ nyanbinary lilyinstarlight ];
+  meta.maintainers = with lib.maintainers; [ nyanbinary /*lilyinstarlight*/ ];
 
   options.services.displayManager.cosmic-greeter = {
     enable = lib.mkEnableOption (lib.mdDoc "COSMIC greeter");

@@ -41,7 +41,7 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/benfuddled/emoji-picker";
     description = "Emoji picker for the COSMIC Desktop Environment";
     license = licenses.mpl20;
-    maintainers = with maintainers; [ lilyinstarlight ];
+    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
     platforms = platforms.linux;
     mainProgram = "emoji-picker";
   };

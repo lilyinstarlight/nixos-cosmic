@@ -70,7 +70,7 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/pop-os/cosmic-comp";
     description = "Compositor for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ qyliss nyanbinary lilyinstarlight ];
+    maintainers = with maintainers; [ qyliss nyanbinary /*lilyinstarlight*/ ];
     platforms = platforms.linux;
   };
 }

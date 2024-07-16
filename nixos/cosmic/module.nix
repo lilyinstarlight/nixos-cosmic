@@ -4,7 +4,7 @@ let
   cfg = config.services.desktopManager.cosmic;
 in
 {
-  meta.maintainers = with lib.maintainers; [ nyanbinary lilyinstarlight ];
+  meta.maintainers = with lib.maintainers; [ nyanbinary /*lilyinstarlight*/ ];
 
   options = {
     services.desktopManager.cosmic = {

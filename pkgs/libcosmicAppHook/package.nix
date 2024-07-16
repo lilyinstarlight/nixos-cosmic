@@ -57,6 +57,6 @@ makeSetupHook {
 
   meta = {
     description = "Setup hook for configuring and wrapping applications based on libcosmic";
-    maintainers = [ lib.maintainers.lilyinstarlight ];
+    maintainers = [ /*lib.maintainers.lilyinstarlight*/ ];
   };
 } ./libcosmic-app-hook.sh
