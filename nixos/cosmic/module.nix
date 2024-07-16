@@ -31,6 +31,7 @@ in
     environment.etc."cosmic-comp/config.ron".source = lib.mkDefault "${pkgs.cosmic-comp}/etc/cosmic-comp/config.ron";
     environment.pathsToLink = [ "/share/cosmic" ];
     environment.systemPackages = utils.removePackagesByName (with pkgs; [
+      adwaita-icon-theme
       alsa-utils
       cosmic-applets
       cosmic-applibrary
@@ -51,7 +52,6 @@ in
       cosmic-settings-daemon
       cosmic-term
       cosmic-workspaces-epoch
-      gnome.adwaita-icon-theme
       hicolor-icon-theme
       pop-icon-theme
       pop-launcher
@@ -84,7 +84,7 @@ in
     ]) config.environment.cosmic.excludePackages;
 
     # required features
-    hardware.${if lib.versionAtLeast lib.version "24.11" then "graphics" else "opengl"}.enable = true;
+    hardware.graphics.enable = true;
     services.libinput.enable = true;
     xdg.mime.enable = true;
     xdg.icons.enable = true;
