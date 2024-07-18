@@ -2,13 +2,15 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
+
     flake-compat = {
       url = "github:nix-community/flake-compat";
       flake = false;
     };
   };
 
-  outputs = { self, nixpkgs, ... }: let
+  outputs = { self, nixpkgs, nixpkgs-stable, ... }: let
     forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
   in {
     lib = {
@@ -42,7 +44,7 @@
 
             attr="$(basename "$pkg")"
 
-            if [ "$attr" = wrapCosmicAppsHook ]; then
+            if [ "$attr" = libcosmicAppHook ]; then
               continue
             fi
 
@@ -51,7 +53,7 @@
         '';
       };
 
-      vm = let
+      vm = nixpkgs.lib.makeOverridable ({ nixpkgs }: let
         nixosConfig = nixpkgs.lib.nixosSystem {
           modules = [
             ({ lib, pkgs, modulesPath, ... }: {
@@ -114,7 +116,9 @@
             })
           ];
         };
-      in nixosConfig.config.system.build.vm // { closure = nixosConfig.config.system.build.toplevel; inherit (nixosConfig) config pkgs; };
+      in nixosConfig.config.system.build.vm // { closure = nixosConfig.config.system.build.toplevel; inherit (nixosConfig) config pkgs; }) { inherit nixpkgs; };
+
+      vm-stable = self.legacyPackages.${system}.vm.override { nixpkgs = nixpkgs-stable; };
     });
   };
 }

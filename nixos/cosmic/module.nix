@@ -4,8 +4,7 @@ let
   cfg = config.services.desktopManager.cosmic;
 in
 {
-  imports = [ ./config.nix ];
-  meta.maintainers = with lib.maintainers; [ nyanbinary lilyinstarlight ];
+  meta.maintainers = with lib.maintainers; [ nyanbinary /*lilyinstarlight*/ ];
 
   options = {
     services.desktopManager.cosmic = {
@@ -32,6 +31,7 @@ in
     environment.etc."cosmic-comp/config.ron".source = lib.mkDefault "${pkgs.cosmic-comp}/etc/cosmic-comp/config.ron";
     environment.pathsToLink = [ "/share/cosmic" ];
     environment.systemPackages = utils.removePackagesByName (with pkgs; [
+      adwaita-icon-theme
       alsa-utils
       cosmic-applets
       cosmic-applibrary
@@ -52,7 +52,6 @@ in
       cosmic-settings-daemon
       cosmic-term
       cosmic-workspaces-epoch
-      gnome.adwaita-icon-theme
       hicolor-icon-theme
       pop-icon-theme
       pop-launcher
@@ -65,8 +64,15 @@ in
       enable = true;
       extraPortals = with pkgs; [
         xdg-desktop-portal-cosmic
-        xdg-desktop-portal-gtk
-      ];
+      ]
+      # Workaround for conflicting xdg-desktop-portal-gtk
+      # see https://github.com/lilyinstarlight/nixos-cosmic/issues/17
+      ++ lib.optional (!(
+          config.services.xserver.desktopManager.gnome.enable ||
+          config.services.xserver.desktopManager.deepin.enable ||
+          config.services.xserver.desktopManager.cinnamon.enable ||
+          config.services.xserver.desktopManager.phosh.enable
+        )) pkgs.xdg-desktop-portal-gtk;
       configPackages = lib.mkDefault (with pkgs; [
         xdg-desktop-portal-cosmic
       ]);
@@ -78,7 +84,7 @@ in
     ]) config.environment.cosmic.excludePackages;
 
     # required features
-    hardware.opengl.enable = true;
+    hardware.graphics.enable = true;
     services.libinput.enable = true;
     xdg.mime.enable = true;
     xdg.icons.enable = true;
@@ -93,6 +99,7 @@ in
     };
     services.gvfs.enable = lib.mkDefault true;
     networking.networkmanager.enable = lib.mkDefault true;
+    services.gnome.gnome-keyring.enable = lib.mkDefault true;
 
     # general graphical session features
     programs.dconf.enable = lib.mkDefault true;

@@ -4,7 +4,7 @@ let
   cfg = config.services.displayManager.cosmic-greeter;
 in
 {
-  meta.maintainers = with lib.maintainers; [ nyanbinary lilyinstarlight ];
+  meta.maintainers = with lib.maintainers; [ nyanbinary /*lilyinstarlight*/ ];
 
   options.services.displayManager.cosmic-greeter = {
     enable = lib.mkEnableOption (lib.mdDoc "COSMIC greeter");
@@ -30,6 +30,8 @@ in
       wantedBy = [ "multi-user.target" ];
       before = [ "greetd.service" ];
       serviceConfig = {
+        Type = "dbus";
+        BusName = "com.system76.CosmicGreeter";
         ExecStart = "${pkgs.cosmic-greeter}/bin/cosmic-greeter-daemon";
         Restart = "on-failure";
       };
@@ -49,7 +51,7 @@ in
     users.groups.cosmic-greeter = { };
 
     # required features
-    hardware.opengl.enable = true;
+    hardware.graphics.enable = true;
     services.libinput.enable = true;
 
     # required dbus services

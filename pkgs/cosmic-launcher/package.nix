@@ -1,23 +1,20 @@
 { lib
 , fetchFromGitHub
 , rustPlatform
-, wrapCosmicAppsHook
-, appstream-glib
-, desktop-file-utils
-, intltool
+, libcosmicAppHook
 , just
 , stdenv
 }:
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-launcher";
-  version = "0-unstable-2024-05-08";
+  version = "0-unstable-2024-06-13";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-launcher";
-    rev = "0bed2f42afdb6680f6eb098cb4b212fe93472478";
-    sha256 = "sha256-UHt05h3RYKrUoRZSSKKziiUTn27ttBS5k8UDBbOKjwA=";
+    rev = "2c3a2fc5d68eeb6f3c9edb9089c43606d929649e";
+    sha256 = "sha256-hDkvIC7ihva7WOo1cfCJrWDuLGsCM8aGLbvanlMq8Yk=";
   };
 
   cargoLock = {
@@ -25,23 +22,21 @@ rustPlatform.buildRustPackage {
     outputHashes = {
       "accesskit-0.12.2" = "sha256-ksaYMGT/oug7isQY8/1WD97XDUsX2ShBdabUzxWffYw=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
-      "clipboard_macos-0.1.0" = "sha256-KVcKQ4DtoZCgFBnejIaQfQxJJJxd/mFzHBI+4PbGBio=";
-      "cosmic-client-toolkit-0.1.0" = "sha256-XUiyL4M3hLBoBlpuG0K71QuhM4SSUBeYGtUhD+FL6Wg=";
-      "cosmic-config-0.1.0" = "sha256-vv7KHCCwK3DLvE4LDjnVto1Nix4GO+QtQ6Wa3Nv58IE=";
-      "cosmic-settings-daemon-0.1.0" = "sha256-z/dvRyc3Zc1fAQh2HKk6NI6QSDpNqarqslwszjU+0nc=";
-      "cosmic-text-0.11.2" = "sha256-gUIQFHPaFTmtUfgpVvsGTnw2UKIBx9gl0K67KPuynWs=";
+      "clipboard_macos-0.1.0" = "sha256-G6r7cUmdom8LhIUzm3JTVry+WQzHyxUFWbQ0gry11Eo=";
+      "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
+      "cosmic-config-0.1.0" = "sha256-MJZhd/Y6BZ7FtRdD00F2hCUsmFbO8liB+c00oq6nojw=";
+      "cosmic-settings-daemon-0.1.0" = "sha256-Bz/bzXCm60AF0inpZJDF4iNZIX3FssImORrE5nZpkyQ=";
+      "cosmic-text-0.11.2" = "sha256-6gj1Br8dFmuWpGo6aBNCy4rKI7xSCYdRWqiBbI5GgyY=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "pop-launcher-1.2.2" = "sha256-tQtjPwSBKrT1Uq62hQLR+MBbn6UJ3OSlkNSSNCJcYas=";
-      "smithay-client-toolkit-0.18.0" = "sha256-/7twYMt5/LpzxLXAQKTGNnWcfspUkkZsN5hJu7KaANc=";
-      "smithay-clipboard-0.8.0" = "sha256-LDd56TJ175qsj2/EV/dbBRV9HMU7RzgrG5JP7H2PmhE=";
+      "smithay-clipboard-0.8.0" = "sha256-pBQZ+UXo9hZ907mfpcZk+a+8pKrIWdczVvPkjT3TS8U=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
-      "switcheroo-control-0.1.0" = "sha256-t/dwQGNGvvMRhdjIDHbEh5sUjkBnjdxQm2PDudUutL0=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook just ];
+  nativeBuildInputs = [ libcosmicAppHook just ];
 
   dontUseJustBuild = true;
 
@@ -60,7 +55,7 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/pop-os/cosmic-launcher";
     description = "Launcher for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ nyanbinary lilyinstarlight ];
+    maintainers = with maintainers; [ nyanbinary /*lilyinstarlight*/ ];
     platforms = platforms.linux;
   };
 }

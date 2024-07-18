@@ -1,7 +1,7 @@
 { lib
 , fetchFromGitHub
 , rustPlatform
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , just
 , nasm
 , stdenv
@@ -9,13 +9,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-bg";
-  version = "0-unstable-2024-05-07";
+  version = "0-unstable-2024-06-26";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-bg";
-    rev = "c25b9a9efd862b669e645b2e832cc651c01c6536";
-    hash = "sha256-tXkvD4l04svbkhLs2yPS8+kRSzKHD914oTqgW72bc0A=";
+    rev = "f83d9f4c8e4b47bea3ef16e4894982919fef6b9a";
+    hash = "sha256-e195Hp0LD0bvHRi3AQvtQ9vccgWBqYwna6g+4U8rWdI=";
   };
 
   cargoLock = {
@@ -27,7 +27,7 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook just nasm ];
+  nativeBuildInputs = [ libcosmicAppHook just nasm ];
 
   dontUseJustBuild = true;
 
@@ -44,7 +44,7 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/pop-os/cosmic-bg";
     description = "Applies Background for the COSMIC Desktop Environment";
     license = licenses.mpl20;
-    maintainers = with maintainers; [ nyanbinary lilyinstarlight ];
+    maintainers = with maintainers; [ nyanbinary /*lilyinstarlight*/ ];
     platforms = platforms.linux;
     mainProgram = "cosmic-bg";
   };

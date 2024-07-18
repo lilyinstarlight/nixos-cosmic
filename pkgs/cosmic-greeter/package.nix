@@ -1,24 +1,26 @@
 { lib
 , fetchFromGitHub
 , rustPlatform
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , cmake
 , coreutils
 , just
+, libinput
 , linux-pam
 , rust
 , stdenv
+, udev
 }:
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-greeter";
-  version = "0-unstable-2024-05-08";
+  version = "0-unstable-2024-06-24";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-greeter";
-    rev = "e8faaebeb0661cd171723d32b14c6a3a2c629f48";
-    sha256 = "sha256-HuZvDECcJnDW+OfuG2LGOu3BmV3kFUQH+2A9qZ9BdOk=";
+    rev = "0ac49fe6f734386176dc65b75c50a5037ccb5ea9";
+    sha256 = "sha256-8KGnap0jFvAY21jz3HgRqWp9IaFNK+uslkz60N4O3KE=";
   };
 
   cargoLock = {
@@ -26,23 +28,24 @@ rustPlatform.buildRustPackage {
     outputHashes = {
       "accesskit-0.12.2" = "sha256-ksaYMGT/oug7isQY8/1WD97XDUsX2ShBdabUzxWffYw=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
-      "clipboard_macos-0.1.0" = "sha256-KVcKQ4DtoZCgFBnejIaQfQxJJJxd/mFzHBI+4PbGBio=";
-      "cosmic-bg-config-0.1.0" = "sha256-yFyrMakBlFgSwqTmVzPoCL0QmhIlfXhv7r4MtBnD2No=";
+      "clipboard_macos-0.1.0" = "sha256-temNg+RdvquSLAdkwU5b6dtu9vZkXjnDASS/eJo2rz8=";
+      "cosmic-bg-config-0.1.0" = "sha256-R5r4emkFEbF3pcHO34EaY/gGzCyBW6YpYPp4ylgmQwI=";
       "cosmic-client-toolkit-0.1.0" = "sha256-XUiyL4M3hLBoBlpuG0K71QuhM4SSUBeYGtUhD+FL6Wg=";
-      "cosmic-config-0.1.0" = "sha256-VEE/1XQZaojz9gxTV/Zz++eVplsCfiDPgf/cAr2Rih8=";
-      "cosmic-dbus-networkmanager-0.1.0" = "sha256-z/dvRyc3Zc1fAQh2HKk6NI6QSDpNqarqslwszjU+0nc=";
-      "cosmic-text-0.11.2" = "sha256-gUIQFHPaFTmtUfgpVvsGTnw2UKIBx9gl0K67KPuynWs=";
+      "cosmic-comp-config-0.1.0" = "sha256-E6/uHoL5jN48AjKzLe6LMmflaHo18GHiCFPPRsQKhQo=";
+      "cosmic-config-0.1.0" = "sha256-RVUsezjeJ3EGsD+zTWMwxLP+0HvbxFKuuW6JivWfCKE=";
+      "cosmic-dbus-networkmanager-0.1.0" = "sha256-Bz/bzXCm60AF0inpZJDF4iNZIX3FssImORrE5nZpkyQ=";
+      "cosmic-text-0.11.2" = "sha256-2TfgUaxyRBrf9EpcdOzrwQltoI9/Od29itrxldZ5KGw=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "smithay-client-toolkit-0.18.0" = "sha256-/7twYMt5/LpzxLXAQKTGNnWcfspUkkZsN5hJu7KaANc=";
-      "smithay-clipboard-0.8.0" = "sha256-LDd56TJ175qsj2/EV/dbBRV9HMU7RzgrG5JP7H2PmhE=";
+      "smithay-clipboard-0.8.0" = "sha256-MqzynFCZvzVg9/Ry/zrbH5R6//erlZV+nmQ2St63Wnc=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook rustPlatform.bindgenHook cmake just ];
-  buildInputs = [ linux-pam ];
+  nativeBuildInputs = [ libcosmicAppHook rustPlatform.bindgenHook cmake just ];
+  buildInputs = [ libinput linux-pam udev ];
 
   cargoBuildFlags = [ "--all" ];
 
@@ -68,7 +71,7 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/pop-os/cosmic-greeter";
     description = "Greeter for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ nyanbinary lilyinstarlight ];
+    maintainers = with maintainers; [ nyanbinary /*lilyinstarlight*/ ];
     platforms = platforms.linux;
   };
 }

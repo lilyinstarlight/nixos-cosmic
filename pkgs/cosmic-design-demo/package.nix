@@ -1,7 +1,7 @@
 { lib
 , fetchFromGitHub
 , rustPlatform
-, wrapCosmicAppsHook
+, libcosmicAppHook
 , cmake
 , expat
 , fontconfig
@@ -41,7 +41,7 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ wrapCosmicAppsHook cmake just pkg-config ];
+  nativeBuildInputs = [ libcosmicAppHook cmake just pkg-config ];
   buildInputs = [ expat fontconfig freetype ];
 
   dontUseJustBuild = true;
@@ -60,7 +60,7 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/pop-os/cosmic-design-demo";
     description = "Design Demo for the COSMIC Desktop Environment";
     license = licenses.mpl20;
-    maintainers = with maintainers; [ nyanbinary lilyinstarlight ];
+    maintainers = with maintainers; [ nyanbinary /*lilyinstarlight*/ ];
     platforms = platforms.linux;
     mainProgram = "cosmic-design-demo";
   };
