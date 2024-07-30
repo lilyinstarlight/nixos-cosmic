@@ -61,8 +61,8 @@ rustPlatform.buildRustPackage {
   buildNoDefaultFeatures = !useSystemd;
 
   postInstall = ''
-    mkdir -p $out/etc/cosmic-comp
-    cp config.ron $out/etc/cosmic-comp/config.ron
+    mkdir -p $out/share/cosmic/com.system76.CosmicSettings.Shortcuts/v1
+    cp data/keybindings.ron $out/share/cosmic/com.system76.CosmicSettings.Shortcuts/v1/defaults
   '' + lib.optionalString useXWayland ''
     libcosmicAppWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ xwayland ]})
   '';
