@@ -7,16 +7,16 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-screenshot";
-  version = "0-unstable-2024-05-10";
+  version = "0-unstable-2024-07-25";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-screenshot";
-    rev = "a8130eb9dc74ea8720240e3890a87b1fbe7f234f";
-    hash = "sha256-pfjOyHq7YdlyRGnLQRrNYOrk0Uqu6RjDxuTmLYyYdKg=";
+    rev = "031eb6686196e3dd4d7876ae30572522edc110b9";
+    hash = "sha256-+yHpRbK+AWnpcGrC5U0wKbt0u8tm3CFGjKTCDQpb3G0=";
   };
 
-  cargoHash = "sha256-fNE4mCC3aLishhP3s7wKsmiVXf16Q7lfXEiH294nvnY=";
+  cargoHash = "sha256-jg2pOOZ9KoyeNLlJ4C4kHXSpCVohuYPIZXtSgPP1ssw=";
 
   nativeBuildInputs = [ just ];
 
