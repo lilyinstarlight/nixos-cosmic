@@ -9,28 +9,32 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-panel";
-  version = "0-unstable-2024-06-14";
+  version = "0-unstable-2024-07-29";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-panel";
-    rev = "d7a3ff64d134805b712f513cca307214f6b5e9d5";
-    sha256 = "sha256-ALnSJtTp9vtkoM0t7zopOa+twRCCFUqgW9kVqShYhIE=";
+    rev = "3d0802185bacf5e0dbb8eeb0c16b872b5f9cbb8e";
+    sha256 = "sha256-yOf9xCaeHLiyi3AgOQ0tlQ+bgKgdmKK2HVyRutKM1So=";
   };
 
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
+      "accesskit-0.12.2" = "sha256-1UwgRyUe0PQrZrpS7574oNLi13fg5HpgILtZGW6JNtQ=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
-      "clipboard_macos-0.1.0" = "sha256-temNg+RdvquSLAdkwU5b6dtu9vZkXjnDASS/eJo2rz8=";
-      "cosmic-client-toolkit-0.1.0" = "sha256-vj7Wm1uJ5ULvGNEwKznNhujCZQiuntsWMyKQbIVaO/Q=";
-      "cosmic-config-0.1.0" = "sha256-vvWBDUk/LtKQ6arKgkN2ftW037fPd0VHILiV8gYyvBA=";
-      "cosmic-notifications-util-0.1.0" = "sha256-+vPfNW82+WNmymOCi5upOcvlrx1xpCm7HtIZM7GkT2k=";
-      "launch-pad-0.1.0" = "sha256-tnbSJ/GP9GTnLnikJmvb9XrJSgnUnWjadABHF43L1zc=";
-      "smithay-0.3.0" = "sha256-tScCvnZ+rpfloO0HsLHWL50MfRrGo8/YQt/u1OYZdws=";
-      "smithay-client-toolkit-0.18.0" = "sha256-/7twYMt5/LpzxLXAQKTGNnWcfspUkkZsN5hJu7KaANc=";
-      "smithay-clipboard-0.8.0" = "sha256-MqzynFCZvzVg9/Ry/zrbH5R6//erlZV+nmQ2St63Wnc=";
-      "xdg-shell-wrapper-0.1.0" = "sha256-OjFcBzVE/fpHTK9bHxcHocEa16q6i9mVRNfJ9lLa/cw=";
+      "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
+      "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
+      "cosmic-config-0.1.0" = "sha256-LRP3NU2V1Qzrs+SQh1iYUFAg5BbTPwb9HvWnsO5d51Y=";
+      "cosmic-notifications-util-0.1.0" = "sha256-VdJ6W8+g2492wAr1kDLo2zWZGc01gHp2dvLVtj/xArE=";
+      "cosmic-text-0.12.0" = "sha256-VUUCcW5XnkmCB8cQ5t2xT70wVD5WKXEOPNgNd2xod2A=";
+      "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
+      "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
+      "launch-pad-0.1.0" = "sha256-c+uawTQlg5SW8x7DOBG2Idv/AfIaCFNtLQLUz8ifT2I=";
+      "smithay-0.3.0" = "sha256-Ir12itaCX1zDb6QzuBh9ve09KGLxxiiiW/sP4bxlx8w=";
+      "smithay-clipboard-0.8.0" = "sha256-pBQZ+UXo9hZ907mfpcZk+a+8pKrIWdczVvPkjT3TS8U=";
+      "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
+      "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
     };
   };
 
