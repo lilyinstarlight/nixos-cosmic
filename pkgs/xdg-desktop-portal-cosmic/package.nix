@@ -51,6 +51,7 @@ rustPlatform.buildRustPackage rec {
 
   postInstall = ''
     mkdir -p $out/share/{dbus-1/services,xdg-desktop-portal/portals}
+    cp -r data/icons $out/share/icons
     cp data/*.service $out/share/dbus-1/services/
     cp data/cosmic.portal $out/share/xdg-desktop-portal/portals/
     cp data/cosmic-portals.conf $out/share/xdg-desktop-portal/
