@@ -41,6 +41,12 @@ rustPlatform.buildRustPackage {
   nativeBuildInputs = [ libcosmicAppHook pkg-config ];
   buildInputs = [ libinput mesa udev ];
 
+  postInstall = ''
+    mkdir -p $out/share/{applications,icons/hicolor/scalable/apps}
+    cp data/*.desktop $out/share/applications/
+    cp data/*.svg $out/share/icons/hicolor/scalable/apps/
+  '';
+
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-workspaces-epoch";
     description = "Workspaces Epoch for the COSMIC Desktop Environment";
