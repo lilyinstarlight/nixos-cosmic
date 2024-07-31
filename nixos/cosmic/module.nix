@@ -108,6 +108,7 @@ in
     services.upower.enable = true;
     services.power-profiles-daemon.enable = lib.mkDefault (!config.hardware.system76.power-daemon.enable);
     security.polkit.enable = true;
+    security.rtkit.enable = true;
 
     # session packages
     services.displayManager.sessionPackages = with pkgs; [ cosmic-session ];
