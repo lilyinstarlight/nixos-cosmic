@@ -8,7 +8,7 @@
 , gst_all_1
 }:
 
-rustPlatform.buildRustPackage {
+rustPlatform.buildRustPackage rec {
   pname = "xdg-desktop-portal-cosmic";
   version = "0-unstable-2024-07-17";
 
@@ -46,6 +46,8 @@ rustPlatform.buildRustPackage {
   nativeBuildInputs = [ libcosmicAppHook rustPlatform.bindgenHook pkg-config ];
   buildInputs = [ mesa pipewire ];
   checkInputs = [ gst_all_1.gstreamer ];
+
+  env.VERGEN_GIT_SHA = src.rev;
 
   postInstall = ''
     mkdir -p $out/share/{dbus-1/services,xdg-desktop-portal/portals}
