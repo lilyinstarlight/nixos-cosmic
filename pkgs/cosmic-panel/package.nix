@@ -9,13 +9,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-panel";
-  version = "0-unstable-2024-07-31";
+  version = "0-unstable-2024-08-01";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-panel";
-    rev = "cfee4b5545379bddf34c01a9d5ff4c82b5609e8e";
-    sha256 = "sha256-bBUSZ3CTLq/DCQ2dMvaIcGcIcjqM/5vny5kTE3Jclj8=";
+    rev = "987f5250a631f8290d8a27ab3590b18ca8629a45";
+    sha256 = "sha256-Dj5uLgYyEnqWzdxKvPKZJERlqSL+/oJwaOe/nfD9vkQ=";
   };
 
   cargoLock = {
@@ -27,7 +27,7 @@ rustPlatform.buildRustPackage {
       "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
       "cosmic-config-0.1.0" = "sha256-LRP3NU2V1Qzrs+SQh1iYUFAg5BbTPwb9HvWnsO5d51Y=";
       "cosmic-notifications-util-0.1.0" = "sha256-VdJ6W8+g2492wAr1kDLo2zWZGc01gHp2dvLVtj/xArE=";
-      "cosmic-text-0.12.0" = "sha256-VUUCcW5XnkmCB8cQ5t2xT70wVD5WKXEOPNgNd2xod2A=";
+      "cosmic-text-0.12.1" = "sha256-x0XTxzbmtE2d4XCG/Nuq3DzBpz15BbnjRRlirfNJEiU=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "launch-pad-0.1.0" = "sha256-c+uawTQlg5SW8x7DOBG2Idv/AfIaCFNtLQLUz8ifT2I=";
