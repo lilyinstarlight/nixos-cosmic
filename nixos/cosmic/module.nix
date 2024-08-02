@@ -9,6 +9,8 @@ in
   options = {
     services.desktopManager.cosmic = {
       enable = lib.mkEnableOption (lib.mdDoc "COSMIC desktop environment");
+
+      xwayland.enable = lib.mkEnableOption "Xwayland support for cosmic-comp" // { default = true; };
     };
 
     environment.cosmic.excludePackages = lib.mkOption {
@@ -35,7 +37,9 @@ in
       cosmic-applets
       cosmic-applibrary
       cosmic-bg
-      cosmic-comp
+      (cosmic-comp.override {
+        useXWayland = config.services.desktopManager.cosmic.xwayland.enable;
+      })
       cosmic-edit
       cosmic-files
       cosmic-greeter
