@@ -17,13 +17,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-comp";
-  version = "0-unstable-2024-08-01";
+  version = "0-unstable-2024-08-03";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-comp";
-    rev = "2cef99ae783efb451bd9067b4d9e74c014615996";
-    hash = "sha256-kV9iPSmtV6eWDCq8BLn9qO7RLuK/35PcVk6bOalCmLE=";
+    rev = "3dd3460ee0caef370b37c33913791f9f0cba12ab";
+    hash = "sha256-zsDHDVJakxniQEWVJ8WPHoPcwxEsv0nTCesPzys/Ll0=";
   };
 
   cargoLock = {
@@ -31,14 +31,14 @@ rustPlatform.buildRustPackage {
     outputHashes = {
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
-      "cosmic-config-0.1.0" = "sha256-d2R5xytwf0BIbllG6elc/nn7nmiC3+VI1g3EiW8WEHA=";
-      "cosmic-protocols-0.1.0" = "sha256-YLaC59g5VI0R1IohE+T2Drah8eCzGXReOMarY+3m6Ok=";
-      "cosmic-settings-config-0.1.0" = "sha256-WefU0AXl3MyzTyeMuLb6bNSWfiX1lH51DLEVzEgFl4U=";
-      "cosmic-text-0.12.0" = "sha256-Xqkh4vrbskW6c1E//DEp9P2dpdDT1D/umbYMhvBLYTw=";
+      "cosmic-config-0.1.0" = "sha256-nZCefRCq40K0Mcsav+akZbX89kHnliqAkB7vKx5WIwY=";
+      "cosmic-protocols-0.1.0" = "sha256-qgo8FMKo/uCbhUjfykRRN8KSavbyhZpu82M8npLcIPI=";
+      "cosmic-settings-config-0.1.0" = "sha256-/Qav6r4VQ8ZDSs/tqHeutxYH3u4HiTBFWTfAYUSl2HQ=";
+      "cosmic-text-0.12.1" = "sha256-x0XTxzbmtE2d4XCG/Nuq3DzBpz15BbnjRRlirfNJEiU=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "id_tree-1.8.0" = "sha256-uKdKHRfPGt3vagOjhnri3aYY5ar7O3rp2/ivTfM2jT0=";
-      "smithay-0.3.0" = "sha256-KXBLciwF+/ztUHxnq/biSqAHR2DZpT1QYOvml7Ll1dI=";
+      "smithay-0.3.0" = "sha256-puo6xbWRTIco8luz3Jz83VXoRMkyb0ZH7kKHGlTzS5Q=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
       "smithay-egui-0.1.0" = "sha256-FcSoKCwYk3okwQURiQlDUcfk9m/Ne6pSblGAzHDaVHg=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
