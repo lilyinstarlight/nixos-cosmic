@@ -27,7 +27,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - run: nix -vL run --show-trace .#update
+      - run: nix -vL run --show-trace --impure .#update
 
       - id: create-pr
         uses: peter-evans/create-pull-request@v6
