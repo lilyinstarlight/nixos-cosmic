@@ -8,8 +8,8 @@ pull_request_rules:
 
       - check-success=Build - x86_64-linux - vm.closure
       - check-success=Build - aarch64-linux - vm.closure
-      #- check-success=Build - x86_64-linux - vm-stable.closure
-      #- check-success=Build - aarch64-linux - vm-stable.closure
+      - check-success=Build - x86_64-linux - vm-stable.closure
+      - check-success=Build - aarch64-linux - vm-stable.closure
     actions:
       merge:
         method: squash
