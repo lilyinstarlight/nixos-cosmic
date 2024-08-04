@@ -137,5 +137,10 @@
 
       vm-stable = self.legacyPackages.${system}.vm.override { nixpkgs = nixpkgs-stable; };
     });
+
+    checks = forAllSystems (system: {
+      vm = self.legacyPackages.${system}.vm.closure;
+      vm-stable = self.legacyPackages.${system}.vm-stable.closure;
+    });
   };
 }
