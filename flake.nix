@@ -4,23 +4,40 @@
 
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
 
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     flake-compat = {
       url = "github:nix-community/flake-compat";
       flake = false;
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, ... }: let
+  outputs = { self, nixpkgs, nixpkgs-stable, rust-overlay, ... }: let
     forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+    rustPlatformFor = pkgs: let
+      rust-bin = rust-overlay.lib.mkRustBin {} pkgs;
+    in pkgs.makeRustPlatform {
+      cargo = rust-bin.stable.latest.default;
+      rustc = rust-bin.stable.latest.default;
+    };
   in {
     lib = {
-      packagesFor = pkgs: import ./pkgs { inherit pkgs; };
+      packagesFor = pkgs: import ./pkgs {
+        inherit pkgs;
+        rustPlatform = rustPlatformFor pkgs;
+      };
     };
 
     packages = forAllSystems (system: self.lib.packagesFor nixpkgs.legacyPackages.${system});
 
     overlays = {
-      default = final: prev: import ./pkgs { inherit final prev; };
+      default = final: prev: import ./pkgs {
+        inherit final prev;
+        rustPlatform = rustPlatformFor prev;
+      };
     };
 
     nixosModules = {
