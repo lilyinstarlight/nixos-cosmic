@@ -31,8 +31,11 @@ in
 
     # environment packages
     environment.pathsToLink = [ "/share/cosmic" ];
-    environment.systemPackages = utils.removePackagesByName (with pkgs; [
+    environment.systemPackages = utils.removePackagesByName (with pkgs; (if lib.versionAtLeast lib.version "24.11" then [
       adwaita-icon-theme
+    ] else [
+      gnome.adwaita-icon-theme
+    ]) ++ [
       alsa-utils
       cosmic-applets
       cosmic-applibrary
@@ -87,7 +90,7 @@ in
     ]) config.environment.cosmic.excludePackages;
 
     # required features
-    hardware.graphics.enable = true;
+    hardware.${if lib.versionAtLeast lib.version "24.11" then "graphics" else "opengl"}.enable = true;
     services.libinput.enable = true;
     xdg.mime.enable = true;
     xdg.icons.enable = true;
