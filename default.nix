@@ -1,5 +1,3 @@
-{ system ? builtins.currentSystem, ... }:
-
 let
   self = (import (
       let
@@ -9,13 +7,8 @@ let
         sha256 = lock.nodes.flake-compat.locked.narHash;
       }
     )
-    {
-      # hack to skip fetchGit when evaluating impurely and get original paths
-      src = {
-        outPath = ./.;
-      };
-    }
+    { src = ./.; }
   ).defaultNix;
 in
 
-self.packages.${system}
+self.nixosModules.default
