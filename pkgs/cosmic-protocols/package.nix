@@ -2,6 +2,7 @@
 , fetchFromGitHub
 , stdenv
 , wayland-scanner
+, nix-update-script
 }:
 
 stdenv.mkDerivation rec {
@@ -17,6 +18,11 @@ stdenv.mkDerivation rec {
 
   makeFlags = [ "PREFIX=${placeholder "out"}" ];
   nativeBuildInputs = [ wayland-scanner ];
+
+  passthru.updateScript = nix-update-script {
+    # add if upstream ever makes a tag
+    #extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-protocols";

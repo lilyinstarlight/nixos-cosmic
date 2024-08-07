@@ -13,6 +13,7 @@
 , useXWayland ? true
 , systemd
 , useSystemd ? lib.meta.availableOn stdenv.hostPlatform systemd
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage {
@@ -66,6 +67,10 @@ rustPlatform.buildRustPackage {
   '' + lib.optionalString useXWayland ''
     libcosmicAppWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ xwayland ]})
   '';
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-comp";

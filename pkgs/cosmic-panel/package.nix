@@ -5,6 +5,7 @@
 , just
 , stdenv
 , util-linux
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage {
@@ -46,6 +47,10 @@ rustPlatform.buildRustPackage {
     "--set" "prefix" (placeholder "out")
     "--set" "bin-src" "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-panel"
   ];
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-panel";

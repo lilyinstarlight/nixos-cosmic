@@ -13,6 +13,7 @@
 , pkg-config
 , udev
 , util-linux
+, nix-update-script
 }:
 
 let
@@ -72,6 +73,10 @@ rustPlatform.buildRustPackage {
   postInstall = ''
     libcosmicAppWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ cosmic-randr ]})
   '';
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-settings";

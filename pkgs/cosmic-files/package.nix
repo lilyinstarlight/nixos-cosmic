@@ -5,6 +5,7 @@
 , stdenv
 , glib
 , just
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -56,6 +57,10 @@ rustPlatform.buildRustPackage rec {
 
   # TODO: remove when <https://github.com/pop-os/cosmic-files/pull/103#issuecomment-2051661109> is fixed
   doCheck = false;
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-files";

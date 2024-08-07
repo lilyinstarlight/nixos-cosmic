@@ -5,6 +5,7 @@
 , libinput
 , pkg-config
 , udev
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage {
@@ -46,6 +47,10 @@ rustPlatform.buildRustPackage {
     cp data/polkit-1/rules.d/*.rules $out/share/polkit-1/rules.d/
     cp data/system_actions.ron $out/share/cosmic/com.system76.CosmicSettings.Shortcuts/v1/system_actions
   '';
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-settings-daemon";

@@ -5,6 +5,7 @@
 , pkg-config
 , pulseaudio
 , udev
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage {
@@ -42,6 +43,10 @@ rustPlatform.buildRustPackage {
   buildInputs = [ pulseaudio udev ];
 
   env.POLKIT_AGENT_HELPER_1 = "/run/wrappers/bin/polkit-agent-helper-1";
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-osd";

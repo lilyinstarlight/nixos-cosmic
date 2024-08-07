@@ -11,6 +11,7 @@
 , stdenv
 , udev
 , util-linux
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage {
@@ -56,6 +57,10 @@ rustPlatform.buildRustPackage {
     "--set" "prefix" (placeholder "out")
     "--set" "target" "${stdenv.hostPlatform.rust.cargoShortTarget}/release"
   ];
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-applets";

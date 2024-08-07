@@ -10,6 +10,7 @@
 , rust
 , stdenv
 , udev
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage {
@@ -65,6 +66,10 @@ rustPlatform.buildRustPackage {
   postPatch = ''
     substituteInPlace src/greeter.rs --replace-fail '/usr/bin/env' '${lib.getExe' coreutils "env"}'
   '';
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-greeter";

@@ -8,6 +8,7 @@
 , openssl
 , pkg-config
 , stdenv
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -58,6 +59,10 @@ rustPlatform.buildRustPackage rec {
   ];
 
   env.VERGEN_GIT_SHA = src.rev;
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-store";

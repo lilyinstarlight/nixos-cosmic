@@ -5,6 +5,7 @@
 , libsecret
 , openssl
 , sqlite
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -47,6 +48,8 @@ rustPlatform.buildRustPackage rec {
   ];
 
   env.VERGEN_GIT_SHA = src.rev;
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     homepage = "https://github.com/edfloreshz/cosmic-tasks";

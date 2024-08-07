@@ -8,6 +8,7 @@
   rust,
   stdenv,
   xdg-desktop-portal-cosmic,
+  nix-update-script,
 }:
 rustPlatform.buildRustPackage {
   pname = "cosmic-session";
@@ -51,7 +52,12 @@ rustPlatform.buildRustPackage {
 
   env.XDP_COSMIC = lib.getExe xdg-desktop-portal-cosmic;
 
-  passthru.providedSessions = [ "cosmic" ];
+  passthru = {
+    updateScript = nix-update-script {
+      extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    };
+    providedSessions = [ "cosmic" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-session";

@@ -2,6 +2,7 @@
 , fetchFromGitHub
 , libcosmicAppHook
 , rustPlatform
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage {
@@ -36,6 +37,8 @@ rustPlatform.buildRustPackage {
   nativeBuildInputs = [
     libcosmicAppHook
   ];
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     homepage = "https://github.com/benfuddled/emoji-picker";

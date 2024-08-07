@@ -6,6 +6,7 @@
 , mesa
 , pipewire
 , gst_all_1
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -56,6 +57,10 @@ rustPlatform.buildRustPackage rec {
     cp data/cosmic.portal $out/share/xdg-desktop-portal/portals/
     cp data/cosmic-portals.conf $out/share/xdg-desktop-portal/
   '';
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/xdg-desktop-portal-cosmic";

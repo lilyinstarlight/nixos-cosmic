@@ -8,6 +8,7 @@
 , libxkbcommon
 , pkg-config
 , stdenv
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage {
@@ -66,6 +67,8 @@ rustPlatform.buildRustPackage {
   postInstall = ''
     chmod +x $out/share/pop-launcher/scripts/**/*.sh
   '';
+
+  passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
     description = "Modular IPC-based desktop launcher service";

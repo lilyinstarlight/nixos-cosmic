@@ -6,6 +6,7 @@
 , libinput
 , mesa
 , udev
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage {
@@ -46,6 +47,10 @@ rustPlatform.buildRustPackage {
     cp data/*.desktop $out/share/applications/
     cp data/*.svg $out/share/icons/hicolor/scalable/apps/
   '';
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-workspaces-epoch";

@@ -9,6 +9,7 @@
 , just
 , pkg-config
 , stdenv
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage {
@@ -55,6 +56,11 @@ rustPlatform.buildRustPackage {
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-design-demo"
   ];
+
+  passthru.updateScript = nix-update-script {
+    # add if upstream ever makes a tag
+    #extraArgs = [ "--version-regex" "epoch-(.*)" ];
+  };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-design-demo";
