@@ -44,30 +44,14 @@
       default = import ./nixos { cosmicOverlay = self.overlays.default; };
     };
 
-    legacyPackages = forAllSystems (system: let pkgs = nixpkgs.legacyPackages.${system}; in {
+    legacyPackages = forAllSystems (system: let lib = nixpkgs.lib; pkgs = nixpkgs.legacyPackages.${system}; in {
       update = pkgs.writeShellApplication {
-        name = "cosmic-update";
+        name = "cosmic-unstable-update";
 
-        runtimeInputs = [
-          pkgs.coreutils
-          pkgs.nix-update
-        ];
-
-        text = ''
-          for pkg in pkgs/*; do
-            if ! [ -f "$pkg/package.nix" ]; then
-              continue
-            fi
-
-            attr="$(basename "$pkg")"
-
-            if [ "$attr" = libcosmicAppHook ]; then
-              continue
-            fi
-
-            nix-update --commit --version branch=HEAD "$attr"
-          done
-        '';
+        text = lib.concatStringsSep "\n" (lib.mapAttrsToList (attr: drv:
+          if drv ? updateScript && (lib.isList drv.updateScript) && (lib.length drv.updateScript) > 0
+            then lib.escapeShellArgs (drv.updateScript ++ lib.optionals (lib.match "nix-update|.*/nix-update" (lib.head drv.updateScript) != null) [ "--version" "branch=HEAD" "--commit" attr ])
+            else builtins.toString drv.updateScript or "") self.packages.${system});
       };
 
       vm = nixpkgs.lib.makeOverridable ({ nixpkgs }: let
