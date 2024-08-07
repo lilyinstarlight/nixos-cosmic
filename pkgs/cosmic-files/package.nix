@@ -55,9 +55,6 @@ rustPlatform.buildRustPackage rec {
 
   env.VERGEN_GIT_SHA = src.rev;
 
-  # TODO: remove when <https://github.com/pop-os/cosmic-files/pull/103#issuecomment-2051661109> is fixed
-  doCheck = false;
-
   passthru.updateScript = nix-update-script {
     extraArgs = [ "--version-regex" "epoch-(.*)" ];
   };
