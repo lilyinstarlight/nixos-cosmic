@@ -16,13 +16,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-applets";
-  version = "1.0.0-alpha.1-unstable-2024-08-02";
+  version = "1.0.0-alpha.1-unstable-2024-08-07";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-applets";
-    rev = "0720bdbae32e6398413aad3d370a74ac3fae5b59";
-    hash = "sha256-4KaMG7sKaiJDIlP101/6YDHDwKRqJXHdqotNZlPhv8Q=";
+    rev = "5a682fad905ea77824dee92c499c9bb04ec03ac4";
+    hash = "sha256-GOpcKjxrRgd9KUkOKE911d7N+GR0mRmR0uIfHwC0Jts=";
   };
 
   cargoLock = {
