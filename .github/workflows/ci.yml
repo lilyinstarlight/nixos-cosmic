@@ -13,9 +13,9 @@ jobs:
       matrix:
         architecture:
           - system: x86_64-linux
-            runner: [linux, X64, drakon64/github-actions-runner-aws, EC2-r7a.large, EBS-30GB]
+            runner: [linux, X64, drakon64/github-actions-runner-aws, EC2-r7a.2xlarge, EBS-30GB, EBS-64GB-Swap]
           - system: aarch64-linux
-            runner: [linux, ARM64, drakon64/github-actions-runner-aws, EC2-r8g.large, EBS-30GB]
+            runner: [linux, ARM64, drakon64/github-actions-runner-aws, EC2-r8g.2xlarge, EBS-30GB, EBS-64GB-Swap]
         attribute:
           - vm.closure
           - vm-stable.closure
@@ -37,4 +37,4 @@ jobs:
           SYSTEM: ${{ matrix.architecture.system }}
           ATTRIBUTE: ${{ matrix.attribute }}
         run: |
-          nix -vL build --show-trace --cores 2 --max-jobs 1 --system "$SYSTEM" ".#$ATTRIBUTE"
+          nix -vL build --show-trace --cores 8 --max-jobs 1 --system "$SYSTEM" ".#$ATTRIBUTE"
