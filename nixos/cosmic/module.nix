@@ -59,6 +59,7 @@ in
       cosmic-term
       cosmic-workspaces-epoch
       hicolor-icon-theme
+      playerctl
       pop-icon-theme
       pop-launcher
     ] ++ lib.optionals config.services.flatpak.enable [
