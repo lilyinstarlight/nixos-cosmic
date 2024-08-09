@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-panel";
-  version = "1.0.0-alpha.1-unstable-2024-08-07";
+  version = "1.0.0-alpha.1-unstable-2024-08-09";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-panel";
-    rev = "48c653d75aacebc1d9911e907ee98e4efa66cb7f";
-    sha256 = "sha256-JuwfV44ALbn+tDPEXFDYuGxDEcAYc8d1nONIG+156OQ=";
+    rev = "e184d10535e43dfc3e470a481f81f9fe24359521";
+    sha256 = "sha256-Hi4WVWODxtKIzhvq16LVrjvEaLN/FOgA3ycLItx70dY=";
   };
 
   cargoLock = {
