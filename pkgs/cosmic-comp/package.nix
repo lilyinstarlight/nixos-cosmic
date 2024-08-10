@@ -18,13 +18,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-comp";
-  version = "1.0.0-alpha.1-unstable-2024-08-08";
+  version = "1.0.0-alpha.1-unstable-2024-08-10";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-comp";
-    rev = "7660f7aaa9d0730f6cfd72c36f106fc4e514ac06";
-    hash = "sha256-8ZIQaoT0WlXbz6LStoiURzHYqu8m8bhLp8AjeMFzUPE=";
+    rev = "0916d3599a91fe40503209e0431fcc888fa6b867";
+    hash = "sha256-9rWeViJe/ETVf1mW66iwygjbJec/m3wg910kOm0z3S4=";
   };
 
   cargoLock = {
@@ -39,7 +39,7 @@ rustPlatform.buildRustPackage {
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "id_tree-1.8.0" = "sha256-uKdKHRfPGt3vagOjhnri3aYY5ar7O3rp2/ivTfM2jT0=";
-      "smithay-0.3.0" = "sha256-puo6xbWRTIco8luz3Jz83VXoRMkyb0ZH7kKHGlTzS5Q=";
+      "smithay-0.3.0" = "sha256-4lmCbdW+fOnPWEDAbKk4LFcr9KK+akjUJqiwm0pK8Uw=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
       "smithay-egui-0.1.0" = "sha256-FcSoKCwYk3okwQURiQlDUcfk9m/Ne6pSblGAzHDaVHg=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
