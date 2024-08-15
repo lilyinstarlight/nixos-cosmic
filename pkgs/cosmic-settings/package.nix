@@ -57,7 +57,7 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ libcosmicAppHook' cmake just pkg-config util-linux ];
+  nativeBuildInputs = [ libcosmicAppHook' rustPlatform.bindgenHook cmake just pkg-config util-linux ];
   buildInputs = [ expat fontconfig freetype libinput pipewire udev ];
 
   dontUseJustBuild = true;
