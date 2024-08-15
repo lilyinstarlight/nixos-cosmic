@@ -12,6 +12,7 @@
 , libinput
 , pipewire
 , pkg-config
+, pulseaudio
 , udev
 , util-linux
 , nix-update-script
@@ -58,7 +59,7 @@ rustPlatform.buildRustPackage {
   };
 
   nativeBuildInputs = [ libcosmicAppHook' rustPlatform.bindgenHook cmake just pkg-config util-linux ];
-  buildInputs = [ expat fontconfig freetype libinput pipewire udev ];
+  buildInputs = [ expat fontconfig freetype libinput pipewire pulseaudio udev ];
 
   dontUseJustBuild = true;
 
