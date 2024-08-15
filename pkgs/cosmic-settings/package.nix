@@ -10,6 +10,7 @@
 , freetype
 , just
 , libinput
+, pipewire
 , pkg-config
 , udev
 , util-linux
@@ -57,7 +58,7 @@ rustPlatform.buildRustPackage {
   };
 
   nativeBuildInputs = [ libcosmicAppHook' cmake just pkg-config util-linux ];
-  buildInputs = [ expat fontconfig freetype libinput udev ];
+  buildInputs = [ expat fontconfig freetype libinput pipewire udev ];
 
   dontUseJustBuild = true;
 
