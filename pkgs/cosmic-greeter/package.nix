@@ -15,13 +15,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-greeter";
-  version = "1.0.0-alpha.1-unstable-2024-08-02";
+  version = "1.0.0-alpha.1-unstable-2024-08-15";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-greeter";
-    rev = "cc744b0b9a6065a97808744bf63433c439e4186c";
-    sha256 = "sha256-dc+VV7eIEUKoio/bQieXcDVZCepf4HtQrIKRslym31Y=";
+    rev = "3679ee55614f7c37f8a2eb9b52900024c186a576";
+    sha256 = "sha256-QpHU9EOLoOL+HzbM9+FTAPZ6a51PyIJ00e337zUg7ns=";
   };
 
   cargoLock = {
@@ -33,7 +33,7 @@ rustPlatform.buildRustPackage {
       "cosmic-bg-config-0.1.0" = "sha256-keKTWghlKehLQA9J9SQjAvGCaZY/7xWWteDtmLoThD0=";
       "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
       "cosmic-comp-config-0.1.0" = "sha256-5+AY6p31XV+y+rrIU6YCg37oa4ygFPjYb+Osml1O29Q=";
-      "cosmic-config-0.1.0" = "sha256-qvpgX+JpnO3Kt+sYD+q1+avNzJ6IXlYkRQqKGqIZ/ik=";
+      "cosmic-config-0.1.0" = "sha256-vkYq91Zvz8RNdXm5z26Rc3XaHtD2/PuUYfYJkORKdgE=";
       "cosmic-dbus-networkmanager-0.1.0" = "sha256-Bz/bzXCm60AF0inpZJDF4iNZIX3FssImORrE5nZpkyQ=";
       "cosmic-text-0.12.1" = "sha256-x0XTxzbmtE2d4XCG/Nuq3DzBpz15BbnjRRlirfNJEiU=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
