@@ -13,13 +13,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-term";
-  version = "1.0.0-alpha.1-unstable-2024-08-03";
+  version = "1.0.0-alpha.1-unstable-2024-08-15";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-term";
-    rev = "be808b56cf24d03fc99cf44b0885078a81a16523";
-    hash = "sha256-dY4QGQXJFL+yjCYRGCg3NfMLMjlEBSEmxHn68PvhCAQ=";
+    rev = "72ffa01fb680615872ee8a3fcf56ccc65e6a7428";
+    hash = "sha256-G8XtR43CR4x91aQ1vKILs+RmPDKQ0Gk1FhhKumKscck=";
   };
 
   cargoLock = {
