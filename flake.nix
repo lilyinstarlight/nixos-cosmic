@@ -13,6 +13,12 @@
       url = "github:nix-community/flake-compat";
       flake = false;
     };
+
+    # TODO: remove when nix-update is bumped in nixpkgs with a release containing <https://github.com/Mic92/nix-update/pull/269>
+    nix-update = {
+      url = "github:Mic92/nix-update";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, nixpkgs-stable, rust-overlay, ... }: let
@@ -44,14 +50,19 @@
       default = import ./nixos { cosmicOverlay = self.overlays.default; };
     };
 
-    legacyPackages = forAllSystems (system: let lib = nixpkgs.lib; pkgs = nixpkgs.legacyPackages.${system}; in {
+    legacyPackages = forAllSystems (system: let
+      lib = nixpkgs.lib;
+      # TODO: revert when nix-update is bumped in nixpkgs with a release containing <https://github.com/Mic92/nix-update/pull/269>
+      #pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = nixpkgs.legacyPackages.${system}.extend (final: prev: { nix-update = self.inputs.nix-update.packages.${system}.default; });
+    in {
       update = pkgs.writeShellApplication {
         name = "cosmic-unstable-update";
 
         text = lib.concatStringsSep "\n" (lib.mapAttrsToList (attr: drv:
           if drv ? updateScript && (lib.isList drv.updateScript) && (lib.length drv.updateScript) > 0
             then lib.escapeShellArgs (drv.updateScript ++ lib.optionals (lib.match "nix-update|.*/nix-update" (lib.head drv.updateScript) != null) [ "--version" "branch=HEAD" "--commit" attr ])
-            else builtins.toString drv.updateScript or "") self.packages.${system});
+            else builtins.toString drv.updateScript or "") (self.lib.packagesFor pkgs));
       };
 
       vm = nixpkgs.lib.makeOverridable ({ nixpkgs }: let
