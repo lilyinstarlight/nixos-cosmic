@@ -16,7 +16,12 @@ rustPlatform.buildRustPackage {
     owner = "pop-os";
     repo = "cosmic-bg";
     rev = "e5e91d93fb7cd7e917922eceaddd4d412df46f93";
-    hash = "sha256-In/aSQkxXrlTHqrdv14gL7eBu2o7fkmJFVs1HDgGhEQ=";
+    hash = "sha256-3hhS4/+5wj5pjVKdS+BPy8Q7UUFaMKiGANfDIRBm+Dc=";
+    # TODO: remove when <https://github.com/pop-os/cosmic-bg/commit/ed9ea6cc15638b08c848fda042ec2df3ff69865f#r145966372> is addressed
+    postFetch = ''
+      substituteInPlace $out/Cargo.toml --replace-fail 'libcosmic?branch=master' '/libcosmic'
+      substituteInPlace $out/Cargo.lock --replace-fail 'libcosmic?branch=master?rev=' '/libcosmic?rev='
+    '';
   };
 
   cargoLock = {
