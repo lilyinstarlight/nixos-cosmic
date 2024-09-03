@@ -13,13 +13,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-term";
-  version = "1.0.0-alpha.1-unstable-2024-09-01";
+  version = "1.0.0-alpha.1-unstable-2024-09-03";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-term";
-    rev = "e2d18a0a207237f8c9e66e03ca8d8f383c58d342";
-    hash = "sha256-wRUZYEcdCHOpU74XyBBvQNR11Nt3ps7oBxbVb9aDTuI=";
+    rev = "a71f0dcdf9e1cc8797a27f641cac5f1c0a667e84";
+    hash = "sha256-9CIteSSiCZOE8hwPUPNEBM3irEYuJUOZMiQmYNk48SU=";
   };
 
   cargoLock = {
@@ -66,12 +66,6 @@ rustPlatform.buildRustPackage rec {
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-term"
   ];
-
-  # TODO: remove when <https://github.com/pop-os/cosmic-term/commit/193746ffbc90c8bcb7a7ff226422d56e4e404d98#r145969203> is addressed
-  preConfigure = ''
-    substituteInPlace Cargo.toml --replace-fail 'libc = { git = "https://gitlab.redox-os.org/redox-os/liblibc.git", branch = "redox-epoll-0.2" }' ""
-    substituteInPlace Cargo.lock --replace-fail $'\n[[patch.unused]]\nname = "libc"\nversion = "0.2.154"\nsource = "git+https://gitlab.redox-os.org/redox-os/liblibc.git?branch=redox-epoll-0.2#5eff703b923d3e1b042e91bc67409cca961f3976"' ""
-  '';
 
   env.VERGEN_GIT_SHA = src.rev;
 

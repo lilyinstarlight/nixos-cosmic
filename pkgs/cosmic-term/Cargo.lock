@@ -7299,8 +7299,3 @@ dependencies = [
  "quote",
  "syn 2.0.76",
 ]
-
-[[patch.unused]]
-name = "libc"
-version = "0.2.154"
-source = "git+https://gitlab.redox-os.org/redox-os/liblibc.git?branch=redox-epoll-0.2#5eff703b923d3e1b042e91bc67409cca961f3976"
