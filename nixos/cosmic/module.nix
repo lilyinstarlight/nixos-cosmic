@@ -8,13 +8,13 @@ in
 
   options = {
     services.desktopManager.cosmic = {
-      enable = lib.mkEnableOption (lib.mdDoc "COSMIC desktop environment");
+      enable = lib.mkEnableOption "COSMIC desktop environment";
 
       xwayland.enable = lib.mkEnableOption "Xwayland support for cosmic-comp" // { default = true; };
     };
 
     environment.cosmic.excludePackages = lib.mkOption {
-      description = lib.mdDoc "List of COSMIC packages to exclude from the default environment";
+      description = "List of COSMIC packages to exclude from the default environment";
       type = lib.types.listOf lib.types.package;
       default = [];
       example = lib.literalExpression "[ pkgs.cosmic-edit ]";

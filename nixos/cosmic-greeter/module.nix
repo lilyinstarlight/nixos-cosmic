@@ -7,7 +7,7 @@ in
   meta.maintainers = with lib.maintainers; [ nyanbinary /*lilyinstarlight*/ ];
 
   options.services.displayManager.cosmic-greeter = {
-    enable = lib.mkEnableOption (lib.mdDoc "COSMIC greeter");
+    enable = lib.mkEnableOption "COSMIC greeter";
   };
 
   config = lib.mkIf cfg.enable {
