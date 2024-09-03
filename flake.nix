@@ -115,7 +115,7 @@
               virtualisation.mountHostNixStore = true;
 
               virtualisation.memorySize = 4096;
-              # TODO: below options can be removed once NixOS/nixpkgs#279009 is merged
+              # TODO: below option can be removed once NixOS/nixpkgs#279009 is merged
               virtualisation.qemu.options = [ "-vga none" "-device virtio-gpu-gl-pci" "-display default,gl=on" ];
 
               virtualisation.forwardPorts = [
