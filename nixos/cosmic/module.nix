@@ -57,6 +57,7 @@ in
       cosmic-settings
       cosmic-settings-daemon
       cosmic-term
+      cosmic-wallpapers
       cosmic-workspaces-epoch
       hicolor-icon-theme
       playerctl
