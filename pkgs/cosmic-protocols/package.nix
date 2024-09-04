@@ -5,13 +5,13 @@
 , nix-update-script
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   pname = "cosmic-protocols";
   version = "0-unstable-2024-09-03";
 
   src = fetchFromGitHub {
     owner = "pop-os";
-    repo = pname;
+    repo = "cosmic-protocols";
     rev = "d11ddc1ca3bc114de69fff77295c735c2dec1f65";
     hash = "sha256-xa0YHAIOZDivHhdOdiLqCuXA04T9ywRGZkK9KGW2A4s=";
   };
@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-protocols";
-    description = "Addtional wayland-protocols used by the COSMIC desktop environment";
+    description = "Addtional wayland-protocols used by the COSMIC Desktop Environment";
     license = [ licenses.mit licenses.gpl3Only ];
     maintainers = with maintainers; [ nyanbinary /*lilyinstarlight*/ ];
     platforms = platforms.linux;

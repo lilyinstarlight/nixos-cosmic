@@ -58,5 +58,6 @@ rustPlatform.buildRustPackage {
     license = licenses.gpl3Only;
     maintainers = with maintainers; [ nyanbinary /*lilyinstarlight*/ ];
     platforms = platforms.linux;
+    mainProgram = "cosmic-workspaces";
   };
 }

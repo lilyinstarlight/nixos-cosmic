@@ -54,9 +54,10 @@ rustPlatform.buildRustPackage {
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-settings-daemon";
-    description = "Settings Daemon for the COSMIC Desktop Environment";
+    description = "Settings daemon for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
     maintainers = with maintainers; [ nyanbinary /*lilyinstarlight*/ ];
     platforms = platforms.linux;
+    mainProgram = "cosmic-settings-daemon";
   };
 }

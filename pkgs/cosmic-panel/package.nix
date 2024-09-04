@@ -58,5 +58,6 @@ rustPlatform.buildRustPackage {
     license = licenses.gpl3Only;
     maintainers = with maintainers; [ qyliss nyanbinary /*lilyinstarlight*/ ];
     platforms = platforms.linux;
+    mainProgram = "cosmic-panel";
   };
 }

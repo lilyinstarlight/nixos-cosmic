@@ -64,7 +64,7 @@ rustPlatform.buildRustPackage {
 
   meta = with lib; {
     homepage = "https://github.com/leb-kuchen/cosmic-ext-applet-emoji-selector";
-    description = "Emoji picker for the COSMIC desktop environment";
+    description = "Emoji selector applet for the COSMIC Desktop Environment";
     license = with licenses; [ mpl20 mit ];
     maintainers = with maintainers; [ /*lilyinstarlight*/ ];
     platforms = platforms.linux;

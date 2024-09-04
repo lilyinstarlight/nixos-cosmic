@@ -66,5 +66,6 @@ rustPlatform.buildRustPackage rec {
     license = licenses.gpl3Only;
     maintainers = with maintainers; [ ahoneybun nyanbinary /*lilyinstarlight*/ ];
     platforms = platforms.linux;
+    mainProgram = "cosmic-files";
   };
 }

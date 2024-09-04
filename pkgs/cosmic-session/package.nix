@@ -5,7 +5,6 @@
   bash,
   dbus,
   just,
-  rust,
   stdenv,
   xdg-desktop-portal-cosmic,
   nix-update-script,
@@ -31,7 +30,7 @@ rustPlatform.buildRustPackage {
 
   postPatch = ''
     substituteInPlace Justfile \
-      --replace-fail '{{cargo-target-dir}}/release/cosmic-session' 'target/${rust.lib.toRustTargetSpecShort stdenv.hostPlatform}/release/cosmic-session'
+      --replace-fail '{{cargo-target-dir}}/release/cosmic-session' 'target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-session'
     substituteInPlace data/start-cosmic \
       --replace-fail '/usr/bin/cosmic-session' '${placeholder "out"}/bin/cosmic-session' \
       --replace-fail '/usr/bin/dbus-run-session' '${lib.getExe' dbus "dbus-run-session"}'
@@ -61,7 +60,7 @@ rustPlatform.buildRustPackage {
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-session";
-    description = "Session manager for the COSMIC desktop environment";
+    description = "Session manager for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
     mainProgram = "cosmic-session";
     maintainers = with maintainers; [

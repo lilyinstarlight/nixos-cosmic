@@ -7,7 +7,6 @@
 , just
 , libinput
 , linux-pam
-, rust
 , stdenv
 , udev
 , nix-update-script
@@ -57,10 +56,10 @@ rustPlatform.buildRustPackage {
     (placeholder "out")
     "--set"
     "bin-src"
-    "target/${rust.lib.toRustTargetSpecShort stdenv.hostPlatform}/release/cosmic-greeter"
+    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-greeter"
     "--set"
     "daemon-src"
-    "target/${rust.lib.toRustTargetSpecShort stdenv.hostPlatform}/release/cosmic-greeter-daemon"
+    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-greeter-daemon"
   ];
 
   postPatch = ''
@@ -77,5 +76,6 @@ rustPlatform.buildRustPackage {
     license = licenses.gpl3Only;
     maintainers = with maintainers; [ nyanbinary /*lilyinstarlight*/ ];
     platforms = platforms.linux;
+    mainProgram = "cosmic-greeter";
   };
 }
