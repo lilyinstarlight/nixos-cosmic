@@ -42,6 +42,7 @@ rustPlatform.buildRustPackage {
   buildInputs = [ bash ];
 
   dontUseJustBuild = true;
+  dontUseJustCheck = true;
 
   justFlags = [
     "--set"

@@ -42,6 +42,7 @@ rustPlatform.buildRustPackage {
   nativeBuildInputs = [ libcosmicAppHook just which ];
 
   dontUseJustBuild = true;
+  dontUseJustCheck = true;
 
   justFlags = [
     "--set"

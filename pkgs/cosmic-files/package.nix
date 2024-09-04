@@ -44,6 +44,7 @@ rustPlatform.buildRustPackage rec {
   buildInputs = [ glib ];
 
   dontUseJustBuild = true;
+  dontUseJustCheck = true;
 
   justFlags = [
     "--set"

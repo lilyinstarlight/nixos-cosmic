@@ -63,6 +63,7 @@ rustPlatform.buildRustPackage {
   buildInputs = [ expat fontconfig freetype libinput pipewire pulseaudio udev ];
 
   dontUseJustBuild = true;
+  dontUseJustCheck = true;
 
   justFlags = [
     "--set"

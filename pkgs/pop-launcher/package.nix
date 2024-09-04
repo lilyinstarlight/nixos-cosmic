@@ -38,6 +38,7 @@ rustPlatform.buildRustPackage {
   cargoTestFlags = [ "--package" "pop-launcher-bin" ];
 
   dontUseJustBuild = true;
+  dontUseJustCheck = true;
 
   justFlags = [
     "--set"

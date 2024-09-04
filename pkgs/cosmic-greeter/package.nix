@@ -49,6 +49,7 @@ rustPlatform.buildRustPackage {
   cargoBuildFlags = [ "--all" ];
 
   dontUseJustBuild = true;
+  dontUseJustCheck = true;
 
   justFlags = [
     "--set"

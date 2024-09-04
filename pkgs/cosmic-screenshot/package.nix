@@ -22,6 +22,7 @@ rustPlatform.buildRustPackage {
   nativeBuildInputs = [ just ];
 
   dontUseJustBuild = true;
+  dontUseJustCheck = true;
 
   justFlags = [
     "--set"

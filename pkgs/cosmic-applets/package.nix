@@ -52,6 +52,7 @@ rustPlatform.buildRustPackage {
   buildInputs = [ dbus glib libinput pulseaudio udev ];
 
   dontUseJustBuild = true;
+  dontUseJustCheck = true;
 
   justFlags = [
     "--set" "prefix" (placeholder "out")

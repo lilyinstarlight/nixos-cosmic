@@ -30,6 +30,7 @@ rustPlatform.buildRustPackage {
   buildInputs = [ wayland ];
 
   dontUseJustBuild = true;
+  dontUseJustCheck = true;
 
   justFlags = [
     "--set"
