@@ -14,9 +14,9 @@
       flake = false;
     };
 
-    # TODO: remove when nix-update is bumped in nixpkgs with a release containing <https://github.com/Mic92/nix-update/pull/269>
+    # TODO: remove when nix-update is bumped in nixpkgs for a version addressing <https://github.com/Mic92/nix-update/pull/246#issuecomment-2323018854>
     nix-update = {
-      url = "github:Mic92/nix-update";
+      url = "github:lilyinstarlight/nix-update";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -52,7 +52,7 @@
 
     legacyPackages = forAllSystems (system: let
       lib = nixpkgs.lib;
-      # TODO: revert when nix-update is bumped in nixpkgs with a release containing <https://github.com/Mic92/nix-update/pull/269>
+      # TODO: revert when nix-update is bumped in nixpkgs for a version addressing <https://github.com/Mic92/nix-update/pull/246#issuecomment-2323018854>
       #pkgs = nixpkgs.legacyPackages.${system};
       pkgs = nixpkgs.legacyPackages.${system}.extend (final: prev: { nix-update = self.inputs.nix-update.packages.${system}.default; });
     in {
