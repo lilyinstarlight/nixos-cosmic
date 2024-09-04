@@ -80,7 +80,16 @@
 
               services.flatpak.enable = true;
 
-              environment.systemPackages = [ pkgs.drm_info pkgs.firefox pkgs.cosmic-applet-emoji-selector pkgs.cosmic-tasks ];
+              environment.systemPackages = with pkgs; [
+                cosmic-applet-emoji-selector
+                cosmic-calculator
+                cosmic-player
+                cosmic-reader
+                cosmic-tasks
+                drm_info
+                firefox
+                quick-webapps
+              ];
 
               boot.kernelParams = [ "quiet" "udev.log_level=3"  ];
               boot.initrd.kernelModules = [ "bochs" ];
