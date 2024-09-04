@@ -2,9 +2,11 @@
 , fetchFromGitHub
 , libcosmicAppHook
 , rustPlatform
+, just
 , libsecret
 , openssl
 , sqlite
+, stdenv
 , nix-update-script
 }:
 
@@ -13,8 +15,8 @@ rustPlatform.buildRustPackage rec {
   version = "0.1.0-unstable-2024-09-04";
 
   src = fetchFromGitHub {
-    owner = "edfloreshz";
-    repo = "cosmic-tasks";
+    owner = "cosmic-utils";
+    repo = "tasks";
     rev = "286ef1e6af30b117d96e6e0a04284b9b03ea384c";
     hash = "sha256-h4fNWlbrzVqZ+IPlXc9a8pOFBK6E4bYkRgnlyGyOAeQ=";
   };
@@ -39,6 +41,7 @@ rustPlatform.buildRustPackage rec {
 
   nativeBuildInputs = [
     libcosmicAppHook
+    just
   ];
 
   buildInputs = [
@@ -47,16 +50,27 @@ rustPlatform.buildRustPackage rec {
     sqlite
   ];
 
+  dontUseJustBuild = true;
+
+  justFlags = [
+    "--set"
+    "prefix"
+    (placeholder "out")
+    "--set"
+    "bin-src"
+    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/tasks"
+  ];
+
   env.VERGEN_GIT_SHA = src.rev;
 
   passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
-    homepage = "https://github.com/edfloreshz/cosmic-tasks";
+    homepage = "https://github.com/cosmic-utils/tasks";
     description = "Simple task management application for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
     maintainers = with maintainers; [ /*lilyinstarlight*/ ];
     platforms = platforms.linux;
-    mainProgram = "cosmic-tasks";
+    mainProgram = "tasks";
   };
 }
