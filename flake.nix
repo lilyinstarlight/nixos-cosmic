@@ -61,7 +61,7 @@
 
         text = lib.concatStringsSep "\n" (lib.mapAttrsToList (attr: drv:
           if drv ? updateScript && (lib.isList drv.updateScript) && (lib.length drv.updateScript) > 0
-            then lib.escapeShellArgs (drv.updateScript ++ lib.optionals (lib.match "nix-update|.*/nix-update" (lib.head drv.updateScript) != null) [ "--version" "branch=HEAD" "--commit" attr ])
+            then lib.escapeShellArgs (if (lib.match "nix-update|.*/nix-update" (lib.head drv.updateScript) != null) then [ pkgs.nix-update ] ++ (lib.tail drv.updateScript) ++ [ "--version" "branch=HEAD" "--commit" attr ] else drv.updateScript)
             else builtins.toString drv.updateScript or "") (self.lib.packagesFor pkgs));
       };
 
