@@ -40,7 +40,8 @@ rustPlatform.buildRustPackage {
   ];
 
   passthru.updateScript = nix-update-script {
-    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    # TODO: uncomment when there are actual tagged releases
+    #extraArgs = [ "--version-regex" "epoch-(.*)" ];
   };
 
   meta = with lib; {
