@@ -6934,7 +6934,7 @@ checksum = "229730647fbc343e3a80e463c1db7f78f3855d3f3739bee0dda773c9a037c90a"
 [[package]]
 name = "upower_dbus"
 version = "0.3.2"
-source = "git+https://github.com/pop-os/dbus-settings-bindings#7aedc25e3295b95a90eb710f443029d4ec920aa8"
+source = "git+https://github.com/pop-os/dbus-settings-bindings#e0d6a04d6ebf6bcede1580721c84a7f01e5ef8bb"
 dependencies = [
  "serde",
  "serde_repr",
