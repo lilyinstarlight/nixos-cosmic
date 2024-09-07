@@ -24,13 +24,13 @@ in
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings";
-  version = "1.0.0-alpha.1-unstable-2024-09-04";
+  version = "1.0.0-alpha.1-unstable-2024-09-05";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings";
-    rev = "544da2bdc87965b8f3de3486075e756b08b1c2be";
-    hash = "sha256-ftHfO2wdap5b3avFq3ZqManyz19VRLH8JZuejVflfy0=";
+    rev = "bb35fa7b65091e77b942b820211acc4c89b8b6ae";
+    hash = "sha256-Z6RCrFAlz5CQcefKsCIXq2Xk4DM8OLBJRADqa/NwMtk=";
   };
 
   cargoLock = {
@@ -55,6 +55,7 @@ rustPlatform.buildRustPackage {
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
+      "upower_dbus-0.3.2" = "sha256-QAFlbT66P7MDFJf+BFrCwUqNinEAcXpimqVa59OaAh8=";
       "winit-0.29.10" = "sha256-ScTII2AzK3SC8MVeASZ9jhVWsEaGrSQ2BnApTxgfxK4=";
     };
   };

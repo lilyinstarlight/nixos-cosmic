@@ -994,6 +994,7 @@ dependencies = [
  "cosmic-comp-config",
  "cosmic-config",
  "cosmic-dbus-networkmanager",
+ "cosmic-greeter-config",
  "cosmic-greeter-daemon",
  "env_logger",
  "freedesktop_entry_parser",
@@ -1016,6 +1017,15 @@ dependencies = [
  "xdg",
  "xkb-data",
  "zbus 4.4.0",
+]
+
+[[package]]
+name = "cosmic-greeter-config"
+version = "0.1.0"
+dependencies = [
+ "cosmic-config",
+ "log",
+ "serde",
 ]
 
 [[package]]

@@ -9,13 +9,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-calculator";
-  version = "0-unstable-2024-09-04";
+  version = "0-unstable-2024-09-06";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "calculator";
-    rev = "7592afc4fc504ed10dcb0efe9f3b0ce0c2de1b57";
-    hash = "sha256-rSYZifuhV9l/L+8pOrxEmj4WlGhg/SW1CqWIQATZa8I=";
+    rev = "27830c9313c4013a7dbe9efe591967893c867632";
+    hash = "sha256-UMxvwGx8PdjwVak9Cu6mD+tNNIBFW4ZXz1+FhQaaPNk=";
   };
 
   cargoLock = {
@@ -24,9 +24,9 @@ rustPlatform.buildRustPackage {
       "accesskit-0.12.2" = "sha256-1UwgRyUe0PQrZrpS7574oNLi13fg5HpgILtZGW6JNtQ=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
-      "cosmic-config-0.1.0" = "sha256-zamYPvxmIqh4IT4G+aqceP1mXNNBA1TAcJwAtjlbYAU=";
+      "cosmic-config-0.1.0" = "sha256-AmgRihxFMq6pQotz/Qqbzo04dVGkxx1pSiQwfBG3kjY=";
       "cosmic-settings-daemon-0.1.0" = "sha256-QAFlbT66P7MDFJf+BFrCwUqNinEAcXpimqVa59OaAh8=";
-      "cosmic-text-0.12.1" = "sha256-5Gk220HTiHuxDvyqwz1Dwr+BaLvH/6X7M14IirQzcsE=";
+      "cosmic-text-0.12.1" = "sha256-sZjYGyGRu9sg81SdCw44I0/re/BtSyz/tSZPgM6cl70=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
