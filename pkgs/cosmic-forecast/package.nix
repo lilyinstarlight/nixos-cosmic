@@ -11,13 +11,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-forecast";
-  version = "0-unstable-2024-09-07";
+  version = "0-unstable-2024-09-08";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "forecast";
-    rev = "4b481688700bdeda825de29309610415addf4c62";
-    hash = "sha256-E1uPZ4JPxDM1SrFkX0FzZuaKESNXFsunAhD5WL7qCq4=";
+    rev = "01d7b3fc5db873a42ee94cae7779b019dbd646e3";
+    hash = "sha256-5d6F2JPj17KYXX0CVpDIhKLxjN2fdCJjiAf9JgByOfI=";
   };
 
   cargoLock = {
