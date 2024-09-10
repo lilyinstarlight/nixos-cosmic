@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings-daemon";
-  version = "1.0.0-alpha.1-unstable-2024-09-04";
+  version = "1.0.0-alpha.1-unstable-2024-09-08";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings-daemon";
-    rev = "1ed68808e85ce681da882446ec572d44c68a6866";
-    hash = "sha256-j4tAclYoenNM+iBwk8iHOj4baIXc4wkclPl5RZsADGI=";
+    rev = "a41d1991fdfdac58f0b788e43087ad6ee01d00ca";
+    hash = "sha256-mtnMqG3aUSgtN3+Blj3w90UsX8NUu/QlzYgr64KPE9s=";
   };
 
   cargoLock = {

@@ -929,7 +929,7 @@ dependencies = [
  "cosmic-app-list-config",
  "cosmic-client-toolkit",
  "cosmic-protocols",
- "freedesktop-desktop-entry 0.6.2",
+ "freedesktop-desktop-entry 0.7.5",
  "futures",
  "i18n-embed 0.14.1",
  "i18n-embed-fl 0.8.0",
@@ -1214,6 +1214,7 @@ dependencies = [
  "cosmic-applet-tiling",
  "cosmic-applet-time",
  "cosmic-applet-workspaces",
+ "cosmic-panel-button",
  "libcosmic",
  "tracing",
  "tracing-log",
@@ -1313,7 +1314,7 @@ name = "cosmic-panel-button"
 version = "0.1.0"
 dependencies = [
  "cosmic-config",
- "freedesktop-desktop-entry 0.6.2",
+ "freedesktop-desktop-entry 0.7.5",
  "libcosmic",
  "serde",
  "tracing",
@@ -2268,9 +2269,9 @@ dependencies = [
 
 [[package]]
 name = "freedesktop-desktop-entry"
-version = "0.6.2"
+version = "0.7.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e33809936d2fa9ac78750c5c04696a7aabdb09f928454957c77a2c8247f5ff98"
+checksum = "d83c9c25bc7e0ff18c6fee324db310497622be235fd45c0f7347ab81981a941e"
 dependencies = [
  "dirs 5.0.1",
  "gettext-rs",
