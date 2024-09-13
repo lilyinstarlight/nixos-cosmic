@@ -53,9 +53,6 @@ rustPlatform.buildRustPackage rec {
     "--set"
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-files"
-    "--set"
-    "applet-src"
-    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-files-applet"
   ];
 
   env.VERGEN_GIT_SHA = src.rev;
