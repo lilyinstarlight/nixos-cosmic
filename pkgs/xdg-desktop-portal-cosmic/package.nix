@@ -11,13 +11,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "xdg-desktop-portal-cosmic";
-  version = "1.0.0-alpha.1-unstable-2024-09-10";
+  version = "1.0.0-alpha.1-unstable-2024-09-11";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "xdg-desktop-portal-cosmic";
-    rev = "9bf51d3d1a452f1dfd184930ee1dffa59d0c3558";
-    hash = "sha256-xE1TVlo1w9CpDZi3uwrqjAoscFIF9jspArb/rOTJ6Eo=";
+    rev = "3bbc18076dfb25108408ec6f43a711ab93d7a0ea";
+    hash = "sha256-YB7+p0hzvaiqUK7BwQTmE1cA/9gWeUauKT9nxkI5CDY=";
   };
 
   cargoLock = {
@@ -26,12 +26,12 @@ rustPlatform.buildRustPackage rec {
       "accesskit-0.12.2" = "sha256-1UwgRyUe0PQrZrpS7574oNLi13fg5HpgILtZGW6JNtQ=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
-      "cosmic-bg-config-0.1.0" = "sha256-6GXyC7EI2WMV5b5wAKOj2vkg/Y5NrNlsskbKN/2c6pQ=";
+      "cosmic-bg-config-0.1.0" = "sha256-lAFAZBo5FnXgJV3MrZhaYmBxqtH1E7+Huj53ho/hPik=";
       "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
-      "cosmic-config-0.1.0" = "sha256-/OaUjPZ/JnA+kk1KfBR0DPRBgGMy3J9exwyia7yoEOo=";
-      "cosmic-files-0.1.0" = "sha256-O9rcD6wlXiSfOav8GP+H6lhgGtdmYBoP/S1qd/l2PnU=";
-      "cosmic-settings-daemon-0.1.0" = "sha256-+1XB7r45Uc71fLnNR4U0DUF2EB8uzKeE4HIrdvKhFXo=";
-      "cosmic-text-0.12.1" = "sha256-x0XTxzbmtE2d4XCG/Nuq3DzBpz15BbnjRRlirfNJEiU=";
+      "cosmic-config-0.1.0" = "sha256-YygjfgWmBtfMhUa1GZdKAJSUgSXczrkfUrLbgrF5Tcs=";
+      "cosmic-files-0.1.0" = "sha256-MXzEnIiDyeTnMWmKtN6ebMVGomNKTICO44QQdb/k578=";
+      "cosmic-settings-daemon-0.1.0" = "sha256-mcunAOrjOgt6Y8me4fjpF3fZcK4jQDIpLYlPKuarQLQ=";
+      "cosmic-text-0.12.1" = "sha256-3opGta6Co8l+hIQRVGkfSy6IqJXq/N8ZzqF+YGQADmI=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "fs_extra-1.3.0" = "sha256-ftg5oanoqhipPnbUsqnA4aZcyHqn9XsINJdrStIPLoE=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
