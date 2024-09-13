@@ -43,6 +43,10 @@ rustPlatform.buildRustPackage rec {
   nativeBuildInputs = [ libcosmicAppHook just ];
   buildInputs = [ glib ];
 
+  # TODO: uncomment if these packages ever stop requiring mutually exclusive features
+  #cargoBuildFlags = [ "--package" "cosmic-files" "--package" "cosmic-files-applet" ];
+  #cargoTestFlags = [ "--package" "cosmic-files" "--package" "cosmic-files-applet" ];
+
   dontUseJustBuild = true;
   dontUseJustCheck = true;
 
@@ -53,9 +57,29 @@ rustPlatform.buildRustPackage rec {
     "--set"
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-files"
+    "--set"
+    "applet-src"
+    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-files-applet"
   ];
 
   env.VERGEN_GIT_SHA = src.rev;
+
+  # TODO: remove next two phases if these packages ever stop requiring mutually exclusive features
+  buildPhase = ''
+    baseCargoBuildFlags="$cargoBuildFlags"
+    cargoBuildFlags="$baseCargoBuildFlags --package cosmic-files"
+    runHook cargoBuildHook
+    cargoBuildFlags="$baseCargoBuildFlags --package cosmic-files-applet"
+    runHook cargoBuildHook
+  '';
+
+  checkPhase = ''
+    baseCargoTestFlags="$cargoTestFlags"
+    cargoTestFlags="$baseCargoTestFlags --package cosmic-files"
+    runHook cargoCheckHook
+    cargoTestFlags="$baseCargoTestFlags --package cosmic-files-applet"
+    runHook cargoCheckHook
+  '';
 
   passthru.updateScript = nix-update-script {
     extraArgs = [ "--version-regex" "epoch-(.*)" ];
