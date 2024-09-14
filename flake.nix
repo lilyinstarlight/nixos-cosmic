@@ -16,7 +16,7 @@
 
     # TODO: remove when nix-update is bumped in nixpkgs for a version addressing <https://github.com/Mic92/nix-update/pull/246#issuecomment-2323018854>
     nix-update = {
-      url = "github:lilyinstarlight/nix-update";
+      url = "github:Mic92/nix-update";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
