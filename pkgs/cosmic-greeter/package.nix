@@ -9,8 +9,8 @@
 , linux-pam
 , stdenv
 , udev
-, nix-update-script
 , xkeyboard_config
+, nix-update-script
 }:
 
 rustPlatform.buildRustPackage {

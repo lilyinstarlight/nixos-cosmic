@@ -15,8 +15,8 @@
 , pulseaudio
 , udev
 , util-linux
-, nix-update-script
 , xkeyboard_config
+, nix-update-script
 }:
 
 let
