@@ -11,6 +11,7 @@
 , stdenv
 , udev
 , util-linux
+, xkeyboard_config
 , nix-update-script
 }:
 
@@ -58,6 +59,11 @@ rustPlatform.buildRustPackage {
     "--set" "prefix" (placeholder "out")
     "--set" "target" "${stdenv.hostPlatform.rust.cargoShortTarget}/release"
   ];
+
+  postInstall = ''
+    libcosmicAppWrapperArgs+=(--set X11_BASE_RULES_XML ${xkeyboard_config}/share/X11/xkb/rules/base.xml)
+    libcosmicAppWrapperArgs+=(--set X11_EXTRA_RULES_XML ${xkeyboard_config}/share/X11/xkb/rules/base.extras.xml)
+  '';
 
   passthru.updateScript = nix-update-script {
     extraArgs = [ "--version-regex" "epoch-(.*)" ];
