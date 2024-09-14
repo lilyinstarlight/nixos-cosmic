@@ -16,6 +16,7 @@
 , udev
 , util-linux
 , nix-update-script
+, xkeyboard_config
 }:
 
 let
@@ -76,6 +77,8 @@ rustPlatform.buildRustPackage {
 
   postInstall = ''
     libcosmicAppWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ cosmic-randr ]})
+    libcosmicAppWrapperArgs+=(--set X11_BASE_RULES_XML ${xkeyboard_config}/share/X11/xkb/rules/base.xml)
+    libcosmicAppWrapperArgs+=(--set X11_EXTRA_RULES_XML ${xkeyboard_config}/share/X11/xkb/rules/base.extras.xml)
   '';
 
   passthru.updateScript = nix-update-script {

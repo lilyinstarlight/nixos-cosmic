@@ -10,6 +10,7 @@
 , stdenv
 , udev
 , nix-update-script
+, xkeyboard_config
 }:
 
 rustPlatform.buildRustPackage {
@@ -65,6 +66,11 @@ rustPlatform.buildRustPackage {
 
   postPatch = ''
     substituteInPlace src/greeter.rs --replace-fail '/usr/bin/env' '${lib.getExe' coreutils "env"}'
+  '';
+
+  postInstall = ''
+    libcosmicAppWrapperArgs+=(--set X11_BASE_RULES_XML ${xkeyboard_config}/share/X11/xkb/rules/base.xml)
+    libcosmicAppWrapperArgs+=(--set X11_EXTRA_RULES_XML ${xkeyboard_config}/share/X11/xkb/rules/base.extras.xml)
   '';
 
   passthru.updateScript = nix-update-script {
