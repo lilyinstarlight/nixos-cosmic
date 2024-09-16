@@ -19,6 +19,11 @@ libcosmicAppLinkerArgsHook() {
 
 preConfigurePhases+=" libcosmicAppVergenHook libcosmicAppLinkerArgsHook"
 
+# Add shell hook for use in dev shells
+if [ -n "${IN_NIX_SHELL-}" ] && [ -z "${shellHook-}" ]; then
+    shellHook="libcosmicAppLinkerArgsHook && export RUSTFLAGS=\$CARGO_TARGET_@cargoLinkerVar@_RUSTFLAGS CARGO_TARGET_@cargoLinkerVar@_RUSTFLAGS="
+fi
+
 libcosmicAppWrapperArgsHook() {
     if [ -d "${prefix:?}/share" ]; then
         libcosmicAppWrapperArgs+=(--suffix XDG_DATA_DIRS : "$prefix/share")
