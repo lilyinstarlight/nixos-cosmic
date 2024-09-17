@@ -1242,6 +1242,7 @@ dependencies = [
 name = "cosmic-files"
 version = "0.1.0"
 dependencies = [
+ "bzip2",
  "chrono",
  "dirs 5.0.1",
  "env_logger",
@@ -1261,6 +1262,7 @@ dependencies = [
  "image",
  "libc",
  "libcosmic",
+ "liblzma",
  "log",
  "mime_guess",
  "notify-debouncer-full",
@@ -3574,6 +3576,26 @@ checksum = "4979f22fdb869068da03c9f7528f8297c6fd2606bc3a4affe42e6a823fdb8da4"
 dependencies = [
  "cfg-if",
  "windows-targets 0.52.6",
+]
+
+[[package]]
+name = "liblzma"
+version = "0.3.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a7c45fc6fcf5b527d3cf89c1dee8c327943984b0dc8bfcf6e100473b00969e63"
+dependencies = [
+ "liblzma-sys",
+]
+
+[[package]]
+name = "liblzma-sys"
+version = "0.3.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "63117d31458acdb7b406f6c60090aa8e1e7cd6e283f8ee02ce585ed68c53fe39"
+dependencies = [
+ "cc",
+ "libc",
+ "pkg-config",
 ]
 
 [[package]]
