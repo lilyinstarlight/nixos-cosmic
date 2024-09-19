@@ -53,8 +53,8 @@ rustPlatform.buildRustPackage rec {
   env.VERGEN_GIT_SHA = src.rev;
 
   postInstall = ''
-    mkdir -p $out/share/{dbus-1/services,xdg-desktop-portal/portals}
-    cp -r data/icons $out/share/icons
+    mkdir -p $out/share/{dbus-1/services,icons,xdg-desktop-portal/portals}
+    cp -r data/icons $out/share/icons/hicolor
     cp data/*.service $out/share/dbus-1/services/
     cp data/cosmic.portal $out/share/xdg-desktop-portal/portals/
     cp data/cosmic-portals.conf $out/share/xdg-desktop-portal/
