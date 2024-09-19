@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-files";
-  version = "1.0.0-alpha.1-unstable-2024-09-17";
+  version = "1.0.0-alpha.1-unstable-2024-09-18";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-files";
-    rev = "50f585318313a3da67fdddaf81fa27f7aac0de90";
-    hash = "sha256-5qXcyTtGvaAMfOMcPdkcFh1MQb0b6YP2estlH//J/PA=";
+    rev = "8668c186072e508bb90286f3f02d70b0ed96e0dc";
+    hash = "sha256-w28TSp0/e4SiwZ5eS41LRIaPGxcsEsMvwvrc1ABc9Lw=";
   };
 
   cargoLock = {
@@ -35,7 +35,7 @@ rustPlatform.buildRustPackage rec {
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
-      "trash-5.0.0" = "sha256-6cMo2GtMJjU+fbehlsGNmj3LbzSP+vOjA4en3OgmZ54=";
+      "trash-5.1.1" = "sha256-So8rQ8gLF5o79Az396/CQY/veNo4ticxYpYZPfMJyjQ=";
       "winit-0.29.10" = "sha256-ScTII2AzK3SC8MVeASZ9jhVWsEaGrSQ2BnApTxgfxK4=";
     };
   };
