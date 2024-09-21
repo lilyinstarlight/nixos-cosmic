@@ -25,13 +25,13 @@ in
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings";
-  version = "1.0.0-alpha.1-unstable-2024-09-18";
+  version = "1.0.0-alpha.1-unstable-2024-09-20";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings";
-    rev = "2c07dd8befc8cbbc9bfbf7f23d76b356210c8178";
-    hash = "sha256-UNP1alSRfySZAkOWjxpEv2uUUIHxQHBiyQJQ7Gsrsxs=";
+    rev = "822a6eaa6912f5c2638e8f37c0fdd69aedf40d6b";
+    hash = "sha256-vQEVRqLGaCcUmhZE6gq9Jk1WdQiZh/p5p/dqny6W2UI=";
   };
 
   cargoLock = {
@@ -40,17 +40,17 @@ rustPlatform.buildRustPackage {
       "accesskit-0.12.2" = "sha256-1UwgRyUe0PQrZrpS7574oNLi13fg5HpgILtZGW6JNtQ=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
-      "cosmic-bg-config-0.1.0" = "sha256-ejx13vdvtlwZ6neEJRMolVlPa9NMhRvkLn0N9LQF/bE=";
+      "cosmic-bg-config-0.1.0" = "sha256-lAFAZBo5FnXgJV3MrZhaYmBxqtH1E7+Huj53ho/hPik=";
       "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
-      "cosmic-comp-config-0.1.0" = "sha256-MgiRkgWyOUShxRVGFuvLOy5fi8EheA9Fj/fUg8bSsTE=";
-      "cosmic-config-0.1.0" = "sha256-zamYPvxmIqh4IT4G+aqceP1mXNNBA1TAcJwAtjlbYAU=";
-      "cosmic-dbus-networkmanager-0.1.0" = "sha256-QAFlbT66P7MDFJf+BFrCwUqNinEAcXpimqVa59OaAh8=";
-      "cosmic-panel-config-0.1.0" = "sha256-Hi4WVWODxtKIzhvq16LVrjvEaLN/FOgA3ycLItx70dY=";
+      "cosmic-comp-config-0.1.0" = "sha256-6VYuvZZ9gk5IBWsyVh0Wu7RBpeQ9DbWdvAYzcrgC5wo=";
+      "cosmic-config-0.1.0" = "sha256-Vp2kqk6EWTPt75cdwuvbLX2GBjZt5ltJsX5yROantTE=";
+      "cosmic-dbus-networkmanager-0.1.0" = "sha256-mcunAOrjOgt6Y8me4fjpF3fZcK4jQDIpLYlPKuarQLQ=";
+      "cosmic-panel-config-0.1.0" = "sha256-PBkYCwZlZ0UPJ3irOD2PC3zfdjZ+/EnVurGsAlAs6xo=";
       "cosmic-protocols-0.1.0" = "sha256-zWuvZrg39REZpviQPfLNyfmWBzMS7A7IBUTi8ZRhxXs=";
       "cosmic-randr-0.1.0" = "sha256-g9zoqjPHRv6Tw/Xn8VtFS3H/66tfHSl/DR2lH3Z2ysA=";
-      "cosmic-settings-config-0.1.0" = "sha256-2lNUY1N5iAHwV277BKDLEG/fEuDibTQZS4523W8fLn8=";
-      "cosmic-settings-subscriptions-0.1.0" = "sha256-yhlWnfRRekMlztAJJ4XZIZ1VNzeyFLQY3VNW1UjdY88=";
-      "cosmic-text-0.12.1" = "sha256-5Gk220HTiHuxDvyqwz1Dwr+BaLvH/6X7M14IirQzcsE=";
+      "cosmic-settings-config-0.1.0" = "sha256-mtnMqG3aUSgtN3+Blj3w90UsX8NUu/QlzYgr64KPE9s=";
+      "cosmic-settings-subscriptions-0.1.0" = "sha256-Mmyx3q18BP3j5sUeyyNytmBEBzdJWTmy6AgAGCFe90c=";
+      "cosmic-text-0.12.1" = "sha256-3opGta6Co8l+hIQRVGkfSy6IqJXq/N8ZzqF+YGQADmI=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
