@@ -11,13 +11,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "xdg-desktop-portal-cosmic";
-  version = "1.0.0-alpha.1-unstable-2024-09-14";
+  version = "1.0.0-alpha.1-unstable-2024-09-21";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "xdg-desktop-portal-cosmic";
-    rev = "05c37cd94294cf5cda812d5bc27ab83e4a46b72d";
-    hash = "sha256-/Yh8GcBG1B3goOwrg4F0IlOTjIvh/gdqSy2qbyRym/c=";
+    rev = "03956611cb515c0ad0b77ccfb760fff78592cd4e";
+    hash = "sha256-Z3NaVu0xX0P75blRb89LYd+1XA/bVBQ1G67zpEqHWNA=";
   };
 
   cargoLock = {
@@ -28,18 +28,18 @@ rustPlatform.buildRustPackage rec {
       "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
       "cosmic-bg-config-0.1.0" = "sha256-lAFAZBo5FnXgJV3MrZhaYmBxqtH1E7+Huj53ho/hPik=";
       "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
-      "cosmic-config-0.1.0" = "sha256-3b9G5r0/F4ESoOLRADeuWmJZDCVaaVdESnOa3X3+UOo=";
-      "cosmic-files-0.1.0" = "sha256-nGBBIzYFiXMfpiDsdN7mhEFB+DfHyFv3pppRioBDnew=";
+      "cosmic-config-0.1.0" = "sha256-9VdBixiwk0VuxXRdPL8pZ1QMcuPJgJomtQDm4fOMwRo=";
+      "cosmic-files-0.1.0" = "sha256-sJAJtCxDUAbqu3bh1Dxeo3nBoAVMDcDGeiDuZNBYT7E=";
       "cosmic-settings-daemon-0.1.0" = "sha256-mcunAOrjOgt6Y8me4fjpF3fZcK4jQDIpLYlPKuarQLQ=";
       "cosmic-text-0.12.1" = "sha256-3opGta6Co8l+hIQRVGkfSy6IqJXq/N8ZzqF+YGQADmI=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "fs_extra-1.3.0" = "sha256-ftg5oanoqhipPnbUsqnA4aZcyHqn9XsINJdrStIPLoE=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
-      "libspa-0.8.0" = "sha256-R68TkFbzDFA/8Btcar+0omUErLyBMm4fsmQlCvfqR9o=";
+      "libspa-0.8.0" = "sha256-kp5x5QhmgEqCrt7xDRfMFGoTK5IXOuvW2yOW02B8Ftk=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
-      "trash-5.0.0" = "sha256-6cMo2GtMJjU+fbehlsGNmj3LbzSP+vOjA4en3OgmZ54=";
+      "trash-5.1.1" = "sha256-So8rQ8gLF5o79Az396/CQY/veNo4ticxYpYZPfMJyjQ=";
       "winit-0.29.10" = "sha256-ScTII2AzK3SC8MVeASZ9jhVWsEaGrSQ2BnApTxgfxK4=";
     };
   };
