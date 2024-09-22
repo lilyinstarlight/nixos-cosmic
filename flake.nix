@@ -54,7 +54,7 @@
       lib = nixpkgs.lib;
       # TODO: revert when nix-update is bumped in nixpkgs for a version addressing <https://github.com/Mic92/nix-update/pull/246#issuecomment-2323018854>
       #pkgs = nixpkgs.legacyPackages.${system};
-      pkgs = nixpkgs.legacyPackages.${system}.extend (final: prev: { nix-update = self.inputs.nix-update.packages.${system}.default; nix-update-script = prev.nix-update-script.override { inherit (final) nix-update; }; });
+      pkgs = nixpkgs.legacyPackages.${system}.extend (final: prev: { nix-update = self.inputs.nix-update.packages.${system}.default // { nix-update-script = prev.nix-update.nix-update-script.override { inherit (final) nix-update; }; meta = prev.nix-update.meta; }; });
     in {
       update = pkgs.writeShellApplication {
         name = "cosmic-unstable-update";
