@@ -25,13 +25,13 @@ in
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings";
-  version = "1.0.0-alpha.1-unstable-2024-09-21";
+  version = "1.0.0-alpha.1-unstable-2024-09-23";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings";
-    rev = "7c189811b50985d7515a80f6069d2700041c6dba";
-    hash = "sha256-Qjb/jB8NJy6D/AwyEsGeB1+p0euTpyhsaZn2xCpE9aQ=";
+    rev = "e35b8a3a6d1481a63a2441f854151227988d62ae";
+    hash = "sha256-LBnEiIbZrrg8h7z7uJmtgZYInQ36TsOJax/JBANz6UE=";
   };
 
   cargoLock = {
@@ -42,15 +42,15 @@ rustPlatform.buildRustPackage {
       "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
       "cosmic-bg-config-0.1.0" = "sha256-lAFAZBo5FnXgJV3MrZhaYmBxqtH1E7+Huj53ho/hPik=";
       "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
-      "cosmic-comp-config-0.1.0" = "sha256-6VYuvZZ9gk5IBWsyVh0Wu7RBpeQ9DbWdvAYzcrgC5wo=";
-      "cosmic-config-0.1.0" = "sha256-9VdBixiwk0VuxXRdPL8pZ1QMcuPJgJomtQDm4fOMwRo=";
+      "cosmic-comp-config-0.1.0" = "sha256-IbGMp+4nRg4v5yRvp3ujGx7+nJ6wJmly6dZBXbQAnr8=";
+      "cosmic-config-0.1.0" = "sha256-gXrMEoAN+7nYAEcs4w6wROhQTjMCxkGn+muJutktLyk=";
       "cosmic-dbus-networkmanager-0.1.0" = "sha256-mcunAOrjOgt6Y8me4fjpF3fZcK4jQDIpLYlPKuarQLQ=";
       "cosmic-panel-config-0.1.0" = "sha256-PBkYCwZlZ0UPJ3irOD2PC3zfdjZ+/EnVurGsAlAs6xo=";
       "cosmic-protocols-0.1.0" = "sha256-zWuvZrg39REZpviQPfLNyfmWBzMS7A7IBUTi8ZRhxXs=";
       "cosmic-randr-0.1.0" = "sha256-g9zoqjPHRv6Tw/Xn8VtFS3H/66tfHSl/DR2lH3Z2ysA=";
       "cosmic-settings-config-0.1.0" = "sha256-mtnMqG3aUSgtN3+Blj3w90UsX8NUu/QlzYgr64KPE9s=";
       "cosmic-settings-subscriptions-0.1.0" = "sha256-Mmyx3q18BP3j5sUeyyNytmBEBzdJWTmy6AgAGCFe90c=";
-      "cosmic-text-0.12.1" = "sha256-3opGta6Co8l+hIQRVGkfSy6IqJXq/N8ZzqF+YGQADmI=";
+      "cosmic-text-0.12.1" = "sha256-u2Tw+XhpIKeFg8Wgru/sjGw6GUZ2m50ZDmRBJ1IM66w=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";

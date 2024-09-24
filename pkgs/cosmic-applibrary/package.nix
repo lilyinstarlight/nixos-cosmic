@@ -9,13 +9,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-applibrary";
-  version = "1.0.0-alpha.1-unstable-2024-08-28";
+  version = "1.0.0-alpha.1-unstable-2024-09-23";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-applibrary";
-    rev = "db4a96e4307f7bc57f7af0d9faa498940dfaea65";
-    hash = "sha256-HvAStp5aR1lbqxQqxconeNQHWWmZsnZUqpgt8mehay4=";
+    rev = "e26816ff5e60b4ac7a63c517cd4d274a28e378ed";
+    hash = "sha256-Ae6yzlbM7kCV7X+8OzbiJo9klLFr/gBoq02ONHAFfdI=";
   };
 
   cargoLock = {
@@ -24,12 +24,12 @@ rustPlatform.buildRustPackage {
       "accesskit-0.12.2" = "sha256-1UwgRyUe0PQrZrpS7574oNLi13fg5HpgILtZGW6JNtQ=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
-      "cosmic-app-list-config-0.1.0" = "sha256-F0DU4QNt8Euo8jDd1OpuicPeIV57Rz9UxiEAizAkMwE=";
+      "cosmic-app-list-config-0.1.0" = "sha256-xRMW/tikw1DHuYuCgCPQf3xxrKSKFVRYI+ipK2jSaaM=";
       "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
-      "cosmic-config-0.1.0" = "sha256-FRSM3YQuP5eJhUlD5uS6l5A/d422W7ZtT4GcVOubxWw=";
-      "cosmic-panel-config-0.1.0" = "sha256-Hi4WVWODxtKIzhvq16LVrjvEaLN/FOgA3ycLItx70dY=";
-      "cosmic-settings-daemon-0.1.0" = "sha256-+1XB7r45Uc71fLnNR4U0DUF2EB8uzKeE4HIrdvKhFXo=";
-      "cosmic-text-0.12.1" = "sha256-x0XTxzbmtE2d4XCG/Nuq3DzBpz15BbnjRRlirfNJEiU=";
+      "cosmic-config-0.1.0" = "sha256-gXrMEoAN+7nYAEcs4w6wROhQTjMCxkGn+muJutktLyk=";
+      "cosmic-panel-config-0.1.0" = "sha256-PBkYCwZlZ0UPJ3irOD2PC3zfdjZ+/EnVurGsAlAs6xo=";
+      "cosmic-settings-daemon-0.1.0" = "sha256-mcunAOrjOgt6Y8me4fjpF3fZcK4jQDIpLYlPKuarQLQ=";
+      "cosmic-text-0.12.1" = "sha256-u2Tw+XhpIKeFg8Wgru/sjGw6GUZ2m50ZDmRBJ1IM66w=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
