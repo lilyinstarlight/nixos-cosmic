@@ -13,12 +13,6 @@
       url = "github:nix-community/flake-compat";
       flake = false;
     };
-
-    # TODO: remove when nix-update is bumped in nixpkgs for a version addressing <https://github.com/Mic92/nix-update/pull/246#issuecomment-2323018854>
-    nix-update = {
-      url = "github:Mic92/nix-update";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, nixpkgs-stable, rust-overlay, ... }: let
@@ -52,9 +46,7 @@
 
     legacyPackages = forAllSystems (system: let
       lib = nixpkgs.lib;
-      # TODO: revert when nix-update is bumped in nixpkgs for a version addressing <https://github.com/Mic92/nix-update/pull/246#issuecomment-2323018854>
-      #pkgs = nixpkgs.legacyPackages.${system};
-      pkgs = nixpkgs.legacyPackages.${system}.extend (final: prev: { nix-update = self.inputs.nix-update.packages.${system}.default // { nix-update-script = prev.nix-update.nix-update-script.override { inherit (final) nix-update; }; meta = prev.nix-update.meta; }; });
+      pkgs = nixpkgs.legacyPackages.${system};
     in {
       update = pkgs.writeShellApplication {
         name = "cosmic-unstable-update";
