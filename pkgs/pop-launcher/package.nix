@@ -74,9 +74,9 @@ rustPlatform.buildRustPackage {
   meta = with lib; {
     description = "Modular IPC-based desktop launcher service";
     homepage = "https://github.com/pop-os/launcher";
-    platforms = platforms.linux;
     license = licenses.mpl20;
-    maintainers = with maintainers; [ samhug /*lilyinstarlight*/ ];
+    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    platforms = platforms.linux;
     mainProgram = "pop-launcher";
   };
 }

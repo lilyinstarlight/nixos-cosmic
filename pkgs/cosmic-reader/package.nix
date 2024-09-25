@@ -2,7 +2,6 @@
 , fetchFromGitHub
 , rustPlatform
 , libcosmicAppHook
-, stdenv
 , nix-update-script
 }:
 

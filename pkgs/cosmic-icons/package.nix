@@ -6,6 +6,7 @@
 , hicolor-icon-theme
 , nix-update-script
 }:
+
 stdenvNoCC.mkDerivation {
   pname = "cosmic-icons";
   version = "1.0.0-alpha.1-unstable-2024-09-09";
@@ -39,9 +40,8 @@ stdenvNoCC.mkDerivation {
   meta = with lib; {
     description = "System76 COSMIC icon theme for Linux";
     homepage = "https://github.com/pop-os/cosmic-icons";
-    license = with licenses; [
-      cc-by-sa-40
-    ];
-    maintainers = with maintainers; [ a-kenji /*lilyinstarlight*/ ];
+    license = with licenses; [ cc-by-sa-40 ];
+    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    platforms = platforms.all;
   };
 }

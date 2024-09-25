@@ -24,5 +24,6 @@ stdenvNoCC.mkDerivation {
     homepage = "https://github.com/pop-os/cosmic-wallpapers";
     license = with licenses; [ cc-by-sa-40 cc-by-40 publicDomain ];
     maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    platforms = platforms.all;
   };
 }
