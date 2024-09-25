@@ -9,11 +9,9 @@ let
   cfg = config.services.displayManager.cosmic-greeter;
 in
 {
-  meta.maintainers =
-    with lib.maintainers;
-    [
-      # lilyinstarlight
-    ];
+  meta.maintainers = with lib.maintainers; [
+    # lilyinstarlight
+  ];
 
   options.services.displayManager.cosmic-greeter = {
     enable = lib.mkEnableOption "COSMIC greeter";
@@ -26,7 +24,7 @@ in
       settings = {
         default_session = {
           user = "cosmic-greeter";
-          command = ''${pkgs.coreutils}/bin/env XCURSOR_THEME="''${XCURSOR_THEME:-Pop}" systemd-cat -t cosmic-greeter ${pkgs.cosmic-comp}/bin/cosmic-comp ${pkgs.cosmic-greeter}/bin/cosmic-greeter'';
+          command = ''${lib.getExe' pkgs.coreutils "env"} XCURSOR_THEME="''${XCURSOR_THEME:-Pop}" systemd-cat -t cosmic-greeter ${lib.getExe pkgs.cosmic-comp} ${lib.getExe pkgs.cosmic-greeter}'';
         };
       };
     };
@@ -38,7 +36,7 @@ in
       serviceConfig = {
         Type = "dbus";
         BusName = "com.system76.CosmicGreeter";
-        ExecStart = "${pkgs.cosmic-greeter}/bin/cosmic-greeter-daemon";
+        ExecStart = lib.getExe' pkgs.cosmic-greeter "cosmic-greeter-daemon";
         Restart = "on-failure";
       };
     };

@@ -9,6 +9,7 @@
   xdg-desktop-portal-cosmic,
   nix-update-script,
 }:
+
 rustPlatform.buildRustPackage {
   pname = "cosmic-session";
   version = "1.0.0-alpha.2-unstable-2024-09-17";
@@ -32,10 +33,10 @@ rustPlatform.buildRustPackage {
     substituteInPlace Justfile \
       --replace-fail '{{cargo-target-dir}}/release/cosmic-session' 'target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-session'
     substituteInPlace data/start-cosmic \
-      --replace-fail '/usr/bin/cosmic-session' '${placeholder "out"}/bin/cosmic-session' \
-      --replace-fail '/usr/bin/dbus-run-session' '${lib.getExe' dbus "dbus-run-session"}'
+      --replace-fail /usr/bin/cosmic-session "''${!outputBin}/bin/cosmic-session" \
+      --replace-fail /usr/bin/dbus-run-session '${lib.getExe' dbus "dbus-run-session"}'
     substituteInPlace data/cosmic.desktop \
-      --replace-fail '/usr/bin/start-cosmic' '${placeholder "out"}/bin/start-cosmic'
+      --replace-fail /usr/bin/start-cosmic "''${!outputBin}/bin/start-cosmic"
   '';
 
   nativeBuildInputs = [ just ];
@@ -67,11 +68,9 @@ rustPlatform.buildRustPackage {
     description = "Session manager for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
     mainProgram = "cosmic-session";
-    maintainers =
-      with maintainers;
-      [
-        # lilyinstarlight
-      ];
+    maintainers = with maintainers; [
+      # lilyinstarlight
+    ];
     platforms = platforms.linux;
   };
 }
