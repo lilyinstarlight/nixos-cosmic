@@ -1,10 +1,19 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   cfg = config.services.displayManager.cosmic-greeter;
 in
 {
-  meta.maintainers = with lib.maintainers; [ /*lilyinstarlight*/ ];
+  meta.maintainers =
+    with lib.maintainers;
+    [
+      # lilyinstarlight
+    ];
 
   options.services.displayManager.cosmic-greeter = {
     enable = lib.mkEnableOption "COSMIC greeter";
@@ -55,7 +64,7 @@ in
     services.accounts-daemon.enable = true;
 
     # required for authentication
-    security.pam.services.cosmic-greeter = {};
+    security.pam.services.cosmic-greeter = { };
 
     # dbus definitions
     services.dbus.packages = with pkgs; [ cosmic-greeter ];

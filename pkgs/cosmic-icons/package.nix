@@ -1,10 +1,11 @@
-{ lib
-, stdenvNoCC
-, fetchFromGitHub
-, just
-, pop-icon-theme
-, hicolor-icon-theme
-, nix-update-script
+{
+  lib,
+  stdenvNoCC,
+  fetchFromGitHub,
+  just,
+  pop-icon-theme,
+  hicolor-icon-theme,
+  nix-update-script,
 }:
 
 stdenvNoCC.mkDerivation {
@@ -34,14 +35,21 @@ stdenvNoCC.mkDerivation {
   dontDropIconThemeCache = true;
 
   passthru.updateScript = nix-update-script {
-    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    extraArgs = [
+      "--version-regex"
+      "epoch-(.*)"
+    ];
   };
 
   meta = with lib; {
     description = "System76 COSMIC icon theme for Linux";
     homepage = "https://github.com/pop-os/cosmic-icons";
     license = with licenses; [ cc-by-sa-40 ];
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.all;
   };
 }

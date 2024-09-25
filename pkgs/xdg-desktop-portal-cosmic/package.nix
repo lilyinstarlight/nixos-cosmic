@@ -1,12 +1,13 @@
-{ lib
-, rustPlatform
-, fetchFromGitHub
-, libcosmicAppHook
-, pkg-config
-, mesa
-, pipewire
-, gst_all_1
-, nix-update-script
+{
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+  libcosmicAppHook,
+  pkg-config,
+  mesa,
+  pipewire,
+  gst_all_1,
+  nix-update-script,
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -46,8 +47,15 @@ rustPlatform.buildRustPackage rec {
 
   separateDebugInfo = true;
 
-  nativeBuildInputs = [ libcosmicAppHook rustPlatform.bindgenHook pkg-config ];
-  buildInputs = [ mesa pipewire ];
+  nativeBuildInputs = [
+    libcosmicAppHook
+    rustPlatform.bindgenHook
+    pkg-config
+  ];
+  buildInputs = [
+    mesa
+    pipewire
+  ];
   checkInputs = [ gst_all_1.gstreamer ];
 
   env.VERGEN_GIT_SHA = src.rev;
@@ -61,14 +69,21 @@ rustPlatform.buildRustPackage rec {
   '';
 
   passthru.updateScript = nix-update-script {
-    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    extraArgs = [
+      "--version-regex"
+      "epoch-(.*)"
+    ];
   };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/xdg-desktop-portal-cosmic";
     description = "XDG Desktop Portal for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     mainProgram = "xdg-desktop-portal-cosmic";
     platforms = platforms.linux;
   };

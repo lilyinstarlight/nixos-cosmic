@@ -47,7 +47,11 @@ rustPlatform.buildRustPackage rec {
     };
   };
 
-  nativeBuildInputs = [ libcosmicAppHook just pkg-config ];
+  nativeBuildInputs = [
+    libcosmicAppHook
+    just
+    pkg-config
+  ];
   buildInputs = [
     glib
     gtk3
@@ -71,14 +75,21 @@ rustPlatform.buildRustPackage rec {
   env.VERGEN_GIT_SHA = src.rev;
 
   passthru.updateScript = nix-update-script {
-    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    extraArgs = [
+      "--version-regex"
+      "epoch-(.*)"
+    ];
   };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-edit";
     description = "Text Editor for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
     mainProgram = "cosmic-edit";
   };

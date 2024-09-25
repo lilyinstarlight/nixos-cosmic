@@ -1,8 +1,9 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
-, libcosmicAppHook
-, nix-update-script
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  libcosmicAppHook,
+  nix-update-script,
 }:
 
 rustPlatform.buildRustPackage {
@@ -47,7 +48,11 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/pop-os/cosmic-reader";
     description = "PDF reader for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
     mainProgram = "cosmic-reader";
   };

@@ -1,11 +1,12 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
-, geoclue2-with-demo-agent
-, libinput
-, pkg-config
-, udev
-, nix-update-script
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  geoclue2-with-demo-agent,
+  libinput,
+  pkg-config,
+  udev,
+  nix-update-script,
 }:
 
 rustPlatform.buildRustPackage {
@@ -38,7 +39,10 @@ rustPlatform.buildRustPackage {
   };
 
   nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ libinput udev ];
+  buildInputs = [
+    libinput
+    udev
+  ];
 
   env.GEOCLUE_AGENT = "${lib.getLib geoclue2-with-demo-agent}/libexec/geoclue-2.0/demos/agent";
 
@@ -49,14 +53,21 @@ rustPlatform.buildRustPackage {
   '';
 
   passthru.updateScript = nix-update-script {
-    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    extraArgs = [
+      "--version-regex"
+      "epoch-(.*)"
+    ];
   };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-settings-daemon";
     description = "Settings daemon for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
     mainProgram = "cosmic-settings-daemon";
   };

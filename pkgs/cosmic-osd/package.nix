@@ -1,11 +1,12 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
-, libcosmicAppHook
-, pkg-config
-, pulseaudio
-, udev
-, nix-update-script
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  libcosmicAppHook,
+  pkg-config,
+  pulseaudio,
+  udev,
+  nix-update-script,
 }:
 
 rustPlatform.buildRustPackage {
@@ -39,20 +40,33 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ libcosmicAppHook pkg-config ];
-  buildInputs = [ pulseaudio udev ];
+  nativeBuildInputs = [
+    libcosmicAppHook
+    pkg-config
+  ];
+  buildInputs = [
+    pulseaudio
+    udev
+  ];
 
   env.POLKIT_AGENT_HELPER_1 = "/run/wrappers/bin/polkit-agent-helper-1";
 
   passthru.updateScript = nix-update-script {
-    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    extraArgs = [
+      "--version-regex"
+      "epoch-(.*)"
+    ];
   };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-osd";
     description = "OSD for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
     mainProgram = "cosmic-osd";
   };

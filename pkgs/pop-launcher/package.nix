@@ -1,14 +1,15 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
-, bash
-, fd
-, just
-, libqalculate
-, libxkbcommon
-, pkg-config
-, stdenv
-, nix-update-script
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  bash,
+  fd,
+  just,
+  libqalculate,
+  libxkbcommon,
+  pkg-config,
+  stdenv,
+  nix-update-script,
 }:
 
 rustPlatform.buildRustPackage {
@@ -31,11 +32,23 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ just pkg-config ];
-  buildInputs = [ bash libxkbcommon ];
+  nativeBuildInputs = [
+    just
+    pkg-config
+  ];
+  buildInputs = [
+    bash
+    libxkbcommon
+  ];
 
-  cargoBuildFlags = [ "--package" "pop-launcher-bin" ];
-  cargoTestFlags = [ "--package" "pop-launcher-bin" ];
+  cargoBuildFlags = [
+    "--package"
+    "pop-launcher-bin"
+  ];
+  cargoTestFlags = [
+    "--package"
+    "pop-launcher-bin"
+  ];
 
   dontUseJustBuild = true;
   dontUseJustCheck = true;
@@ -75,7 +88,11 @@ rustPlatform.buildRustPackage {
     description = "Modular IPC-based desktop launcher service";
     homepage = "https://github.com/pop-os/launcher";
     license = licenses.mpl20;
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
     mainProgram = "pop-launcher";
   };

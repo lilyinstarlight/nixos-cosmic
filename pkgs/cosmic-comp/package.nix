@@ -1,19 +1,20 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
-, libcosmicAppHook
-, libinput
-, mesa
-, pixman
-, pkg-config
-, seatd
-, stdenv
-, udev
-, xwayland
-, useXWayland ? true
-, systemd
-, useSystemd ? lib.meta.availableOn stdenv.hostPlatform systemd
-, nix-update-script
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  libcosmicAppHook,
+  libinput,
+  mesa,
+  pixman,
+  pkg-config,
+  seatd,
+  stdenv,
+  udev,
+  xwayland,
+  useXWayland ? true,
+  systemd,
+  useSystemd ? lib.meta.availableOn stdenv.hostPlatform systemd,
+  nix-update-script,
 }:
 
 rustPlatform.buildRustPackage {
@@ -50,7 +51,10 @@ rustPlatform.buildRustPackage {
 
   separateDebugInfo = true;
 
-  nativeBuildInputs = [ libcosmicAppHook pkg-config ];
+  nativeBuildInputs = [
+    libcosmicAppHook
+    pkg-config
+  ];
   buildInputs = [
     libinput
     mesa
@@ -62,22 +66,31 @@ rustPlatform.buildRustPackage {
   # only default feature is systemd
   buildNoDefaultFeatures = !useSystemd;
 
-  postInstall = ''
-    mkdir -p $out/share/cosmic/com.system76.CosmicSettings.Shortcuts/v1
-    cp data/keybindings.ron $out/share/cosmic/com.system76.CosmicSettings.Shortcuts/v1/defaults
-  '' + lib.optionalString useXWayland ''
-    libcosmicAppWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ xwayland ]})
-  '';
+  postInstall =
+    ''
+      mkdir -p $out/share/cosmic/com.system76.CosmicSettings.Shortcuts/v1
+      cp data/keybindings.ron $out/share/cosmic/com.system76.CosmicSettings.Shortcuts/v1/defaults
+    ''
+    + lib.optionalString useXWayland ''
+      libcosmicAppWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ xwayland ]})
+    '';
 
   passthru.updateScript = nix-update-script {
-    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    extraArgs = [
+      "--version-regex"
+      "epoch-(.*)"
+    ];
   };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-comp";
     description = "Compositor for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
     mainProgram = "cosmic-comp";
   };

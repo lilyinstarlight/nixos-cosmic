@@ -1,11 +1,12 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
-, libcosmicAppHook
-, just
-, stdenv
-, util-linux
-, nix-update-script
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  libcosmicAppHook,
+  just,
+  stdenv,
+  util-linux,
+  nix-update-script,
 }:
 
 rustPlatform.buildRustPackage {
@@ -53,7 +54,10 @@ rustPlatform.buildRustPackage {
     (placeholder "out")
   ];
 
-  installTargets = [ "install" "install-schema" ];
+  installTargets = [
+    "install"
+    "install-schema"
+  ];
 
   postPatch = ''
     substituteInPlace justfile \
@@ -66,8 +70,15 @@ rustPlatform.buildRustPackage {
   meta = with lib; {
     homepage = "https://github.com/leb-kuchen/cosmic-ext-applet-emoji-selector";
     description = "Emoji selector applet for the COSMIC Desktop Environment";
-    license = with licenses; [ mpl20 mit ];
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    license = with licenses; [
+      mpl20
+      mit
+    ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
     mainProgram = "cosmic-applet-emoji-selector";
   };

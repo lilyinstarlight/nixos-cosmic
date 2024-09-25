@@ -1,8 +1,9 @@
-{ lib
-, fetchFromGitHub
-, stdenv
-, wayland-scanner
-, nix-update-script
+{
+  lib,
+  fetchFromGitHub,
+  stdenv,
+  wayland-scanner,
+  nix-update-script,
 }:
 
 stdenv.mkDerivation {
@@ -27,8 +28,15 @@ stdenv.mkDerivation {
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-protocols";
     description = "Addtional wayland-protocols used by the COSMIC Desktop Environment";
-    license = [ licenses.mit licenses.gpl3Only ];
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    license = [
+      licenses.mit
+      licenses.gpl3Only
+    ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
   };
 }

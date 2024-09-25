@@ -1,18 +1,19 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
-, libcosmicAppHook
-, dbus
-, glib
-, just
-, libinput
-, pkg-config
-, pulseaudio
-, stdenv
-, udev
-, util-linux
-, xkeyboard_config
-, nix-update-script
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  libcosmicAppHook,
+  dbus,
+  glib,
+  just,
+  libinput,
+  pkg-config,
+  pulseaudio,
+  stdenv,
+  udev,
+  util-linux,
+  xkeyboard_config,
+  nix-update-script,
 }:
 
 rustPlatform.buildRustPackage {
@@ -49,15 +50,30 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ libcosmicAppHook just pkg-config util-linux ];
-  buildInputs = [ dbus glib libinput pulseaudio udev ];
+  nativeBuildInputs = [
+    libcosmicAppHook
+    just
+    pkg-config
+    util-linux
+  ];
+  buildInputs = [
+    dbus
+    glib
+    libinput
+    pulseaudio
+    udev
+  ];
 
   dontUseJustBuild = true;
   dontUseJustCheck = true;
 
   justFlags = [
-    "--set" "prefix" (placeholder "out")
-    "--set" "target" "${stdenv.hostPlatform.rust.cargoShortTarget}/release"
+    "--set"
+    "prefix"
+    (placeholder "out")
+    "--set"
+    "target"
+    "${stdenv.hostPlatform.rust.cargoShortTarget}/release"
   ];
 
   postInstall = ''
@@ -66,14 +82,21 @@ rustPlatform.buildRustPackage {
   '';
 
   passthru.updateScript = nix-update-script {
-    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    extraArgs = [
+      "--version-regex"
+      "epoch-(.*)"
+    ];
   };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-applets";
     description = "Applets for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
   };
 }

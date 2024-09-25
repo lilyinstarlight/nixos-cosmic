@@ -1,26 +1,29 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, rustPlatform
-, libcosmicAppHook
-, cmake
-, cosmic-randr
-, expat
-, fontconfig
-, freetype
-, just
-, libinput
-, pipewire
-, pkg-config
-, pulseaudio
-, udev
-, util-linux
-, xkeyboard_config
-, nix-update-script
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  rustPlatform,
+  libcosmicAppHook,
+  cmake,
+  cosmic-randr,
+  expat,
+  fontconfig,
+  freetype,
+  just,
+  libinput,
+  pipewire,
+  pkg-config,
+  pulseaudio,
+  udev,
+  util-linux,
+  xkeyboard_config,
+  nix-update-script,
 }:
 
 let
-  libcosmicAppHook' = (libcosmicAppHook.__spliced.buildHost or libcosmicAppHook).override { includeSettings = false; };
+  libcosmicAppHook' = (libcosmicAppHook.__spliced.buildHost or libcosmicAppHook).override {
+    includeSettings = false;
+  };
 in
 
 rustPlatform.buildRustPackage {
@@ -60,8 +63,23 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ libcosmicAppHook' rustPlatform.bindgenHook cmake just pkg-config util-linux ];
-  buildInputs = [ expat fontconfig freetype libinput pipewire pulseaudio udev ];
+  nativeBuildInputs = [
+    libcosmicAppHook'
+    rustPlatform.bindgenHook
+    cmake
+    just
+    pkg-config
+    util-linux
+  ];
+  buildInputs = [
+    expat
+    fontconfig
+    freetype
+    libinput
+    pipewire
+    pulseaudio
+    udev
+  ];
 
   dontUseJustBuild = true;
   dontUseJustCheck = true;
@@ -82,14 +100,21 @@ rustPlatform.buildRustPackage {
   '';
 
   passthru.updateScript = nix-update-script {
-    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    extraArgs = [
+      "--version-regex"
+      "epoch-(.*)"
+    ];
   };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-settings";
     description = "Settings for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
     mainProgram = "cosmic-settings";
   };

@@ -1,11 +1,12 @@
-{ lib
-, fetchFromGitHub
-, rustPlatform
-, libcosmicAppHook
-, stdenv
-, glib
-, just
-, nix-update-script
+{
+  lib,
+  fetchFromGitHub,
+  rustPlatform,
+  libcosmicAppHook,
+  stdenv,
+  glib,
+  just,
+  nix-update-script,
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -40,7 +41,10 @@ rustPlatform.buildRustPackage rec {
     };
   };
 
-  nativeBuildInputs = [ libcosmicAppHook just ];
+  nativeBuildInputs = [
+    libcosmicAppHook
+    just
+  ];
   buildInputs = [ glib ];
 
   # TODO: uncomment if these packages ever stop requiring mutually exclusive features
@@ -82,14 +86,21 @@ rustPlatform.buildRustPackage rec {
   '';
 
   passthru.updateScript = nix-update-script {
-    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    extraArgs = [
+      "--version-regex"
+      "epoch-(.*)"
+    ];
   };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-files";
     description = "File Manager for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
     mainProgram = "cosmic-files";
   };

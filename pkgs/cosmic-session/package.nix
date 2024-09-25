@@ -54,7 +54,10 @@ rustPlatform.buildRustPackage {
 
   passthru = {
     updateScript = nix-update-script {
-      extraArgs = [ "--version-regex" "epoch-(.*)" ];
+      extraArgs = [
+        "--version-regex"
+        "epoch-(.*)"
+      ];
     };
     providedSessions = [ "cosmic" ];
   };
@@ -64,7 +67,11 @@ rustPlatform.buildRustPackage {
     description = "Session manager for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
     mainProgram = "cosmic-session";
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
   };
 }

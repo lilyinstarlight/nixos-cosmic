@@ -1,12 +1,13 @@
-{ lib
-, rustPlatform
-, fetchFromGitHub
-, libcosmicAppHook
-, pkg-config
-, libinput
-, mesa
-, udev
-, nix-update-script
+{
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+  libcosmicAppHook,
+  pkg-config,
+  libinput,
+  mesa,
+  udev,
+  nix-update-script,
 }:
 
 rustPlatform.buildRustPackage {
@@ -39,8 +40,15 @@ rustPlatform.buildRustPackage {
     };
   };
 
-  nativeBuildInputs = [ libcosmicAppHook pkg-config ];
-  buildInputs = [ libinput mesa udev ];
+  nativeBuildInputs = [
+    libcosmicAppHook
+    pkg-config
+  ];
+  buildInputs = [
+    libinput
+    mesa
+    udev
+  ];
 
   postInstall = ''
     mkdir -p $out/share/{applications,icons/hicolor/scalable/apps}
@@ -49,14 +57,21 @@ rustPlatform.buildRustPackage {
   '';
 
   passthru.updateScript = nix-update-script {
-    extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    extraArgs = [
+      "--version-regex"
+      "epoch-(.*)"
+    ];
   };
 
   meta = with lib; {
     homepage = "https://github.com/pop-os/cosmic-workspaces-epoch";
     description = "Workspaces Epoch for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [ /*lilyinstarlight*/ ];
+    maintainers =
+      with maintainers;
+      [
+        # lilyinstarlight
+      ];
     platforms = platforms.linux;
     mainProgram = "cosmic-workspaces";
   };
