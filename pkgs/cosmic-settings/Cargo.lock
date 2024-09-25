@@ -814,6 +814,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "bluez-zbus"
+version = "0.1.0"
+source = "git+https://github.com/pop-os/dbus-settings-bindings#8059e6bdaa35fecd70d228a999ca342fb00d313b"
+dependencies = [
+ "futures",
+ "zbus 4.4.0",
+]
+
+[[package]]
 name = "borsh"
 version = "1.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1477,7 +1486,7 @@ dependencies = [
 [[package]]
 name = "cosmic-dbus-networkmanager"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/dbus-settings-bindings#063c2ad0dbe090d7e1221817128098493838b13a"
+source = "git+https://github.com/pop-os/dbus-settings-bindings#8059e6bdaa35fecd70d228a999ca342fb00d313b"
 dependencies = [
  "bitflags 2.6.0",
  "derive_builder",
@@ -1552,6 +1561,7 @@ dependencies = [
  "as-result",
  "ashpd 0.9.1",
  "async-channel",
+ "bluez-zbus",
  "chrono",
  "clap",
  "color-eyre",
@@ -1623,7 +1633,7 @@ dependencies = [
 [[package]]
 name = "cosmic-settings-daemon"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/dbus-settings-bindings#063c2ad0dbe090d7e1221817128098493838b13a"
+source = "git+https://github.com/pop-os/dbus-settings-bindings#8059e6bdaa35fecd70d228a999ca342fb00d313b"
 dependencies = [
  "zbus 4.4.0",
 ]
@@ -2964,7 +2974,7 @@ checksum = "f558a64ac9af88b5ba400d99b579451af0d39c6d360980045b91aac966d705e2"
 [[package]]
 name = "hostname1-zbus"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/dbus-settings-bindings#063c2ad0dbe090d7e1221817128098493838b13a"
+source = "git+https://github.com/pop-os/dbus-settings-bindings#8059e6bdaa35fecd70d228a999ca342fb00d313b"
 dependencies = [
  "zbus 4.4.0",
 ]
@@ -6647,7 +6657,7 @@ dependencies = [
 [[package]]
 name = "timedate-zbus"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/dbus-settings-bindings#063c2ad0dbe090d7e1221817128098493838b13a"
+source = "git+https://github.com/pop-os/dbus-settings-bindings#8059e6bdaa35fecd70d228a999ca342fb00d313b"
 dependencies = [
  "zbus 4.4.0",
 ]
@@ -7067,7 +7077,7 @@ checksum = "ebc1c04c71510c7f702b52b7c350734c9ff1295c464a03335b00bb84fc54f853"
 [[package]]
 name = "upower_dbus"
 version = "0.3.2"
-source = "git+https://github.com/pop-os/dbus-settings-bindings#063c2ad0dbe090d7e1221817128098493838b13a"
+source = "git+https://github.com/pop-os/dbus-settings-bindings#8059e6bdaa35fecd70d228a999ca342fb00d313b"
 dependencies = [
  "serde",
  "serde_repr",
