@@ -42,13 +42,11 @@ in
     };
 
     # greeter user (hardcoded in cosmic-greeter)
-    systemd.tmpfiles.rules = [
-      "d '/var/lib/cosmic-greeter' - cosmic-greeter cosmic-greeter - -"
-    ];
-
     users.users.cosmic-greeter = {
+      description = "COSMIC login greeter user";
       isSystemUser = true;
       home = "/var/lib/cosmic-greeter";
+      createHome = true;
       group = "cosmic-greeter";
     };
 
