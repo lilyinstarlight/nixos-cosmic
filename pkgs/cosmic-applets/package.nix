@@ -92,11 +92,9 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/pop-os/cosmic-applets";
     description = "Applets for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers =
-      with maintainers;
-      [
-        # lilyinstarlight
-      ];
+    maintainers = with maintainers; [
+      # lilyinstarlight
+    ];
     platforms = platforms.linux;
   };
 }

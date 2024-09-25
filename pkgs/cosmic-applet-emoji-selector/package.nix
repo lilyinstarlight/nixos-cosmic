@@ -74,11 +74,9 @@ rustPlatform.buildRustPackage {
       mpl20
       mit
     ];
-    maintainers =
-      with maintainers;
-      [
-        # lilyinstarlight
-      ];
+    maintainers = with maintainers; [
+      # lilyinstarlight
+    ];
     platforms = platforms.linux;
     mainProgram = "cosmic-applet-emoji-selector";
   };

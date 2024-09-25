@@ -68,11 +68,9 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://github.com/cosmic-utils/forecast";
     description = "Weather forecast for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers =
-      with maintainers;
-      [
-        # lilyinstarlight
-      ];
+    maintainers = with maintainers; [
+      # lilyinstarlight
+    ];
     platforms = platforms.linux;
     mainProgram = "cosmic-ext-forecast";
   };

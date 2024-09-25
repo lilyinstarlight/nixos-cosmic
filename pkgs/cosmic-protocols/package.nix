@@ -32,11 +32,9 @@ stdenv.mkDerivation {
       licenses.mit
       licenses.gpl3Only
     ];
-    maintainers =
-      with maintainers;
-      [
-        # lilyinstarlight
-      ];
+    maintainers = with maintainers; [
+      # lilyinstarlight
+    ];
     platforms = platforms.linux;
   };
 }

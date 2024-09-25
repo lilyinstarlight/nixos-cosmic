@@ -28,11 +28,9 @@ stdenvNoCC.mkDerivation {
       cc-by-40
       publicDomain
     ];
-    maintainers =
-      with maintainers;
-      [
-        # lilyinstarlight
-      ];
+    maintainers = with maintainers; [
+      # lilyinstarlight
+    ];
     platforms = platforms.all;
   };
 }

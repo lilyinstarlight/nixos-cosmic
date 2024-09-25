@@ -79,11 +79,9 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://github.com/pop-os/xdg-desktop-portal-cosmic";
     description = "XDG Desktop Portal for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers =
-      with maintainers;
-      [
-        # lilyinstarlight
-      ];
+    maintainers = with maintainers; [
+      # lilyinstarlight
+    ];
     mainProgram = "xdg-desktop-portal-cosmic";
     platforms = platforms.linux;
   };

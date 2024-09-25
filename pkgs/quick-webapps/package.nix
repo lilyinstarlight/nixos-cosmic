@@ -67,11 +67,9 @@ rustPlatform.buildRustPackage {
     homepage = "https://github.com/cosmic-utils/web-apps";
     description = "Web app manager for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
-    maintainers =
-      with maintainers;
-      [
-        # lilyinstarlight
-      ];
+    maintainers = with maintainers; [
+      # lilyinstarlight
+    ];
     platforms = platforms.linux;
     mainProgram = "quick-webapps";
   };
