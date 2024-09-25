@@ -44,6 +44,8 @@ If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flak
 
 After setting up binary substituters and NixOS module, enable COSMIC with `services.desktopManager.cosmic.enable = true` and `services.displayManager.cosmic-greeter.enable = true` in your NixOS configuration.
 
+To use COSMIC Store to manage Flatpaks, set `services.flatpak.enable = true` and then run `flatpak remote-add --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo` in your user terminal to add the Flathub repository.
+
 
 ## Build Requirements
 
