@@ -123,6 +123,7 @@
                 { from = "host"; host.port = 2222; guest.port = 22; }
               ];
 
+              nixpkgs.config.allowAliases = false;
               nixpkgs.hostPlatform = system;
 
               system.stateVersion = lib.trivial.release;
