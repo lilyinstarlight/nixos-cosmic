@@ -1245,7 +1245,7 @@ dependencies = [
 [[package]]
 name = "cosmic-files"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/cosmic-files.git#c7117049478712de70ea4ea1982ae35db8e531a8"
+source = "git+https://github.com/pop-os/cosmic-files.git#774ccf955f59f24cf9493f9249d20788ad394d48"
 dependencies = [
  "chrono",
  "dirs",
@@ -3406,9 +3406,9 @@ dependencies = [
 
 [[package]]
 name = "libc"
-version = "0.2.158"
+version = "0.2.159"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d8adc4bb1803a324070e64a98ae98f38934d91957a99cfb3a43dcbc01bc56439"
+checksum = "561d97a539a36e26a9a5fad1ea11a3039a67714694aaa379433e580854bc3dc5"
 
 [[package]]
 name = "libcosmic"
