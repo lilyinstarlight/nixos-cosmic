@@ -11,7 +11,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-randr";
-  version = "1.0.0-alpha.1-unstable-2024-07-31";
+  version = "1.0.0-alpha.2-unstable-2024-07-31";
 
   src = fetchFromGitHub {
     owner = "pop-os";
