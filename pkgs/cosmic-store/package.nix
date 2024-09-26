@@ -14,20 +14,20 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-store";
-  version = "1.0.0-alpha.2-unstable-2024-09-24";
+  version = "1.0.0-alpha.2-unstable-2024-09-26";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-store";
-    rev = "da8c64229f43164c6fa6613087f2284d3caf1721";
-    hash = "sha256-mq94ZMVOdXAPR52ID5x8nppJ9mNoTOPBfn7Eouj3T1U=";
+    rev = "5cbd0969ecf94ec8658cc7edc3615fa9c7a284e6";
+    hash = "sha256-3jkD9K2gVJc4jxEfc5anAOCkTaSfvPobjt4cQ2777sk=";
   };
 
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
       "accesskit-0.12.2" = "sha256-1UwgRyUe0PQrZrpS7574oNLi13fg5HpgILtZGW6JNtQ=";
-      "appstream-0.2.2" = "sha256-OWeNXxvqU8s0ksdY9v5bZeNfDYgMBVd1DhEAjjZxEmo=";
+      "appstream-0.2.2" = "sha256-bTq1x5oZlx2I2wM47Dd2Q5dXD4iAyxi6vFZ7BbWVnes=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
       "cosmic-config-0.1.0" = "sha256-gXrMEoAN+7nYAEcs4w6wROhQTjMCxkGn+muJutktLyk=";
@@ -36,6 +36,7 @@ rustPlatform.buildRustPackage rec {
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
+      "spdx-0.10.6" = "sha256-T55ycyxEkKGd9eApQOxSV4UE4W3Phs+M3WICAqfXuLg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
       "winit-0.29.10" = "sha256-ScTII2AzK3SC8MVeASZ9jhVWsEaGrSQ2BnApTxgfxK4=";
     };
