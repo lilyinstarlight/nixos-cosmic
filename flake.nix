@@ -78,6 +78,7 @@
                 cosmic-player
                 cosmic-reader
                 cosmic-tasks
+                cosmic-tweaks
                 drm_info
                 firefox
                 quick-webapps
