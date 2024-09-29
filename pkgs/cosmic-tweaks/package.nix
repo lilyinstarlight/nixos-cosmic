@@ -17,8 +17,8 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "tweaks";
-    rev = "4c73f09e16f34d014e0379b55c21225694f178e3";
-    hash = "sha256-t1YoDXz/un0BRlK6/5yeST9QLW8E/7Gcktq12HsHDj4=";
+    rev = "69e3b261428b682dfdfb08473be48dec672364db";
+    hash = "sha256-9T93mLvVQIY1IVfLTqTNgSpHgVQuzFrjJuMl6n7THXg=";
   };
 
   cargoLock = {
