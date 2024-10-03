@@ -10,15 +10,15 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage {
+rustPlatform.buildRustPackage rec {
   pname = "cosmic-tweaks";
-  version = "0-unstable-2024-10-01";
+  version = "0-unstable-2024-10-03";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "tweaks";
-    rev = "b8be3d77265539001a8562f6a37c5b4b90854630";
-    hash = "sha256-JyqIzONDriLb3NjUap4NYpmTZIuv7MnvqUdNVDmjtSA=";
+    rev = "e4cd2eb1cdb7eb2c6e87de52bdacc6b6d3995fdc";
+    hash = "sha256-bZYyfNKLx4Pm9F1S0cStIpuEREqPFhio0VvKZCwBsco=";
   };
 
   cargoLock = {
@@ -62,6 +62,8 @@ rustPlatform.buildRustPackage {
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-ext-tweaks"
   ];
+
+  env.VERGEN_GIT_SHA = src.rev;
 
   passthru.updateScript = nix-update-script { };
 
