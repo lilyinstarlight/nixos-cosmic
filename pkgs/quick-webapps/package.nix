@@ -12,13 +12,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "quick-webapps";
-  version = "0.5.0-unstable-2024-10-01";
+  version = "0.5.0-unstable-2024-10-03";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "web-apps";
-    rev = "56a47103dffcc75b17f0c11164f777d6733780d7";
-    hash = "sha256-m18oitwopEw8dt9XdJvawm1IIahKYawuwHAOGFtYnc8=";
+    rev = "be5f3bc520adaad908ce76d103b46f80107bbea3";
+    hash = "sha256-k3XL2rPpecFyouKnwTDUCuuZFIsPvmgX2bmfRP4zW8Y=";
   };
 
   cargoLock = {
