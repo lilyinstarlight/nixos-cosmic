@@ -1217,7 +1217,7 @@ dependencies = [
 [[package]]
 name = "cosmic-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "atomicwrites",
  "cosmic-config-derive",
@@ -1236,7 +1236,7 @@ dependencies = [
 [[package]]
 name = "cosmic-config-derive"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "quote",
  "syn 1.0.109",
@@ -1245,7 +1245,7 @@ dependencies = [
 [[package]]
 name = "cosmic-files"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/cosmic-files.git#dabb3749f01b5911a4ad86feeab831cb62367ba8"
+source = "git+https://github.com/pop-os/cosmic-files.git#f3b4257c5554cafd354e35d4d8f8b8832ef520bd"
 dependencies = [
  "chrono",
  "dirs",
@@ -1347,7 +1347,7 @@ dependencies = [
 [[package]]
 name = "cosmic-theme"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "almost",
  "cosmic-config",
@@ -2685,7 +2685,7 @@ dependencies = [
 [[package]]
 name = "iced"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "dnd",
  "iced_accessibility",
@@ -2704,7 +2704,7 @@ dependencies = [
 [[package]]
 name = "iced_accessibility"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "accesskit",
  "accesskit_unix",
@@ -2714,7 +2714,7 @@ dependencies = [
 [[package]]
 name = "iced_core"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "bitflags 2.6.0",
  "dnd",
@@ -2736,7 +2736,7 @@ dependencies = [
 [[package]]
 name = "iced_futures"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "futures",
  "iced_core",
@@ -2749,7 +2749,7 @@ dependencies = [
 [[package]]
 name = "iced_graphics"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "bitflags 2.6.0",
  "bytemuck",
@@ -2773,7 +2773,7 @@ dependencies = [
 [[package]]
 name = "iced_renderer"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "iced_graphics",
  "iced_tiny_skia",
@@ -2785,7 +2785,7 @@ dependencies = [
 [[package]]
 name = "iced_runtime"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "dnd",
  "iced_accessibility",
@@ -2799,7 +2799,7 @@ dependencies = [
 [[package]]
 name = "iced_sctk"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "enum-repr",
  "float-cmp",
@@ -2826,7 +2826,7 @@ dependencies = [
 [[package]]
 name = "iced_style"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "iced_core",
  "once_cell",
@@ -2836,7 +2836,7 @@ dependencies = [
 [[package]]
 name = "iced_tiny_skia"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "bytemuck",
  "cosmic-text",
@@ -2853,7 +2853,7 @@ dependencies = [
 [[package]]
 name = "iced_wgpu"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "as-raw-xcb-connection",
  "bitflags 2.6.0",
@@ -2882,7 +2882,7 @@ dependencies = [
 [[package]]
 name = "iced_widget"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "dnd",
  "iced_accessibility",
@@ -2899,7 +2899,7 @@ dependencies = [
 [[package]]
 name = "iced_winit"
 version = "0.12.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "dnd",
  "iced_accessibility",
@@ -3420,7 +3420,7 @@ checksum = "561d97a539a36e26a9a5fad1ea11a3039a67714694aaa379433e580854bc3dc5"
 [[package]]
 name = "libcosmic"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#228eb4d70d581be88bacb1e261106a58603d847b"
+source = "git+https://github.com/pop-os/libcosmic.git#e645dee2f0b399485b756ac7d85b2c557b2a0e21"
 dependencies = [
  "apply",
  "ashpd 0.9.1",
