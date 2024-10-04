@@ -11,7 +11,7 @@
 }:
 
 rustPlatform.buildRustPackage rec {
-  pname = "cosmic-tweaks";
+  pname = "cosmic-ext-tweaks";
   version = "0-unstable-2024-10-03";
 
   src = fetchFromGitHub {

@@ -10,7 +10,7 @@
 }:
 
 rustPlatform.buildRustPackage {
-  pname = "cosmic-applet-emoji-selector";
+  pname = "cosmic-ext-applet-emoji-selector";
   version = "0.1.5-unstable-2024-08-19";
 
   src = fetchFromGitHub {
@@ -78,6 +78,6 @@ rustPlatform.buildRustPackage {
       # lilyinstarlight
     ];
     platforms = platforms.linux;
-    mainProgram = "cosmic-applet-emoji-selector";
+    mainProgram = "cosmic-ext-applet-emoji-selector";
   };
 }

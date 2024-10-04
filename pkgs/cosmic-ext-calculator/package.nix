@@ -4,22 +4,19 @@
   libcosmicAppHook,
   rustPlatform,
   just,
-  libsecret,
-  openssl,
-  sqlite,
   stdenv,
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage rec {
-  pname = "cosmic-tasks";
-  version = "0.1.0-unstable-2024-10-01";
+rustPlatform.buildRustPackage {
+  pname = "cosmic-ext-calculator";
+  version = "0-unstable-2024-10-03";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
-    repo = "tasks";
-    rev = "c121a4528b18e39da35ee2fc4441e2c083760cea";
-    hash = "sha256-O/j7Z35i39qm449L00g61oNpaIB2V8BWga2Q+mjdgU8=";
+    repo = "calculator";
+    rev = "c5193cc5b8b4656c74f39686df91a8ff029ac0b1";
+    hash = "sha256-asFT4WwfAOeKwKHs79xGJms9RkOpVgRZK2lGVb7WLT4=";
   };
 
   cargoLock = {
@@ -45,12 +42,6 @@ rustPlatform.buildRustPackage rec {
     just
   ];
 
-  buildInputs = [
-    libsecret
-    openssl
-    sqlite
-  ];
-
   dontUseJustBuild = true;
   dontUseJustCheck = true;
 
@@ -60,21 +51,19 @@ rustPlatform.buildRustPackage rec {
     (placeholder "out")
     "--set"
     "bin-src"
-    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/tasks"
+    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-ext-calculator"
   ];
-
-  env.VERGEN_GIT_SHA = src.rev;
 
   passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
-    homepage = "https://github.com/cosmic-utils/tasks";
-    description = "Simple task management application for the COSMIC Desktop Environment";
+    homepage = "https://github.com/cosmic-utils/calculator";
+    description = "Calculator for the COSMIC Desktop Environment";
     license = licenses.gpl3Only;
     maintainers = with maintainers; [
       # lilyinstarlight
     ];
     platforms = platforms.linux;
-    mainProgram = "tasks";
+    mainProgram = "cosmic-ext-calculator";
   };
 }
