@@ -13,13 +13,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-ext-tasks";
-  version = "0.1.0-unstable-2024-10-01";
+  version = "0.1.0-unstable-2024-10-04";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "tasks";
-    rev = "c121a4528b18e39da35ee2fc4441e2c083760cea";
-    hash = "sha256-O/j7Z35i39qm449L00g61oNpaIB2V8BWga2Q+mjdgU8=";
+    rev = "776ef0abcbb78bb427eff9af487136957fc3a844";
+    hash = "sha256-Uh4QO8FQ06j9YIpe3+WGahc3H5qpaV+CbYf0UUU/vzo=";
   };
 
   cargoLock = {
