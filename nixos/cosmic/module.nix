@@ -83,6 +83,7 @@ in
         playerctl
         pop-icon-theme
         pop-launcher
+        xdg-user-dirs
       ]
       ++ lib.optionals config.services.flatpak.enable [
         cosmic-store
