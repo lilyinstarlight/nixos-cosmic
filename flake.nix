@@ -73,8 +73,11 @@
               services.flatpak.enable = true;
 
               environment.systemPackages = with pkgs; [
+                chronos
+                cosmic-ext-applet-clipboard-manager
                 cosmic-ext-applet-emoji-selector
                 cosmic-ext-calculator
+                cosmic-ext-examine
                 cosmic-ext-forecast
                 cosmic-ext-tasks
                 cosmic-ext-tweaks
@@ -83,6 +86,7 @@
                 drm_info
                 firefox
                 quick-webapps
+                stellarshot
               ];
 
               boot.kernelParams = [ "quiet" "udev.log_level=3"  ];
