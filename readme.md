@@ -6,7 +6,17 @@ Dedicated development matrix room: <https://matrix.to/#/#cosmic:nixos.org>
 
 ## Usage
 
+### With traditional evaluation
+
+This isn't supported, you are required to use [nix flakes] if you want to use nixos-cosmic.
+
+If switching from traditional evaluation to flakes,
+`nix-channel` will no longer have any effect on the nixpkgs your system is built with,
+and therefore `nixos-rebuild --upgrade` will also no longer have any effect. You will need to use `nix flake update` from your flake directory to update nixpkgs and nixos-cosmic.
+
 ### Flakes
+
+> **Note:** If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flake with the following in an adjacent `flake.nix` (e.g. in `/etc/nixos`).
 
 1. Update your flake so that it looks like this:
 
@@ -44,7 +54,7 @@ Dedicated development matrix room: <https://matrix.to/#/#cosmic:nixos.org>
    - COSMIC with `services.desktopManager.cosmic.enable = true`.
    - `cosmic-greeter` with `services.displayManager.cosmic-greeter.enable = true`.
 
-> **Note**: To use COSMIC Store to manage Flatpaks, set `services.flatpak.enable = true` and then run `flatpak remote-add --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo` in your user terminal to add the Flathub repository.
+> **Note:** To use COSMIC Store to manage Flatpaks, set `services.flatpak.enable = true` and then run `flatpak remote-add --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo` in your user terminal to add the Flathub repository.
 
 ## Build Requirements
 
@@ -63,3 +73,5 @@ Add to your configuration:
 ```nix
 boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
 ```
+
+[nix flakes]: https://wiki.nixos.org/wiki/Flakes
