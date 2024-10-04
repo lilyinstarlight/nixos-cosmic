@@ -73,12 +73,13 @@
               services.flatpak.enable = true;
 
               environment.systemPackages = with pkgs; [
-                cosmic-applet-emoji-selector
-                cosmic-calculator
+                cosmic-ext-applet-emoji-selector
+                cosmic-ext-calculator
+                cosmic-ext-forecast
+                cosmic-ext-tasks
+                cosmic-ext-tweaks
                 cosmic-player
                 cosmic-reader
-                cosmic-tasks
-                cosmic-tweaks
                 drm_info
                 firefox
                 quick-webapps
