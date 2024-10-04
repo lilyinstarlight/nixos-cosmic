@@ -74,4 +74,23 @@ Add to your configuration:
 boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
 ```
 
+## Developing
+
+### Development shell
+
+If you want to contribute to cosmic, you can easily get a development shell by executing `nix develop github:lilyinstarlight/nixos-cosmic#<cosmic-program-name>`.
+
+**Example:**
+If you'd like to contribute to `cosmic-greeter`, then you can get a development shell by executing `nix develop github:lilyinstarlight/nixos-cosmic#cosmic-greeter`
+
+### Running in a VM
+
+Some cosmic programs are better to be run in a VM than on your machine.
+For example if you'd like to contribute to `cosmic-greeter` do the following:
+
+1. Apply your changes to `cosmic-greeter`
+2. Clone `nixos-cosmic` to your local machine
+3. Adjust the [cosmic-greeter nix file](https://github.com/lilyinstarlight/nixos-cosmic/tree/main/pkgs/cosmic-greeter) to point to your local clone.
+4. In the directory of your cloned `nixos-cosmic` repository, execute `nix run --impure .#vm -j 1` to create a VM with your current changes.
+
 [nix flakes]: https://wiki.nixos.org/wiki/Flakes
