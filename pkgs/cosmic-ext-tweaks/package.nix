@@ -12,13 +12,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-ext-tweaks";
-  version = "0-unstable-2024-10-03";
+  version = "0-unstable-2024-10-06";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "tweaks";
-    rev = "e4cd2eb1cdb7eb2c6e87de52bdacc6b6d3995fdc";
-    hash = "sha256-bZYyfNKLx4Pm9F1S0cStIpuEREqPFhio0VvKZCwBsco=";
+    rev = "40bd0d2d8d5f5dcff3ec86b041c3ec09eee38adc";
+    hash = "sha256-e7n9jx7+YlNpf3ILX/ucpR66HZy8KDMnn0RNEq0+rI4=";
   };
 
   cargoLock = {
@@ -27,7 +27,7 @@ rustPlatform.buildRustPackage rec {
       "accesskit-0.12.2" = "sha256-1UwgRyUe0PQrZrpS7574oNLi13fg5HpgILtZGW6JNtQ=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
-      "cosmic-config-0.1.0" = "sha256-geQHqepxeZjjc425qb3hOpflEOBTbbXva7/aSiU0Z0k=";
+      "cosmic-config-0.1.0" = "sha256-6jl9AnuPlbObQl4JayWFAvcrfADJgcWKnY1fVASZods=";
       "cosmic-panel-config-0.1.0" = "sha256-s+p5pCzacNOJLCEmMH+QdwQlK1aGUBqIetlXW7D3A0A=";
       "cosmic-text-0.12.1" = "sha256-u2Tw+XhpIKeFg8Wgru/sjGw6GUZ2m50ZDmRBJ1IM66w=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
