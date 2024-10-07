@@ -5,6 +5,8 @@
   libcosmicAppHook,
   alsa-lib,
   ffmpeg,
+  glib,
+  gst_all_1,
   just,
   pkg-config,
   stdenv,
@@ -50,6 +52,11 @@ rustPlatform.buildRustPackage {
   buildInputs = [
     alsa-lib
     ffmpeg
+    glib
+    gst_all_1.gstreamer
+    gst_all_1.gst-plugins-base
+    gst_all_1.gst-plugins-good
+    gst_all_1.gst-plugins-bad
   ];
 
   dontUseJustBuild = true;
@@ -63,6 +70,10 @@ rustPlatform.buildRustPackage {
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-player"
   ];
+
+  postInstall = ''
+    libcosmicAppWrapperArgs+=(--prefix GST_PLUGIN_SYSTEM_PATH_1_0 : "$GST_PLUGIN_SYSTEM_PATH_1_0")
+  '';
 
   passthru.updateScript = nix-update-script {
     # TODO: uncomment when there are actual tagged releases
