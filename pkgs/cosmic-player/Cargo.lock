@@ -2841,7 +2841,7 @@ dependencies = [
 [[package]]
 name = "iced_video_player"
 version = "0.6.0"
-source = "git+https://github.com/jackpot51/iced_video_player.git?branch=cosmic#0bee8bed36c84cd3ffab684bbf1acf1aa6929650"
+source = "git+https://github.com/jackpot51/iced_video_player.git?branch=cosmic#edf6354fdd3d365df9177cd90de4a12024096dff"
 dependencies = [
  "glib",
  "gstreamer",
