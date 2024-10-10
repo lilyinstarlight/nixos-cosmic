@@ -161,5 +161,9 @@ in
 
     # required for screen locker
     security.pam.services.cosmic-greeter = { };
+
+    warnings = if (builtins.elem pkgs.cosmic-files config.environment.cosmic.excludePackages)
+      then [ ''The COSMIC Session may fail to initialise without the cosmic-files package (excluded).'' ]
+      else [];
   };
 }
