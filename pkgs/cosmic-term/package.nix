@@ -19,8 +19,8 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-term";
-    rev = "2462e8d61a901324a429a7ac376b143e5663f91d";
-    hash = "sha256-HvRdIdInKfHj7RvuY8J0ieDzeDyuFpokagsC1DidsR0=";
+    rev = "3303f51bfe59c9f1b02807b17a7c285b68ec8a01";
+    hash = "sha256-82wKOJ+pDelIIb/0SZbw1th4j5JK0awG2y+SxMNJOqI=";
   };
 
   cargoLock = {
@@ -31,7 +31,7 @@ rustPlatform.buildRustPackage rec {
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
       "cosmic-config-0.1.0" = "sha256-XXT92zsdwkzx9dajSYlK6p/XPp6ajq9xJT504T1L4qU=";
-      "cosmic-files-0.1.0" = "sha256-vnMGNRLygGPaSM1n+h5Mbij0m1LDW8N/N7zR4ooOwIY=";
+      "cosmic-files-0.1.0" = "sha256-eP6uLHxXpx+nNkEcROlqi0t3qRtU8vYITyt4JXtd7vw=";
       "cosmic-text-0.12.1" = "sha256-u2Tw+XhpIKeFg8Wgru/sjGw6GUZ2m50ZDmRBJ1IM66w=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "filetime-0.2.24" = "sha256-lU7dPotdnmyleS2B75SmDab7qJfEzmJnHPF18CN/Y98=";

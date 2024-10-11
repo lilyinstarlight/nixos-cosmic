@@ -1443,7 +1443,7 @@ dependencies = [
 [[package]]
 name = "cosmic-files"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/cosmic-files#c3d09c3885ce7b506c0bbb7753384e2d819ca650"
+source = "git+https://github.com/pop-os/cosmic-files#2b4a14dfe2403f1adfeb0423870216ee9a48cd06"
 dependencies = [
  "chrono",
  "dirs 5.0.1",
@@ -2624,9 +2624,9 @@ dependencies = [
 
 [[package]]
 name = "gettext-rs"
-version = "0.7.1"
+version = "0.7.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4a6716b8a0db461a2720b850ba1623e5b69e4b1aa0224cf5e1fb23a0fe49e65c"
+checksum = "a44e92f7dc08430aca7ed55de161253a22276dfd69c5526e5c5e95d1f7cf338a"
 dependencies = [
  "gettext-sys",
  "locale_config",
@@ -2634,9 +2634,9 @@ dependencies = [
 
 [[package]]
 name = "gettext-sys"
-version = "0.21.4"
+version = "0.22.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f7b8797f28f2dabfbe2caadb6db4f7fd739e251b5ede0a2ba49e506071edcf67"
+checksum = "bb45773f5b8945f12aecd04558f545964f943dacda1b1155b3d738f5469ef661"
 dependencies = [
  "cc",
  "temp-dir",
