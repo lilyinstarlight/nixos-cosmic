@@ -59,7 +59,13 @@ rustPlatform.buildRustPackage rec {
   env.VERGEN_GIT_SHA = src.rev;
 
   postInstall = ''
-      libcosmicAppWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ pciutils usbutils util-linux ]})
+    libcosmicAppWrapperArgs+=(--prefix PATH : ${
+      lib.makeBinPath [
+        pciutils
+        usbutils
+        util-linux
+      ]
+    })
   '';
 
   passthru.updateScript = nix-update-script { };
