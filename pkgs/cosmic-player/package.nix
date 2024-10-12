@@ -15,13 +15,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-player";
-  version = "0-unstable-2024-10-10";
+  version = "0-unstable-2024-10-11";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-player";
-    rev = "9ab453a3bb3f253e6055b3b87c27ec0050e8203c";
-    hash = "sha256-GLMiwx9mRght9CXt4Y1LisaPr0EcaiN+6Ebx5bBR1u4=";
+    rev = "5d44d331dd8dc9bfec7a8379f7094829b7de2f3d";
+    hash = "sha256-+L69IZ/s3W2GKc/mixwxqOtYAeLzg5Yl4/iee7bF25g=";
   };
 
   cargoLock = {
