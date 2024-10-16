@@ -42,7 +42,10 @@ in
     ];
 
     # environment packages
-    environment.pathsToLink = [ "/share/backgrounds" "/share/cosmic" ];
+    environment.pathsToLink = [
+      "/share/backgrounds"
+      "/share/cosmic"
+    ];
     environment.systemPackages = utils.removePackagesByName (
       with pkgs;
       (
@@ -98,9 +101,10 @@ in
         [
           xdg-desktop-portal-cosmic
         ]
-        # work around conflicting xdg-desktop-portal-gtk (<https://github.com/lilyinstarlight/nixos-cosmic/issues/17>)
+        # TODO: work around duplicate xdg-desktop-portal-gtk problems until NixOS 24.11 is released (see <https://github.com/lilyinstarlight/nixos-cosmic/issues/17>)
         ++ lib.optionals (
-          !(
+          lib.versionAtLeast lib.version "24.11"
+          || !(
             config.services.xserver.desktopManager.gnome.enable
             || config.services.xserver.desktopManager.deepin.enable
             || config.services.xserver.desktopManager.cinnamon.enable
