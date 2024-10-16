@@ -22,7 +22,7 @@ rustPlatform.buildRustPackage {
     owner = "pop-os";
     repo = "cosmic-greeter";
     rev = "7366808e8ca59c5ba8c4cfdf39dec26e52ca82c1";
-    sha256 = "sha256-wHfPS6nwI9A2MH6jexBYlC+sI1UhZ0HtYfwSSctBLfk=";
+    hash = "sha256-wHfPS6nwI9A2MH6jexBYlC+sI1UhZ0HtYfwSSctBLfk=";
   };
 
   cargoLock = {

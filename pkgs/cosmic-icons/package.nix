@@ -16,7 +16,7 @@ stdenvNoCC.mkDerivation {
     owner = "pop-os";
     repo = "cosmic-icons";
     rev = "3fdc2175c145e00d798f98e81d5c4d493f0a2a8c";
-    sha256 = "sha256-7gWCRBiE+XJX1JSjopyPN4bIIgZih6ZKGVSA7wBq3i0=";
+    hash = "sha256-7gWCRBiE+XJX1JSjopyPN4bIIgZih6ZKGVSA7wBq3i0=";
   };
 
   nativeBuildInputs = [ just ];
