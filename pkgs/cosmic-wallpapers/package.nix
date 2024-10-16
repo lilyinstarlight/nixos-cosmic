@@ -7,7 +7,7 @@
 
 stdenvNoCC.mkDerivation {
   pname = "cosmic-wallpapers";
-  version = "epoch-1.0.0-alpha.2-unstable-2024-09-27";
+  version = "1.0.0-alpha.2-unstable-2024-09-27";
 
   src = fetchFromGitHub {
     owner = "pop-os";
@@ -18,7 +18,12 @@ stdenvNoCC.mkDerivation {
 
   makeFlags = [ "prefix=${placeholder "out"}" ];
 
-  passthru.updateScript = nix-update-script { };
+  passthru.updateScript = nix-update-script {
+    extraArgs = [
+      "--version-regex"
+      "epoch-(.*)"
+    ];
+  };
 
   meta = with lib; {
     description = "Wallpapers for the COSMIC Desktop Environment";
