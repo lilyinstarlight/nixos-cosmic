@@ -139,6 +139,10 @@
                         stellarshot
                       ];
 
+                      environment.sessionVariables = {
+                        COSMIC_DATA_CONTROL_ENABLED = "1";
+                      };
+
                       boot.kernelParams = [
                         "quiet"
                         "udev.log_level=3"
