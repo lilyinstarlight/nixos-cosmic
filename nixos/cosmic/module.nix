@@ -162,8 +162,12 @@ in
     # required for screen locker
     security.pam.services.cosmic-greeter = { };
 
-    warnings = if (builtins.elem pkgs.cosmic-files config.environment.cosmic.excludePackages)
-      then [ ''The COSMIC Session may fail to initialise without the cosmic-files package (excluded).'' ]
-      else [];
+    warnings = lib.optional (lib.elem pkgs.cosmic-files config.environment.cosmic.excludePackages -> !(lib.elem pkgs.cosmic-session config.environment.cosmic.excludePackages)) ''
+      The COSMIC session may fail to initialise with the `cosmic-files` package excluded via `config.environment.cosmic.excludePackages`.
+      
+      Please do one of the following:
+        1. Remove `cosmic-files` from `config.environment.cosmic.excludePackages`.
+        2. Add `cosmic-session` (in addition to `cosmic-files`) to `config.environment.cosmic.excludePackages` and ensure whatever session starter/manager you are using is appropriately set up.
+    '';
   };
 }
