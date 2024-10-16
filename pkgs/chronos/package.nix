@@ -54,12 +54,6 @@ rustPlatform.buildRustPackage {
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/chronos"
   ];
 
-  postPatch = ''
-    substituteInPlace justfile \
-      --replace-fail 'res/{{appid}}.desktop' 'res/Chronos.desktop' \
-      --replace-fail "'Chronos.svg'" "appid + '.svg'"
-  '';
-
   passthru.updateScript = nix-update-script { };
 
   meta = with lib; {
