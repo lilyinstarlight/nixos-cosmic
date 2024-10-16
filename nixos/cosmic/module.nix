@@ -42,7 +42,7 @@ in
     ];
 
     # environment packages
-    environment.pathsToLink = [ "/share/cosmic" ];
+    environment.pathsToLink = [ "/share/backgrounds" "/share/cosmic" ];
     environment.systemPackages = utils.removePackagesByName (
       with pkgs;
       (
