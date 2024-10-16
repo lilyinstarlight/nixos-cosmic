@@ -166,12 +166,47 @@ in
     # required for screen locker
     security.pam.services.cosmic-greeter = { };
 
-    warnings = lib.optional (lib.elem pkgs.cosmic-files config.environment.cosmic.excludePackages -> !(lib.elem pkgs.cosmic-session config.environment.cosmic.excludePackages)) ''
-      The COSMIC session may fail to initialise with the `cosmic-files` package excluded via `config.environment.cosmic.excludePackages`.
-      
-      Please do one of the following:
-        1. Remove `cosmic-files` from `config.environment.cosmic.excludePackages`.
-        2. Add `cosmic-session` (in addition to `cosmic-files`) to `config.environment.cosmic.excludePackages` and ensure whatever session starter/manager you are using is appropriately set up.
-    '';
+    # module diagnostics
+    warnings =
+      lib.optional
+        (
+          lib.elem pkgs.cosmic-files config.environment.cosmic.excludePackages
+          && !(lib.elem pkgs.cosmic-session config.environment.cosmic.excludePackages)
+        )
+        ''
+          The COSMIC session may fail to initialise with the `cosmic-files` package excluded via
+          `config.environment.cosmic.excludePackages`.
+
+          Please do one of the following:
+            1. Remove `cosmic-files` from `config.environment.cosmic.excludePackages`.
+            2. Add `cosmic-session` (in addition to `cosmic-files`) to
+               `config.environment.cosmic.excludePackages` and ensure whatever session starter/manager you are
+               using is appropriately set up.
+        '';
+    assertions = [
+      {
+        assertion = lib.elem "libcosmic-app-hook" (
+          lib.map (
+            drv: lib.optionalString (lib.isDerivation drv) (lib.getName drv)
+          ) pkgs.cosmic-comp.nativeBuildInputs
+        );
+        message = ''
+          It looks like the provided `pkgs` to the NixOS COSMIC module is not usable for a working COSMIC
+          desktop environment.
+
+          If you are erroneously passing in `pkgs` to `specialArgs` somewhere in your system configuration,
+          this is is often unnecessary and has unintended consequences for all NixOS modules. Please either
+          remove that in favor of configuring the NixOS `pkgs` instance via `nixpkgs.config` and
+          `nixpkgs.overlays`.
+
+          If you must instantiate your own `pkgs`, then please include the overlay from the NixOS COSMIC flake
+          when instantiating `pkgs` and be aware that the `nixpkgs.config` and `nixpkgs.overlays` options will
+          not function for any NixOS modules.
+
+          Note that the COSMIC packages in Nixpkgs are still largely broken as of 2024-10-16 and will not be
+          usable for having a fully functional COSMIC desktop environment. The overlay is therefore necessary.
+        '';
+      }
+    ];
   };
 }
