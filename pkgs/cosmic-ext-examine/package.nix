@@ -13,13 +13,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-ext-examine";
-  version = "1.0.0-unstable-2024-10-13";
+  version = "1.0.0-unstable-2024-10-16";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "examine";
-    rev = "bc08e77fa4dd4dd99b82ca8c1b05c9bdc889e90a";
-    hash = "sha256-yYpyMYwderU98tVwFE9sYUg3QlIqTQnACv9X9m6O4R0=";
+    rev = "f012733c131727fb4c2d835b45f363233574b72d";
+    hash = "sha256-cpa13gd8Tj9H9+15twfgqvuG7ntyoDcSqXQdeKhbHUk=";
   };
 
   cargoLock = {
