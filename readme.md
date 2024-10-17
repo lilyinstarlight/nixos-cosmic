@@ -6,17 +6,25 @@ Dedicated development matrix room: <https://matrix.to/#/#cosmic:nixos.org>
 
 ## Usage
 
+### With traditional evaluation
+
+This isn't supported, you are required to use [nix flakes] if you want to use nixos-cosmic.
+
+If switching from traditional evaluation to flakes,
+`nix-channel` will no longer have any effect on the nixpkgs your system is built with,
+and therefore `nixos-rebuild --upgrade` will also no longer have any effect. You will need to use `nix flake update` from your flake directory to update nixpkgs and nixos-cosmic.
+
 ### Flakes
 
-If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flake with the following in an adjacent `flake.nix` (e.g. in `/etc/nixos`):
+> **Note:** If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flake with the following in an adjacent `flake.nix` (e.g. in `/etc/nixos`).
 
-**Note:** If switching from traditional evaluation to flakes, `nix-channel` will no longer have any effect on the nixpkgs your system is built with, and therefore `nixos-rebuild --upgrade` will also no longer have any effect. You will need to use `nix flake update` from your flake directory to update nixpkgs and nixos-cosmic.
+1. Update your flake so that it looks like this:
 
 ```nix
 {
   inputs = {
-    nixpkgs.follows = "nixos-cosmic/nixpkgs"; # NOTE: change "nixpkgs" to "nixpkgs-stable" to use stable NixOS release
-
+    # Note: We'are using `follows` not `url`
+    nixpkgs.follows = "nixos-cosmic/nixpkgs";
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
   };
 
@@ -40,19 +48,19 @@ If you have an existing `configuration.nix`, you can use the `nixos-cosmic` flak
 }
 ```
 
-**Note:** To ensure binary substituters are set up before attempting to pull any COSMIC packages, perform a `nixos-rebuild test` with this configuration before attempting to add any COSMIC packages or settings to your NixOS configuration.
+2. Execute `nixos-rebuild test` (this will create a temporary generation where the substituters are added to your config).
+3. Now you can enable
 
-After setting up binary substituters and NixOS module, enable COSMIC with `services.desktopManager.cosmic.enable = true` and `services.displayManager.cosmic-greeter.enable = true` in your NixOS configuration.
+   - COSMIC with `services.desktopManager.cosmic.enable = true`.
+   - `cosmic-greeter` with `services.displayManager.cosmic-greeter.enable = true`.
 
-To use COSMIC Store to manage Flatpaks, set `services.flatpak.enable = true` and then run `flatpak remote-add --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo` in your user terminal to add the Flathub repository.
-
+> **Note:** To use COSMIC Store to manage Flatpaks, set `services.flatpak.enable = true` and then run `flatpak remote-add --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo` in your user terminal to add the Flathub repository.
 
 ## Build Requirements
 
 Although there is a provided binary cache built against the current `nixos-unstable` and `nixos-24.05` branches, if you are not using a current `nixos-unstable` or `nixos-24.05` then you may need to build packages locally.
 
 Generally you will need roughly 16 GiB of RAM and 40 GiB of disk space, but it can be built with less RAM by reducing build parallelism, either via `--cores 1` or `-j 1` or both, on `nix build`, `nix-build`, and `nixos-rebuild` commands.
-
 
 ## Troubleshooting
 
@@ -65,3 +73,24 @@ Add to your configuration:
 ```nix
 boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
 ```
+
+## Developing
+
+### Development shell
+
+If you want to contribute to cosmic, you can easily get a development shell by executing `nix develop github:lilyinstarlight/nixos-cosmic#<cosmic-program-name>`.
+
+**Example:**
+If you'd like to contribute to `cosmic-greeter`, then you can get a development shell by executing `nix develop github:lilyinstarlight/nixos-cosmic#cosmic-greeter`
+
+### Running in a VM
+
+Some cosmic programs are better to be run in a VM than on your machine.
+For example if you'd like to contribute to `cosmic-greeter` do the following:
+
+1. Apply your changes to `cosmic-greeter`
+2. Clone `nixos-cosmic` to your local machine
+3. Adjust the [cosmic-greeter nix file](https://github.com/lilyinstarlight/nixos-cosmic/tree/main/pkgs/cosmic-greeter) to point to your local clone.
+4. In the directory of your cloned `nixos-cosmic` repository, execute `nix run --impure .#vm -j 1` to create a VM with your current changes.
+
+[nix flakes]: https://wiki.nixos.org/wiki/Flakes
