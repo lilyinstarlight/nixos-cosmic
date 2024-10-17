@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "chronos";
-  version = "0.1.3-unstable-2024-10-15";
+  version = "0.1.3-unstable-2024-10-17";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "chronos";
-    rev = "c04734b2286ec784d630d8ffe3027e0d8127b4d8";
-    hash = "sha256-urHjUtrXVcGsOrFSSZcW4ZnRe3Hlv9flHbQnEpCtOV0=";
+    rev = "8b4d2dacf51150e42c7bbbc2e4258769ad56d6e9";
+    hash = "sha256-94jmnqsVPYJQJHJcYmNl7mNBJZWpUBGW2v2ntIF1R9Y=";
   };
 
   cargoLock = {
