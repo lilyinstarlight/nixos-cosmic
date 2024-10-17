@@ -13,7 +13,9 @@ stdenvNoCC.mkDerivation {
     owner = "pop-os";
     repo = "cosmic-wallpapers";
     rev = "8d1d23ab64c52ad57f09c1e5e79585cc97dd4eea";
-    hash = "sha256-sk85k2Lra06CIerGNC/rHzJsgzNfjB4JaJ+WNoqzP48=";
+    hash = "sha256-v75oVRS8kpa0G7bcQXSiPYcRXo1ImvADkrnaWBCm2r0=";
+    forceFetchGit = true;
+    fetchLFS = true;
   };
 
   makeFlags = [ "prefix=${placeholder "out"}" ];
