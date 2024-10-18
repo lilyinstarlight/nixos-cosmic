@@ -65,3 +65,11 @@ Add to your configuration:
 ```nix
 boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
 ```
+
+### COSMIC Utilities - Clipboard Manager not working
+
+The zwlr\_data\_control\_manager\_v1 protocol needs to be available. Enable it in cosmic-comp via the following configuration:
+
+```nix
+environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1
+```
