@@ -65,14 +65,16 @@ rustPlatform.buildRustPackage {
   # only default feature is systemd
   buildNoDefaultFeatures = !useSystemd;
 
-  postInstall =
-    ''
-      mkdir -p $out/share/cosmic/com.system76.CosmicSettings.Shortcuts/v1
-      cp data/keybindings.ron $out/share/cosmic/com.system76.CosmicSettings.Shortcuts/v1/defaults
-    ''
-    + lib.optionalString useXWayland ''
-      libcosmicAppWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ xwayland ]})
-    '';
+  dontCargoInstall = true;
+
+  makeFlags = [
+    "prefix=${placeholder "out"}"
+    "CARGO_TARGET_DIR=target/${stdenv.hostPlatform.rust.cargoShortTarget}"
+  ];
+
+  preFixup = lib.optionalString useXWayland ''
+    libcosmicAppWrapperArgs+=(--prefix PATH : ${lib.makeBinPath [ xwayland ]})
+  '';
 
   passthru.updateScript = nix-update-script {
     extraArgs = [
