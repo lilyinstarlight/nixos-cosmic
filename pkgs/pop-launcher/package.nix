@@ -14,21 +14,20 @@
 
 rustPlatform.buildRustPackage {
   pname = "pop-launcher";
-  version = "1.2.1-unstable-2024-10-01";
+  version = "1.2.4-unstable-2024-10-18";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "launcher";
-    rev = "476a8fb44564b7075adf2c3b74bad758f6582747";
-    hash = "sha256-fiVvJwESe7/Az3nXPzrTalzg2zvhu2p6tWJQzXjJUDE=";
+    rev = "fca3b25552deca3bd64de8bfd1ebb38c45e4fb39";
+    hash = "sha256-CLpquNgdtnGMlMpGLv72WZmizalvYPfMWlE/qLprVrs=";
   };
 
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
-      "cosmic-client-toolkit-0.1.0" = "sha256-YLaC59g5VI0R1IohE+T2Drah8eCzGXReOMarY+3m6Ok=";
-      "smithay-client-toolkit-0.18.0" = "sha256-/7twYMt5/LpzxLXAQKTGNnWcfspUkkZsN5hJu7KaANc=";
-      "switcheroo-control-0.1.0" = "sha256-Bz/bzXCm60AF0inpZJDF4iNZIX3FssImORrE5nZpkyQ=";
+      "cosmic-client-toolkit-0.1.0" = "sha256-6XM6kcM2CEGAziCkal4uO0EL1nEWOKb3rFs7hFh6r7Y=";
+      "switcheroo-control-0.1.0" = "sha256-mklNPKVMO6iFrxki2DwiL5K78KiWpGxksisYldaASIE=";
     };
   };
 
