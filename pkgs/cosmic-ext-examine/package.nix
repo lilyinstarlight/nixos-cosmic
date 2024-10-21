@@ -22,6 +22,10 @@ rustPlatform.buildRustPackage rec {
     hash = "sha256-Ww6bap1rNLobyYT/cVDNMOsOFD/J+HXhexaGuBKhGNI=";
   };
 
+  patches = [
+    ./cosmic-ext-examine-fix-cargo-lock.patch
+  ];
+
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
@@ -29,6 +33,7 @@ rustPlatform.buildRustPackage rec {
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-ojvLP1G8huTR9fiqMLosKeYYVnhKINzyJzOPEM2gUUQ=";
       "cosmic-config-0.1.0" = "sha256-ssxb6JJ/8yzjLr9qtCTVay+ckkBKCiu64jX7eGVFQ/0=";
+      "cosmic-settings-daemon-0.1.0" = "sha256-mklNPKVMO6iFrxki2DwiL5K78KiWpGxksisYldaASIE=";
       "cosmic-text-0.12.1" = "sha256-u2Tw+XhpIKeFg8Wgru/sjGw6GUZ2m50ZDmRBJ1IM66w=";
       "dpi-0.1.1" = "sha256-yGkLPQzH3Cf0QJO9f45Jn2ZcoONT4zhqVrJcR/RQAqU=";
       "iced_glyphon-0.6.0" = "sha256-u1vnsOjP8npQ57NNSikotuHxpi4Mp/rV9038vAgCsfQ=";

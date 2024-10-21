@@ -1,0 +1,45 @@
+diff --git a/Cargo.lock b/Cargo.lock
+index 123c154..7caa87b 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -1055,7 +1055,9 @@ source = "git+https://github.com/pop-os/libcosmic.git#a73e91a12bbc4318b855d7ab10
+ dependencies = [
+  "atomicwrites",
+  "cosmic-config-derive",
++ "cosmic-settings-daemon",
+  "dirs",
++ "futures-util",
+  "iced_futures",
+  "known-folders",
+  "notify",
+@@ -1065,6 +1067,7 @@ dependencies = [
+  "tokio",
+  "tracing",
+  "xdg",
++ "zbus 4.4.0",
+ ]
+ 
+ [[package]]
+@@ -1076,6 +1079,14 @@ dependencies = [
+  "syn 1.0.109",
+ ]
+ 
++[[package]]
++name = "cosmic-settings-daemon"
++version = "0.1.0"
++source = "git+https://github.com/pop-os/dbus-settings-bindings#931f5db558bf3fcb572ff4e18f7f1618a7430046"
++dependencies = [
++ "zbus 4.4.0",
++]
++
+ [[package]]
+ name = "cosmic-text"
+ version = "0.12.1"
+@@ -2850,6 +2861,7 @@ dependencies = [
+  "ashpd 0.9.2",
+  "chrono",
+  "cosmic-config",
++ "cosmic-settings-daemon",
+  "cosmic-theme",
+  "css-color",
+  "derive_setters",
