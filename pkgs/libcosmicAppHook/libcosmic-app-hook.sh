@@ -2,8 +2,10 @@
 libcosmicAppWrapperArgs=()
 
 libcosmicAppVergenHook() {
-  # shellcheck disable=SC2155
-  export VERGEN_GIT_COMMIT_DATE="$(date --utc --date=@"$SOURCE_DATE_EPOCH" '+%Y-%m-%d')"
+  if [ -z "${VERGEN_GIT_COMMIT_DATE-}" ]; then
+    # shellcheck disable=SC2155
+    export VERGEN_GIT_COMMIT_DATE="$(date --utc --date=@"$SOURCE_DATE_EPOCH" '+%Y-%m-%d')"
+  fi
 }
 
 libcosmicAppLinkerArgsHook() {
