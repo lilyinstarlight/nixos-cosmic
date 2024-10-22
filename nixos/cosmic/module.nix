@@ -64,7 +64,8 @@ in
         cosmic-applibrary
         cosmic-bg
         (cosmic-comp.override {
-          useXWayland = config.services.desktopManager.cosmic.xwayland.enable;
+          # avoid PATH pollution of system action keybinds (Xwayland handled below)
+          useXWayland = false;
         })
         cosmic-edit
         cosmic-files
@@ -87,6 +88,9 @@ in
         pop-icon-theme
         pop-launcher
         xdg-user-dirs
+      ]
+      ++ lib.optionals cfg.xwayland.enable [
+        xwayland
       ]
       ++ lib.optionals config.services.flatpak.enable [
         cosmic-store
