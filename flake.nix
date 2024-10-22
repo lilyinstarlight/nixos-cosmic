@@ -132,6 +132,7 @@
                         cosmic-ext-forecast
                         cosmic-ext-tasks
                         cosmic-ext-tweaks
+                        (lib.lowPrio cosmic-comp)
                         cosmic-player
                         cosmic-reader
                         drm_info
