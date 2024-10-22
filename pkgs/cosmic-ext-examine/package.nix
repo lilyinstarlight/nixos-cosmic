@@ -13,18 +13,14 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-ext-examine";
-  version = "1.0.0-unstable-2024-10-18";
+  version = "1.0.0-unstable-2024-10-22";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "examine";
-    rev = "dc0163bbf18003ad2a14b7087fc93a3c248e6926";
-    hash = "sha256-Ww6bap1rNLobyYT/cVDNMOsOFD/J+HXhexaGuBKhGNI=";
+    rev = "04af93cdcb5d1231723cff57992178636c9bf20e";
+    hash = "sha256-+anofhvWsVGF7EoUhsoQiVdgoXQNLO4RLefIxUVrcDI=";
   };
-
-  patches = [
-    ./cosmic-ext-examine-fix-cargo-lock.patch
-  ];
 
   cargoLock = {
     lockFile = ./Cargo.lock;
