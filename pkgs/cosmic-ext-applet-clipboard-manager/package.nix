@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-applet-clipboard-manager";
-  version = "0-unstable-2024-10-13";
+  version = "0-unstable-2024-10-23";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "clipboard-manager";
-    rev = "5396b3cc0b36f9fa229302cc0c97cd39c339ef4a";
-    hash = "sha256-tDoF6Xv/HyFx4qZS0fq7y1bjq+1lNHXvl7CLdsj5UYc=";
+    rev = "e34bd40f576516a435dc57ba3b2a2ab4a0b4ca15";
+    hash = "sha256-AdcDso035M78sp0ifzxaVWT6cTjcii946AHq6UcaBIY=";
   };
 
   cargoLock = {
@@ -25,6 +25,7 @@ rustPlatform.buildRustPackage {
       "accesskit-0.12.2" = "sha256-1UwgRyUe0PQrZrpS7574oNLi13fg5HpgILtZGW6JNtQ=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
+      "configurator_schema-0.1.0" = "sha256-4Vfduj/1t7C0Q99vhagw2NjUb2iOIGJ1Skxl/+btY9U=";
       "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
       "cosmic-config-0.1.0" = "sha256-joMHmFbgMAuaXtSvJutahE/8y+4AL7dd8bb9bs6Usc0=";
       "cosmic-panel-config-0.1.0" = "sha256-1gOvJeA+K2F37RJH75dsMxpoRSF6ayjtw3UvKVl2gB4=";
