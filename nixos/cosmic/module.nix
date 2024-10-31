@@ -71,6 +71,7 @@ in
         cosmic-files
         cosmic-greeter
         cosmic-icons
+        cosmic-idle
         cosmic-launcher
         cosmic-notifications
         cosmic-osd
