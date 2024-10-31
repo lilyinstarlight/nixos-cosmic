@@ -3,6 +3,7 @@
   fetchFromGitHub,
   rustPlatform,
   libcosmicAppHook,
+  bash,
   just,
   stdenv,
   nix-update-script,
@@ -47,6 +48,10 @@ rustPlatform.buildRustPackage {
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-idle"
   ];
+
+  postPatch = ''
+    substituteInPlace src/main.rs --replace-fail '"/bin/sh"' '"${lib.getExe bash}"'
+  '';
 
   passthru.updateScript = nix-update-script {
     # TODO: uncomment when there are actual tagged releases
