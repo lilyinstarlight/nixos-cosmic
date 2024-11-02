@@ -12,18 +12,19 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-session";
-  version = "1.0.0-alpha.2-unstable-2024-10-30";
+  version = "1.0.0-alpha.3-unstable-2024-11-01";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-session";
-    rev = "342369eaf92dbb5a3d642d82da8429ce2f57e573";
-    hash = "sha256-NI5CTWod11TTAvHMRjbDEYZ50irYFPRKs5u0fso6bu8=";
+    rev = "2612282fcfcc2c12c8a7227631cb936d17edc494";
+    hash = "sha256-cktMgdGpmh+SVj23F1I19mRVXmFNObl1/4V7YELMFDY=";
   };
 
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
+      "cosmic-dbus-a11y-0.1.0" = "sha256-TRXYsnodKjKacc2eVndviEPpma/NNOWstG+ipGcQ0s4=";
       "cosmic-notifications-util-0.1.0" = "sha256-GmTT7SFBqReBMe4GcNSym1YhsKtFQ/0hrDcwUqXkaBw=";
       "launch-pad-0.1.0" = "sha256-c+uawTQlg5SW8x7DOBG2Idv/AfIaCFNtLQLUz8ifT2I=";
     };
