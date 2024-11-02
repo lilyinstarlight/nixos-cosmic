@@ -11,29 +11,28 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-panel";
-  version = "1.0.0-alpha.2-unstable-2024-10-22";
+  version = "1.0.0-alpha.3-unstable-2024-11-02";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-panel";
-    rev = "041a44eb6f825b7e0b3d45ccf745252b136d5da9";
-    hash = "sha256-sIJSD/clSqF7H/jEl7XzXn7qpzpI5ez9xM3ApiXFNqw=";
+    rev = "43c3ac30eb8e6e8032cb049e352ce07a525b321c";
+    hash = "sha256-/mAffg2OuL5atwYpW64JlFsKY0s/PYR7hdPyLhhQbKQ=";
   };
 
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
-      "accesskit-0.12.2" = "sha256-1UwgRyUe0PQrZrpS7574oNLi13fg5HpgILtZGW6JNtQ=";
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
-      "clipboard_macos-0.1.0" = "sha256-cG5vnkiyDlQnbEfV2sPbmBYKv1hd3pjJrymfZb8ziKk=";
+      "clipboard_macos-0.1.0" = "sha256-tovB4fjPVVRY8LKn5albMzskFQ+1W5ul4jT5RXx9gKE=";
       "cosmic-client-toolkit-0.1.0" = "sha256-aCFtbH3+2SS/Fl+USszRwBNEgsO3FFFEMQqED9gHFsw=";
-      "cosmic-config-0.1.0" = "sha256-zdhdsGpf+/38WLDL1goKH22FbZx/Ntz4GUedaToGgEo=";
-      "cosmic-notifications-util-0.1.0" = "sha256-tCizZePze94tbJbR91N9rfUhrLFTAMW2oL9ByKOeDAU=";
-      "cosmic-text-0.12.1" = "sha256-x0XTxzbmtE2d4XCG/Nuq3DzBpz15BbnjRRlirfNJEiU=";
-      "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
-      "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
+      "cosmic-config-0.1.0" = "sha256-jUOFWa7ZVrbiIxWbW13ghRPzB2kWrOnNsraqWa0JA/E=";
+      "cosmic-notifications-util-0.1.0" = "sha256-yB8XGr/Glj6iUMp4Rj4CEsHpWQgLeF5h/KyIDiqfmfI=";
+      "cosmic-text-0.12.1" = "sha256-u2Tw+XhpIKeFg8Wgru/sjGw6GUZ2m50ZDmRBJ1IM66w=";
+      "iced_glyphon-0.6.0" = "sha256-u1vnsOjP8npQ57NNSikotuHxpi4Mp/rV9038vAgCsfQ=";
       "launch-pad-0.1.0" = "sha256-yWd+QGI0z53p1WfFuGryhrcd5q82MxwHCNJuNyrldzQ=";
-      "smithay-0.3.0" = "sha256-Ir12itaCX1zDb6QzuBh9ve09KGLxxiiiW/sP4bxlx8w=";
+      "smithay-0.3.0" = "sha256-I6XXB5Kort09440dbXQ0+2F4U3ulq1c9x3od+gQ6Chs=";
+      "smithay-client-toolkit-0.19.2" = "sha256-DUn8MW+UN1nPIvX5+DWAwA37WUAdtdlOV4eJ0+5/CtM=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
