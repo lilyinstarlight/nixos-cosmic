@@ -121,6 +121,7 @@
                       services.displayManager.cosmic-greeter.enable = true;
 
                       services.flatpak.enable = true;
+                      services.gnome.gnome-keyring.enable = true;
 
                       environment.systemPackages = with pkgs; [
                         chronos
