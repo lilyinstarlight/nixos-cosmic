@@ -31,7 +31,6 @@ stdenvNoCC.mkDerivation {
     description = "Wallpapers for the COSMIC Desktop Environment";
     homepage = "https://github.com/pop-os/cosmic-wallpapers";
     license = with licenses; [
-      cc-by-sa-40
       cc-by-40
       publicDomain
     ];
