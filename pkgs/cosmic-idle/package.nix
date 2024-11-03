@@ -11,7 +11,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-idle";
-  version = "0-unstable-2024-10-30";
+  version = "1.0.0-alpha.3-unstable-2024-10-30";
 
   src = fetchFromGitHub {
     owner = "pop-os";
@@ -54,8 +54,7 @@ rustPlatform.buildRustPackage {
   '';
 
   passthru.updateScript = nix-update-script {
-    # TODO: uncomment when there are actual tagged releases
-    #extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
   };
 
   meta = with lib; {
