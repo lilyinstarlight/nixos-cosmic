@@ -10,7 +10,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-launcher";
-  version = "1.0.0-alpha.2-unstable-2024-10-29";
+  version = "1.0.0-alpha.3-unstable-2024-10-29";
 
   src = fetchFromGitHub {
     owner = "pop-os";

@@ -14,7 +14,7 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-term";
-  version = "1.0.0-alpha.2-unstable-2024-10-30";
+  version = "1.0.0-alpha.3-unstable-2024-10-30";
 
   src = fetchFromGitHub {
     owner = "pop-os";

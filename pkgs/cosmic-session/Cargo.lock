@@ -309,6 +309,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "cosmic-dbus-a11y"
+version = "0.1.0"
+source = "git+https://github.com/pop-os/dbus-settings-bindings#62100129240d164e39fff16bda34faad520936de"
+dependencies = [
+ "zbus",
+]
+
+[[package]]
 name = "cosmic-notifications-util"
 version = "0.1.0"
 source = "git+https://github.com/pop-os/cosmic-notifications#bca2352c1fa22c52bff33a46968735909f8f6888"
@@ -323,6 +331,7 @@ version = "0.1.0"
 dependencies = [
  "async-signals",
  "color-eyre",
+ "cosmic-dbus-a11y",
  "cosmic-notifications-util",
  "futures-util",
  "itertools",
