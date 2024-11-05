@@ -246,9 +246,9 @@ dependencies = [
 
 [[package]]
 name = "anyhow"
-version = "1.0.83"
+version = "1.0.91"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "25bdb32cbbdce2b519a9cd7df3a678443100e265d5e25ca763b7572a5104f5f3"
+checksum = "c042108f3ed77fd83760a5fd79b53be043192bb3b9dba91d8c574c0ada7850c8"
 
 [[package]]
 name = "apply"
@@ -508,7 +508,7 @@ checksum = "3b43422f69d8ff38f95f1b2bb76517c91589a924d1559a0e935d7c8ce0274c11"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -543,7 +543,7 @@ checksum = "c6fa2087f2753a7da8cc1c0dbfcf89579dd57458e36769de5ac750b4671737ca"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -746,7 +746,7 @@ checksum = "4da9a32f3fed317401fa3c862968128267c3106685286e15d5aaa3d7389c2f60"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -835,6 +835,46 @@ dependencies = [
  "wasm-bindgen",
  "windows-targets 0.52.6",
 ]
+
+[[package]]
+name = "clap"
+version = "4.5.20"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b97f376d85a664d5837dbae44bf546e6477a679ff6610010f17276f686d867e8"
+dependencies = [
+ "clap_builder",
+ "clap_derive",
+]
+
+[[package]]
+name = "clap_builder"
+version = "4.5.20"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "19bc80abd44e4bed93ca373a0704ccbd1b710dc5749406201bb018272808dc54"
+dependencies = [
+ "anstream",
+ "anstyle",
+ "clap_lex",
+ "strsim 0.11.1",
+]
+
+[[package]]
+name = "clap_derive"
+version = "4.5.18"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4ac6a0c7b1a9e9a5186361f67dfa1b88213572f427fb9ab038efb2bd8c582dab"
+dependencies = [
+ "heck 0.5.0",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.85",
+]
+
+[[package]]
+name = "clap_lex"
+version = "0.7.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1462739cb27611015575c0c11df5df7601141071f07518d56fcc1be504cbec97"
 
 [[package]]
 name = "clipboard-win"
@@ -1039,7 +1079,7 @@ dependencies = [
 [[package]]
 name = "cosmic-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "atomicwrites",
  "cosmic-config-derive",
@@ -1058,18 +1098,35 @@ dependencies = [
 [[package]]
 name = "cosmic-config-derive"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "quote",
  "syn 1.0.109",
 ]
 
 [[package]]
+name = "cosmic-ext-config-templates"
+version = "2.0.2"
+source = "git+https://github.com/ryanabx/cosmic-ext-config-templates#250a5c7a19a1626fb047da07808531cfd55819a5"
+dependencies = [
+ "anyhow",
+ "clap",
+ "cosmic-config",
+ "cosmic-panel-config",
+ "env_logger 0.11.5",
+ "log",
+ "ron",
+ "serde",
+ "walkdir",
+]
+
+[[package]]
 name = "cosmic-ext-tweaks"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "anyhow",
  "ashpd 0.8.1",
+ "cosmic-ext-config-templates",
  "cosmic-panel-config",
  "dirs",
  "env_logger 0.11.5",
@@ -1092,15 +1149,15 @@ dependencies = [
 [[package]]
 name = "cosmic-panel-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/cosmic-panel#1495bfa2abc4057129c7c3b0e8530b3afd853204"
+source = "git+https://github.com/pop-os/cosmic-panel#43c3ac30eb8e6e8032cb049e352ce07a525b321c"
 dependencies = [
  "anyhow",
  "cosmic-config",
  "ron",
  "serde",
- "smithay-client-toolkit 0.18.0",
+ "smithay-client-toolkit",
  "tracing",
- "wayland-protocols-wlr 0.2.0",
+ "wayland-protocols-wlr",
  "xdg-shell-wrapper-config",
 ]
 
@@ -1130,7 +1187,7 @@ dependencies = [
 [[package]]
 name = "cosmic-theme"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "almost",
  "cosmic-config",
@@ -1272,7 +1329,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "strsim 0.11.1",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -1283,7 +1340,7 @@ checksum = "733cabb43482b1a1b53eee8583c2b9e8684d592215ea83efd305dd31bc2f0178"
 dependencies = [
  "darling_core",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -1334,7 +1391,7 @@ dependencies = [
  "darling",
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -1382,7 +1439,7 @@ checksum = "487585f4d0c6655fe74905e2504d8ad6908e4db67f744eb140876906c2f3175d"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -1411,7 +1468,7 @@ dependencies = [
  "bitflags 2.6.0",
  "mime 0.1.0",
  "raw-window-handle",
- "smithay-client-toolkit 0.19.2",
+ "smithay-client-toolkit",
  "smithay-clipboard",
 ]
 
@@ -1513,7 +1570,7 @@ checksum = "5c785274071b1b420972453b306eeca06acf4633829db4223b58a2a8c5953bc4"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -1873,7 +1930,7 @@ checksum = "1a5c6c585bc94aaf2c7b51dd4c2ba22680844aba4c687be581871a6f518c5742"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -2014,7 +2071,7 @@ checksum = "87750cf4b7a4c0625b1529e4c543c2182106e4dedc60a2a6455e00d212c489ac"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -2261,6 +2318,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8"
 
 [[package]]
+name = "heck"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
+
+[[package]]
 name = "hermit-abi"
 version = "0.3.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2456,7 +2519,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "strsim 0.10.0",
- "syn 2.0.63",
+ "syn 2.0.85",
  "unic-langid",
 ]
 
@@ -2470,7 +2533,7 @@ dependencies = [
  "i18n-config",
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -2499,7 +2562,7 @@ dependencies = [
 [[package]]
 name = "iced"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "dnd",
  "iced_accessibility",
@@ -2517,7 +2580,7 @@ dependencies = [
 [[package]]
 name = "iced_accessibility"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "accesskit",
  "accesskit_winit",
@@ -2526,7 +2589,7 @@ dependencies = [
 [[package]]
 name = "iced_core"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "bitflags 2.6.0",
  "bytes",
@@ -2549,7 +2612,7 @@ dependencies = [
 [[package]]
 name = "iced_futures"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "futures",
  "iced_core",
@@ -2575,7 +2638,7 @@ dependencies = [
 [[package]]
 name = "iced_graphics"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "bitflags 2.6.0",
  "bytemuck",
@@ -2597,7 +2660,7 @@ dependencies = [
 [[package]]
 name = "iced_renderer"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "iced_graphics",
  "iced_tiny_skia",
@@ -2609,7 +2672,7 @@ dependencies = [
 [[package]]
 name = "iced_runtime"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "bytes",
  "dnd",
@@ -2623,7 +2686,7 @@ dependencies = [
 [[package]]
 name = "iced_tiny_skia"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "bytemuck",
  "cosmic-text",
@@ -2639,7 +2702,7 @@ dependencies = [
 [[package]]
 name = "iced_wgpu"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "as-raw-xcb-connection",
  "bitflags 2.6.0",
@@ -2656,12 +2719,12 @@ dependencies = [
  "resvg",
  "rustc-hash 2.0.0",
  "rustix 0.38.34",
- "smithay-client-toolkit 0.19.2",
+ "smithay-client-toolkit",
  "thiserror",
  "tiny-xlib",
  "wayland-backend",
  "wayland-client",
- "wayland-protocols 0.32.3",
+ "wayland-protocols",
  "wayland-sys",
  "wgpu",
  "x11rb",
@@ -2670,7 +2733,7 @@ dependencies = [
 [[package]]
 name = "iced_widget"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "dnd",
  "iced_renderer",
@@ -2687,7 +2750,7 @@ dependencies = [
 [[package]]
 name = "iced_winit"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "dnd",
  "iced_futures",
@@ -3030,7 +3093,7 @@ checksum = "ae743338b92ff9146ce83992f766a31066a91a8c84a45e0e9f21e7cf6de6d346"
 [[package]]
 name = "libcosmic"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#4b562867eccb65895953023a19393fa293aafb4b"
+source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
 dependencies = [
  "apply",
  "ashpd 0.9.1",
@@ -3550,7 +3613,7 @@ dependencies = [
  "proc-macro-crate 3.1.0",
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -3843,7 +3906,7 @@ checksum = "a948666b637a0f465e8564c73e89d4dde00d72d4d473cc972f390fc3dcee7d9c"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -3916,12 +3979,12 @@ version = "0.18.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39b0deead1528fd0e5947a8546a9642a9777c25f6e1e26f34c97b204bbb465bd"
 dependencies = [
- "heck",
+ "heck 0.4.1",
  "itertools",
  "proc-macro2",
  "proc-macro2-diagnostics",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -3955,7 +4018,7 @@ dependencies = [
  "by_address",
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -4060,7 +4123,7 @@ dependencies = [
  "phf_shared",
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -4095,7 +4158,7 @@ checksum = "2f38a4412a78282e09a2cf38d195ea5420d15ba0602cb375210efbc877243965"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -4250,9 +4313,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.82"
+version = "1.0.89"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8ad3d49ab951a01fbaafe34f2ec74122942fe18a3f9814c3268f1bb72042131b"
+checksum = "f139b0662de085916d1fb67d2b4169d1addddda1919e696f3252b740b629986e"
 dependencies = [
  "unicode-ident",
 ]
@@ -4265,7 +4328,7 @@ checksum = "af066a9c399a26e020ada66a034357a868728e72cd426f3adcd35f80d88d88c8"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
  "version_check",
  "yansi",
 ]
@@ -4604,7 +4667,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "rust-embed-utils",
- "syn 2.0.63",
+ "syn 2.0.85",
  "walkdir",
 ]
 
@@ -4781,7 +4844,7 @@ dependencies = [
  "ab_glyph",
  "log",
  "memmap2 0.9.4",
- "smithay-client-toolkit 0.19.2",
+ "smithay-client-toolkit",
  "tiny-skia",
 ]
 
@@ -4825,22 +4888,22 @@ checksum = "d369a96f978623eb3dc28807c4852d6cc617fed53da5d3c400feff1ef34a714a"
 
 [[package]]
 name = "serde"
-version = "1.0.202"
+version = "1.0.214"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "226b61a0d411b2ba5ff6d7f73a476ac4f8bb900373459cd00fab8512828ba395"
+checksum = "f55c3193aca71c12ad7890f1785d2b73e1b9f63a0bbc353c08ef26fe03fc56b5"
 dependencies = [
  "serde_derive",
 ]
 
 [[package]]
 name = "serde_derive"
-version = "1.0.202"
+version = "1.0.214"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6048858004bcff69094cd972ed40a32500f153bd3be9f716b2eed2e8217c4838"
+checksum = "de523f781f095e28fa605cdce0f8307e451cc0fd14e2eb4cd2e98a355b147766"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -4864,7 +4927,7 @@ checksum = "6c64451ba24fc7a6a2d60fc75dd9c83c90903b19028d4eff35e88fc1e86564e9"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -4982,33 +5045,6 @@ checksum = "3c5e1a9a646d36c3599cd173a41282daf47c44583ad367b8e6837255952e5c67"
 
 [[package]]
 name = "smithay-client-toolkit"
-version = "0.18.0"
-source = "git+https://github.com/smithay/client-toolkit?rev=3bed072#3bed072b966022f5f929d12f3aff089b1ace980b"
-dependencies = [
- "bitflags 2.6.0",
- "bytemuck",
- "calloop",
- "calloop-wayland-source",
- "cursor-icon",
- "libc",
- "log",
- "memmap2 0.9.4",
- "pkg-config",
- "rustix 0.38.34",
- "thiserror",
- "wayland-backend",
- "wayland-client",
- "wayland-csd-frame",
- "wayland-cursor",
- "wayland-protocols 0.31.2",
- "wayland-protocols-wlr 0.2.0",
- "wayland-scanner",
- "xkbcommon",
- "xkeysym",
-]
-
-[[package]]
-name = "smithay-client-toolkit"
 version = "0.19.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3457dea1f0eb631b4034d61d4d8c32074caa6cd1ab2d59f2327bd8461e2c0016"
@@ -5028,8 +5064,8 @@ dependencies = [
  "wayland-client",
  "wayland-csd-frame",
  "wayland-cursor",
- "wayland-protocols 0.32.3",
- "wayland-protocols-wlr 0.3.3",
+ "wayland-protocols",
+ "wayland-protocols-wlr",
  "wayland-scanner",
  "xkbcommon",
  "xkeysym",
@@ -5042,7 +5078,7 @@ source = "git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5#5a3007de
 dependencies = [
  "libc",
  "raw-window-handle",
- "smithay-client-toolkit 0.19.2",
+ "smithay-client-toolkit",
  "wayland-backend",
 ]
 
@@ -5196,9 +5232,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.63"
+version = "2.0.85"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bf5be731623ca1a1fb7d8be6f261a3be6d3e2337b8a1f97be944d020c8fcb704"
+checksum = "5023162dfcd14ef8f32034d8bcd4cc5ddc61ef7a247c024a33e24e1f24d21b56"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -5293,7 +5329,7 @@ checksum = "ae71770322cbd277e69d762a16c444af02aa0575ac0d174f0b9562d3b37f8602"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -5439,7 +5475,7 @@ checksum = "5b8a1e28f2deaa14e508979454cb3a223b10b938b45af148bc0986de36f1923b"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -5598,7 +5634,7 @@ checksum = "34704c8d6ebcbc939824180af020566b01a7c01f80641264eba0999f6c2b6be7"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -5895,7 +5931,7 @@ dependencies = [
  "once_cell",
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
  "wasm-bindgen-shared",
 ]
 
@@ -5929,7 +5965,7 @@ checksum = "26c6ab57572f7a24a4985830b120de1594465e5d500f24afe89e16b4e833ef68"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
  "wasm-bindgen-backend",
  "wasm-bindgen-shared",
 ]
@@ -6005,19 +6041,6 @@ dependencies = [
 
 [[package]]
 name = "wayland-protocols"
-version = "0.31.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8f81f365b8b4a97f422ac0e8737c438024b5951734506b0e1d775c73030561f4"
-dependencies = [
- "bitflags 2.6.0",
- "wayland-backend",
- "wayland-client",
- "wayland-scanner",
- "wayland-server",
-]
-
-[[package]]
-name = "wayland-protocols"
 version = "0.32.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "62989625a776e827cc0f15d41444a3cea5205b963c3a25be48ae1b52d6b4daaa"
@@ -6026,6 +6049,7 @@ dependencies = [
  "wayland-backend",
  "wayland-client",
  "wayland-scanner",
+ "wayland-server",
 ]
 
 [[package]]
@@ -6037,22 +6061,8 @@ dependencies = [
  "bitflags 2.6.0",
  "wayland-backend",
  "wayland-client",
- "wayland-protocols 0.32.3",
+ "wayland-protocols",
  "wayland-scanner",
-]
-
-[[package]]
-name = "wayland-protocols-wlr"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ad1f61b76b6c2d8742e10f9ba5c3737f6530b4c243132c2a2ccc8aa96fe25cd6"
-dependencies = [
- "bitflags 2.6.0",
- "wayland-backend",
- "wayland-client",
- "wayland-protocols 0.31.2",
- "wayland-scanner",
- "wayland-server",
 ]
 
 [[package]]
@@ -6064,8 +6074,9 @@ dependencies = [
  "bitflags 2.6.0",
  "wayland-backend",
  "wayland-client",
- "wayland-protocols 0.32.3",
+ "wayland-protocols",
  "wayland-scanner",
+ "wayland-server",
 ]
 
 [[package]]
@@ -6081,9 +6092,9 @@ dependencies = [
 
 [[package]]
 name = "wayland-server"
-version = "0.31.1"
+version = "0.31.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "00e6e4d5c285bc24ba4ed2d5a4bd4febd5fd904451f465973225c8e99772fdb7"
+checksum = "2f0a4bab6d420ee4a609b63ef4d5f9b5d309c6b93a029fccab70f2594c0cb3ae"
 dependencies = [
  "bitflags 2.6.0",
  "downcast-rs",
@@ -6338,7 +6349,7 @@ checksum = "942ac266be9249c84ca862f0a164a39533dc2f6f33dc98ec89c8da99b82ea0bd"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -6349,7 +6360,7 @@ checksum = "da33557140a288fae4e1d5f8873aaf9eb6613a9cf82c3e070223ff177f598b60"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
@@ -6638,7 +6649,7 @@ dependencies = [
  "redox_syscall 0.4.1",
  "rustix 0.38.34",
  "sctk-adwaita",
- "smithay-client-toolkit 0.19.2",
+ "smithay-client-toolkit",
  "smol_str",
  "tracing",
  "unicode-segmentation",
@@ -6646,7 +6657,7 @@ dependencies = [
  "wasm-bindgen-futures",
  "wayland-backend",
  "wayland-client",
- "wayland-protocols 0.32.3",
+ "wayland-protocols",
  "wayland-protocols-plasma",
  "web-sys",
  "web-time",
@@ -6731,10 +6742,10 @@ dependencies = [
 [[package]]
 name = "xdg-shell-wrapper-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/xdg-shell-wrapper#b5480042615ecfcf30262d5a40625e8f430b474a"
+source = "git+https://github.com/pop-os/cosmic-panel#43c3ac30eb8e6e8032cb049e352ce07a525b321c"
 dependencies = [
  "serde",
- "wayland-protocols-wlr 0.2.0",
+ "wayland-protocols-wlr",
 ]
 
 [[package]]
@@ -6941,7 +6952,7 @@ checksum = "15e934569e47891f7d9411f1a451d947a60e000ab3bd24fbb970f000387d1b3b"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.63",
+ "syn 2.0.85",
 ]
 
 [[package]]
