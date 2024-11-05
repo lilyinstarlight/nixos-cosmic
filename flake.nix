@@ -32,13 +32,16 @@
       ];
       rustPlatformFor =
         pkgs:
-        let
-          rust-bin = rust-overlay.lib.mkRustBin { } pkgs;
-        in
-        pkgs.makeRustPlatform {
-          cargo = rust-bin.stable.latest.default;
-          rustc = rust-bin.stable.latest.default;
-        };
+        if nixpkgs.lib.versionAtLeast pkgs.rustc.version "1.80.0" then
+          pkgs.rustPlatform
+        else
+          let
+            rust-bin = rust-overlay.lib.mkRustBin { } pkgs;
+          in
+          pkgs.makeRustPlatform {
+            cargo = rust-bin.stable.latest.default;
+            rustc = rust-bin.stable.latest.default;
+          };
     in
     {
       lib = {
