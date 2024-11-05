@@ -507,7 +507,7 @@ checksum = "3b43422f69d8ff38f95f1b2bb76517c91589a924d1559a0e935d7c8ce0274c11"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -542,7 +542,7 @@ checksum = "c6fa2087f2753a7da8cc1c0dbfcf89579dd57458e36769de5ac750b4671737ca"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -764,7 +764,7 @@ checksum = "369cfaf2a5bed5d8f8202073b2e093c9f508251de1551a0deb4253e4c7d80909"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -1083,7 +1083,7 @@ dependencies = [
 [[package]]
 name = "cosmic-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "atomicwrites 0.4.2",
  "cosmic-config-derive",
@@ -1105,7 +1105,7 @@ dependencies = [
 [[package]]
 name = "cosmic-config-derive"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "quote",
  "syn 1.0.109",
@@ -1114,7 +1114,7 @@ dependencies = [
 [[package]]
 name = "cosmic-settings-daemon"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/dbus-settings-bindings#931f5db558bf3fcb572ff4e18f7f1618a7430046"
+source = "git+https://github.com/pop-os/dbus-settings-bindings#62100129240d164e39fff16bda34faad520936de"
 dependencies = [
  "zbus 4.2.2",
 ]
@@ -1145,7 +1145,7 @@ dependencies = [
 [[package]]
 name = "cosmic-theme"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "almost",
  "cosmic-config",
@@ -1311,7 +1311,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "strsim 0.11.1",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -1322,7 +1322,7 @@ checksum = "733cabb43482b1a1b53eee8583c2b9e8684d592215ea83efd305dd31bc2f0178"
 dependencies = [
  "darling_core",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -1395,7 +1395,7 @@ dependencies = [
  "darling",
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -1443,7 +1443,7 @@ checksum = "487585f4d0c6655fe74905e2504d8ad6908e4db67f744eb140876906c2f3175d"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -1500,7 +1500,7 @@ checksum = "75b325c5dbd37f80359721ad39aca5a29fb04c89279657cffdda8736d0c0b9d2"
 [[package]]
 name = "dpi"
 version = "0.1.1"
-source = "git+https://github.com/pop-os/winit.git?tag=iced-xdg-surface-0.13#b1852274c0251d7f24ba2cb32fa53812b37b1c79"
+source = "git+https://github.com/pop-os/winit.git?tag=iced-xdg-surface-0.13#1cc02bdab141072eaabad639d74b032fd0fcc62e"
 
 [[package]]
 name = "drm"
@@ -1583,7 +1583,7 @@ checksum = "5c785274071b1b420972453b306eeca06acf4633829db4223b58a2a8c5953bc4"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -1939,7 +1939,7 @@ checksum = "1a5c6c585bc94aaf2c7b51dd4c2ba22680844aba4c687be581871a6f518c5742"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -2094,7 +2094,7 @@ checksum = "87750cf4b7a4c0625b1529e4c543c2182106e4dedc60a2a6455e00d212c489ac"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -2432,7 +2432,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "strsim 0.10.0",
- "syn 2.0.66",
+ "syn 2.0.87",
  "unic-langid",
 ]
 
@@ -2446,7 +2446,7 @@ dependencies = [
  "i18n-config",
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -2475,7 +2475,7 @@ dependencies = [
 [[package]]
 name = "iced"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "dnd",
  "iced_accessibility",
@@ -2493,7 +2493,7 @@ dependencies = [
 [[package]]
 name = "iced_accessibility"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "accesskit",
  "accesskit_winit",
@@ -2502,7 +2502,7 @@ dependencies = [
 [[package]]
 name = "iced_core"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "bitflags 2.6.0",
  "bytes",
@@ -2525,7 +2525,7 @@ dependencies = [
 [[package]]
 name = "iced_futures"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "futures",
  "iced_core",
@@ -2551,7 +2551,7 @@ dependencies = [
 [[package]]
 name = "iced_graphics"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "bitflags 2.6.0",
  "bytemuck",
@@ -2573,7 +2573,7 @@ dependencies = [
 [[package]]
 name = "iced_renderer"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "iced_graphics",
  "iced_tiny_skia",
@@ -2585,7 +2585,7 @@ dependencies = [
 [[package]]
 name = "iced_runtime"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "bytes",
  "dnd",
@@ -2599,7 +2599,7 @@ dependencies = [
 [[package]]
 name = "iced_tiny_skia"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "bytemuck",
  "cosmic-text",
@@ -2615,7 +2615,7 @@ dependencies = [
 [[package]]
 name = "iced_wgpu"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "as-raw-xcb-connection",
  "bitflags 2.6.0",
@@ -2646,7 +2646,7 @@ dependencies = [
 [[package]]
 name = "iced_widget"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "dnd",
  "iced_renderer",
@@ -2663,7 +2663,7 @@ dependencies = [
 [[package]]
 name = "iced_winit"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "dnd",
  "iced_futures",
@@ -2983,7 +2983,7 @@ checksum = "97b3888a4aecf77e811145cadf6eef5901f4782c53886191b2f693f24761847c"
 [[package]]
 name = "libcosmic"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#fde0516484750e0a7d2499e54964c5ed6ba8e16b"
+source = "git+https://github.com/pop-os/libcosmic.git#36b3cfa13aeac6e5cdf7e76ef826ed7d66aaebfe"
 dependencies = [
  "apply",
  "ashpd 0.9.1",
@@ -3545,7 +3545,7 @@ dependencies = [
  "proc-macro-crate 3.1.0",
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -3882,7 +3882,7 @@ dependencies = [
  "proc-macro2",
  "proc-macro2-diagnostics",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -3916,7 +3916,7 @@ dependencies = [
  "by_address",
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -4031,7 +4031,7 @@ dependencies = [
  "phf_shared",
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -4066,7 +4066,7 @@ checksum = "3c0f5fad0874fc7abcd4d750e76917eaebbecaa2c20bde22e1dbeeba8beb758c"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -4226,7 +4226,7 @@ checksum = "af066a9c399a26e020ada66a034357a868728e72cd426f3adcd35f80d88d88c8"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
  "version_check",
  "yansi",
 ]
@@ -4507,7 +4507,7 @@ dependencies = [
  "proc-macro2",
  "quote",
  "rust-embed-utils",
- "syn 2.0.66",
+ "syn 2.0.87",
  "walkdir",
 ]
 
@@ -4671,7 +4671,7 @@ checksum = "500cbc0ebeb6f46627f50f3f5811ccf6bf00643be300b4c3eabc0ef55dc5b5ba"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -4694,7 +4694,7 @@ checksum = "6c64451ba24fc7a6a2d60fc75dd9c83c90903b19028d4eff35e88fc1e86564e9"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -4994,7 +4994,7 @@ dependencies = [
  "quote",
  "sqlx-core",
  "sqlx-macros-core",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -5015,7 +5015,7 @@ dependencies = [
  "sha2",
  "sqlx-core",
  "sqlx-sqlite",
- "syn 2.0.66",
+ "syn 2.0.87",
  "tempfile",
  "url",
 ]
@@ -5116,9 +5116,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.66"
+version = "2.0.87"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c42f3f41a2de00b01c0aaad383c5a45241efc8b2d1eda5661812fda5f3cdcff5"
+checksum = "25aa4ce346d03a6dcd68dd8b4010bcb74e54e62c90c573f394c46eae99aba32d"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -5215,22 +5215,22 @@ dependencies = [
 
 [[package]]
 name = "thiserror"
-version = "1.0.65"
+version = "1.0.67"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5d11abd9594d9b38965ef50805c5e469ca9cc6f197f883f717e0269a3057b3d5"
+checksum = "3b3c6efbfc763e64eb85c11c25320f0737cb7364c4b6336db90aa9ebe27a0bbd"
 dependencies = [
  "thiserror-impl",
 ]
 
 [[package]]
 name = "thiserror-impl"
-version = "1.0.65"
+version = "1.0.67"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ae71770322cbd277e69d762a16c444af02aa0575ac0d174f0b9562d3b37f8602"
+checksum = "b607164372e89797d78b8e23a6d67d5d1038c1c65efd52e1389ef8b77caba2a6"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -5376,7 +5376,7 @@ checksum = "5b8a1e28f2deaa14e508979454cb3a223b10b938b45af148bc0986de36f1923b"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -5475,7 +5475,7 @@ checksum = "34704c8d6ebcbc939824180af020566b01a7c01f80641264eba0999f6c2b6be7"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -5780,7 +5780,7 @@ dependencies = [
  "once_cell",
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
  "wasm-bindgen-shared",
 ]
 
@@ -5814,7 +5814,7 @@ checksum = "26c6ab57572f7a24a4985830b120de1594465e5d500f24afe89e16b4e833ef68"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
  "wasm-bindgen-backend",
  "wasm-bindgen-shared",
 ]
@@ -6250,7 +6250,7 @@ checksum = "942ac266be9249c84ca862f0a164a39533dc2f6f33dc98ec89c8da99b82ea0bd"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -6261,7 +6261,7 @@ checksum = "da33557140a288fae4e1d5f8873aaf9eb6613a9cf82c3e070223ff177f598b60"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -6481,7 +6481,7 @@ checksum = "bec47e5bfd1bff0eeaf6d8b485cc1074891a197ab4225d504cb7a1ab88b02bf0"
 [[package]]
 name = "winit"
 version = "0.30.5"
-source = "git+https://github.com/pop-os/winit.git?tag=iced-xdg-surface-0.13#b1852274c0251d7f24ba2cb32fa53812b37b1c79"
+source = "git+https://github.com/pop-os/winit.git?tag=iced-xdg-surface-0.13#1cc02bdab141072eaabad639d74b032fd0fcc62e"
 dependencies = [
  "ahash",
  "android-activity",
@@ -6805,7 +6805,7 @@ dependencies = [
  "proc-macro-crate 3.1.0",
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
  "zvariant_utils 2.0.0",
 ]
 
@@ -6854,7 +6854,7 @@ checksum = "15e934569e47891f7d9411f1a451d947a60e000ab3bd24fbb970f000387d1b3b"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
 
 [[package]]
@@ -6916,7 +6916,7 @@ dependencies = [
  "proc-macro-crate 3.1.0",
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
  "zvariant_utils 2.0.0",
 ]
 
@@ -6939,5 +6939,5 @@ checksum = "fc242db087efc22bd9ade7aa7809e4ba828132edc312871584a6b4391bdf8786"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 2.0.66",
+ "syn 2.0.87",
 ]
