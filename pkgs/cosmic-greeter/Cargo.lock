@@ -996,6 +996,7 @@ dependencies = [
  "cosmic-dbus-networkmanager",
  "cosmic-greeter-config",
  "cosmic-greeter-daemon",
+ "dirs",
  "env_logger",
  "freedesktop_entry_parser",
  "futures-util",
