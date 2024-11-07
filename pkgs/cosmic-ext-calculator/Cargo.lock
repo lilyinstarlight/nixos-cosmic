@@ -819,7 +819,7 @@ version = "0.2.2"
 source = "git+https://github.com/pop-os/window_clipboard.git?tag=pop-0.13#a83bf83784276aaa882ef13555295a2ad9edd265"
 dependencies = [
  "dnd",
- "mime",
+ "mime 0.1.0",
  "smithay-clipboard",
 ]
 
@@ -991,12 +991,12 @@ dependencies = [
 [[package]]
 name = "cosmic-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "atomicwrites",
  "cosmic-config-derive",
  "cosmic-settings-daemon",
- "dirs",
+ "dirs 5.0.1",
  "futures-util",
  "iced_futures",
  "known-folders",
@@ -1013,7 +1013,7 @@ dependencies = [
 [[package]]
 name = "cosmic-config-derive"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "quote",
  "syn 1.0.109",
@@ -1021,7 +1021,7 @@ dependencies = [
 
 [[package]]
 name = "cosmic-ext-calculator"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "calculator-rs",
  "i18n-embed",
@@ -1029,7 +1029,6 @@ dependencies = [
  "libcosmic",
  "log",
  "once_cell",
- "open",
  "paste",
  "pretty_env_logger",
  "rust-embed",
@@ -1071,12 +1070,12 @@ dependencies = [
 [[package]]
 name = "cosmic-theme"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "almost",
  "cosmic-config",
  "csscolorparser",
- "dirs",
+ "dirs 5.0.1",
  "lazy_static",
  "palette",
  "ron",
@@ -1281,11 +1280,31 @@ dependencies = [
 
 [[package]]
 name = "dirs"
+version = "3.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "30baa043103c9d0c2a57cf537cc2f35623889dc0d405e6c3cccfadbc81c71309"
+dependencies = [
+ "dirs-sys 0.3.7",
+]
+
+[[package]]
+name = "dirs"
 version = "5.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "44c45a9d03d6676652bcb5e724c7e988de1acad23a711b5217ab9cbecbec2225"
 dependencies = [
- "dirs-sys",
+ "dirs-sys 0.4.1",
+]
+
+[[package]]
+name = "dirs-sys"
+version = "0.3.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1b1d1d91c932ef41c0f2663aa8b0ca0342d444d842c06914aa0a7e352d0bada6"
+dependencies = [
+ "libc",
+ "redox_users",
+ "winapi",
 ]
 
 [[package]]
@@ -1341,7 +1360,7 @@ version = "0.1.0"
 source = "git+https://github.com/pop-os/window_clipboard.git?tag=pop-0.13#a83bf83784276aaa882ef13555295a2ad9edd265"
 dependencies = [
  "bitflags 2.6.0",
- "mime",
+ "mime 0.1.0",
  "raw-window-handle",
  "smithay-client-toolkit",
  "smithay-clipboard",
@@ -1772,12 +1791,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "freedesktop-desktop-entry"
+version = "0.5.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c201444ddafb5506fe85265b48421664ff4617e3b7090ef99e42a0070c1aead0"
+dependencies = [
+ "dirs 3.0.2",
+ "gettext-rs",
+ "memchr",
+ "thiserror",
+ "xdg",
+]
+
+[[package]]
 name = "freedesktop-icons"
 version = "0.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a8ef34245e0540c9a3ce7a28340b98d2c12b75da0d446da4e8224923fcaa0c16"
 dependencies = [
- "dirs",
+ "dirs 5.0.1",
  "once_cell",
  "rust-ini",
  "thiserror",
@@ -1940,6 +1972,26 @@ dependencies = [
  "cfg-if",
  "libc",
  "wasi",
+]
+
+[[package]]
+name = "gettext-rs"
+version = "0.7.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a44e92f7dc08430aca7ed55de161253a22276dfd69c5526e5c5e95d1f7cf338a"
+dependencies = [
+ "gettext-sys",
+ "locale_config",
+]
+
+[[package]]
+name = "gettext-sys"
+version = "0.22.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bb45773f5b8945f12aecd04558f545964f943dacda1b1155b3d738f5469ef661"
+dependencies = [
+ "cc",
+ "temp-dir",
 ]
 
 [[package]]
@@ -2231,7 +2283,7 @@ dependencies = [
 [[package]]
 name = "iced"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "dnd",
  "iced_accessibility",
@@ -2241,7 +2293,7 @@ dependencies = [
  "iced_widget",
  "iced_winit",
  "image",
- "mime",
+ "mime 0.1.0",
  "thiserror",
  "window_clipboard",
 ]
@@ -2249,7 +2301,7 @@ dependencies = [
 [[package]]
 name = "iced_accessibility"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "accesskit",
  "accesskit_winit",
@@ -2258,14 +2310,14 @@ dependencies = [
 [[package]]
 name = "iced_core"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "bitflags 2.6.0",
  "bytes",
  "dnd",
  "glam",
  "log",
- "mime",
+ "mime 0.1.0",
  "num-traits",
  "once_cell",
  "palette",
@@ -2281,7 +2333,7 @@ dependencies = [
 [[package]]
 name = "iced_futures"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "futures",
  "iced_core",
@@ -2307,7 +2359,7 @@ dependencies = [
 [[package]]
 name = "iced_graphics"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "bitflags 2.6.0",
  "bytemuck",
@@ -2329,7 +2381,7 @@ dependencies = [
 [[package]]
 name = "iced_renderer"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "iced_graphics",
  "iced_tiny_skia",
@@ -2341,7 +2393,7 @@ dependencies = [
 [[package]]
 name = "iced_runtime"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "bytes",
  "dnd",
@@ -2355,7 +2407,7 @@ dependencies = [
 [[package]]
 name = "iced_tiny_skia"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "bytemuck",
  "cosmic-text",
@@ -2371,7 +2423,7 @@ dependencies = [
 [[package]]
 name = "iced_wgpu"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "as-raw-xcb-connection",
  "bitflags 2.6.0",
@@ -2402,7 +2454,7 @@ dependencies = [
 [[package]]
 name = "iced_widget"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "dnd",
  "iced_renderer",
@@ -2419,7 +2471,7 @@ dependencies = [
 [[package]]
 name = "iced_winit"
 version = "0.14.0-dev"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "dnd",
  "iced_futures",
@@ -2744,7 +2796,7 @@ checksum = "a5f43f184355eefb8d17fc948dbecf6c13be3c141f20d834ae842193a448c72a"
 [[package]]
 name = "libcosmic"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/libcosmic.git#bd28ae658161852e51c7746218cd9dd619698998"
+source = "git+https://github.com/pop-os/libcosmic.git#8d4afb90da26d1a4526c4146c43856f7bff008b3"
 dependencies = [
  "apply",
  "ashpd 0.9.1",
@@ -2755,6 +2807,7 @@ dependencies = [
  "css-color",
  "derive_setters",
  "fraction",
+ "freedesktop-desktop-entry",
  "freedesktop-icons",
  "iced",
  "iced_core",
@@ -2766,9 +2819,14 @@ dependencies = [
  "iced_widget",
  "iced_winit",
  "lazy_static",
+ "libc",
+ "mime 0.3.17",
+ "open",
  "palette",
  "rfd",
+ "rustix 0.38.34",
  "serde",
+ "shlex",
  "slotmap",
  "taffy",
  "thiserror",
@@ -3002,6 +3060,12 @@ source = "git+https://github.com/pop-os/window_clipboard.git?tag=pop-0.13#a83bf8
 dependencies = [
  "smithay-clipboard",
 ]
+
+[[package]]
+name = "mime"
+version = "0.3.17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6877bb514081ee2a7ff5ef9de3281f14a4dd4bceac4c09388074a6b5df8a139a"
 
 [[package]]
 name = "miniz_oxide"
@@ -3666,9 +3730,9 @@ checksum = "57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a"
 
 [[package]]
 name = "pathdiff"
-version = "0.2.1"
+version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8835116a5c179084a830efb3adc117ab007512b535bc1a21c991d3b32a6b44dd"
+checksum = "d61c5ce1153ab5b689d0c074c4e7fc613e942dfb7dd9eea5ab202d2ad91fe361"
 
 [[package]]
 name = "percent-encoding"
@@ -4679,6 +4743,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "temp-dir"
+version = "0.1.14"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bc1ee6eef34f12f765cb94725905c6312b6610ab2b0940889cfe58dae7bc3c72"
+
+[[package]]
 name = "tempfile"
 version = "3.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5506,7 +5576,7 @@ dependencies = [
  "clipboard_wayland",
  "clipboard_x11",
  "dnd",
- "mime",
+ "mime 0.1.0",
  "raw-window-handle",
  "thiserror",
 ]
