@@ -12,13 +12,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-ext-tweaks";
-  version = "0.1.3-unstable-2024-11-06";
+  version = "0.1.3-unstable-2024-11-08";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "tweaks";
-    rev = "18c1f170178f98043c1fa6f1ee1f2eb1e1ed8a27";
-    hash = "sha256-xCN6QGWuA3oyqb/sQRDSbc6MR6drBkwHcLiN/6N/wDg=";
+    rev = "66d8997323927d78a959643c329ae3582681a3b9";
+    hash = "sha256-+fS/buj7s4WgyirjcpjLCaunzNR4hy+ZD0xiLkUNkPE=";
   };
 
   cargoLock = {
