@@ -28,13 +28,13 @@ in
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings";
-  version = "1.0.0-alpha.3-unstable-2024-11-14";
+  version = "1.0.0-alpha.3-unstable-2024-11-20";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings";
-    rev = "437cd831b96e0d03ec2b89452da1631def0f1164";
-    hash = "sha256-7Zrn0maj9iv0l/hf8E/roBF/pfYsTJrvY4P6MhS3enc=";
+    rev = "355c27caa8de24ff83883eadd88a5bc29305227f";
+    hash = "sha256-jeF9M9Pk2JjA5RGxPFObPDqxv2lxLRuPaxz3xIWtQTw=";
   };
 
   cargoLock = {
@@ -46,10 +46,10 @@ rustPlatform.buildRustPackage {
       "clipboard_macos-0.1.0" = "sha256-tovB4fjPVVRY8LKn5albMzskFQ+1W5ul4jT5RXx9gKE=";
       "cosmic-bg-config-0.1.0" = "sha256-bmcMZIURozlptsR4si62NTmexqaCX1Yj5bYj49GDehQ=";
       "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
-      "cosmic-comp-config-0.1.0" = "sha256-cgQT8E5CKZlyfRDgxclgxCZaFR6eQffOp9tuAI2ZohQ=";
-      "cosmic-config-0.1.0" = "sha256-KRLpJnFYqg4T/PwCIkkEmBJUA/APLLFxlOvIc3upIG8=";
-      "cosmic-idle-config-0.1.0" = "sha256-ah2L8yq36U6ez+kU6C3ot0V8Imj4fw4QOW1NpjYOSYk=";
-      "cosmic-panel-config-0.1.0" = "sha256-9sf4fD4LthfCMb15JhvVZX00tkshLh58aJPNFhk8k0E=";
+      "cosmic-comp-config-0.1.0" = "sha256-7i6tyGKx6UC0iXd6Lcy4XmutxP+4t82W/xgHrsQnQE4=";
+      "cosmic-config-0.1.0" = "sha256-VVxiIJanb9gs/7sYpXtsoDdsd+QDUg0QBpBpBWVTSqo=";
+      "cosmic-idle-config-0.1.0" = "sha256-+BOzbFDEoIaYkXs48RJtfomv8qdzIFiEpDpN/zDDgFM=";
+      "cosmic-panel-config-0.1.0" = "sha256-XbuTvUWS3Z3FMTSm1SYcGxxa5T6FGT2AQQ9uzXH+PlI=";
       "cosmic-protocols-0.1.0" = "sha256-zWuvZrg39REZpviQPfLNyfmWBzMS7A7IBUTi8ZRhxXs=";
       "cosmic-randr-0.1.0" = "sha256-xakK4APhlNKuWbCMP6nJXLyOaQ0hFCvzOht3P8CkV/0=";
       "cosmic-settings-config-0.1.0" = "sha256-QnRicNbKKAjq12hPE6QbtyH0rV33H3RPHdISYjHX7yw=";
@@ -61,7 +61,7 @@ rustPlatform.buildRustPackage {
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "superblock-0.1.0" = "sha256-G5jBTr9Cn2wdHlu0mFcYxksBrS5FU3gCzFbMe9B9+VU=";
-      "system-0.1.0" = "sha256-5VvSYxwyZ6Ok/Xe4AGoOU1pZhFCTkcZtUKQg3K1OFwA=";
+      "system-0.1.0" = "sha256-iL8DJiMdDXYCZE2npR0S/8eG5GPFthRSokhuKbzW3PQ=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
     };
   };
