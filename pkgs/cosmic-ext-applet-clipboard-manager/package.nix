@@ -19,6 +19,10 @@ rustPlatform.buildRustPackage {
     hash = "sha256-VSaoegakYI7BcqtgsCiYM47Qh20csEv/WWdNCdkZ3ys=";
   };
 
+  patches = [
+    ./fix-cargo-lock-hell.patch
+  ];
+
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
@@ -32,7 +36,6 @@ rustPlatform.buildRustPackage {
       "cosmic-text-0.12.1" = "sha256-nCw3RNIHINXH4+m9wKB+0CeoXSVKKxP+ylaZhfp8u+o=";
       "dpi-0.1.1" = "sha256-whi05/2vc3s5eAJTZ9TzVfGQ/EnfPr0S4PZZmbiYio0=";
       "iced_glyphon-0.6.0" = "sha256-u1vnsOjP8npQ57NNSikotuHxpi4Mp/rV9038vAgCsfQ=";
-      "smithay-client-toolkit-0.19.2" = "sha256-DUn8MW+UN1nPIvX5+DWAwA37WUAdtdlOV4eJ0+5/CtM=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
