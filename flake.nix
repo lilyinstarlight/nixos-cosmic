@@ -134,7 +134,6 @@
                         cosmic-ext-calculator
                         cosmic-ext-examine
                         cosmic-ext-forecast
-                        cosmic-ext-observatory
                         cosmic-ext-tasks
                         cosmic-ext-tweaks
                         (lib.lowPrio cosmic-comp)
@@ -144,6 +143,8 @@
                         firefox
                         quick-webapps
                         stellarshot
+                      ] ++ pkgs.stdenv.hostPlatform.isx86 [
+                        cosmic-ext-observatory
                       ];
 
                       environment.sessionVariables = {
