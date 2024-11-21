@@ -143,7 +143,7 @@
                         firefox
                         quick-webapps
                         stellarshot
-                      ] ++ pkgs.stdenv.hostPlatform.isx86 [
+                      ] ++ lib.optionals pkgs.stdenv.hostPlatform.isx86 [
                         cosmic-ext-observatory
                       ];
 
