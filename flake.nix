@@ -134,6 +134,7 @@
                         cosmic-ext-calculator
                         cosmic-ext-examine
                         cosmic-ext-forecast
+                        cosmic-ext-observatory
                         cosmic-ext-tasks
                         cosmic-ext-tweaks
                         (lib.lowPrio cosmic-comp)
