@@ -7669,6 +7669,7 @@ dependencies = [
  "memmap2 0.9.5",
  "once_cell",
  "pipewire",
+ "pipewire-sys",
  "png",
  "rust-embed",
  "rustix 0.38.40",
