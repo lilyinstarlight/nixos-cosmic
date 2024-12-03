@@ -49,7 +49,7 @@ To use COSMIC Store to manage Flatpaks, set `services.flatpak.enable = true` and
 
 ## Build Requirements
 
-Although there is a provided binary cache built against the current `nixos-unstable` and `nixos-24.05` branches, if you are not using a current `nixos-unstable` or `nixos-24.05` then you may need to build packages locally.
+Although there is a provided binary cache built against the current `nixos-unstable` and `nixos-24.11` branches, if you are not using a current `nixos-unstable` or `nixos-24.11` then you may need to build packages locally.
 
 Generally you will need roughly 16 GiB of RAM and 40 GiB of disk space, but it can be built with less RAM by reducing build parallelism, either via `--cores 1` or `-j 1` or both, on `nix build`, `nix-build`, and `nixos-rebuild` commands.
 
