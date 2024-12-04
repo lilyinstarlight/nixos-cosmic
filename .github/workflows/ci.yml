@@ -22,6 +22,7 @@ jobs:
 
     name: Build - ${{ matrix.architecture.system }} - ${{ matrix.attribute }}
     runs-on: ${{ matrix.architecture.runner }}
+    timeout-minutes: 720 # 12 hours
 
     steps:
       - uses: actions/checkout@v4
