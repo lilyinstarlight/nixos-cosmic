@@ -15,13 +15,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-player";
-  version = "0-unstable-2024-12-03";
+  version = "0-unstable-2024-12-05";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-player";
-    rev = "214e89449168e49213ec9df5c2887c653669b736";
-    hash = "sha256-qU5godZA5lwrZ2l7u4KZBOuWU2ccmnAaj2i1ocmgQKM=";
+    rev = "b26005d7808ef3ea8d01d9a25b14b4450187e6b9";
+    hash = "sha256-zxDouaybS05FUTZ0k84Yn2EjBH/NiIscy4fuPAKTC0c=";
   };
 
   cargoLock = {
@@ -34,7 +34,7 @@ rustPlatform.buildRustPackage {
       "cosmic-text-0.12.1" = "sha256-nCw3RNIHINXH4+m9wKB+0CeoXSVKKxP+ylaZhfp8u+o=";
       "d3d12-0.19.0" = "sha256-usrxQXWLGJDjmIdw1LBXtBvX+CchZDvE8fHC0LjvhD4=";
       "glyphon-0.5.0" = "sha256-j1HrbEpUBqazWqNfJhpyjWuxYAxkvbXzRKeSouUoPWg=";
-      "iced_video_player-0.6.0" = "sha256-91zLc7lg2PwKUZsJSfi0Yrx7bkm52NykbkdGQt3uTR4=";
+      "iced_video_player-0.6.0" = "sha256-RC6XLokIbiGESXa5pGSwELhK0+JTI2qOHSmZKE7hNr8=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";

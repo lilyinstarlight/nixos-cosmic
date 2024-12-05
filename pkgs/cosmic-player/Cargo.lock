@@ -1071,6 +1071,7 @@ name = "cosmic-player"
 version = "0.1.0"
 dependencies = [
  "env_logger",
+ "gstreamer-tag",
  "i18n-embed",
  "i18n-embed-fl",
  "iced_video_player",
@@ -1096,7 +1097,7 @@ dependencies = [
  "rayon",
  "rustc-hash",
  "rustybuzz 0.14.1",
- "self_cell 1.0.4",
+ "self_cell 1.1.0",
  "smol_str",
  "swash",
  "sys-locale",
@@ -2302,6 +2303,31 @@ dependencies = [
 ]
 
 [[package]]
+name = "gstreamer-tag"
+version = "0.23.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "089398382ac684c23c676a2c17c3da611e58ac022e9d6b6ed225eab5b5a97c24"
+dependencies = [
+ "glib",
+ "gstreamer",
+ "gstreamer-tag-sys",
+ "libc",
+]
+
+[[package]]
+name = "gstreamer-tag-sys"
+version = "0.23.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c554d84f8e29aa2bae07b1ce00a79d2ea0a8e38b55c5cacc4411221955c0dbe1"
+dependencies = [
+ "glib-sys",
+ "gobject-sys",
+ "gstreamer-sys",
+ "libc",
+ "system-deps",
+]
+
+[[package]]
 name = "gstreamer-video"
 version = "0.23.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2670,7 +2696,7 @@ dependencies = [
 [[package]]
 name = "iced_video_player"
 version = "0.6.0"
-source = "git+https://github.com/jackpot51/iced_video_player.git?branch=prev-cosmic#cb70dc44be8d04b323d749322d06a2dd8a659e68"
+source = "git+https://github.com/jackpot51/iced_video_player.git?branch=prev-cosmic#c6adbcd70c518ad6ae418f4e6f42ce68df586001"
 dependencies = [
  "glib",
  "gstreamer",
@@ -4560,14 +4586,14 @@ version = "0.10.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e14e4d63b804dc0c7ec4a1e52bcb63f02c7ac94476755aa579edac21e01f915d"
 dependencies = [
- "self_cell 1.0.4",
+ "self_cell 1.1.0",
 ]
 
 [[package]]
 name = "self_cell"
-version = "1.0.4"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d369a96f978623eb3dc28807c4852d6cc617fed53da5d3c400feff1ef34a714a"
+checksum = "c2fdfc24bc566f839a2da4c4295b82db7d25a24253867d5c64355abb5799bdbe"
 
 [[package]]
 name = "serde"
