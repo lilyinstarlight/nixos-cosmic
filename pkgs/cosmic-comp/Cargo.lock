@@ -899,7 +899,7 @@ dependencies = [
 [[package]]
 name = "cosmic-protocols"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/cosmic-protocols?branch=main#ec1616b90fa6b4568709cfe2c0627b1e8cc887e0"
+source = "git+https://github.com/pop-os/cosmic-protocols?branch=main#d218c76b58c7a3b20dd5e7943f93fc306a1b81b8"
 dependencies = [
  "bitflags 2.6.0",
  "wayland-backend",
@@ -4667,7 +4667,7 @@ checksum = "3c5e1a9a646d36c3599cd173a41282daf47c44583ad367b8e6837255952e5c67"
 [[package]]
 name = "smithay"
 version = "0.3.0"
-source = "git+https://github.com/smithay//smithay?rev=ace2e6a#ace2e6a9197f4b4173dea13d53d280d82f3a99c6"
+source = "git+https://github.com/smithay//smithay?rev=bc1d732#bc1d7320f95cdf17f9e7aa6867cccc5903548032"
 dependencies = [
  "appendlist",
  "ash 0.38.0+1.3.281",

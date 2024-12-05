@@ -12,7 +12,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-workspaces-epoch";
-  version = "1.0.0-alpha.3-unstable-2024-08-07";
+  version = "1.0.0-alpha.4-unstable-2024-08-07";
 
   src = fetchFromGitHub {
     owner = "pop-os";

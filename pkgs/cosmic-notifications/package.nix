@@ -11,13 +11,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-notifications";
-  version = "1.0.0-alpha.3-unstable-2024-10-24";
+  version = "1.0.0-alpha.3-unstable-2024-11-26";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-notifications";
-    rev = "980b9621332502af4754c837f54e514282581c2f";
-    hash = "sha256-yB8XGr/Glj6iUMp4Rj4CEsHpWQgLeF5h/KyIDiqfmfI=";
+    rev = "d4d5f429337004c1721e0072ad1c25509229586f";
+    hash = "sha256-bc2CqdAEnYXbLofKLO3g9DsK8OzolK2pwhaIDaXKjSY=";
   };
 
   cargoLock = {
@@ -27,12 +27,12 @@ rustPlatform.buildRustPackage {
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-tovB4fjPVVRY8LKn5albMzskFQ+1W5ul4jT5RXx9gKE=";
       "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
-      "cosmic-config-0.1.0" = "sha256-jUOFWa7ZVrbiIxWbW13ghRPzB2kWrOnNsraqWa0JA/E=";
-      "cosmic-panel-config-0.1.0" = "sha256-sIJSD/clSqF7H/jEl7XzXn7qpzpI5ez9xM3ApiXFNqw=";
-      "cosmic-settings-daemon-0.1.0" = "sha256-mklNPKVMO6iFrxki2DwiL5K78KiWpGxksisYldaASIE=";
-      "cosmic-text-0.12.1" = "sha256-u2Tw+XhpIKeFg8Wgru/sjGw6GUZ2m50ZDmRBJ1IM66w=";
+      "cosmic-config-0.1.0" = "sha256-NxPil2llmL2TSogiu/OFSaosDLjUNOB6mf1IpNhQ890=";
+      "cosmic-panel-config-0.1.0" = "sha256-XbuTvUWS3Z3FMTSm1SYcGxxa5T6FGT2AQQ9uzXH+PlI=";
+      "cosmic-settings-daemon-0.1.0" = "sha256-TRXYsnodKjKacc2eVndviEPpma/NNOWstG+ipGcQ0s4=";
+      "cosmic-text-0.12.1" = "sha256-nCw3RNIHINXH4+m9wKB+0CeoXSVKKxP+ylaZhfp8u+o=";
       "cosmic-time-0.4.0" = "sha256-egp4PxicVQ0I8nQiGfula3FGDs/o3JLvYDqOxanDqTU=";
-      "dpi-0.1.1" = "sha256-F29FkvbIgizqk+eYdXPCjSOVXmnMHZGqZh4eHVf94Cs=";
+      "dpi-0.1.1" = "sha256-whi05/2vc3s5eAJTZ9TzVfGQ/EnfPr0S4PZZmbiYio0=";
       "iced_glyphon-0.6.0" = "sha256-u1vnsOjP8npQ57NNSikotuHxpi4Mp/rV9038vAgCsfQ=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
