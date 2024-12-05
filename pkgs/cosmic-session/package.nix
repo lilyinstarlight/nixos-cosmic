@@ -55,6 +55,11 @@ rustPlatform.buildRustPackage {
 
   env.XDP_COSMIC = lib.getExe xdg-desktop-portal-cosmic;
 
+  postInstall = ''
+    mkdir -p $out/etc
+    cp -r data/dconf $out/etc/
+  '';
+
   passthru = {
     updateScript = nix-update-script {
       extraArgs = [
