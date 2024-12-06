@@ -13,24 +13,20 @@ jobs:
       matrix:
         architecture:
           - system: x86_64-linux
-            runner: [self-hosted, linux, x64]
+            runner: [linux, x64, ktisis, ktisis-n4-highmem-4, ktisis-30GB]
           - system: aarch64-linux
-            runner: [self-hosted, linux, ARM64]
+            runner: [linux, ARM64, ktisis, ktisis-c4a-highmem-4, ktisis-30GB]
         attribute:
           - vm.closure
           - vm-stable.closure
 
     name: Build - ${{ matrix.architecture.system }} - ${{ matrix.attribute }}
     runs-on: ${{ matrix.architecture.runner }}
-    timeout-minutes: 720 # 12 hours
 
     steps:
       - uses: actions/checkout@v4
 
       - uses: DeterminateSystems/nix-installer-action@v16
-        with:
-          extra-conf: |
-            min-free = 1000000000
 
       - uses: cachix/cachix-action@v15
         with:
@@ -41,4 +37,4 @@ jobs:
           SYSTEM: ${{ matrix.architecture.system }}
           ATTRIBUTE: ${{ matrix.attribute }}
         run: |
-          nix -vL build --show-trace --cores 1 --max-jobs 1 --system "$SYSTEM" ".#$ATTRIBUTE"
+          nix -vL build --show-trace --cores 4 --max-jobs 1 --system "$SYSTEM" ".#$ATTRIBUTE"
