@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-observatory";
-  version = "0-unstable-2024-11-28";
+  version = "0-unstable-2024-12-09";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "observatory";
-    rev = "6373f31013f9ff1735de009b46dd67f54e1d2e59";
-    hash = "sha256-Gw14TXJD5qbCSxQJ3iSQCXp9tSPMBXDk9mkTpYv9rs0=";
+    rev = "dc9405337a251ff726a19b5c7cd08d2a8ca02aff";
+    hash = "sha256-8CiJe5CBKLtnLrj9RKUS2CVGzuFN0fDMjdQc6y3EWVQ=";
   };
 
   patches = [
@@ -30,7 +30,7 @@ rustPlatform.buildRustPackage {
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-tovB4fjPVVRY8LKn5albMzskFQ+1W5ul4jT5RXx9gKE=";
       "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
-      "cosmic-config-0.1.0" = "sha256-AxPl1KaRjVKkx/8ASH/Jor6oP0hOrqW2o18/DNsSsEI=";
+      "cosmic-config-0.1.0" = "sha256-FCfCIsWrZlvPgQXMOEzlTIqZvrT82S43J4FBxu7Szjg=";
       "cosmic-text-0.12.1" = "sha256-nCw3RNIHINXH4+m9wKB+0CeoXSVKKxP+ylaZhfp8u+o=";
       "dpi-0.1.1" = "sha256-whi05/2vc3s5eAJTZ9TzVfGQ/EnfPr0S4PZZmbiYio0=";
       "iced_glyphon-0.6.0" = "sha256-u1vnsOjP8npQ57NNSikotuHxpi4Mp/rV9038vAgCsfQ=";
