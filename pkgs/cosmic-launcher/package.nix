@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-launcher";
-  version = "1.0.0-alpha.4-unstable-2024-12-03";
+  version = "1.0.0-alpha.4-unstable-2024-12-09";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-launcher";
-    rev = "9324e9e7772341de72a06b8970dada3250bd1794";
-    hash = "sha256-rx2FrRSiW5UQLEUtNbQ5JEoTR9djQEtY3eOxR2IqkU4=";
+    rev = "3255df889c5be55639d848531f6c4dee17c6b92e";
+    hash = "sha256-+08tz1u4l/vzx3AI088enXWxngLZSCjWeKukQy9+V88=";
   };
 
   cargoLock = {
@@ -31,7 +31,7 @@ rustPlatform.buildRustPackage {
       "cosmic-text-0.12.1" = "sha256-nCw3RNIHINXH4+m9wKB+0CeoXSVKKxP+ylaZhfp8u+o=";
       "dpi-0.1.1" = "sha256-whi05/2vc3s5eAJTZ9TzVfGQ/EnfPr0S4PZZmbiYio0=";
       "iced_glyphon-0.6.0" = "sha256-u1vnsOjP8npQ57NNSikotuHxpi4Mp/rV9038vAgCsfQ=";
-      "pop-launcher-1.2.4" = "sha256-CLpquNgdtnGMlMpGLv72WZmizalvYPfMWlE/qLprVrs=";
+      "pop-launcher-1.2.4" = "sha256-p9jFLKvxg95S/H4nC71fbs9iD438dXIjFHCUfN3ftqM=";
       "smithay-clipboard-0.8.0" = "sha256-4InFXm0ahrqFrtNLeqIuE3yeOpxKZJZx+Bc0yQDtv34=";
       "softbuffer-0.4.1" = "sha256-a0bUFz6O8CWRweNt/OxTvflnPYwO5nm6vsyc/WcXyNg=";
       "taffy-0.3.11" = "sha256-SCx9GEIJjWdoNVyq+RZAGn0N71qraKZxf9ZWhvyzLaI=";
