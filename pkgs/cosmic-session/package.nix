@@ -51,6 +51,9 @@ rustPlatform.buildRustPackage {
     "--set"
     "prefix"
     (placeholder "out")
+    "--set"
+    "cosmic_dconf_profile"
+    "cosmic"
   ];
 
   env.XDP_COSMIC = lib.getExe xdg-desktop-portal-cosmic;
