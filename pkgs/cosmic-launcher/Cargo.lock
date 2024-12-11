@@ -1291,6 +1291,8 @@ dependencies = [
  "switcheroo-control",
  "tokio",
  "tracing",
+ "tracing-journald",
+ "tracing-subscriber",
  "unicode-truncate",
  "unicode-width",
  "xdg",
@@ -3854,6 +3856,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "nu-ansi-term"
+version = "0.46.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "77a8165726e8236064dbb45459242600304b42a5ea24ee2948e18e023bf7ba84"
+dependencies = [
+ "overload",
+ "winapi",
+]
+
+[[package]]
 name = "num-conv"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4208,6 +4220,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "overload"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b15813163c1d831bf4a13c3610c05c0d03b39feb07f7e09fa234dac9b15aaf39"
+
+[[package]]
 name = "owned_ttf_parser"
 version = "0.25.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4477,7 +4495,7 @@ checksum = "22686f4785f02a4fcc856d3b3bb19bf6c8160d103f7a99cc258bddd0251dc7f2"
 [[package]]
 name = "pop-launcher"
 version = "1.2.4"
-source = "git+https://github.com/pop-os/launcher/?rev=fca3b25#fca3b25552deca3bd64de8bfd1ebb38c45e4fb39"
+source = "git+https://github.com/pop-os/launcher/#c37c2a3c6a0b0167267140f2792c49ccc0c15767"
 dependencies = [
  "const_format",
  "dirs 5.0.1",
@@ -4492,7 +4510,7 @@ dependencies = [
 [[package]]
 name = "pop-launcher-service"
 version = "1.2.4"
-source = "git+https://github.com/pop-os/launcher/?rev=fca3b25#fca3b25552deca3bd64de8bfd1ebb38c45e4fb39"
+source = "git+https://github.com/pop-os/launcher/#c37c2a3c6a0b0167267140f2792c49ccc0c15767"
 dependencies = [
  "anyhow",
  "async-oneshot",
@@ -5893,18 +5911,43 @@ dependencies = [
 ]
 
 [[package]]
+name = "tracing-journald"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ba316a74e8fc3c3896a850dba2375928a9fa171b085ecddfc7c054d39970f3fd"
+dependencies = [
+ "libc",
+ "tracing-core",
+ "tracing-subscriber",
+]
+
+[[package]]
+name = "tracing-log"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ee855f1f400bd0e5c02d150ae5de3840039a3f54b025156404e34c23c03f47c3"
+dependencies = [
+ "log",
+ "once_cell",
+ "tracing-core",
+]
+
+[[package]]
 name = "tracing-subscriber"
 version = "0.3.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e8189decb5ac0fa7bc8b96b7cb9b2701d60d48805aca84a238004d665fcc4008"
 dependencies = [
  "matchers",
+ "nu-ansi-term",
  "once_cell",
  "regex",
  "sharded-slab",
+ "smallvec",
  "thread_local",
  "tracing",
  "tracing-core",
+ "tracing-log",
 ]
 
 [[package]]
