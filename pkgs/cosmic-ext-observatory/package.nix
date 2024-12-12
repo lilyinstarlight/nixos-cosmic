@@ -9,6 +9,7 @@
   just,
   mesa,
   stdenv,
+  systemd,
   udev,
   nix-update-script,
 }:
@@ -59,6 +60,7 @@ rustPlatform.buildRustPackage {
 
   buildInputs = [
     mesa
+    systemd
     udev
   ];
 
@@ -91,6 +93,8 @@ rustPlatform.buildRustPackage {
   ];
 
   postInstall = ''
+    patchelf --add-needed libsystemd.so.0 $out/bin/observatory-daemon
+
     libcosmicAppWrapperArgs+=(--prefix PATH : $out/bin)
   '';
 
