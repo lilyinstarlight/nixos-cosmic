@@ -126,27 +126,30 @@
                       services.flatpak.enable = true;
                       services.gnome.gnome-keyring.enable = true;
 
-                      environment.systemPackages = with pkgs; [
-                        chronos
-                        cosmic-ext-applet-clipboard-manager
-                        cosmic-ext-applet-emoji-selector
-                        cosmic-ext-applet-external-monitor-brightness
-                        cosmic-ext-calculator
-                        cosmic-ext-ctl
-                        cosmic-ext-examine
-                        cosmic-ext-forecast
-                        cosmic-ext-tasks
-                        cosmic-ext-tweaks
-                        (lib.lowPrio cosmic-comp)
-                        cosmic-player
-                        cosmic-reader
-                        drm_info
-                        firefox
-                        quick-webapps
-                        stellarshot
-                      ] ++ lib.optionals pkgs.stdenv.hostPlatform.isx86 [
-                        cosmic-ext-observatory
-                      ];
+                      environment.systemPackages =
+                        with pkgs;
+                        [
+                          chronos
+                          cosmic-ext-applet-clipboard-manager
+                          cosmic-ext-applet-emoji-selector
+                          cosmic-ext-applet-external-monitor-brightness
+                          cosmic-ext-calculator
+                          cosmic-ext-ctl
+                          cosmic-ext-examine
+                          cosmic-ext-forecast
+                          cosmic-ext-tasks
+                          cosmic-ext-tweaks
+                          (lib.lowPrio cosmic-comp)
+                          cosmic-player
+                          cosmic-reader
+                          drm_info
+                          firefox
+                          quick-webapps
+                          stellarshot
+                        ]
+                        ++ lib.optionals pkgs.stdenv.hostPlatform.isx86 [
+                          cosmic-ext-observatory
+                        ];
 
                       environment.sessionVariables = {
                         COSMIC_DATA_CONTROL_ENABLED = "1";
