@@ -132,6 +132,7 @@
                         cosmic-ext-applet-emoji-selector
                         cosmic-ext-applet-external-monitor-brightness
                         cosmic-ext-calculator
+                        cosmic-ext-ctl
                         cosmic-ext-examine
                         cosmic-ext-forecast
                         cosmic-ext-tasks
