@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-applet-clipboard-manager";
-  version = "0.1.0-unstable-2024-11-20";
+  version = "0.1.0-unstable-2024-12-12";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "clipboard-manager";
-    rev = "30472d9333a88837f627d00ac0f2700c8234f52e";
-    hash = "sha256-VSaoegakYI7BcqtgsCiYM47Qh20csEv/WWdNCdkZ3ys=";
+    rev = "9242ae07d077992cb2d090873e9ef3fd4d2bd642";
+    hash = "sha256-0wdnh3DP85tEMSSrrQ6BO5YKeqjEwe6tlivRRIbkuc0=";
   };
 
   patches = [
@@ -30,9 +30,10 @@ rustPlatform.buildRustPackage {
       "atomicwrites-0.4.2" = "sha256-QZSuGPrJXh+svMeFWqAXoqZQxLq/WfIiamqvjJNVhxA=";
       "clipboard_macos-0.1.0" = "sha256-tovB4fjPVVRY8LKn5albMzskFQ+1W5ul4jT5RXx9gKE=";
       "configurator_schema-0.1.0" = "sha256-tQmPTh0uhZhtHh/4PwJ5JvPMmhs2GiX2u/ijICWrReA=";
-      "cosmic-client-toolkit-0.1.0" = "sha256-1XtyEvednEMN4MApxTQid4eed19dEN5ZBDt/XRjuda0=";
-      "cosmic-config-0.1.0" = "sha256-VVxiIJanb9gs/7sYpXtsoDdsd+QDUg0QBpBpBWVTSqo=";
-      "cosmic-panel-config-0.1.0" = "sha256-XbuTvUWS3Z3FMTSm1SYcGxxa5T6FGT2AQQ9uzXH+PlI=";
+      "cosmic-client-toolkit-0.1.0" = "sha256-/DJ/PfqnZHB6VeRi7HXWp0Vruk+jWBe+VCLPpiJeEv4=";
+      "cosmic-config-0.1.0" = "sha256-2Ocl6eRqlc1gHyeIru5wu+Rq1FPNaaZbdpRMxn1JZYE=";
+      "cosmic-freedesktop-icons-0.2.6" = "sha256-+WmCBP9BQx7AeGdFW2KM029vuweYKM/OzuCap5aTImw=";
+      "cosmic-panel-config-0.1.0" = "sha256-tMOB4ucdBPl/PjU04Za8UCHPgiVW5TPkqWyQbDyhzWk=";
       "cosmic-text-0.12.1" = "sha256-nCw3RNIHINXH4+m9wKB+0CeoXSVKKxP+ylaZhfp8u+o=";
       "dpi-0.1.1" = "sha256-whi05/2vc3s5eAJTZ9TzVfGQ/EnfPr0S4PZZmbiYio0=";
       "iced_glyphon-0.6.0" = "sha256-u1vnsOjP8npQ57NNSikotuHxpi4Mp/rV9038vAgCsfQ=";
