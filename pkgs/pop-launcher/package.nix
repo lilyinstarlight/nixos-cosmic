@@ -23,13 +23,8 @@ rustPlatform.buildRustPackage {
     hash = "sha256-p9jFLKvxg95S/H4nC71fbs9iD438dXIjFHCUfN3ftqM=";
   };
 
-  cargoLock = {
-    lockFile = ./Cargo.lock;
-    outputHashes = {
-      "cosmic-client-toolkit-0.1.0" = "sha256-/DJ/PfqnZHB6VeRi7HXWp0Vruk+jWBe+VCLPpiJeEv4=";
-      "switcheroo-control-0.1.0" = "sha256-9Pq5WFBeIRvP2VZaa3BzoqiQmzN6taa20u7k+2aF3v0=";
-    };
-  };
+  useFetchCargoVendor = true;
+  cargoHash = "sha256-2gPWVchzFW1rIc/1/EJ3grS3Dku0GDEE3hj8L91NSvA=";
 
   nativeBuildInputs = [
     just
