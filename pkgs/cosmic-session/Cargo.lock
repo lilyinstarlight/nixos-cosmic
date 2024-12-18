@@ -841,7 +841,7 @@ checksum = "540654e97a3f4470a492cd30ff187bc95d89557a903a2bbf112e2fae98104ef2"
 [[package]]
 name = "launch-pad"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/launch-pad#1aa34f26f2cd3d3a82496a9678d340a4773821cd"
+source = "git+https://github.com/pop-os/launch-pad#adf371cc4bd8705f77df6a0d2879678bf0ef27b4"
 dependencies = [
  "log",
  "nix 0.26.4",
