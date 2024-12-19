@@ -21,14 +21,8 @@ rustPlatform.buildRustPackage {
     hash = "sha256-tudZzhXWrf1fIfR7A8THYTUKkchAtmcDAV365p9Qo6c=";
   };
 
-  cargoLock = {
-    lockFile = ./Cargo.lock;
-    outputHashes = {
-      "cosmic-dbus-a11y-0.1.0" = "sha256-TRXYsnodKjKacc2eVndviEPpma/NNOWstG+ipGcQ0s4=";
-      "cosmic-notifications-util-0.1.0" = "sha256-yB8XGr/Glj6iUMp4Rj4CEsHpWQgLeF5h/KyIDiqfmfI=";
-      "launch-pad-0.1.0" = "sha256-TOnVCF1XWwfi3g/Z0LUJ/uwxSd1NBSRlArBnlXeeMTQ=";
-    };
-  };
+  useFetchCargoVendor = true;
+  cargoHash = "sha256-cArfyknKe8vtZcGxdOEqjGYQUDMW1ObprqnGjKoyU68=";
 
   postPatch = ''
     substituteInPlace Justfile \
