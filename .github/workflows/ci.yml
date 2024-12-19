@@ -13,7 +13,7 @@ jobs:
       matrix:
         architecture:
           - system: x86_64-linux
-            runner: [linux, x64, ktisis, ktisis-n4-highmem-4, ktisis-30GB]
+            runner: [linux, x64, ktisis, ktisis-c3d-highmem-4, ktisis-30GB]
           - system: aarch64-linux
             runner: [linux, ARM64, ktisis, ktisis-c4a-highmem-4, ktisis-30GB]
         attribute:
