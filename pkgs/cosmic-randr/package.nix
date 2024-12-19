@@ -20,12 +20,8 @@ rustPlatform.buildRustPackage {
     hash = "sha256-H7b1y7tujXvaD7E/3nIRAfp2nErASiIxvA1qnYCikt8=";
   };
 
-  cargoLock = {
-    lockFile = ./Cargo.lock;
-    outputHashes = {
-      "cosmic-protocols-0.1.0" = "sha256-U1Lcxb6AovekR3vJfoj5B4qZEASba7RfdMcUckt5Hb0=";
-    };
-  };
+  useFetchCargoVendor = true;
+  cargoHash = "sha256-+InIQ9DnmdZHg9OdZ9+njSd8F32LaNp6Tmey2u6+jVE=";
 
   nativeBuildInputs = [
     just
