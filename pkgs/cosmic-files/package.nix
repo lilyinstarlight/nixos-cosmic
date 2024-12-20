@@ -50,9 +50,6 @@ rustPlatform.buildRustPackage rec {
 
   env.VERGEN_GIT_SHA = src.rev;
 
-  # TODO: remove when <https://github.com/pop-os/cosmic-files/commit/00ed3115cc161583ee5e89912ab9112334d7c21f#r149226829> is fixed
-  doCheck = false;
-
   # TODO: remove next two phases if these packages ever stop requiring mutually exclusive features
   buildPhase = ''
     baseCargoBuildFlags="$cargoBuildFlags"
