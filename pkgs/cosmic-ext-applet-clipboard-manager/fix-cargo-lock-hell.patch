@@ -1,8 +1,8 @@
 diff --git a/Cargo.lock b/Cargo.lock
-index 6503b00..0c56501 100644
+index 7ef6557..7974583 100644
 --- a/Cargo.lock
 +++ b/Cargo.lock
-@@ -773,38 +773,13 @@ dependencies = [
+@@ -784,38 +784,13 @@ dependencies = [
   "thiserror 1.0.69",
  ]
  
@@ -42,25 +42,25 @@ index 6503b00..0c56501 100644
   "rustix 0.38.42",
   "wayland-backend",
   "wayland-client",
-@@ -1091,7 +1066,7 @@ source = "git+https://github.com/pop-os/cosmic-protocols?rev=d218c76#d218c76b58c
+@@ -1102,7 +1077,7 @@ source = "git+https://github.com/pop-os/cosmic-protocols?rev=d218c76#d218c76b58c
  dependencies = [
   "cosmic-protocols",
   "libc",
 - "smithay-client-toolkit 0.19.2 (registry+https://github.com/rust-lang/crates.io-index)",
 + "smithay-client-toolkit",
   "wayland-client",
-  "wayland-protocols 0.32.5",
+  "wayland-protocols",
  ]
-@@ -1177,7 +1152,7 @@ dependencies = [
+@@ -1191,7 +1166,7 @@ dependencies = [
   "cosmic-config",
   "ron",
   "serde",
 - "smithay-client-toolkit 0.19.2 (git+https://github.com/Smithay/client-toolkit)",
 + "smithay-client-toolkit",
   "tracing",
-  "wayland-protocols-wlr 0.3.5",
+  "wayland-protocols-wlr",
   "xdg-shell-wrapper-config",
-@@ -1542,7 +1517,7 @@ dependencies = [
+@@ -1556,7 +1531,7 @@ dependencies = [
   "bitflags 2.6.0",
   "mime 0.1.0",
   "raw-window-handle",
@@ -69,7 +69,7 @@ index 6503b00..0c56501 100644
   "smithay-clipboard",
  ]
  
-@@ -4868,7 +4843,7 @@ dependencies = [
+@@ -4891,7 +4866,7 @@ dependencies = [
   "ab_glyph",
   "log",
   "memmap2 0.9.5",
@@ -78,7 +78,7 @@ index 6503b00..0c56501 100644
   "tiny-skia",
  ]
  
-@@ -5113,35 +5088,8 @@ checksum = "3457dea1f0eb631b4034d61d4d8c32074caa6cd1ab2d59f2327bd8461e2c0016"
+@@ -5136,35 +5111,8 @@ checksum = "3457dea1f0eb631b4034d61d4d8c32074caa6cd1ab2d59f2327bd8461e2c0016"
  dependencies = [
   "bitflags 2.6.0",
   "bytemuck",
@@ -95,8 +95,8 @@ index 6503b00..0c56501 100644
 - "wayland-client",
 - "wayland-csd-frame",
 - "wayland-cursor",
-- "wayland-protocols 0.32.5",
-- "wayland-protocols-wlr 0.3.5",
+- "wayland-protocols",
+- "wayland-protocols-wlr",
 - "wayland-scanner",
 - "xkbcommon",
 - "xkeysym",
@@ -116,7 +116,7 @@ index 6503b00..0c56501 100644
   "cursor-icon",
   "libc",
   "log",
-@@ -5167,7 +5115,7 @@ source = "git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5#5a3007de
+@@ -5190,7 +5138,7 @@ source = "git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5#5a3007de
  dependencies = [
   "libc",
   "raw-window-handle",
@@ -125,7 +125,7 @@ index 6503b00..0c56501 100644
   "wayland-backend",
  ]
  
-@@ -6889,7 +6837,7 @@ dependencies = [
+@@ -6887,7 +6835,7 @@ dependencies = [
   "bitflags 2.6.0",
   "block2",
   "bytemuck",
@@ -134,7 +134,7 @@ index 6503b00..0c56501 100644
   "cfg_aliases 0.2.1",
   "concurrent-queue",
   "core-foundation",
-@@ -6911,7 +6859,7 @@ dependencies = [
+@@ -6909,7 +6857,7 @@ dependencies = [
   "redox_syscall 0.4.1",
   "rustix 0.38.42",
   "sctk-adwaita",
@@ -144,16 +144,15 @@ index 6503b00..0c56501 100644
   "tracing",
   "unicode-segmentation",
 diff --git a/Cargo.toml b/Cargo.toml
-index 52eac1f..1c7053b 100644
+index 2be9028..45a1c5d 100644
 --- a/Cargo.toml
 +++ b/Cargo.toml
-@@ -54,6 +54,9 @@ git = "https://github.com/wiiznokes/wl-clipboard-rs.git"
+@@ -52,6 +52,8 @@ features = ["applet", "tokio", "wayland", "qr_code"]
+ git = "https://github.com/wiiznokes/wl-clipboard-rs.git"
  branch = "watch"
- # path = "../wl-clipboard-rs"
  
 +[patch."https://github.com/smithay/client-toolkit.git"]
 +sctk = { package = "smithay-client-toolkit", version = "=0.19.2" }
-+
- # [patch."https://github.com/pop-os/libcosmic".libcosmic]
- # git = "https://github.com/wiiznokes/libcosmic"
- # branch = "fix_qr_code_theme"
+ 
+ [dev-dependencies]
+ serial_test = "3"

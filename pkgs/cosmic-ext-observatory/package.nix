@@ -16,13 +16,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-observatory";
-  version = "0.2.2-unstable-2024-12-13";
+  version = "0.2.2-unstable-2024-12-16";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "observatory";
-    rev = "27415c2146769f2aa661a03b2afa250da0934729";
-    hash = "sha256-r3YBdDEh2EfPp4XKhSCwQj4VUHg89q9vWpm53O46Fes=";
+    rev = "d887b866112b85a915191c7dc7e882823304f667";
+    hash = "sha256-WwKDGrTv83Abm+YVIurWKmzMLKDuY7qRlOkMwQ7HPco=";
   };
 
   useFetchCargoVendor = true;
@@ -31,8 +31,8 @@ rustPlatform.buildRustPackage {
   nvtop = fetchFromGitHub {
     owner = "Syllo";
     repo = "nvtop";
-    rev = "6e91c745cd051d902fc57e9195068df03eb192bb";
-    hash = "sha256-1wKNBRlWAsXcWAXrNhYg2TBTxkE0QnMig0hunHkQLFA=";
+    rev = "19382d93086acf36f32a8d72173fb9968232e3c1";
+    hash = "sha256-LHVyG6XdBIR4v636cUW/skmqSvq7sEEHLJ+NuJuLUo8=";
   };
 
   nativeBuildInputs = [
