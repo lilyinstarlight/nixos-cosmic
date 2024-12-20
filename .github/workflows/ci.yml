@@ -55,3 +55,11 @@ jobs:
           ATTRIBUTE: ${{ matrix.architecture.attribute }}
         run: |
           nix -L build --show-trace --cores 0 --max-jobs 1 --system "$SYSTEM" ".#$ATTRIBUTE"
+
+      - name: Pin store path in Cachix
+        env:
+          SYSTEM: ${{ matrix.architecture.system }}
+          ATTRIBUTE: ${{ matrix.architecture.attribute }}
+        run: |
+          cachix pin cosmic "$ATTRIBUTE.$SYSTEM" "$(nix eval --raw --system "$SYSTEM" ".#$ATTRIBUTE")" --keep-revisions 1
+        if: ${{ github.ref == 'refs/heads/main' }}
