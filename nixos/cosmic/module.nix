@@ -129,6 +129,10 @@ in
       fira
     ]) config.environment.cosmic.excludePackages;
 
+    # xkb config
+    environment.sessionVariables.X11_BASE_RULES_XML = "${config.services.xserver.xkb.dir}/rules/base.xml";
+    environment.sessionVariables.X11_EXTRA_RULES_XML = "${config.services.xserver.xkb.dir}/rules/base.extras.xml";
+
     # required features
     hardware.${if lib.versionAtLeast lib.version "24.11" then "graphics" else "opengl"}.enable = true;
     services.libinput.enable = true;
