@@ -41,6 +41,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: DeterminateSystems/nix-installer-action@v16
+        with:
+          diagnostic-endpoint: ''
+          source-url: 'https://install.lix.systems/lix/lix-installer-x86_64-linux'
 
       - uses: cachix/cachix-action@v15
         with:
@@ -51,4 +54,4 @@ jobs:
           SYSTEM: ${{ matrix.architecture.system }}
           ATTRIBUTE: ${{ matrix.architecture.attribute }}
         run: |
-          nix -vL build --show-trace --cores 0 --max-jobs 1 --system "$SYSTEM" ".#$ATTRIBUTE"
+          nix -L build --show-trace --cores 0 --max-jobs 1 --system "$SYSTEM" ".#$ATTRIBUTE"
