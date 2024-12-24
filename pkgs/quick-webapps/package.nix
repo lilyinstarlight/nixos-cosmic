@@ -12,17 +12,17 @@
 
 rustPlatform.buildRustPackage {
   pname = "quick-webapps";
-  version = "0.5.4-unstable-2024-12-20";
+  version = "0.5.4-unstable-2024-12-24";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "web-apps";
-    rev = "a5f8232727a284efec95d2173453dc87861e844d";
-    hash = "sha256-INVztDJtUDuExQTvOVjujoq48nBpFbOv5UpZI76v7N4=";
+    rev = "c7571ed5ace4429dd8cd80bc9983c1eb4b2fbf3b";
+    hash = "sha256-Rovd/X4xQ/nYUnX9cRZDT38k7Xjd13wNMBXkofPgwvo=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-ySfCZeizQdukXAvNCXS7hJmBOF8U+Wh5UVomWQYwyw0=";
+  cargoHash = "sha256-eCMtv4/SjaAB7NkwnorwRiUbtejS98dryaXywlwBkJQ=";
 
   nativeBuildInputs = [
     libcosmicAppHook
