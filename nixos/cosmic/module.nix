@@ -142,6 +142,7 @@ in
     # optional features
     hardware.bluetooth.enable = lib.mkDefault true;
     services.acpid.enable = lib.mkDefault true;
+    services.avahi.enable = lib.mkDefault true;
     services.pipewire = {
       enable = lib.mkDefault true;
       alsa.enable = lib.mkDefault true;
