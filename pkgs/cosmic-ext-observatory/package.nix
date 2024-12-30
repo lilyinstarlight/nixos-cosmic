@@ -7,6 +7,7 @@
   gnutar,
   jq,
   just,
+  libgbm ? null,
   mesa,
   stdenv,
   systemd,
@@ -44,7 +45,7 @@ rustPlatform.buildRustPackage {
   ];
 
   buildInputs = [
-    mesa
+    (if libgbm != null then libgbm else mesa)
     systemd
     udev
   ];
