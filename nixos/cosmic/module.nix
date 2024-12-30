@@ -162,6 +162,11 @@ in
     );
     security.polkit.enable = true;
     security.rtkit.enable = true;
+    services.geoclue2.enable = true;
+
+    # disable geoclue2 user demo agent in session
+    # TODO: rework if NixOS geoclue2 module ever allows manually including demo agent in whitelist without adding user service
+    systemd.user.services.geoclue-agent.conflicts = [ "cosmic-session.target" ];
 
     # session packages
     services.displayManager.sessionPackages = with pkgs; [ cosmic-session ];
