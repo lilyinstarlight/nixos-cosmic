@@ -182,6 +182,9 @@ in
     # required for screen locker
     security.pam.services.cosmic-greeter = { };
 
+    # set default cursor theme
+    xdg.icons.fallbackCursorThemes = lib.mkDefault [ "Cosmic" ];
+
     # module diagnostics
     warnings =
       lib.optional
