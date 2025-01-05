@@ -1,5 +1,5 @@
 diff --git a/Cargo.lock b/Cargo.lock
-index 7ef6557..7974583 100644
+index 495747b..46852a7 100644
 --- a/Cargo.lock
 +++ b/Cargo.lock
 @@ -784,38 +784,13 @@ dependencies = [
@@ -69,7 +69,7 @@ index 7ef6557..7974583 100644
   "smithay-clipboard",
  ]
  
-@@ -4891,7 +4866,7 @@ dependencies = [
+@@ -4897,7 +4872,7 @@ dependencies = [
   "ab_glyph",
   "log",
   "memmap2 0.9.5",
@@ -78,7 +78,7 @@ index 7ef6557..7974583 100644
   "tiny-skia",
  ]
  
-@@ -5136,35 +5111,8 @@ checksum = "3457dea1f0eb631b4034d61d4d8c32074caa6cd1ab2d59f2327bd8461e2c0016"
+@@ -5142,35 +5117,8 @@ checksum = "3457dea1f0eb631b4034d61d4d8c32074caa6cd1ab2d59f2327bd8461e2c0016"
  dependencies = [
   "bitflags 2.6.0",
   "bytemuck",
@@ -105,7 +105,7 @@ index 7ef6557..7974583 100644
 -[[package]]
 -name = "smithay-client-toolkit"
 -version = "0.19.2"
--source = "git+https://github.com/Smithay/client-toolkit#25079ae75cb6952b0542aa343bd5a52c81d135d4"
+-source = "git+https://github.com/Smithay/client-toolkit#ca6a36e4d5f4a171eea91eabe7c8ab9b17fa98e0"
 -dependencies = [
 - "bitflags 2.6.0",
 - "bytemuck",
@@ -116,7 +116,7 @@ index 7ef6557..7974583 100644
   "cursor-icon",
   "libc",
   "log",
-@@ -5190,7 +5138,7 @@ source = "git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5#5a3007de
+@@ -5196,7 +5144,7 @@ source = "git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5#5a3007de
  dependencies = [
   "libc",
   "raw-window-handle",
@@ -125,7 +125,7 @@ index 7ef6557..7974583 100644
   "wayland-backend",
  ]
  
-@@ -6887,7 +6835,7 @@ dependencies = [
+@@ -6858,7 +6806,7 @@ dependencies = [
   "bitflags 2.6.0",
   "block2",
   "bytemuck",
@@ -134,7 +134,7 @@ index 7ef6557..7974583 100644
   "cfg_aliases 0.2.1",
   "concurrent-queue",
   "core-foundation",
-@@ -6909,7 +6857,7 @@ dependencies = [
+@@ -6880,7 +6828,7 @@ dependencies = [
   "redox_syscall 0.4.1",
   "rustix 0.38.42",
   "sctk-adwaita",
@@ -144,7 +144,7 @@ index 7ef6557..7974583 100644
   "tracing",
   "unicode-segmentation",
 diff --git a/Cargo.toml b/Cargo.toml
-index 2be9028..45a1c5d 100644
+index 831e0c7..7841ce7 100644
 --- a/Cargo.toml
 +++ b/Cargo.toml
 @@ -52,6 +52,8 @@ features = ["applet", "tokio", "wayland", "qr_code"]
