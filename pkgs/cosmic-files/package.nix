@@ -29,8 +29,18 @@ rustPlatform.buildRustPackage rec {
   ];
   buildInputs = [ glib ];
 
-  cargoBuildFlags = [ "--package" "cosmic-files" "--package" "cosmic-files-applet" ];
-  cargoTestFlags = [ "--package" "cosmic-files" "--package" "cosmic-files-applet" ];
+  cargoBuildFlags = [
+    "--package"
+    "cosmic-files"
+    "--package"
+    "cosmic-files-applet"
+  ];
+  cargoTestFlags = [
+    "--package"
+    "cosmic-files"
+    "--package"
+    "cosmic-files-applet"
+  ];
 
   dontUseJustBuild = true;
   dontUseJustCheck = true;
