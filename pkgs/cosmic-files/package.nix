@@ -29,9 +29,8 @@ rustPlatform.buildRustPackage rec {
   ];
   buildInputs = [ glib ];
 
-  # TODO: uncomment if these packages ever stop requiring mutually exclusive features
-  #cargoBuildFlags = [ "--package" "cosmic-files" "--package" "cosmic-files-applet" ];
-  #cargoTestFlags = [ "--package" "cosmic-files" "--package" "cosmic-files-applet" ];
+  cargoBuildFlags = [ "--package" "cosmic-files" "--package" "cosmic-files-applet" ];
+  cargoTestFlags = [ "--package" "cosmic-files" "--package" "cosmic-files-applet" ];
 
   dontUseJustBuild = true;
   dontUseJustCheck = true;
@@ -49,23 +48,6 @@ rustPlatform.buildRustPackage rec {
   ];
 
   env.VERGEN_GIT_SHA = src.rev;
-
-  # TODO: remove next two phases if these packages ever stop requiring mutually exclusive features
-  buildPhase = ''
-    baseCargoBuildFlags="$cargoBuildFlags"
-    cargoBuildFlags="$baseCargoBuildFlags --package cosmic-files"
-    runHook cargoBuildHook
-    cargoBuildFlags="$baseCargoBuildFlags --package cosmic-files-applet"
-    runHook cargoBuildHook
-  '';
-
-  checkPhase = ''
-    baseCargoTestFlags="$cargoTestFlags"
-    cargoTestFlags="$baseCargoTestFlags --package cosmic-files"
-    runHook cargoCheckHook
-    cargoTestFlags="$baseCargoTestFlags --package cosmic-files-applet"
-    runHook cargoCheckHook
-  '';
 
   passthru.updateScript = nix-update-script {
     extraArgs = [
