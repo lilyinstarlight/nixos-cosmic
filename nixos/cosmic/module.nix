@@ -48,17 +48,8 @@ in
     ];
     environment.systemPackages = utils.removePackagesByName (
       with pkgs;
-      (
-        if lib.versionAtLeast lib.version "24.11" then
-          [
-            adwaita-icon-theme
-          ]
-        else
-          [
-            gnome.adwaita-icon-theme
-          ]
-      )
-      ++ [
+      [
+        adwaita-icon-theme
         alsa-utils
         cosmic-applets
         cosmic-applibrary
@@ -102,21 +93,10 @@ in
     # xdg portal packages and config
     xdg.portal = {
       enable = true;
-      extraPortals =
-        with pkgs;
-        [
-          xdg-desktop-portal-cosmic
-        ]
-        # TODO: work around duplicate xdg-desktop-portal-gtk problems until NixOS 24.11 is released (see <https://github.com/lilyinstarlight/nixos-cosmic/issues/17>)
-        ++ lib.optionals (
-          lib.versionAtLeast lib.version "24.11"
-          || !(
-            config.services.xserver.desktopManager.gnome.enable
-            || config.services.xserver.desktopManager.deepin.enable
-            || config.services.xserver.desktopManager.cinnamon.enable
-            || config.services.xserver.desktopManager.phosh.enable
-          )
-        ) [ xdg-desktop-portal-gtk ];
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-cosmic
+        xdg-desktop-portal-gtk
+      ];
       configPackages = lib.mkDefault (
         with pkgs;
         [
@@ -135,7 +115,7 @@ in
     environment.sessionVariables.X11_EXTRA_RULES_XML = "${config.services.xserver.xkb.dir}/rules/base.extras.xml";
 
     # required features
-    hardware.${if lib.versionAtLeast lib.version "24.11" then "graphics" else "opengl"}.enable = true;
+    hardware.graphics.enable = true;
     services.libinput.enable = true;
     xdg.mime.enable = true;
     xdg.icons.enable = true;
