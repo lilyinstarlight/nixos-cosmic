@@ -3,10 +3,11 @@
   rustPlatform,
   fetchFromGitHub,
   libcosmicAppHook,
-  pkg-config,
+  coreutils,
   libgbm ? null,
   mesa,
   pipewire,
+  pkg-config,
   gst_all_1,
   nix-update-script,
 }:
@@ -39,6 +40,12 @@ rustPlatform.buildRustPackage rec {
   checkInputs = [ gst_all_1.gstreamer ];
 
   env.VERGEN_GIT_SHA = src.rev;
+
+  # TODO: remove when dbus activation for xdg-desktop-portal-cosmic is fixed to properly start it
+  postPatch = ''
+    substituteInPlace data/org.freedesktop.impl.portal.desktop.cosmic.service \
+      --replace-fail 'Exec=/bin/false' 'Exec=${lib.getExec' coreutils "true"}'
+  '';
 
   postInstall = ''
     mkdir -p $out/share/{dbus-1/services,icons,xdg-desktop-portal/portals}
