@@ -7,13 +7,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-ctl";
-  version = "1.1.0-unstable-2024-12-29";
+  version = "1.1.0-unstable-2025-01-10";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "cosmic-ctl";
-    rev = "4f088445f468134bd94155195cc251c0462b7622";
-    hash = "sha256-avPr6OV1T8Pyr02ycnpWpyScmb/6q9LmrRuV+KeHf4g=";
+    rev = "35145e808f3d7e895057befde75c87c3f70516cd";
+    hash = "sha256-0fGt9S9U6eOZflc6kzixQFiTC96vZtauQ9tQJhdYoFc=";
   };
 
   useFetchCargoVendor = true;
