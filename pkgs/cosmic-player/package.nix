@@ -15,7 +15,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-player";
-  version = "epoch-1.0.0-alpha.5-unstable-2025-01-09";
+  version = "1.0.0-alpha.5-unstable-2025-01-09";
 
   src = fetchFromGitHub {
     owner = "pop-os";
@@ -61,8 +61,7 @@ rustPlatform.buildRustPackage {
   '';
 
   passthru.updateScript = nix-update-script {
-    # TODO: uncomment when there are actual tagged releases
-    #extraArgs = [ "--version-regex" "epoch-(.*)" ];
+    extraArgs = [ "--version-regex" "epoch-(.*)" ];
   };
 
   meta = with lib; {
