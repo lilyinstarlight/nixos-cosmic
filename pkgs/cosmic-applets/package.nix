@@ -18,7 +18,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-applets";
-  version = "1.0.0-alpha.4-unstable-2025-01-08";
+  version = "1.0.0-alpha.5-unstable-2025-01-08";
 
   src = fetchFromGitHub {
     owner = "pop-os";
