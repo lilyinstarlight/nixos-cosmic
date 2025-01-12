@@ -48,14 +48,14 @@ rustPlatform.buildRustPackage {
 
   passthru.updateScript = nix-update-script { };
 
-  meta = with lib; {
+  meta = {
     homepage = "https://github.com/cosmic-utils/clipboard-manager";
     description = "Clipboard manager for the COSMIC Desktop Environment";
-    license = licenses.gpl3Only;
-    maintainers = with maintainers; [
+    license = lib.licenses.gpl3Only;
+    maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];
-    platforms = platforms.linux;
+    platforms = lib.platforms.linux;
     mainProgram = "cosmic-ext-applet-clipboard-manager";
   };
 }

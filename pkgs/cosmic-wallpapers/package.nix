@@ -27,16 +27,16 @@ stdenvNoCC.mkDerivation {
     ];
   };
 
-  meta = with lib; {
+  meta = {
     description = "Wallpapers for the COSMIC Desktop Environment";
     homepage = "https://github.com/pop-os/cosmic-wallpapers";
-    license = with licenses; [
+    license = with lib.licenses; [
       cc-by-40
       publicDomain
     ];
-    maintainers = with maintainers; [
+    maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];
-    platforms = platforms.all;
+    platforms = lib.platforms.all;
   };
 }

@@ -51,17 +51,17 @@ rustPlatform.buildRustPackage {
 
   passthru.updateScript = nix-update-script { };
 
-  meta = with lib; {
+  meta = {
     homepage = "https://github.com/leb-kuchen/cosmic-ext-applet-emoji-selector";
     description = "Emoji selector applet for the COSMIC Desktop Environment";
-    license = with licenses; [
+    license = with lib.licenses; [
       mpl20
       mit
     ];
-    maintainers = with maintainers; [
+    maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];
-    platforms = platforms.linux;
+    platforms = lib.platforms.linux;
     mainProgram = "cosmic-ext-applet-emoji-selector";
   };
 }
