@@ -17,17 +17,17 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-observatory";
-  version = "0.2.2-unstable-2024-12-30";
+  version = "0.2.2-unstable-2025-01-11";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "observatory";
-    rev = "4c76e44f16787f4c53addf298aeadf6a0249150f";
-    hash = "sha256-xBon/NBAVATGHf82Yhv3KI7e3scCvkoK4EYH+bZmh8w=";
+    rev = "df774fff1a0996d1e09bdf38762da06d3459ae58";
+    hash = "sha256-uwz6yBDszqklu2VIyI3j6fBNzfQkrs7ZO17vF/rfMyw=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-SJlq+NzTrtik+INbCA5WPk102NSJ9SjSyO8YmnBymeo=";
+  cargoHash = "sha256-bxOIXjie/XVur3aNLJif3yI3Yp5VyMSMzOciJHcUhHI=";
 
   nvtop = fetchFromGitHub {
     owner = "Syllo";
@@ -56,9 +56,6 @@ rustPlatform.buildRustPackage {
     mkdir -p "$(dirname "$nvtop_archive")"
     tar -czf "$nvtop_archive" --absolute-names --transform="s,$nvtop,$(jq -r '.directory' "$nvtop_json")," --mode=+w "$nvtop"
     sed -i -e 's/\("source-hash":\s*"\)[^"]*\("\)/\1'"$(sha256sum -b "$nvtop_archive" | cut -d' ' -f1)"'\2/' "$nvtop_json"
-
-    substituteInPlace observatory-daemon/build/build.rs \
-      --replace-fail "$(printf '    #[cfg(not(debug_assertions))]\n    build_def.flag("-flto");\n')" ""
   '';
 
   dontUseJustBuild = true;

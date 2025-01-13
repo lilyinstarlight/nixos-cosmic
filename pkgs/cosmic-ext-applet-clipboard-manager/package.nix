@@ -15,12 +15,12 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "clipboard-manager";
-    rev = "d1e9d6392c73daa67668a985548e374a70fdef83";
-    hash = "sha256-/8DFUwcyneG8gARIBapMpOvDAexY2r8lUui5kV4U7wM=";
+    rev = "6e4b90d768296ad53cc9d6ad628456f04ee78002";
+    hash = "sha256-UQj/NXIY/ox0ApJbipvI5xTobRzb4viv34j+Loh5pyM=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-0swXhLSTJC6ChILbG7jPaFzWr/ozo5FbMLfcuSKRd6c=";
+  cargoHash = "sha256-qeoMIsx9C5Z12ea6oubhVHRwA5GQebxRzyHLwWF0Pv8=";
 
   nativeBuildInputs = [
     libcosmicAppHook
