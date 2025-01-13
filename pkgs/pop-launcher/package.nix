@@ -78,14 +78,14 @@ rustPlatform.buildRustPackage {
 
   passthru.updateScript = nix-update-script { };
 
-  meta = with lib; {
+  meta = {
     description = "Modular IPC-based desktop launcher service";
     homepage = "https://github.com/pop-os/launcher";
-    license = licenses.mpl20;
-    maintainers = with maintainers; [
+    license = lib.licenses.mpl20;
+    maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];
-    platforms = platforms.linux;
+    platforms = lib.platforms.linux;
     mainProgram = "pop-launcher";
   };
 }

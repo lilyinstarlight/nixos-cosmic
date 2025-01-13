@@ -74,14 +74,14 @@ rustPlatform.buildRustPackage {
     ];
   };
 
-  meta = with lib; {
+  meta = {
     homepage = "https://github.com/pop-os/cosmic-comp";
     description = "Compositor for the COSMIC Desktop Environment";
-    license = licenses.gpl3Only;
-    maintainers = with maintainers; [
+    license = lib.licenses.gpl3Only;
+    maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];
-    platforms = platforms.linux;
+    platforms = lib.platforms.linux;
     mainProgram = "cosmic-comp";
   };
 }

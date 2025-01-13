@@ -67,14 +67,14 @@ rustPlatform.buildRustPackage {
     providedSessions = [ "cosmic" ];
   };
 
-  meta = with lib; {
+  meta = {
     homepage = "https://github.com/pop-os/cosmic-session";
     description = "Session manager for the COSMIC Desktop Environment";
-    license = licenses.gpl3Only;
+    license = lib.licenses.gpl3Only;
     mainProgram = "cosmic-session";
-    maintainers = with maintainers; [
+    maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];
-    platforms = platforms.linux;
+    platforms = lib.platforms.linux;
   };
 }

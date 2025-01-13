@@ -25,16 +25,16 @@ stdenv.mkDerivation {
     #extraArgs = [ "--version-regex" "epoch-(.*)" ];
   };
 
-  meta = with lib; {
+  meta = {
     homepage = "https://github.com/pop-os/cosmic-protocols";
-    description = "Addtional wayland-protocols used by the COSMIC Desktop Environment";
-    license = [
-      licenses.mit
-      licenses.gpl3Only
+    description = "Additional wayland-protocols used by the COSMIC Desktop Environment";
+    license = with lib.licenses; [
+      mit
+      gpl3Only
     ];
-    maintainers = with maintainers; [
+    maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];
-    platforms = platforms.linux;
+    platforms = lib.platforms.linux;
   };
 }
