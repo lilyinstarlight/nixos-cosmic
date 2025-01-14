@@ -109,6 +109,7 @@
                       environment.systemPackages =
                         with pkgs;
                         [
+                          andromeda
                           chronos
                           cosmic-ext-applet-clipboard-manager
                           cosmic-ext-applet-emoji-selector
