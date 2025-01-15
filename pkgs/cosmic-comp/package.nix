@@ -51,11 +51,6 @@ rustPlatform.buildRustPackage {
   # only default feature is systemd
   buildNoDefaultFeatures = !useSystemd;
 
-  # TODO: remove when <https://github.com/NixOS/nixpkgs/pull/371795> reaches nixos-unstable and nixos-24.11
-  postConfigure = ''
-    substituteInPlace ../.cargo/config.toml --replace-fail 'branch = "feature%2Fcopy_clone"' 'branch = "feature/copy_clone"'
-  '';
-
   dontCargoInstall = true;
 
   makeFlags = [
