@@ -21,17 +21,17 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-comp";
-  version = "1.0.0-alpha.5-unstable-2025-01-12";
+  version = "1.0.0-alpha.5.1-unstable-2025-01-14";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-comp";
-    rev = "7425ffbad9808f024777540657af94c780b64714";
-    hash = "sha256-pk3o8bRVA+n9JSLsFW7fS3cal3DP2gd++7g9CwWVuh4=";
+    rev = "1a3494e481f625183ea8241225f7b58e46df541e";
+    hash = "sha256-uV/sPBtYNIga74Q2p5AyYMh+PY59hh0i1YtfndklpmY=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-P4/Y70vnyIR5JBpHCOhqLlyfan29eNsExkt3ux7joRw=";
+  cargoHash = "sha256-VfmAolArdi39Iuaiyl4GtjXfICLwf16Cm2xf/DE0iyQ=";
 
   separateDebugInfo = true;
 
@@ -50,11 +50,6 @@ rustPlatform.buildRustPackage {
 
   # only default feature is systemd
   buildNoDefaultFeatures = !useSystemd;
-
-  # TODO: remove when <https://github.com/NixOS/nixpkgs/pull/371795> reaches nixos-unstable and nixos-24.11
-  postConfigure = ''
-    substituteInPlace ../.cargo/config.toml --replace-fail 'branch = "feature%2Fcopy_clone"' 'branch = "feature/copy_clone"'
-  '';
 
   dontCargoInstall = true;
 
