@@ -13,17 +13,17 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-ext-tasks";
-  version = "0.1.1-unstable-2025-01-10";
+  version = "0.1.1-unstable-2025-01-13";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "tasks";
-    rev = "2dad300a3cf7442599638627591ea7f7bfa09f14";
-    hash = "sha256-2rDO/2GOdiFbmZ5TvKyh1FhsMBbhLuUio8nXd8C/AUE=";
+    rev = "a6125bdca2d8fa3dde4b4f8d9d3aef80103b239a";
+    hash = "sha256-8iWsbqKS2Kfa/+LjxvHu+dD09rOzKIZjpRilX/YDvmA=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-GlfFb34dTCFet1pCdiM1CCf0LaR5jHmdEPJNwdFoYZE=";
+  cargoHash = "sha256-na4X37XUbKoJj7mXsZ1KbG4Vgs7smBZmVbDrsooE8O4=";
 
   nativeBuildInputs = [
     libcosmicAppHook

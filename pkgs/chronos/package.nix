@@ -10,17 +10,17 @@
 
 rustPlatform.buildRustPackage {
   pname = "chronos";
-  version = "0.1.4-unstable-2025-01-12";
+  version = "0.1.5-unstable-2025-01-14";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "chronos";
-    rev = "0a8e7f8efccfea519d488edb07a7670a52a1aff4";
-    hash = "sha256-MfCqaVniyA0FBms+ATkjkiSqBnunIbhEFdr5eney8N0=";
+    rev = "cb1acf1bf299ee082cc60597032e62ac3bf2cbba";
+    hash = "sha256-iGkuURCDx5jWDqf9T5TK2vfErMSRlEsYwUcwa0OTies=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-nE7kxIbYP0oXVETASqylEVeKxIN6/Cm2yGwQmZQww0U=";
+  cargoHash = "sha256-7zCs/OHFQuXlgGbWfcx35NhP0nPxWt2AuHQYXI27eec=";
 
   nativeBuildInputs = [
     libcosmicAppHook

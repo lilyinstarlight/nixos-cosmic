@@ -17,13 +17,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-observatory";
-  version = "0.2.2-unstable-2025-01-11";
+  version = "0.2.2-unstable-2025-01-14";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "observatory";
-    rev = "df774fff1a0996d1e09bdf38762da06d3459ae58";
-    hash = "sha256-uwz6yBDszqklu2VIyI3j6fBNzfQkrs7ZO17vF/rfMyw=";
+    rev = "f080813d318ebb7fbb274eec23ec4ab6627feb88";
+    hash = "sha256-EuzuVTOU352r1GiKvTEAkoN2T20LgWbicBzb4H62AAg=";
   };
 
   useFetchCargoVendor = true;
