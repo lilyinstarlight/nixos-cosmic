@@ -22,7 +22,7 @@ jobs:
 #          - vm-stable.closure
         architecture:
           - system: x86_64-linux
-            runner: [linux, X64, ktisis, ktisis-n4-highmem-8, ktisis-30GB]
+            runner: [linux, X64, ktisis, ktisis-c3d-highmem-8, ktisis-30GB]
             attribute: vm.closure
           - system: x86_64-linux
             runner: [linux, X64, ktisis, ktisis-n4-highmem-8, ktisis-30GB]
