@@ -22,16 +22,16 @@ jobs:
 #          - vm-stable.closure
         architecture:
           - system: x86_64-linux
-            runner: [linux, x64, ktisis, ktisis-c3d-highmem-8, ktisis-30GB]
+            runner: [linux, X64, ktisis, ktisis-n4-highmem-8, ktisis-30GB]
             attribute: vm.closure
           - system: x86_64-linux
-            runner: [ linux, x64, ktisis, ktisis-n4-highmem-8, ktisis-30GB ]
+            runner: [linux, X64, ktisis, ktisis-n4-highmem-8, ktisis-30GB]
             attribute: vm-stable.closure
           - system: aarch64-linux
             runner: [linux, ARM64, ktisis, ktisis-c4a-highmem-4, ktisis-30GB]
             attribute: vm.closure
           - system: aarch64-linux
-            runner: [ linux, ARM64, ktisis, ktisis-c4a-highmem-4, ktisis-30GB ]
+            runner: [linux, ARM64, ktisis, ktisis-c4a-highmem-4, ktisis-30GB]
             attribute: vm-stable.closure
 
     name: Build - ${{ matrix.architecture.system }} - ${{ matrix.architecture.attribute }}
