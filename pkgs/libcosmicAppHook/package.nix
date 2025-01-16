@@ -3,12 +3,12 @@
   lib,
   makeSetupHook,
   makeBinaryWrapper,
-  pkg-config,
   libGL,
   libxkbcommon,
-  xorg,
-  wayland,
+  pkg-config,
   vulkan-loader,
+  wayland,
+  xorg,
   targetPackages,
   includeSettings ? true,
 }:
@@ -21,7 +21,7 @@ makeSetupHook {
     pkg-config
   ];
 
-  # TODO: Xorg libs can be removed once tiny-xlib is bumped above 0.2.2 in libcosmic/iced
+  # ensure deps for linking below are available
   depsTargetTargetPropagated =
     assert (lib.assertMsg (!targetPackages ? raw) "libcosmicAppHook must be in nativeBuildInputs");
     [
@@ -30,7 +30,7 @@ makeSetupHook {
       xorg.libX11
       xorg.libXcursor
       xorg.libXi
-      xorg.libXrandr
+      xorg.libxcb
     ]
     ++ lib.optionals (!stdenv.isDarwin) [
       wayland
@@ -41,25 +41,28 @@ makeSetupHook {
     fallbackXdgDirs = "${lib.optionalString includeSettings "${targetPackages.cosmic-settings}/share:"}${targetPackages.cosmic-icons}/share";
 
     cargoLinkerVar = stdenv.hostPlatform.rust.cargoEnvVarTarget;
+    # force linking for all libraries that may be dlopen'd by libcosmic/iced apps
     cargoLinkLibs = lib.escapeShellArgs (
       [
-        # propagated from libGL
+        # for wgpu-hal
         "EGL"
-        # propagated from libxkbcommon
+        # for xkbcommon-dl
         "xkbcommon"
-        # propagated from xorg.libX11
+        # for x11-dl, tiny-xlib, wgpu-hal
         "X11"
-        # propagated from xorg.libXcursor
+        # for x11-dl, tiny-xlib
+        "X11-xcb"
+        # for x11-dl
         "Xcursor"
-        # propagated from xorg.libXi
         "Xi"
-        # propagated from xorg.libXrandr
-        "Xrandr"
+        # for x11rb
+        "xcb"
       ]
       ++ lib.optionals (!stdenv.isDarwin) [
-        # propagated from wayland
+        # for wgpu-hal, wayland-sys
         "wayland-client"
-        # propagated from vulkan-loader
+        # for wgpu-hal
+        "wayland-egl"
         "vulkan"
       ]
     );
