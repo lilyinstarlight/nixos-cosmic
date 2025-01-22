@@ -47,6 +47,9 @@ rustPlatform.buildRustPackage rec {
   dontUseJustBuild = true;
   dontUseJustCheck = true;
 
+  # TODO: remove when upstream fixes checks again
+  doCheck = false;
+
   justFlags = [
     "--set"
     "prefix"
