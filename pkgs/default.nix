@@ -43,8 +43,9 @@ let
         // pkgsOverrides
         // finalPkgs
         // {
-          buildPackages = finalPkgs;
-          targetPackages = finalPkgs;
+          buildPackages = pkgs.buildPackages // finalPkgs;
+          targetPackages = pkgs.targetPackages // finalPkgs;
+          pkgs = pkgs // finalPkgs;
           inherit callPackage;
         }
       );
@@ -56,3 +57,9 @@ let
   );
 in
 finalPkgs
+// (
+  if prev.config.allowAliases or pkgs.config.allowAliases or true then
+    import ./aliases.nix (if prev != null then prev // finalPkgs else pkgs // finalPkgs)
+  else
+    { }
+)
