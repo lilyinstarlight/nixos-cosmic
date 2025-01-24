@@ -11,7 +11,7 @@
 }:
 
 rustPlatform.buildRustPackage rec {
-  pname = "cosmic-ext-forecast";
+  pname = "forecast";
   version = "0-unstable-2025-01-11";
 
   src = fetchFromGitHub {
