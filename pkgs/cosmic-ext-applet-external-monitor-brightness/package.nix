@@ -51,10 +51,8 @@ rustPlatform.buildRustPackage {
 
   meta = {
     homepage = "https://github.com/maciekk64/cosmic-ext-applet-external-monitor-brightness";
-    description = "Change brightness of external monitors via DDC/CI protocol. You can also quickly toggle COSMIC system dark mode.";
-    license = with lib.licenses; [
-      gpl3Only
-    ];
+    description = "Change brightness of external monitors via DDC/CI protocol and also quickly toggle COSMIC system dark mode";
+    license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];

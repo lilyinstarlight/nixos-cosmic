@@ -44,7 +44,7 @@ stdenvNoCC.mkDerivation {
   meta = {
     description = "System76 COSMIC icon theme for Linux";
     homepage = "https://github.com/pop-os/cosmic-icons";
-    license = with lib.licenses; [ cc-by-sa-40 ];
+    license = lib.licenses.cc-by-sa-40;
     maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];

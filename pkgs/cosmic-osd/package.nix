@@ -48,7 +48,7 @@ rustPlatform.buildRustPackage {
     maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];
-    platforms = lib. platforms.linux;
+    platforms = lib.platforms.linux;
     mainProgram = "cosmic-osd";
   };
 }
