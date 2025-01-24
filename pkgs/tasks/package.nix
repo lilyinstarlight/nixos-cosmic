@@ -12,7 +12,7 @@
 }:
 
 rustPlatform.buildRustPackage rec {
-  pname = "cosmic-ext-tasks";
+  pname = "tasks";
   version = "0.1.1-unstable-2025-01-19";
 
   src = fetchFromGitHub {
