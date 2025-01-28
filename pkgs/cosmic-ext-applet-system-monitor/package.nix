@@ -9,18 +9,23 @@
 }:
 
 rustPlatform.buildRustPackage {
-  pname = "cosmic-ext-applet-clipboard-manager";
-  version = "0.1.0-unstable-2025-01-18";
+  pname = "cosmic-ext-applet-system-monitor";
+  version = "0.1.2";
 
   src = fetchFromGitHub {
-    owner = "cosmic-utils";
-    repo = "clipboard-manager";
-    rev = "b347d7dcea3fb983af8d0d499d1721c739a723f3";
-    hash = "sha256-K4m5q0/4IwD/TYtn/aCKFCHMz1nKH/gV+DCL4y9WY+I=";
+    owner = "D-Brox";
+    repo = "cosmic-ext-applet-system-monitor";
+    rev = "8d133a4d5ee431b878b482f18b98e86b224992e8";
+    hash = "sha256-AwpZ2nb3YPfOAFpkoKZrDm4264UmVH96SmKLc0l81R4=";
+  };
+
+  cargoLock = {
+    lockFile = ./Cargo.lock;
+    allowBuiltinFetchGit = true;
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-OabpLa0mkpSOXIiJnNbnbV2QU8aTC6ybdwLNBpjm0aQ=";
+  cargoHash = "";
 
   nativeBuildInputs = [
     libcosmicAppHook
@@ -36,10 +41,10 @@ rustPlatform.buildRustPackage {
     (placeholder "out")
     "--set"
     "env-dst"
-    "${placeholder "out"}/etc/profile.d/cosmic-ext-applet-clipboard-manager.sh"
+    "${placeholder "out"}/etc/profile.d/cosmic-ext-applet-system-monitor.sh"
     "--set"
     "bin-src"
-    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-ext-applet-clipboard-manager"
+    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-ext-applet-system-monitor"
   ];
 
   preCheck = ''
@@ -49,13 +54,13 @@ rustPlatform.buildRustPackage {
   passthru.updateScript = nix-update-script { };
 
   meta = {
-    homepage = "https://github.com/cosmic-utils/clipboard-manager";
-    description = "Clipboard manager for the COSMIC Desktop Environment";
+    homepage = "https://github.com/D-Brox/cosmic-ext-applet-system-monitor";
+    description = "System monitor for the COSMIC Desktop Environment";
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];
     platforms = lib.platforms.linux;
-    mainProgram = "cosmic-ext-applet-clipboard-manager";
+    mainProgram = "cosmic-ext-applet-system-monitor";
   };
 }
