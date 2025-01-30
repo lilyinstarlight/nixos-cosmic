@@ -10,7 +10,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage {
+rustPlatform.buildRustPackage rec {
   pname = "quick-webapps";
   version = "0.5.4-unstable-2025-01-22";
 
@@ -45,6 +45,8 @@ rustPlatform.buildRustPackage {
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/quick-webapps"
   ];
+
+  env.VERGEN_GIT_SHA = src.rev;
 
   passthru.updateScript = nix-update-script { };
 
