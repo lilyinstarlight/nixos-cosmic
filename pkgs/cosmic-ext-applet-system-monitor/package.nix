@@ -48,7 +48,7 @@ rustPlatform.buildRustPackage {
 
   meta = {
     homepage = "https://github.com/D-Brox/cosmic-ext-applet-system-monitor";
-    description = "System monitor for the COSMIC Desktop Environment";
+    description = "Highly configurable system resource monitor for the COSMIC Desktop Environment";
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [
       # lilyinstarlight
