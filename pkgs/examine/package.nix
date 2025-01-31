@@ -12,7 +12,7 @@
 }:
 
 rustPlatform.buildRustPackage rec {
-  pname = "cosmic-ext-examine";
+  pname = "examine";
   version = "1.0.0-unstable-2025-01-26";
 
   src = fetchFromGitHub {

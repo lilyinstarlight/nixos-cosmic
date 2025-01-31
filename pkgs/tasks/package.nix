@@ -4,34 +4,36 @@
   libcosmicAppHook,
   rustPlatform,
   just,
+  libsecret,
   openssl,
-  pkg-config,
+  sqlite,
   stdenv,
   nix-update-script,
 }:
 
 rustPlatform.buildRustPackage rec {
-  pname = "cosmic-ext-forecast";
-  version = "0-unstable-2025-01-11";
+  pname = "tasks";
+  version = "0.1.1-unstable-2025-01-19";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
-    repo = "forecast";
-    rev = "d3a0215e5493b2ac6fdeb8c752dfa8eac13c5f21";
-    hash = "sha256-/gmlk4Oi1haGqD4mwDvrhBjL/0ygYA7tb9kbSgJWaVw=";
+    repo = "tasks";
+    rev = "406ffac6a2263cdc1006f3578b3f9be64761d6ea";
+    hash = "sha256-9p5f6gLLwxWLqmMPhpTX+pOaeyykn3WZTpZo96LaTV0=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-mqZ2tIZzQWU39SMj8UBnScsGAg4xGhkcm51aXx3UBSk=";
+  cargoHash = "sha256-s2JvNXOEoKVc9ixtrDCneG1udrWiXq5tdtlCRqBio7A=";
 
   nativeBuildInputs = [
     libcosmicAppHook
     just
-    pkg-config
   ];
 
   buildInputs = [
+    libsecret
     openssl
+    sqlite
   ];
 
   dontUseJustBuild = true;
@@ -43,7 +45,7 @@ rustPlatform.buildRustPackage rec {
     (placeholder "out")
     "--set"
     "bin-src"
-    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-ext-forecast"
+    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/tasks"
   ];
 
   env.VERGEN_GIT_SHA = src.rev;
@@ -51,13 +53,13 @@ rustPlatform.buildRustPackage rec {
   passthru.updateScript = nix-update-script { };
 
   meta = {
-    homepage = "https://github.com/cosmic-utils/forecast";
-    description = "Weather forecast for the COSMIC Desktop Environment";
+    homepage = "https://github.com/cosmic-utils/tasks";
+    description = "Simple task management application for the COSMIC Desktop Environment";
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];
     platforms = lib.platforms.linux;
-    mainProgram = "cosmic-ext-forecast";
+    mainProgram = "tasks";
   };
 }

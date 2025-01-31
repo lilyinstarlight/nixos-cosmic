@@ -16,7 +16,7 @@
 }:
 
 rustPlatform.buildRustPackage {
-  pname = "cosmic-ext-observatory";
+  pname = "observatory";
   version = "0.2.2-unstable-2025-01-14";
 
   src = fetchFromGitHub {
