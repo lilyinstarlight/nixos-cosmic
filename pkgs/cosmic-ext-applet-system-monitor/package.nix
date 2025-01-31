@@ -36,9 +36,6 @@ rustPlatform.buildRustPackage {
     "prefix"
     (placeholder "out")
     "--set"
-    "env-dst"
-    "${placeholder "out"}/etc/profile.d/cosmic-ext-applet-system-monitor.sh"
-    "--set"
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-ext-applet-system-monitor"
   ];
