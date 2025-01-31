@@ -159,6 +159,11 @@ in
       wants = [ "xdg-desktop-autostart.target" ];
       before = [ "xdg-desktop-autostart.target" ];
     };
+    # TODO: see if there is a better way to do this
+    systemd.user.targets.tray = {
+      description = "Cosmic Tray Target";
+      requires = [ "graphical-session-pre.target" ];
+    };
 
     # required for screen locker
     security.pam.services.cosmic-greeter = { };
