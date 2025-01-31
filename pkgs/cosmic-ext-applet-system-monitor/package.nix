@@ -19,10 +19,6 @@ rustPlatform.buildRustPackage {
     hash = "sha256-AwpZ2nb3YPfOAFpkoKZrDm4264UmVH96SmKLc0l81R4=";
   };
 
-  cargoLock = {
-    lockFile = ./Cargo.lock;
-    allowBuiltinFetchGit = true;
-  };
 
   useFetchCargoVendor = true;
   cargoHash = "";
