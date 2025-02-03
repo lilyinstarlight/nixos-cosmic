@@ -10,17 +10,17 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-launcher";
-  version = "1.0.0-alpha.5.1-unstable-2025-01-23";
+  version = "1.0.0-alpha.5.1-unstable-2025-01-31";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-launcher";
-    rev = "538d3919710302c90790b3e4a2ee0cda5ad5fca9";
-    hash = "sha256-CqgBZrfDVjeE4G1M8WqrltU1ns82RQhhPVoi+cSbfSQ=";
+    rev = "3ad8a2a905636b43a8aef90ed40b8a7e4ca414ef";
+    hash = "sha256-MiqJhfM/rQYwrCznKFwGBi8Cc5VKST06cxU6aqj+A68=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-WW1o9MFxNd41ODS5p4piLQtpy277E5a/oN2yYdJc8y4=";
+  cargoHash = "sha256-gMPqneb2DPSd1gvZfPBBpD4ZBinfuxl+2Tiolw3qffA=";
 
   nativeBuildInputs = [
     libcosmicAppHook
