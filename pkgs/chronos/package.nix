@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "chronos";
-  version = "0.1.5-unstable-2025-01-14";
+  version = "0.1.5-unstable-2025-01-28";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "chronos";
-    rev = "cb1acf1bf299ee082cc60597032e62ac3bf2cbba";
-    hash = "sha256-iGkuURCDx5jWDqf9T5TK2vfErMSRlEsYwUcwa0OTies=";
+    rev = "d19b6adf2fdceee2ffcbff270374fa0e7d169d03";
+    hash = "sha256-f0+znpUxW8Isvrqw55FCop/K3vewwg0mhFtWKIqAoHU=";
   };
 
   useFetchCargoVendor = true;
