@@ -208,7 +208,7 @@ in
           when instantiating `pkgs` and be aware that the `nixpkgs.config` and `nixpkgs.overlays` options will
           not function for any NixOS modules.
 
-          Note that the COSMIC packages in Nixpkgs are still largely broken as of 2024-10-16 and will not be
+          Note that the COSMIC packages in Nixpkgs are still largely broken as of 2025-02-08 and will not be
           usable for having a fully functional COSMIC desktop environment. The overlay is therefore necessary.
         '';
       }
