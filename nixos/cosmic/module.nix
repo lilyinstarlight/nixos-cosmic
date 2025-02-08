@@ -159,7 +159,7 @@ in
       wants = [ "xdg-desktop-autostart.target" ];
       before = [ "xdg-desktop-autostart.target" ];
     };
-    # TODO: see if there is a better way to do this
+    # TODO: remove when <https://github.com/nix-community/home-manager/pull/6332> is available on all supported home-manager branches
     systemd.user.targets.tray = {
       description = "Cosmic Tray Target";
       requires = [ "graphical-session-pre.target" ];
