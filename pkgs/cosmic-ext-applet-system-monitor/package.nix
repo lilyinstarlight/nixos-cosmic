@@ -4,6 +4,7 @@
   libcosmicAppHook,
   rustPlatform,
   just,
+  pkgs,
   stdenv,
   nix-update-script,
 }:
@@ -20,11 +21,14 @@ rustPlatform.buildRustPackage {
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-KvVkQOcioK4wAjakoFi95BGXFqRQhzJ75mRBWyRKsGM=";
+  cargoPatches = [ ./pin-sctk.patch ];
+  cargoHash = "sha256-yuV+U5FMNbGevXEp02ucsqyrqqvyJLXydYsyOOkj/00=";
 
-  nativeBuildInputs = [
+  buildInputs = with pkgs; [ fontconfig ];
+  nativeBuildInputs = with pkgs; [
     libcosmicAppHook
     just
+    pkg-config
   ];
 
   dontUseJustBuild = true;
