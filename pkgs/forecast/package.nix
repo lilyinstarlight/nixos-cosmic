@@ -12,13 +12,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "forecast";
-  version = "0-unstable-2025-01-11";
+  version = "0-unstable-2025-02-12";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "forecast";
-    rev = "d3a0215e5493b2ac6fdeb8c752dfa8eac13c5f21";
-    hash = "sha256-/gmlk4Oi1haGqD4mwDvrhBjL/0ygYA7tb9kbSgJWaVw=";
+    rev = "08030d27dc7751122a3d5d228ef25eb0a6725c8f";
+    hash = "sha256-06HZ38yW1xnRhXQZ6tHg2Yr0LmfJVRu7Cpp245B7tBg=";
   };
 
   useFetchCargoVendor = true;
