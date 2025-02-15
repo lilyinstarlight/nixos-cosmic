@@ -12,13 +12,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-session";
-  version = "1.0.0-alpha.5.1-unstable-2025-01-14";
+  version = "1.0.0-alpha.5.1-unstable-2025-02-14";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-session";
-    rev = "6e48e124434e394683b0048a9c0f2f5fca562189";
-    hash = "sha256-LrQ+XKKIvyZ4ii89Ym/K58abC7yY9Z51Zyo5ZkycRdY=";
+    rev = "8020134a9fb312fd60c778f895f34e6b1a00f624";
+    hash = "sha256-iqYY3Rr3TqKDiTeRSnV5G/zrq/uCHUtn3dFdJSf/kTA=";
   };
 
   useFetchCargoVendor = true;
