@@ -10,7 +10,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage {
   pname = "forecast";
   version = "0-unstable-2025-02-12";
 
@@ -45,8 +45,6 @@ rustPlatform.buildRustPackage rec {
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-ext-forecast"
   ];
-
-  env.VERGEN_GIT_SHA = src.rev;
 
   passthru.updateScript = nix-update-script { };
 

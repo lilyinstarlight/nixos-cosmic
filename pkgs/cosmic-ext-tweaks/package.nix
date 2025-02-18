@@ -10,7 +10,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage {
   pname = "cosmic-ext-tweaks";
   version = "0.1.3-unstable-2025-01-22";
 
@@ -45,8 +45,6 @@ rustPlatform.buildRustPackage rec {
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-ext-tweaks"
   ];
-
-  env.VERGEN_GIT_SHA = src.rev;
 
   passthru.updateScript = nix-update-script { };
 

@@ -12,7 +12,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage {
   pname = "cosmic-store";
   version = "1.0.0-alpha.5.1-unstable-2025-02-11";
 
@@ -48,8 +48,6 @@ rustPlatform.buildRustPackage rec {
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-store"
   ];
-
-  env.VERGEN_GIT_SHA = src.rev;
 
   passthru.updateScript = nix-update-script {
     extraArgs = [

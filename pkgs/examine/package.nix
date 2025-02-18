@@ -11,7 +11,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage {
   pname = "examine";
   version = "1.0.0-unstable-2025-01-26";
 
@@ -41,8 +41,6 @@ rustPlatform.buildRustPackage rec {
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/examine"
   ];
-
-  env.VERGEN_GIT_SHA = src.rev;
 
   postInstall = ''
     libcosmicAppWrapperArgs+=(--prefix PATH : ${
