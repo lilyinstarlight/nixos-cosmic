@@ -31,6 +31,8 @@ jobs:
         with:
           diagnostic-endpoint: ''
           source-url: 'https://install.lix.systems/lix/lix-installer-${{ matrix.architecture.system }}'
+          extra-conf: |
+            http2 = false
 
       - uses: cachix/cachix-action@v15
         with:
