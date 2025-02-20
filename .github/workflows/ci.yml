@@ -53,4 +53,4 @@ jobs:
           storepath="$(nix eval --raw --system "$SYSTEM" ".#$ATTRIBUTE")"
           cachix push cosmic "$storepath"
           cachix pin cosmic "$ATTRIBUTE.$SYSTEM" "$storepath" --keep-revisions 1
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: github.event_name == 'merge_group' || ((github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main')
