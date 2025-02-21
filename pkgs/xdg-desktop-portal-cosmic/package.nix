@@ -12,7 +12,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage {
+rustPlatform.buildRustPackage rec {
   pname = "xdg-desktop-portal-cosmic";
   version = "1.0.0-alpha.5.1-unstable-2025-02-13";
 
@@ -38,6 +38,8 @@ rustPlatform.buildRustPackage {
     pipewire
   ];
   checkInputs = [ gst_all_1.gstreamer ];
+
+  env.VERGEN_GIT_SHA = src.rev;
 
   # TODO: remove when dbus activation for xdg-desktop-portal-cosmic is fixed to properly start it
   postPatch = ''
