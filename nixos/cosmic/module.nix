@@ -108,6 +108,8 @@ in
     # fonts
     fonts.packages = utils.removePackagesByName (with pkgs; [
       fira
+      noto-fonts
+      open-sans
     ]) config.environment.cosmic.excludePackages;
 
     # xkb config
