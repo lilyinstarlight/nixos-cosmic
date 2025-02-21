@@ -8,7 +8,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage {
   pname = "stellarshot";
   version = "0-unstable-2025-01-14";
 
@@ -41,8 +41,6 @@ rustPlatform.buildRustPackage rec {
 
   # TODO: upstream depends on inter-test side effects and therefore depends on test ordering and lack of concurrency, but tests also do not seem useful
   doCheck = false;
-
-  env.VERGEN_GIT_SHA = src.rev;
 
   passthru.updateScript = nix-update-script { };
 

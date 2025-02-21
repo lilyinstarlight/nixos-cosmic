@@ -11,7 +11,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage {
   pname = "tasks";
   version = "0.1.1-unstable-2025-02-18";
 
@@ -47,8 +47,6 @@ rustPlatform.buildRustPackage rec {
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/tasks"
   ];
-
-  env.VERGEN_GIT_SHA = src.rev;
 
   passthru.updateScript = nix-update-script { };
 
