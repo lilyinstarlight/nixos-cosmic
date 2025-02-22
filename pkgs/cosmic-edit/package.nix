@@ -16,13 +16,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-edit";
-  version = "1.0.0-alpha.6-unstable-2025-02-20";
+  version = "1.0.0-alpha.6-unstable-2025-02-22";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-edit";
-    rev = "4b75c32bffecf735f8393af9ddb32a89a237d3c2";
-    hash = "sha256-mKVZI/x8+LrwFHGnJOzOq/vFkGev7sM9xJQOTA7uZGA=";
+    rev = "efad7d9b9a818a66492845ab51fe330efe19ca54";
+    hash = "sha256-b8cMEID7u1Qw/atlGBs+68cxdb6MOnd8kJC5GpCUI+M=";
   };
 
   useFetchCargoVendor = true;
