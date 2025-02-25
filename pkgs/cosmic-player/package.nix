@@ -8,7 +8,6 @@
   glib,
   gst_all_1,
   just,
-  pkg-config,
   stdenv,
   nix-update-script,
 }:
@@ -31,7 +30,6 @@ rustPlatform.buildRustPackage {
     libcosmicAppHook
     rustPlatform.bindgenHook
     just
-    pkg-config
   ];
 
   buildInputs = [

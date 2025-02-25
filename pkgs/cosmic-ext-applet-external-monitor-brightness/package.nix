@@ -6,7 +6,6 @@
   just,
   stdenv,
   nix-update-script,
-  pkg-config,
   udev,
 }:
 
@@ -27,7 +26,6 @@ rustPlatform.buildRustPackage {
   nativeBuildInputs = [
     libcosmicAppHook
     just
-    pkg-config
   ];
 
   buildInputs = [

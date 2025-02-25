@@ -8,7 +8,6 @@
   libinput,
   mesa,
   pixman,
-  pkg-config,
   seatd,
   stdenv,
   udev,
@@ -35,10 +34,8 @@ rustPlatform.buildRustPackage {
 
   separateDebugInfo = true;
 
-  nativeBuildInputs = [
-    libcosmicAppHook
-    pkg-config
-  ];
+  nativeBuildInputs = [ libcosmicAppHook ];
+
   buildInputs = [
     libdisplay-info
     (if libgbm != null then libgbm else mesa)

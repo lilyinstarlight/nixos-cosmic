@@ -3,7 +3,6 @@
   rustPlatform,
   fetchFromGitHub,
   libcosmicAppHook,
-  pkg-config,
   libgbm ? null,
   libinput,
   mesa,
@@ -25,10 +24,8 @@ rustPlatform.buildRustPackage {
   useFetchCargoVendor = true;
   cargoHash = "sha256-l5y9bOG/h24EfiAFfVKjtzYCzjxU2TI8wh6HBUwoVcE=";
 
-  nativeBuildInputs = [
-    libcosmicAppHook
-    pkg-config
-  ];
+  nativeBuildInputs = [ libcosmicAppHook ];
+
   buildInputs = [
     (if libgbm != null then libgbm else mesa)
     libinput

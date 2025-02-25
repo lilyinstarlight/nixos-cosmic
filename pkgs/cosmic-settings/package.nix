@@ -12,7 +12,6 @@
   just,
   libinput,
   pipewire,
-  pkg-config,
   pulseaudio,
   udev,
   util-linux,
@@ -45,9 +44,9 @@ rustPlatform.buildRustPackage {
     rustPlatform.bindgenHook
     cmake
     just
-    pkg-config
     util-linux
   ];
+
   buildInputs = [
     expat
     fontconfig

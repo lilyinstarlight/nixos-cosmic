@@ -7,7 +7,6 @@
   glib,
   just,
   openssl,
-  pkg-config,
   stdenv,
   nix-update-script,
 }:
@@ -29,8 +28,8 @@ rustPlatform.buildRustPackage {
   nativeBuildInputs = [
     libcosmicAppHook
     just
-    pkg-config
   ];
+
   buildInputs = [
     glib
     flatpak

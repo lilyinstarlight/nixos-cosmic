@@ -7,7 +7,6 @@
   libgbm ? null,
   mesa,
   pipewire,
-  pkg-config,
   gst_all_1,
   nix-update-script,
 }:
@@ -31,8 +30,8 @@ rustPlatform.buildRustPackage rec {
   nativeBuildInputs = [
     libcosmicAppHook
     rustPlatform.bindgenHook
-    pkg-config
   ];
+
   buildInputs = [
     (if libgbm != null then libgbm else mesa)
     pipewire

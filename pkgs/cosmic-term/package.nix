@@ -6,7 +6,6 @@
   freetype,
   just,
   libinput,
-  pkg-config,
   rustPlatform,
   stdenv,
   nix-update-script,
@@ -29,7 +28,6 @@ rustPlatform.buildRustPackage rec {
   nativeBuildInputs = [
     libcosmicAppHook
     just
-    pkg-config
   ];
 
   buildInputs = [

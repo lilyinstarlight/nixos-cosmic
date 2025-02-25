@@ -7,7 +7,6 @@
   glib,
   just,
   libinput,
-  pkg-config,
   pulseaudio,
   stdenv,
   udev,
@@ -33,9 +32,9 @@ rustPlatform.buildRustPackage {
   nativeBuildInputs = [
     libcosmicAppHook
     just
-    pkg-config
     util-linux
   ];
+
   buildInputs = [
     dbus
     glib

@@ -3,7 +3,6 @@
   fetchFromGitHub,
   rustPlatform,
   libcosmicAppHook,
-  pkg-config,
   pulseaudio,
   udev,
   nix-update-script,
@@ -23,10 +22,8 @@ rustPlatform.buildRustPackage {
   useFetchCargoVendor = true;
   cargoHash = "sha256-vYehF2RjPrTZiuGcRUe4XX3ftRo7f+SIoKizD/kOtR8=";
 
-  nativeBuildInputs = [
-    libcosmicAppHook
-    pkg-config
-  ];
+  nativeBuildInputs = [ libcosmicAppHook ];
+
   buildInputs = [
     pulseaudio
     udev
