@@ -11,17 +11,17 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings-daemon";
-  version = "1.0.0-alpha.6-unstable-2025-01-23";
+  version = "1.0.0-alpha.6-unstable-2025-02-26";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings-daemon";
-    rev = "58ff27f9723cd68b6e143b7acadcfe20324ea83c";
-    hash = "sha256-DtwW6RxHnNh87Xu0NCULfUsHNzYU9tHtFKE9HO3rvME=";
+    rev = "e2aa1056900d6f8c9c7555c0401aa7c99281eb06";
+    hash = "sha256-4Kv1oo9oOXD0z6e0xm+CtZyy58tug7si/7K3wJmlNKA=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-lGzQBL9IXbPsaKeVHp34xkm5FnTxWvfw4wg3El4LZdA=";
+  cargoHash = "sha256-EdvvKBU/7dUsVj5XysrbWZtZmfikUaJKaxCJueR5snA=";
 
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [
