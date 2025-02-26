@@ -11,13 +11,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-idle";
-  version = "1.0.0-alpha.6-unstable-2024-12-24";
+  version = "1.0.0-alpha.6-unstable-2025-02-25";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-idle";
-    rev = "7899fccbbe3d6746982178d3eff48ce8943b0f71";
-    hash = "sha256-hORU+iMvWA4XMSWmzir9EwjpLK5vOLR8BgMZz+aIZ4U=";
+    rev = "267bb837f127eb805a17250ebcad02db57eb72cb";
+    hash = "sha256-dRvcow+rZ4sJV6pBxRIw6SCmU3aXP9uVKtFEJ9vozzI=";
   };
 
   useFetchCargoVendor = true;
