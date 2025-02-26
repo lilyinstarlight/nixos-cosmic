@@ -32,7 +32,7 @@ makeSetupHook {
       xorg.libXi
       xorg.libxcb
     ]
-    ++ lib.optionals (!stdenv.isDarwin) [
+    ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [
       wayland
       vulkan-loader
     ];
@@ -58,7 +58,7 @@ makeSetupHook {
         # for x11rb
         "xcb"
       ]
-      ++ lib.optionals (!stdenv.isDarwin) [
+      ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [
         # for wgpu-hal, wayland-sys
         "wayland-client"
         # for wgpu-hal
