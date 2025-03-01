@@ -11,13 +11,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-settings-daemon";
-  version = "1.0.0-alpha.6-unstable-2025-02-26";
+  version = "1.0.0-alpha.6-unstable-2025-02-28";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-settings-daemon";
-    rev = "e2aa1056900d6f8c9c7555c0401aa7c99281eb06";
-    hash = "sha256-4Kv1oo9oOXD0z6e0xm+CtZyy58tug7si/7K3wJmlNKA=";
+    rev = "a666c999e811805e20d6f3d794360bf55d700aa2";
+    hash = "sha256-lGRYvY25j89to8D+2ghwPh0BOCYaRD1MIb/3SzsqLVw=";
   };
 
   useFetchCargoVendor = true;
