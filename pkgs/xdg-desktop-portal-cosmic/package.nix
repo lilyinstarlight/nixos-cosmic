@@ -1,9 +1,11 @@
 {
   lib,
+  stdenv,
   rustPlatform,
   fetchFromGitHub,
   libcosmicAppHook,
   coreutils,
+  util-linux,
   libgbm ? null,
   mesa,
   pipewire,
@@ -32,6 +34,7 @@ rustPlatform.buildRustPackage rec {
     libcosmicAppHook
     rustPlatform.bindgenHook
     pkg-config
+    util-linux
   ];
   buildInputs = [
     (if libgbm != null then libgbm else mesa)
@@ -47,12 +50,15 @@ rustPlatform.buildRustPackage rec {
       --replace-fail 'Exec=/bin/false' 'Exec=${lib.getExe' coreutils "true"}'
   '';
 
+  dontCargoInstall = true;
+
+  makeFlags = [
+    "CARGO_TARGET_DIR=target/${stdenv.hostPlatform.rust.cargoShortTarget}"
+    "prefix=${placeholder "out"}"
+  ];
+
   postInstall = ''
-    mkdir -p $out/share/{dbus-1/services,icons,xdg-desktop-portal/portals}
-    cp -r data/icons $out/share/icons/hicolor
-    cp data/*.service $out/share/dbus-1/services/
-    cp data/cosmic.portal $out/share/xdg-desktop-portal/portals/
-    cp data/cosmic-portals.conf $out/share/xdg-desktop-portal/
+    mv $out/libexec $out/bin
   '';
 
   passthru.updateScript = nix-update-script {
