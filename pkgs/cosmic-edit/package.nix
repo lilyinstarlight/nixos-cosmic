@@ -14,7 +14,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "cosmic-edit";
   version = "1.0.0-alpha.6-unstable-2025-02-22";
 
@@ -53,7 +53,7 @@ rustPlatform.buildRustPackage rec {
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-edit"
   ];
 
-  env.VERGEN_GIT_SHA = src.rev;
+  env.VERGEN_GIT_SHA = finalAttrs.src.rev;
 
   passthru.updateScript = nix-update-script {
     extraArgs = [
@@ -72,4 +72,4 @@ rustPlatform.buildRustPackage rec {
     platforms = lib.platforms.linux;
     mainProgram = "cosmic-edit";
   };
-}
+})

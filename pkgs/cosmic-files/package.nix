@@ -9,7 +9,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "cosmic-files";
   version = "1.0.0-alpha.6-unstable-2025-02-24";
 
@@ -62,7 +62,7 @@ rustPlatform.buildRustPackage rec {
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-files-applet"
   ];
 
-  env.VERGEN_GIT_SHA = src.rev;
+  env.VERGEN_GIT_SHA = finalAttrs.src.rev;
 
   # TODO: remove next two phases if these packages can ever be built at the same time
   buildPhase = ''
@@ -98,4 +98,4 @@ rustPlatform.buildRustPackage rec {
     platforms = lib.platforms.linux;
     mainProgram = "cosmic-files";
   };
-}
+})
