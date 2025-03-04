@@ -1,18 +1,10 @@
 {
   lib,
   fetchFromGitHub,
-  rustPlatform,
   libcosmicAppHook,
-  dbus,
-  glib,
+  rustPlatform,
   just,
-  libinput,
-  pkg-config,
-  pulseaudio,
   stdenv,
-  udev,
-  util-linux,
-  xkeyboard_config,
   nix-update-script,
 }:
 
@@ -33,15 +25,6 @@ rustPlatform.buildRustPackage {
   nativeBuildInputs = [
     libcosmicAppHook
     just
-    pkg-config
-    util-linux
-  ];
-  buildInputs = [
-    dbus
-    glib
-    libinput
-    pulseaudio
-    udev
   ];
 
   dontUseJustBuild = true;
@@ -51,29 +34,16 @@ rustPlatform.buildRustPackage {
     "--set"
     "prefix"
     (placeholder "out")
-    # "--set"
-    # "target"
-    # "${stdenv.hostPlatform.rust.cargoShortTarget}/release"
     "--set"
     "bin-src"
-    "${stdenv.hostPlatform.rust.cargoShortTarget}/release/gui-scale-applet"
+    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/gui-scale-applet"
   ];
 
-  preInstall = ''
-    mkdir -p "$TMPDIR/cargo-target/release/gui-scale-applet"
+  preCheck = ''
+    export XDG_RUNTIME_DIR="$TMP"
   '';
 
-  postInstall = ''
-    libcosmicAppWrapperArgs+=(--set-default X11_BASE_RULES_XML ${xkeyboard_config}/share/X11/xkb/rules/base.xml)
-    libcosmicAppWrapperArgs+=(--set-default X11_EXTRA_RULES_XML ${xkeyboard_config}/share/X11/xkb/rules/base.extras.xml)
-  '';
-
-  passthru.updateScript = nix-update-script {
-    extraArgs = [
-      "--version-regex"
-      "epoch-(.*)"
-    ];
-  };
+  passthru.updateScript = nix-update-script { };
 
   meta = {
     homepage = "https://github.com/cosmic-utils/gui-scale-applet";
