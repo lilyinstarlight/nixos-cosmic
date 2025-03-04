@@ -56,7 +56,7 @@ rustPlatform.buildRustPackage {
   meta = {
     homepage = "https://github.com/cosmic-utils/gui-scale-applet";
     description = "Tailscale for cosmic";
-    # license = lib.licenses.gpl3Only;
+    license = lib.licenses.BSD3;
     maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];

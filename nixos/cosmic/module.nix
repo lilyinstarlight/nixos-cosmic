@@ -76,7 +76,6 @@ in
         cosmic-term
         cosmic-wallpapers
         cosmic-workspaces-epoch
-        gui-scale-applet
         hicolor-icon-theme
         playerctl
         pop-icon-theme
