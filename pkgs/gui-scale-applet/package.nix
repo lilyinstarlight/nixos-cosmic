@@ -42,6 +42,7 @@ rustPlatform.buildRustPackage {
   postInstall = ''
     # mkdir -p $out/share/{applications,icons/hicolor/scalable/apps}
     # cp data/*.desktop $out/share/applications/
+    rm $out/share/icons/hicolor/scalable/status
     mkdir -p $out/share/icons/hicolor/scalable/status
     cp data/icons/scalable/apps/tailscale-icon.png $out/share/icons/hicolor/scalable/status/
   '';
