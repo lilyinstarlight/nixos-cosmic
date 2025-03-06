@@ -111,6 +111,7 @@
                         [
                           andromeda
                           chronos
+                          cosmic-ext-applet-caffeine
                           cosmic-ext-applet-clipboard-manager
                           cosmic-ext-applet-emoji-selector
                           cosmic-ext-applet-external-monitor-brightness
