@@ -37,18 +37,15 @@ rustPlatform.buildRustPackage rec {
   #  "--package"
   #  "cosmic-files-applet"
   #];
-  #cargoTestFlags = [
+  # cargoTestFlags = [
   #  "--package"
   #  "cosmic-files"
   #  "--package"
   #  "cosmic-files-applet"
-  #];
+  # ];
 
   dontUseJustBuild = true;
   dontUseJustCheck = true;
-
-  # TODO: remove when upstream fixes checks again
-  doCheck = false;
 
   justFlags = [
     "--set"
