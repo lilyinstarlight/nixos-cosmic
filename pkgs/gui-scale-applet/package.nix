@@ -47,19 +47,16 @@ rustPlatform.buildRustPackage {
     cp data/icons/scalable/apps/tailscale-icon.png $out/share/icons/hicolor/scalable/status/
   '';
 
-  preCheck = ''
-    export XDG_RUNTIME_DIR="$TMP"
-  '';
-
   passthru.updateScript = nix-update-script { };
 
   meta = {
     homepage = "https://github.com/cosmic-utils/gui-scale-applet";
-    description = "Tailscale for cosmic";
+    description = "Tailscale applet for the COSMIC Desktop Environment";
     license = lib.licenses.bsd3;
     maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];
     platforms = lib.platforms.linux;
+    mainProgram = "gui-scale-applet";
   };
 }
