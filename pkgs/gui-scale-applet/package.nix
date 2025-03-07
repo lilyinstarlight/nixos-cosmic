@@ -39,12 +39,10 @@ rustPlatform.buildRustPackage {
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/gui-scale-applet"
   ];
 
-  postInstall = ''
-    # mkdir -p $out/share/{applications,icons/hicolor/scalable/apps}
-    # cp data/*.desktop $out/share/applications/
-    rm $out/share/icons/hicolor/scalable/status
-    mkdir -p $out/share/icons/hicolor/scalable/status
-    cp data/icons/scalable/apps/tailscale-icon.png $out/share/icons/hicolor/scalable/status/
+  postPatch = ''
+    substituteInPlace justfile --replace-fail \
+      'install -Dm0644 "{{icons-src}}/tailscale-icon.png" {{icons-dst}}' \
+      'install -Dm0644 {{icons-src}}/tailscale-icon.png {{icons-dst}}/tailscale-icon.png'
   '';
 
   passthru.updateScript = nix-update-script { };
