@@ -50,7 +50,7 @@ rustPlatform.buildRustPackage {
     "cosmic"
   ];
 
-  env.XDP_COSMIC = lib.getExe xdg-desktop-portal-cosmic;
+  env.XDP_COSMIC = "${xdg-desktop-portal-cosmic}/libexec/xdg-desktop-portal-cosmic";
 
   postInstall = ''
     mkdir -p $out/etc
