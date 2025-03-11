@@ -21,7 +21,7 @@ jobs:
           diagnostic-endpoint: ''
           source-url: 'https://install.lix.systems/lix/lix-installer-x86_64-linux'
 
-      - uses: cachix/cachix-action@v15
+      - uses: cachix/cachix-action@v16
         with:
           name: cosmic
 
