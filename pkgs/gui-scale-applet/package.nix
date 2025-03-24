@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "gui-scale-applet";
-  version = "2.0.0";
+  version = "2.0.0-unstable-2025-03-24";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "gui-scale-applet";
-    rev = "9251253d6332820d267bf9d825e6af522ae63eb7";
-    hash = "sha256-1zCANfgWgDkSTvpvgxzve/ErGel2WF1RxIhv/EdIxxo=";
+    rev = "957bb3c2d2fb483e5bce4b855b86a71c0a3621f3";
+    hash = "sha256-Hc6oplWdyRc5PkDY1Gq2Ja7tihNVutci7jg+ZZYp6ws=";
   };
 
   useFetchCargoVendor = true;
