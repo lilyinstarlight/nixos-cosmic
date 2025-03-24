@@ -39,12 +39,6 @@ rustPlatform.buildRustPackage {
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/gui-scale-applet"
   ];
 
-  postPatch = ''
-    substituteInPlace justfile --replace-fail \
-      'install -Dm0644 "{{icons-src}}/tailscale-icon.png" {{icons-dst}}' \
-      'install -Dm0644 {{icons-src}}/tailscale-icon.png {{icons-dst}}/tailscale-icon.png'
-  '';
-
   passthru.updateScript = nix-update-script { };
 
   meta = {
