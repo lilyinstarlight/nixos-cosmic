@@ -60,7 +60,7 @@ in
         })
         cosmic-edit
         cosmic-files
-        cosmic-greeter
+        config.services.displayManager.cosmic-greeter.package
         cosmic-icons
         cosmic-idle
         cosmic-launcher
