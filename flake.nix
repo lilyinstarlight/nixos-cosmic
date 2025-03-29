@@ -135,6 +135,7 @@
                           cosmic-ext-applet-clipboard-manager
                           cosmic-ext-applet-emoji-selector
                           cosmic-ext-applet-external-monitor-brightness
+                          cosmic-ext-applet-system-monitor
                           cosmic-ext-calculator
                           cosmic-ext-ctl
                           examine
