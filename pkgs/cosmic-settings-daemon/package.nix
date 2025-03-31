@@ -5,6 +5,7 @@
   geoclue2-with-demo-agent,
   libinput,
   pkg-config,
+  pulseaudio,
   udev,
   nix-update-script,
 }:
@@ -26,6 +27,7 @@ rustPlatform.buildRustPackage {
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [
     libinput
+    pulseaudio
     udev
   ];
 
