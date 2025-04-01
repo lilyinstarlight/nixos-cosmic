@@ -71,5 +71,14 @@ boot.kernelParams = [ "nvidia_drm.fbdev=1" ];
 The zwlr\_data\_control\_manager\_v1 protocol needs to be available. Enable it in cosmic-comp via the following configuration:
 
 ```nix
-environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1
+environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1;
+```
+
+### COSMIC Utilities - Observatory not working
+
+The monitord service must be enabled to use Observatory.
+
+```nix
+systemd.packages = [ pkgs.observatory ];
+systemd.services.monitord.wantedBy = [ "multi-user.target" ];
 ```

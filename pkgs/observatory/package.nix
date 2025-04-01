@@ -3,65 +3,72 @@
   fetchFromGitHub,
   libcosmicAppHook,
   rustPlatform,
-  gnused,
-  gnutar,
-  jq,
   just,
-  libgbm ? null,
-  mesa,
   stdenv,
-  systemd,
-  udev,
+  gnused,
+  protobuf,
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage {
+rustPlatform.buildRustPackage rec {
   pname = "observatory";
-  version = "0.2.2-unstable-2025-02-27";
+  version = "0.2.2-unstable-2025-04-01";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "observatory";
-    rev = "f20da86271180ce1f71b20039e11bbc1aefd00b1";
-    hash = "sha256-XXUOUziW3sLvfp9Bldxn9UISqkjCtPI7gRRp7wLE79A=";
+    rev = "02abde5648ca70a8f1e0e0f211e16d174272821a";
+    hash = "sha256-lWabTPlYf3oZIS5hMLF9udPw1RM/Ya96JDEyIY+r80A=";
+    fetchSubmodules = true;
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-bxOIXjie/XVur3aNLJif3yI3Yp5VyMSMzOciJHcUhHI=";
-
-  nvtop = fetchFromGitHub {
-    owner = "Syllo";
-    repo = "nvtop";
-    rev = "19382d93086acf36f32a8d72173fb9968232e3c1";
-    hash = "sha256-LHVyG6XdBIR4v636cUW/skmqSvq7sEEHLJ+NuJuLUo8=";
-  };
+  cargoHash = "sha256-Td1Dc00doBSDIlDekVp03TmAMuhEGAtShcgoMnggqA8=";
 
   nativeBuildInputs = [
     libcosmicAppHook
     gnused
-    gnutar
-    jq
     just
+    protobuf
   ];
 
-  buildInputs = [
-    (if libgbm != null then libgbm else mesa)
-    systemd
-    udev
-  ];
+  monitord = rustPlatform.buildRustPackage {
+    pname = "observatory-monitord";
+
+    inherit version src;
+
+    useFetchCargoVendor = true;
+    cargoHash = "sha256-+ELF/COm0SSDJk8ydyS4x/4ImTqj7PNZI4W2+4v62Js=";
+
+    sourceRoot = "${src.name}/monitord";
+
+    nativeBuildInputs = [
+      protobuf
+    ];
+
+    cargoBuildFlags = [
+      "--package"
+      "monitord-service"
+    ];
+    cargoTestFlags = [
+      "--package"
+      "monitord-service"
+    ];
+  };
 
   postPatch = ''
-    nvtop_json="observatory-daemon/3rdparty/nvtop/nvtop.json"
-    nvtop_archive="target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/build/native/$(jq -r '(."source-url" | split("/"))[-1]' "$nvtop_json")"
-    mkdir -p "$(dirname "$nvtop_archive")"
-    tar -czf "$nvtop_archive" --absolute-names --transform="s,$nvtop,$(jq -r '.directory' "$nvtop_json")," --mode=+w "$nvtop"
-    sed -i -e 's/\("source-hash":\s*"\)[^"]*\("\)/\1'"$(sha256sum -b "$nvtop_archive" | cut -d' ' -f1)"'\2/' "$nvtop_json"
+    sed -i \
+      -e '/sudo system/d' \
+      -e '/@just monitord/d' \
+      -e 's/sudo install/install/' \
+      justfile
+
+    substituteInPlace resources/monitord.service \
+      --replace-fail '/usr/bin/monitord' "''${!outputBin}/bin/monitord"
   '';
 
   dontUseJustBuild = true;
   dontUseJustCheck = true;
-
-  doCheck = false;
 
   justFlags = [
     "--set"
@@ -70,15 +77,15 @@ rustPlatform.buildRustPackage {
     "--set"
     "bin-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/observatory"
-    "--set"
-    "dae-src"
-    "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/observatory-daemon"
   ];
 
-  postInstall = ''
-    patchelf --add-needed libsystemd.so.0 $out/bin/observatory-daemon
+  env.VERGEN_GIT_SHA = src.rev;
 
-    libcosmicAppWrapperArgs+=(--prefix PATH : $out/bin)
+  postInstall = ''
+    cp $monitord/bin/monitord $out/bin/
+
+    mkdir -p $out/lib/systemd/system
+    cp resources/monitord.service $out/lib/systemd/system/
   '';
 
   passthru.updateScript = nix-update-script { };
@@ -86,7 +93,12 @@ rustPlatform.buildRustPackage {
   meta = {
     homepage = "https://github.com/cosmic-utils/observatory";
     description = "System monitor application for the COSMIC Desktop Environment";
-    license = lib.licenses.gpl3Only;
+    licenses = with lib.licenses; [
+      # observatory
+      mpl20
+      # monitord
+      mit
+    ];
     maintainers = with lib.maintainers; [
       # lilyinstarlight
     ];

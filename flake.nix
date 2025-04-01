@@ -148,13 +148,16 @@
                           quick-webapps
                           stellarshot
                         ]
-                        ++ lib.optionals pkgs.stdenv.hostPlatform.isx86 [
+                        ++ lib.optionals stdenv.hostPlatform.isx86 [
                           observatory
                         ];
 
                       environment.sessionVariables = {
                         COSMIC_DATA_CONTROL_ENABLED = "1";
                       };
+
+                      systemd.packages = with pkgs; lib.optionals stdenv.hostPlatform.isx86 [ observatory ];
+                      systemd.services.monitord.wantedBy = [ "multi-user.target" ];
 
                       boot.kernelParams = [
                         "quiet"
