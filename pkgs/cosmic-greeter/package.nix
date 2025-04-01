@@ -14,7 +14,7 @@
   nix-update-script,
 }:
 
-rustPlatform.buildRustPackage {
+rustPlatform.buildRustPackage rec {
   pname = "cosmic-greeter";
   version = "1.0.0-alpha.6-unstable-2025-03-15";
 
@@ -56,6 +56,8 @@ rustPlatform.buildRustPackage {
     "daemon-src"
     "target/${stdenv.hostPlatform.rust.cargoShortTarget}/release/cosmic-greeter-daemon"
   ];
+
+  env.VERGEN_GIT_SHA = src.rev;
 
   postPatch = ''
     substituteInPlace src/greeter.rs --replace-fail '/usr/bin/env' '${lib.getExe' coreutils "env"}'
