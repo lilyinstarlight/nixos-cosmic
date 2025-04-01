@@ -41,6 +41,15 @@
           pkgs.makeRustPlatform {
             cargo = rust-bin.stable.latest.default;
             rustc = rust-bin.stable.latest.default;
+            cargo-auditable =
+              if nixpkgs.lib.versionAtLeast pkgs.cargo-auditable.version "0.6.5" then
+                pkgs.cargo-auditable
+              else
+                pkgs.cargo-auditable.overrideAttrs (attrs: {
+                  meta = attrs.meta // {
+                    broken = true;
+                  };
+                });
           };
     in
     {
