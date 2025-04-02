@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  modulesPath,
   ...
 }:
 
@@ -9,6 +10,10 @@ let
   cfg = config.services.displayManager.cosmic-greeter;
 in
 {
+  disabledModules = [
+    "${toString modulesPath}/services/display-managers/cosmic-greeter.nix"
+  ];
+
   meta.maintainers = with lib.maintainers; [
     # lilyinstarlight
   ];

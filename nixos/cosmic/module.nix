@@ -3,6 +3,7 @@
   pkgs,
   lib,
   utils,
+  modulesPath,
   ...
 }:
 
@@ -10,6 +11,10 @@ let
   cfg = config.services.desktopManager.cosmic;
 in
 {
+  disabledModules = [
+    "${toString modulesPath}/services/desktop-managers/cosmic.nix"
+  ];
+
   meta.maintainers = with lib.maintainers; [
     # lilyinstarlight
   ];
