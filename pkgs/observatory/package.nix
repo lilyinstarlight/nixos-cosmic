@@ -12,13 +12,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "observatory";
-  version = "0.2.2-unstable-2025-04-01";
+  version = "0.2.2-unstable-2025-04-04";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "observatory";
-    rev = "02abde5648ca70a8f1e0e0f211e16d174272821a";
-    hash = "sha256-lWabTPlYf3oZIS5hMLF9udPw1RM/Ya96JDEyIY+r80A=";
+    rev = "9968ba2ba383cb406e66e47d87b6199c94bdf8a9";
+    hash = "sha256-9pvC1iuCCe69qahhRUHrnwYStvFj2CN8TgR6QVtXYWI=";
     fetchSubmodules = true;
   };
 
