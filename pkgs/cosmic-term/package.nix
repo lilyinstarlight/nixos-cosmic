@@ -14,12 +14,12 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-term";
-  version = "1.0.0-alpha.6-unstable-2025-03-31";
+  version = "1.0.0-alpha.6-unstable-2025-04-03";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-term";
-    rev = "72f164d223aace68ef53a4f3d757e8406884fc4b";
+    rev = "00038027c3eae3a46454e6c57a63baf1dca7eb63";
     hash = "sha256-4dQrtrIYhh+ZPae4h/G03kSB+mD4GCm5ZrnexxjxCaY=";
   };
 
