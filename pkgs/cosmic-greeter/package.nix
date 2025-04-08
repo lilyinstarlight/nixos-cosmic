@@ -1,6 +1,7 @@
 {
   lib,
   fetchFromGitHub,
+  fetchpatch,
   rustPlatform,
   libcosmicAppHook,
   cmake,
@@ -24,6 +25,13 @@ rustPlatform.buildRustPackage rec {
     rev = "d53d928b550399cca42192486572245ffccbbed0";
     hash = "sha256-kkh50eQm1pUaI1dUju7u+uD2Qnbih5z+s7qdITwk/CM=";
   };
+
+  patches = [
+    (fetchpatch {
+      url = "https://patch-diff.githubusercontent.com/raw/pop-os/cosmic-greeter/pull/209.patch";
+      hash = "sha256-+/YZ4iy7rxhTZy1HyKbJK8rz0GsGz5YuXtrSQojOoEM=";
+    })
+  ];
 
   useFetchCargoVendor = true;
   cargoHash = "sha256-1s1iWKiHaBWAPi6lZoYRvsHlptQqPDhASBMqdT0FdGY=";
