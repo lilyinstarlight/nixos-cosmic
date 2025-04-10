@@ -15,8 +15,8 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-launcher";
-    rev = "cc028b503493d025a61e3fd222ceedc10b72ba1a";
-    hash = "sha256-pKv31hCxN74Eer+1wZjh8R5ROVcfAS2sVzf6WzpCKgc=";
+    rev = "e105fd1f4534e87f825b1d113c4b097743281e63";
+    hash = "sha256-cZjSki6tzBQvtXVaXfzcMRMhJF+60f4A2iYXeL+hDWE=";
   };
 
   useFetchCargoVendor = true;
