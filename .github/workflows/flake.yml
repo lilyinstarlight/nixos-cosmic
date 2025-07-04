@@ -22,7 +22,7 @@ jobs:
           source-url: 'https://install.lix.systems/lix/lix-installer-x86_64-linux'
 
       - id: update-flake-lock
-        uses: DeterminateSystems/update-flake-lock@v25
+        uses: DeterminateSystems/update-flake-lock@v26
         with:
           commit-msg: 'flake: update inputs'
           pr-title: 'flake: update inputs'
