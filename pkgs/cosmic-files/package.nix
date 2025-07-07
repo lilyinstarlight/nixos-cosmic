@@ -72,7 +72,8 @@ rustPlatform.buildRustPackage rec {
 
   checkPhase = ''
     baseCargoTestFlags="$cargoTestFlags"
-    cargoTestFlags="$baseCargoTestFlags --package cosmic-files"
+    # operation tests require io_uring and fail in nix-sandbox
+    cargoTestFlags="$baseCargoTestFlags --package cosmic-files -- --skip operation::tests"
     runHook cargoCheckHook
     cargoTestFlags="$baseCargoTestFlags --package cosmic-files-applet"
     runHook cargoCheckHook
