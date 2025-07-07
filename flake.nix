@@ -148,6 +148,7 @@
                           cosmic-ext-ctl
                           examine
                           forecast
+                          gui-scale-applet
                           tasks
                           cosmic-ext-tweaks
                           (lib.lowPrio cosmic-comp)
