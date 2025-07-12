@@ -153,7 +153,7 @@
                           (lib.lowPrio cosmic-comp)
                           cosmic-reader
                           drm_info
-                          firefox
+                          zen-browser
                           quick-webapps
                           stellarshot
                         ]
