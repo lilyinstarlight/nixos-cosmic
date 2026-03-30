@@ -2,8 +2,8 @@ pull_request_rules:
   - name: Auto-merge for dependency bump pull requests
     conditions:
       - or:
-        - author=dependabot[bot]
-        - author=github-actions[bot]
+          - author=dependabot[bot]
+          - author=github-actions[bot]
       - label=dependencies
 
       - check-success=Build - x86_64-linux - vm.closure
@@ -13,4 +13,3 @@ pull_request_rules:
     actions:
       merge:
         method: squash
-      delete_head_branch:
