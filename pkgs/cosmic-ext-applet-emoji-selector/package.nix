@@ -11,17 +11,17 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-applet-emoji-selector";
-  version = "0.1.5-unstable-2025-01-27";
+  version = "0.1.5-unstable-2025-11-29";
 
   src = fetchFromGitHub {
     owner = "leb-kuchen";
     repo = "cosmic-ext-applet-emoji-selector";
-    rev = "1b2eb23ba4d337482ed10b0595be3b603020cad2";
-    hash = "sha256-G5Al0YRf0a4WuvYB7kDWCPPl+f/GBrN6M2SMVgO+U94=";
+    rev = "4530c2d1f2690efc87a666645e534328eb55fafe";
+    hash = "sha256-Jw9Br4VVhhG8EH77EmFQsiKZJw97Iq1VtuOgGmjCfAg=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-0V0zKGsNzUXlAjzf4dm4khnzhqNsXvxaLLlIB+JvF9s=";
+  cargoHash = "sha256-uEcxVaLCXVxSCkKPUgTom86ropE3iXiPyy6ITufWa5k=";
 
   nativeBuildInputs = [
     libcosmicAppHook
