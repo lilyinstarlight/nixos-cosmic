@@ -7,13 +7,13 @@
 
 stdenvNoCC.mkDerivation {
   pname = "cosmic-wallpapers";
-  version = "1.0.0-alpha.6-unstable-2025-04-08";
+  version = "1.9.0-unstable-2026-08-21";
 
   src = fetchFromGitHub {
     owner = "pop-os";
     repo = "cosmic-wallpapers";
-    rev = "189c2c63d31da84ebb161acfd21a503f98a1b4c7";
-    hash = "sha256-XtNmV6fxKFlirXQvxxgAYSQveQs8RCTfcFd8SVdEXtE=";
+    rev = "d6c60281508ef6b20db712612dad256d0b44b4fb";
+    hash = "sha256-lCgWRtvaso9jKo7A4VepDFK/zc8pQpR1up8yoWS/qfc=";
     forceFetchGit = true;
     fetchLFS = true;
   };
