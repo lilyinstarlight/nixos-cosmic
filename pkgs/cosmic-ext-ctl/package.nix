@@ -7,17 +7,17 @@
 
 rustPlatform.buildRustPackage {
   pname = "cosmic-ext-ctl";
-  version = "1.1.0-unstable-2025-01-10";
+  version = "1.6.0-unstable-2026-10-14";
 
   src = fetchFromGitHub {
     owner = "cosmic-utils";
     repo = "cosmic-ctl";
-    rev = "35145e808f3d7e895057befde75c87c3f70516cd";
-    hash = "sha256-0fGt9S9U6eOZflc6kzixQFiTC96vZtauQ9tQJhdYoFc=";
+    rev = "6d1e5b0d2e9474e036c85f451253e5384f3dd0cd";
+    hash = "sha256-v3lNcXvSbTtCCosPD0z5ubksrBF9b0ATWfmLfF6MzvI=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-EReo2hkBaIO1YOBx4D9rQSXlx+3NK5VQtj59jfZZI/0=";
+  cargoHash = "sha256-lRBkcn4Vy7XGRpymT3KCeHWwR3hXK5LxTDZB+Kiuk7E=";
 
   passthru.updateScript = nix-update-script { };
 
