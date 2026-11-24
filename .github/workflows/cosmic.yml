@@ -30,7 +30,16 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - run: nix -vL run --show-trace .#update
+      - name: Build update script
+        run: nix -vL build --show-trace .#update
+
+      - name: Run update script
+        run: result/bin/cosmic-unstable-update
+
+      - name: Clean git repository
+        run: |
+          git clean -fdx
+          git reset --hard HEAD
 
       - id: create-pr
         uses: peter-evans/create-pull-request@v7

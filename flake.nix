@@ -86,26 +86,41 @@
         {
           update = pkgs.writeShellApplication {
             name = "cosmic-unstable-update";
+            bashOptions = [ ];
 
             text = lib.concatStringsSep "\n" (
               lib.mapAttrsToList (
                 attr: drv:
-                if drv ? updateScript && (lib.isList drv.updateScript) && (lib.length drv.updateScript) > 0 then
-                  lib.escapeShellArgs (
-                    if (lib.match "nix-update|.*/nix-update" (lib.head drv.updateScript) != null) then
-                      [ (lib.getExe pkgs.nix-update) ]
-                      ++ (lib.tail drv.updateScript)
-                      ++ [
-                        "--version"
-                        "branch=HEAD"
-                        "--commit"
-                        attr
-                      ]
+                let
+                  packageUpdateScript =
+                    if drv ? updateScript && (lib.isList drv.updateScript) && (lib.length drv.updateScript) > 0 then
+                      lib.escapeShellArgs (
+                        if (lib.match "nix-update|.*/nix-update" (lib.head drv.updateScript) != null) then
+                          [ (lib.getExe pkgs.nix-update) ]
+                          ++ (lib.tail drv.updateScript)
+                          ++ [
+                            "--version"
+                            "branch=HEAD"
+                            "--commit"
+                            attr
+                          ]
+                        else
+                          drv.updateScript
+                      )
                     else
-                      drv.updateScript
-                  )
-                else
-                  builtins.toString drv.updateScript or ""
+                      builtins.toString drv.updateScript or "";
+                in
+                  if packageUpdateScript == "" then "" else ''
+                    echo "::group::Updating ${attr}"
+                    ${packageUpdateScript}
+                    status=$?
+                    echo "::endgroup::"
+                    if [ $status -eq 0 ]; then
+                        echo "Update of ${attr} successful"
+                    else
+                        echo "::warning::Update of ${attr} failed"
+                    fi
+                  ''
               ) (self.lib.packagesFor pkgs)
             );
           };
