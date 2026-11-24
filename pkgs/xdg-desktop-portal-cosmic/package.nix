@@ -57,10 +57,6 @@ rustPlatform.buildRustPackage rec {
     "prefix=${placeholder "out"}"
   ];
 
-  postInstall = ''
-    mv $out/libexec $out/bin
-  '';
-
   passthru.updateScript = nix-update-script {
     extraArgs = [
       "--version-regex"

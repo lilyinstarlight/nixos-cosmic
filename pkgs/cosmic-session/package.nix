@@ -51,9 +51,11 @@ rustPlatform.buildRustPackage {
     "cosmic"
   ];
 
-  env.XDP_COSMIC = lib.getExe xdg-desktop-portal-cosmic;
-  # use `orca` from PATH (instead of absolute path) if available
-  env.ORCA = "orca";
+  env = {
+    # use `orca` from PATH (instead of absolute path) if available
+    ORCA = "orca";
+    XDP_COSMIC = "${xdg-desktop-portal-cosmic}/libexec/xdg-desktop-portal-cosmic";
+  };
 
   postInstall = ''
     mkdir -p $out/etc
